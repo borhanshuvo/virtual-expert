@@ -64,6 +64,7 @@ export default function Home() {
           </span>
         </a>
         <h1>Welcome to Virtual</h1>
+        <h1>Vhule bora jibon</h1>
       </footer>
     </div>
   );
