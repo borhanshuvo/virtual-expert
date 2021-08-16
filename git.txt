@@ -1,5 +1,5 @@
 First time:
-git clone link
+git clone https://github.com/borhanshuvo/virtual-expert-client
 git checkout -b YourName
 
 
