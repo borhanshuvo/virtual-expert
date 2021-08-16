@@ -1,0 +1,20 @@
+First time:
+git clone link
+git checkout -b YourName
+
+
+Next Time : 
+git pull origin development
+git add .
+git commit -m "your commit"
+git fetch && git pull origin development
+git push origin YourName
+
+after that:
+git checkout development
+git merge yourname
+git push origin development
+
+For branch Delete :
+git branch -d branchName (locally)
+gti push origin --delete branchName(remotely)
