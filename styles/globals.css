@@ -59,7 +59,7 @@ ul {
   opacity: 1;
   z-index: -1;
 }
-.fs-30{
+.fs-30 {
   font-size: 30px;
 }
 .fs-36 {
@@ -134,6 +134,10 @@ ul {
   color: #828b9a;
 }
 
+.order-color{
+  color:#FF9F26
+}
+
 .numberBefore {
   position: relative;
   z-index: 1111;
@@ -173,9 +177,33 @@ ul {
   content: "";
   position: absolute;
   color: #222f3e;
-  bottom: -5px;
+  bottom: 0;
   width: 25px;
   height: 2px;
   left: 50%;
   background: #ff9f26 0% 0% no-repeat padding-box;
 }
+
+/* .placeOrderRoundIcon {
+  top: -20px;
+  right: -25px !important;
+  z-index: -9;
+} */
+
+.order-section-card {
+  position: relative;
+  z-index: 11111111;
+  background-color: #fff;
+}
+
+/* .order-section-card::after {
+  content: url(../images/service/Ellipse\ 261.svg);
+  right: -60px;
+  top: -25px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: -9999;
+  background-image: ;
+  background-repeat: no-repeat;
+} */

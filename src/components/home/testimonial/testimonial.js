@@ -36,6 +36,7 @@ const Testimonial = () => {
             </p>
             <h6 className="fw-bold fs-18">{currentTestimonials.name}</h6>
             <p className="fs-14">{currentTestimonials.jobTitle}</p>
+            <Image src="/Logo.svg" alt="fkn" height="50" width="50" />
           </div>
           <div className="position-absolute right-38 d-flex flex-md-column">
             {testimonials.map((data, index) => (
