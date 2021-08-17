@@ -4,6 +4,7 @@ import Navbar from "../src/components/navbar/navbar";
 import Banner from "../src/components/banner/banner";
 import Amazon from "../src/components/amazon/amazon";
 import Testimonial from "../src/components/testimonial/testimonial";
+import ScheduleMeeting from "../src/components/scheduleMeeting/scheduleMeeting";
 import Footer from "../src/components/footer/footer";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <Banner />
         <Amazon />
         <Testimonial />
+        <ScheduleMeeting />
         <Footer />
       </main>
     </>
