@@ -1,0 +1,14 @@
+.title {
+  position: relative;
+  display: inline-block;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -10px;
+  width: 25px;
+  height: 2px;
+  left: 0;
+  background: #ff9f26 0% 0% no-repeat padding-box;
+}
