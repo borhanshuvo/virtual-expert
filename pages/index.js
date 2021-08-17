@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import Banner from "../src/components/banner/banner";
 import Navbar from "../src/components/navbar/navbar";
 
@@ -11,8 +12,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <Banner />
         <Navbar />
+        <Banner />
       </main>
     </>
   );
