@@ -95,3 +95,11 @@ ul {
 .boxShadow {
   box-shadow: 0px 0px 25px #94969c26;
 }
+
+.borderColor {
+  border: 3px solid #fe9332 !important;
+}
+
+.left-38 {
+  left: -38px;
+}
