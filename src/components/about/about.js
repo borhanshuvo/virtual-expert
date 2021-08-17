@@ -4,6 +4,7 @@ import { IoIosArrowForward } from 'react-icons/Io';
 import styles from './about.module.css';
 import about1 from '../../../images/about/img-1.svg';
 import about2 from '../../../images/about/Img.svg';
+import model from '../../../images/isa.jpg';
 const AboutC = () => {
   return (
     <section>
@@ -61,83 +62,89 @@ const AboutC = () => {
                 Why We are Unique?
               </h6>
               <div>
-                <p className="mb-5">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     01
-                  </span>{' '}
-                  Our work is 100% compatible with the Amazon A10 algorithm. So,
-                  it is safe.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>
+                    Our work is 100% compatible with the Amazon A10 algorithm.
+                    So, it is safe.
+                  </p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     02
-                  </span>{' '}
-                  We will give you 100% Privacy & Protection by never sharing
-                  your identity with anyone else.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>
+                    We will give you 100% Privacy & Protection by never sharing
+                    your identity with anyone else.
+                  </p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     03
-                  </span>{' '}
-                  We always use 100% Verified Amazon Accounts with real
-                  addresses & purchases history.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>
+                    We always use 100% Verified Amazon Accounts with real
+                    addresses & purchases history.
+                  </p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     04
-                  </span>{' '}
-                  We have 50+ different computers with Different MAC & IP
-                  addresses.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>
+                    We have 50+ different computers with Different MAC & IP
+                    addresses.
+                  </p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     05
-                  </span>{' '}
-                  We have 50+ Real Employee who has enough expertise and
-                  capability to work perfectly.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>
+                    We have 50+ Real Employee who has enough expertise and
+                    capability to work perfectly.
+                  </p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     06
-                  </span>{' '}
-                  We are always up to date with Amazon Terms & Conditions.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>
+                    We are always up to date with Amazon Terms & Conditions.
+                  </p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     07
-                  </span>{' '}
-                  We use PayPal, Payoneer, Skrill & Bitcoin for a smooth
-                  transaction.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>
+                    We use PayPal, Payoneer, Skrill & Bitcoin for a smooth
+                    transaction.
+                  </p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     08
-                  </span>{' '}
-                  We have the option of half-payment for new clients.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>We have the option of half-payment for new clients.</p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     09
-                  </span>{' '}
-                  We always Exchange Browsers & Delete Cookies. So, there is NO
-                  Risk of Cookies.
-                </p>
-                <p className="mb-5 fs-15">
-                  {' '}
-                  <span className={`${styles.number} fw-bold text-dark`}>
+                  </span>
+                  <p>We always Exchange Browsers & Delete Cookies.</p>
+                </div>
+                <div className="d-flex fs-14 mt-4">
+                  <span className="me-2 numberBefore fw-bold text-dark">
                     10
-                  </span>{' '}
-                  Free advice & 24/7 customer support.
-                </p>
+                  </span>
+                  <p>
+                    So, there is NO Risk of Cookies. Free advice & 24/7 customer
+                    support.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -146,15 +153,54 @@ const AboutC = () => {
 
       {/* ========================================= */}
 
-      <div className="container">
+      <div className="container ">
         <div className="d-flex justify-content-center align-items-center">
-          <div className="w-50 text-center ">
+          <div className="w-50 text-center  mt-5 pt-3">
             <h6 className={`${styles.title1} fs-24 `}>Meet The Team</h6>
             <p className="text-muted fs-15 mt-3 mb-5 lh-lg">
               Virtual Experts has around 7 years of experience in Amazon
               FBA/Kindle business model and Digital Marketing consultancy. We
               also sell products on Amazon besides being a marketing agency.
             </p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-4 text-center ">
+            <Image src={model} alt="isabaleIsCute" />
+            <div className={`${styles.name} mt-4`}>
+              <h6 className="fs-18">Richard</h6>
+              <p className="fs-15">Founder & CEO</p>
+            </div>
+          </div>
+          <div className="col-md-4 text-center">
+            <Image src={model} alt="isabaleIsCute" />
+            <div className={`${styles.name} mt-4`}>
+              <h6 className="fs-18">Richard</h6>
+              <p className="fs-15">Founder & CEO</p>
+            </div>
+          </div>
+          <div className="col-md-4 text-center">
+            <Image src={model} alt="isabaleIsCute" />
+            <div className={`${styles.name} mt-4`}>
+              <h6 className="fs-18">Richard</h6>
+              <p className="fs-15">Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* ============================ */}
+
+      <div className="container p-5 my-3 w-md-75 w-100">
+        <div className="d-flex justify-content-center align-items-center background-color-skyblue py-5">
+          <div className="w-75 text-center py-2">
+            <h6 className={`fs-24`}>
+              Our professional team has helped{' '}
+              <span style={{ color: '#FE9332' }}>5,000+</span> Amazon sellers to
+              gain potential sales
+            </h6>
+            <button type="submit" className="button mt-3">
+              Schedule a Meeting
+            </button>
           </div>
         </div>
       </div>
