@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37.205" height="34.295" viewBox="0 0 37.205 34.295">
+  <g id="img" transform="translate(-31.009 -21.432)">
+    <path id="Path_1895" data-name="Path 1895" d="M367.712,345.231h-29.8a3.684,3.684,0,0,1-3.684-3.684V327.894a1.459,1.459,0,0,1,.455-1.059l15.79-14.967a3.4,3.4,0,0,1,4.676,0l15.055,14.271a3.815,3.815,0,0,1,1.191,2.769v12.639A3.684,3.684,0,0,1,367.712,345.231Z" transform="translate(-303.182 -289.504)" fill="#3f3d56"/>
+    <path id="Path_1896" data-name="Path 1896" d="M240.954,387.992h36.857v14.887a2.225,2.225,0,0,1-2.225,2.225H243.179a2.225,2.225,0,0,1-2.225-2.225Z" transform="translate(-209.907 -349.377)" opacity="0.1"/>
+    <path id="Path_1897" data-name="Path 1897" d="M333.73,521.351" transform="translate(-302.721 -483.627)" fill="none" stroke="#3f3d56" stroke-miterlimit="10" stroke-width="1"/>
+    <rect id="Rectangle_267" data-name="Rectangle 267" width="27.41" height="27.41" rx="2" transform="translate(35.887 26.884)" fill="#ff9f26"/>
+    <path id="Path_1898" data-name="Path 1898" d="M330.864,395.942v15.064h-27.41V395.942l13.705,6.624Z" transform="translate(-267.567 -356.712)" opacity="0.1"/>
+    <path id="Path_1899" data-name="Path 1899" d="M352.313,535.376l-17.561-8.488a.713.713,0,0,0-1.023.642v14.6a2.225,2.225,0,0,0,2.225,2.225h32.717a2.225,2.225,0,0,0,2.225-2.225V527.78a.869.869,0,0,0-1.248-.783Z" transform="translate(-302.721 -488.67)" fill="#3f3d56"/>
+    <rect id="Rectangle_268" data-name="Rectangle 268" width="7.666" height="1.084" transform="translate(38.249 29.4)" fill="#f2f2f2"/>
+    <rect id="Rectangle_269" data-name="Rectangle 269" width="22.764" height="0.619" transform="translate(37.629 33.349)" fill="#f2f2f2"/>
+    <rect id="Rectangle_270" data-name="Rectangle 270" width="22.764" height="0.619" transform="translate(37.629 35.44)" fill="#f2f2f2"/>
+    <rect id="Rectangle_271" data-name="Rectangle 271" width="22.764" height="0.619" transform="translate(37.629 37.53)" fill="#f2f2f2"/>
+    <ellipse id="Ellipse_263" data-name="Ellipse 263" cx="3.175" cy="3.18" rx="3.175" ry="3.18" transform="translate(33.835 24.135)" fill="#fff"/>
+    <path id="Path_1921" data-name="Path 1921" d="M366.024,338.851a3.794,3.794,0,1,0,3.794,3.794A3.794,3.794,0,0,0,366.024,338.851Zm-.779,5.817-1.944-1.944.545-.545,1.4,1.4,2.957-2.957.545.545Z" transform="translate(-329.014 -315.258)" fill="#57b894"/>
+  </g>
+</svg>
