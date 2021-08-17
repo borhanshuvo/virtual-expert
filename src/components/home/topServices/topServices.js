@@ -31,7 +31,7 @@ const TopServices = () => {
   return (
     <div className="container py-5">
       <div className="py-5">
-      <h6 className="fs-28 text-center">
+      <h6 className="fs-28 text-center textCenterAfterEffect">
         Our TOP 3 Services for Amazon FBA/Kindle Business
       </h6>
       <div className="row">
@@ -51,7 +51,7 @@ const TopServices = () => {
         ))}
       </div>
       <div className="d-flex justify-content-center">
-      <p className="borderColor text-center fs-14  py-2 px-3">View all Amazon Services</p>
+      <p className={`${styles.viewButonStyle} borderColor text-center fs-14  py-2 px-3`}>View all Amazon Services</p>
       </div>
       </div>
     </div>

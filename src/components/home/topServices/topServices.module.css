@@ -6,3 +6,7 @@
 .serviceCard{
     width: 380px
 }
+
+.viewButonStyle:hover{
+    background-color:#FF9F26;
+}
