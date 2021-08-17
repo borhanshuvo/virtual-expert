@@ -1,3 +1,12 @@
 .service-img{
-    
+    width: 190px;
+    height: 120px;
+}
+
+.serviceCard{
+    width: 380px
+}
+
+.viewButonStyle:hover{
+    background-color:#FF9F26;
 }
