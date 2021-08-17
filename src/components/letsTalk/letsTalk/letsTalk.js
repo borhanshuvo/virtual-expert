@@ -18,19 +18,19 @@ const LetsTalk = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <section className={styles.main}>
+    <section className="mb-5 pb-5">
       <div
         className={`${styles.top} d-flex justify-content-between align-items-center`}
       >
         <div className="container">
-          <div className="  d-md-flex justify-content-between align-items-center">
-            <h6>Let’s Talk</h6>
-            <div className="d-flex align-items-center">
-              <p>Home</p>{' '}
+          <div className=" d-md-flex justify-content-between align-items-center">
+            <h6 className="text-dark fs-30">Let’s Talk</h6>
+            <div className="d-flex align-items-center ">
+              <p className="fs-14">Home</p>{' '}
               <p>
                 <IoIosArrowForward className={`${styles.logo}`} />
               </p>{' '}
-              <p>Let’s Talk</p>{' '}
+              <p className="fs-14">Let’s Talk</p>{' '}
             </div>
           </div>
         </div>
@@ -42,37 +42,39 @@ const LetsTalk = () => {
             <div>
               <Image src={Logo} alt="logo" />
             </div>
-            <h6 className={styles.title}>Amazon Growth & Results.</h6>
-            <p className="text-muted my-4">
+            <h6 className={`${styles.title} fs-24`}>
+              Amazon Growth & Results.
+            </h6>
+            <p className="text-muted my-4 fs-15">
               Do you have any questions related to Amazon FBA/Kindle & Digital
               Marketing? Feel free to contact us. For better response use
               Skype/WhatsApp.
             </p>
-            <div className="text-muted mb-5">
+            <div className="text-muted mb-5 ">
               <p>
                 {' '}
-                <GoLocation className={`${styles.logo}`} />
+                <GoLocation className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Address</span>: 226 West 26th Street,
                 New York, NY 10001, USA
               </p>
               <p>
                 {' '}
-                <HiOutlineMail className={`${styles.logo}`} />
+                <HiOutlineMail className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Email</span>: help@virtualexperts.net
               </p>
               <p>
                 {' '}
-                <AiOutlineSkype className={`${styles.logo}`} />
+                <AiOutlineSkype className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Skype</span>: VirtualExpertsLTD
               </p>
               <p>
                 {' '}
-                <AiOutlineWhatsApp className={`${styles.logo}`} />
+                <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Whatsapp</span>: +13473528622
               </p>
             </div>
             <div>
-              <h6 className={styles.title}>Connect with us</h6>
+              <h6 className={`${styles.title} fs-18`}>Connect with us</h6>
               <div className="d-flex mt-2">
                 <GoLocation className={`${styles.logoBottom}`} />
                 <HiOutlineMail className={`${styles.logoBottom}`} />

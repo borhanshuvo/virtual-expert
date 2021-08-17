@@ -1,0 +1,46 @@
+.top{
+    background-color: #F5F8FE;
+    width: 100vw;
+    height: 120px;
+    margin-bottom: 120px;
+    color: #828B9A;
+}
+.logo {
+    color: #ff9f26;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .number {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    margin-right: 10px;
+  }
+  .number::after {
+    content: "";
+    position: absolute;
+    top:8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FF9F26;
+    z-index: -1;
+    left: -7px;
+    
+  }
+  .title{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+.title::before{
+    content: "";
+    position: absolute;
+    color: #222f3e;
+    bottom: -15px;
+    width: 30px;
+    height: 4px;
+    left: 0;
+    background: #ff9f26 0% 0% no-repeat padding-box;
+}
