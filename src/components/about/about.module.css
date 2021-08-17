@@ -44,3 +44,17 @@
     left: 0;
     background: #ff9f26 0% 0% no-repeat padding-box;
 }
+.title1 {
+    position: relative;
+    display: inline-block;
+  }
+  .title1::before {
+    content: "";
+      position: absolute;
+      color: #222f3e;
+      bottom: -11px;
+      width: 30px;
+      height: 3px;
+      background: #ff9f26;
+      left: 40%;
+  }

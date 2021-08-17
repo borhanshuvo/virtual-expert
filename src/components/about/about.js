@@ -12,7 +12,7 @@ const AboutC = () => {
       >
         <div className="container">
           <div className=" d-md-flex justify-content-between align-items-center">
-            <h6 className="text-dark fs-30">Let’s Talk</h6>
+            <h6 className="text-dark fs-30">About Us</h6>
             <div className="d-flex align-items-center ">
               <p className="fs-14">Home</p>{' '}
               <p>
@@ -29,8 +29,10 @@ const AboutC = () => {
       <div className="container mb-5">
         <div className="row">
           <div className="col-md-6">
-            <h6>Who are Virtual Experts?</h6>
-            <p className="text-muted">
+            <h6 className={`${styles.title} fs-28`}>
+              Who are Virtual Experts?
+            </h6>
+            <p className="text-muted fs-15 lh-lg">
               Virtual Experts is a well-known USA-based Digital Marketing
               Agency. Who works to promote your Amazon products/brands and
               improves your product brand value Online. Virtual Experts Ltd. has
@@ -146,9 +148,9 @@ const AboutC = () => {
 
       <div className="container">
         <div className="d-flex justify-content-center align-items-center">
-          <div>
-            <h6 className="fs-24">Meet The Team</h6>
-            <p className="text-muted fs-15">
+          <div className="w-50 text-center ">
+            <h6 className={`${styles.title1} fs-24 `}>Meet The Team</h6>
+            <p className="text-muted fs-15 mt-3 mb-5 lh-lg">
               Virtual Experts has around 7 years of experience in Amazon
               FBA/Kindle business model and Digital Marketing consultancy. We
               also sell products on Amazon besides being a marketing agency.
