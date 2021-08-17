@@ -1,7 +1,8 @@
 import Head from "next/head";
 
-import Banner from "../src/components/banner/banner";
 import Navbar from "../src/components/navbar/navbar";
+import Banner from "../src/components/banner/banner";
+import Amazon from "../src/components/amazon/amazon";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Navbar />
         <Banner />
+        <Amazon />
       </main>
     </>
   );
