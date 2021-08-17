@@ -25,3 +25,7 @@ p {
 h6 {
   font-family: "Roboto Slab", serif;
 }
+
+ul {
+  list-style: none;
+}

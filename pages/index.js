@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Navbar from "../src/components/navbar/navbar";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <p className="text-center">Hello World</p>
+        <Navbar />
       </main>
     </div>
   );

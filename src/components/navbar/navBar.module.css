@@ -1,0 +1,46 @@
+.navItem {
+  font-size: 14px;
+  color: #828b9a;
+  position: relative;
+}
+.navItem:hover {
+  color: #222f3e;
+}
+.active {
+  color: #222f3e;
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -5px;
+  width: 16px;
+  height: 2px;
+  right: 0;
+  background: #ff9f26 0% 0% no-repeat padding-box;
+}
+
+.navItem:hover::after {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -5px;
+  width: 16px;
+  height: 2px;
+  right: 0;
+  background: #ff9f26 0% 0% no-repeat padding-box;
+}
+
+.menu1 {
+  width: 25px;
+  height: 2px;
+  display: block;
+  background-color: #828b9a;
+}
+
+.menu2 {
+  width: 18px;
+  height: 2px;
+  margin-top: 5px;
+  display: block;
+  margin-left: auto;
+  background-color: #828b9a;
+}
