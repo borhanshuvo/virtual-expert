@@ -99,3 +99,19 @@ ul {
 .background-color-skyblue {
   background-color: #f5f8fe;
 }
+
+.borderColor {
+  border: 3px solid #fe9332 !important;
+}
+
+.left-38 {
+  left: -38px;
+}
+
+.right-38 {
+  right: -48px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
