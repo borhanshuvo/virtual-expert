@@ -134,6 +134,10 @@ ul {
   color: #828b9a;
 }
 
+.order-color{
+  color:#FF9F26
+}
+
 .numberBefore {
   position: relative;
   z-index: 1111;

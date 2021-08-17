@@ -1,7 +1,9 @@
 import Image from "next/image";
-import img1 from "../../../../images/Img-1.svg";
-import img2 from "../../../../images/Img-2.svg";
-import img3 from "../../../../images/Img-3.svg";
+import img1 from "../../../../public/home_top_service_card_image1.svg";
+import img2 from "../../../../public/home_top_service_card_image2.svg";
+import img3 from "../../../../public/home_top_service_card_image3.svg";
+
+import { RiArrowRightSLine } from 'react-icons/Ri'
 import styles from "./topServices.module.css";
 
 const services = [
@@ -27,20 +29,30 @@ const services = [
 
 const TopServices = () => {
   return (
-    <div>
-      <div className="container">
+    <div className="container py-5">
+      <div className="py-5">
+      <h6 className="fs-28 text-center">
+        Our TOP 3 Services for Amazon FBA/Kindle Business
+      </h6>
+      <div className="row">
         {services.map((service, index) => (
-          <div key={index}>
-            <Image
-              className={`${styles.bannerContainer} img-fluid service-img`}
-              src={service.img}
-              alt=""
-            />
-            <h6>{service.title}</h6>
-            <p>{service.description}</p>
-            <p>Order</p>
+          <div key={index} className={`${styles.serviceCard} col-4 p-4  mt-md-5`}>
+            <div className="d-flex justify-content-center">
+              <Image
+                className={`${styles.bannerContainer} img-fluid service-img`}
+                src={service.img}
+                alt=""
+              />
+            </div>
+            <h6 className="text-center mt-5">{service.title}</h6>
+            <p className="text-center fs-15 mt-3 text-color ">{service.description}</p>
+            <p className="text-center order-color">Order <RiArrowRightSLine /></p>
           </div>
         ))}
+      </div>
+      <div className="d-flex justify-content-center">
+      <p className="borderColor text-center fs-14  py-2 px-3">View all Amazon Services</p>
+      </div>
       </div>
     </div>
   );
