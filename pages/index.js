@@ -5,6 +5,7 @@ import Banner from "../src/components/banner/banner";
 import Amazon from "../src/components/amazon/amazon";
 import Testimonial from "../src/components/testimonial/testimonial";
 import Footer from "../src/components/footer/footer";
+import TopServices from "../src/components/topServices/topServices";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Banner />
         <Amazon />
         <Testimonial />
+        <TopServices/>
         <Footer />
       </main>
     </>
