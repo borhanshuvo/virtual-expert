@@ -112,8 +112,70 @@ ul {
 
 .right-38 {
   right: -48px;
+  bottom: 0;
+}
+@media only screen and (max-width: 600px) {
+  .right-38 {
+    right: 20px;
+    bottom: -50px;
+  }
+
+  .left-38 {
+    top: -38px;
+    left: 5px;
+  }
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.text-color {
+  color: #828b9a;
+}
+
+.numberBefore {
+  position: relative;
+  z-index: 1111;
+}
+.numberBefore::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  background: #ff9f26 0% 0% no-repeat padding-box;
+  z-index: -11;
+  border-radius: 50%;
+}
+
+.textLeftAfterEffect {
+  position: relative;
+}
+
+.textLeftAfterEffect::after {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -10px;
+  width: 25px;
+  height: 2px;
+  left: 0;
+  background: #ff9f26 0% 0% no-repeat padding-box;
+}
+
+.textCenterAfterEffect {
+  position: relative;
+}
+
+.textCenterAfterEffect::after {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -5px;
+  width: 25px;
+  height: 2px;
+  left: 50%;
+  background: #ff9f26 0% 0% no-repeat padding-box;
 }

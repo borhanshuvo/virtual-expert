@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Amazon from "../src/components/home/amazon/amazon";
 import Banner from "../src/components/home/banner/banner";
+import HowToPlaceAnOrder from "../src/components/home/howToPlaceAnOrder/howToPlaceAnOrder";
 import ScheduleMeeting from "../src/components/home/scheduleMeeting/scheduleMeeting";
 import Testimonial from "../src/components/home/testimonial/testimonial";
+import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
+import TopServices from './../src/components/topServices/topServices';
 
 export default function Home() {
   return (
@@ -15,7 +18,10 @@ export default function Home() {
       <main>
         <Banner />
         <Amazon />
+        <WhyChooseVirtualExports />
+        <HowToPlaceAnOrder />
         <Testimonial />
+        <TopServices/>
         <ScheduleMeeting />
       </main>
     </>

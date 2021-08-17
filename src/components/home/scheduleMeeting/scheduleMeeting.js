@@ -4,8 +4,8 @@ import styles from "./scheduleMeeting.module.css";
 const ScheduleMeeting = () => {
   return (
     <>
-      <div className="container my-5 pb-3 rounded-3 px-5">
-        <div className={`${styles.meetingContainer} py-5`}>
+      <div className="container my-5 pb-3 rounded-3 px-md-5">
+        <div className={`${styles.meetingContainer} py-5 px-2`}>
           <div className="col-12 col-md-6 mx-auto mb-3 text-center">
             <h6 className="fs-24">
               Our professional team has helped 5,000+ Amazon <br /> sellers to
