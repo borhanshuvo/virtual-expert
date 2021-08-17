@@ -16,7 +16,7 @@ const Services = ({servicesCardData}) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:8000/servicesCard");
+  const res = await fetch("https://virtual-expert.herokuapp.com/servicesCard");
   const servicesCardData = await res.json();
   return {
     props: {
