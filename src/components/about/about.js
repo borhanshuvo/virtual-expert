@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { IoIosArrowForward } from 'react-icons/Io';
+import { IoIosArrowForward } from 'react-icons/io';
 import styles from './about.module.css';
 import about1 from '../../../images/about/img-1.svg';
 import about2 from '../../../images/about/Img.svg';
