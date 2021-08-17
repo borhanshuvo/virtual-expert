@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../src/components/navbar/navbar";
 import Banner from "../src/components/banner/banner";
 import Amazon from "../src/components/amazon/amazon";
+import Footer from "../src/components/footer/footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Navbar />
         <Banner />
         <Amazon />
+        <Footer />
       </main>
     </>
   );
