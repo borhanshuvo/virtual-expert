@@ -13,7 +13,7 @@ const WhyChooseVirtualExports = () => {
         </p>
         <div className="row">
           <div className="col-12 col-md-4">
-            <div className="m-2 bg-white p-4">
+            <div className="mx-1 my-2 bg-white p-3">
               <Image src={Service1} alt="service" height="60" width="60" />
               <h6 className="fs-16">Experienced</h6>
               <p className="fs-14">
@@ -23,7 +23,7 @@ const WhyChooseVirtualExports = () => {
             </div>
           </div>
           <div className="col-12 col-md-4">
-            <div className="m-2 bg-white p-4">
+            <div className="mx-1 my-2 bg-white p-3">
               <Image src={Service1} alt="service" height="60" width="60" />
               <h6 className="fs-16">Experienced</h6>
               <p className="fs-14">
@@ -33,17 +33,7 @@ const WhyChooseVirtualExports = () => {
             </div>
           </div>
           <div className="col-12 col-md-4">
-            <div className="m-2 bg-white p-4">
-              <Image src={Service1} alt="service" height="60" width="60" />
-              <h6 className="fs-16">Experienced</h6>
-              <p className="fs-14">
-                We have 7 years of experience in Amazon FBA/FBM Business &
-                Marketing strategy as well.
-              </p>
-            </div>
-          </div>
-          <div className="col-12 col-md-4">
-            <div className="mx-2 mt-4 bg-white p-4">
+            <div className="mx-1 my-2 bg-white p-3">
               <Image src={Service1} alt="service" height="60" width="60" />
               <h6 className="fs-16">Experienced</h6>
               <p className="fs-14">
