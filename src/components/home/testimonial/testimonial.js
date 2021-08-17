@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
-import quoteIcon from "../../../images/icon.svg";
-import profileImg from "../../../images/Img.svg";
-import { testimonials } from "../fakeData/testimonialData";
+import quoteIcon from "../../../../images/icon.svg";
+import profileImg from "../../../../images/Img.svg";
+import { testimonials } from "../../fakeData/testimonialData";
 
 const Testimonial = () => {
   const [currentTestimonials, setCurrentTestimonial] = useState(

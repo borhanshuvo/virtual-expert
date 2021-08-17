@@ -7,7 +7,7 @@ export const navData = [
   {
     id: "2",
     title: "Service",
-    link: "/service",
+    link: "/services",
   },
   {
     id: "3",

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "./banner.module.css";
-import bannerImg from "../../../images/Img-5.svg";
+import bannerImg from "../../../../images/Img-5.svg";
 
 const Banner = () => {
   return (

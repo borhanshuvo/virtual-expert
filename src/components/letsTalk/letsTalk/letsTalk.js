@@ -4,7 +4,7 @@ import { IoIosArrowForward } from 'react-icons/Io';
 import { GoLocation } from 'react-icons/Go';
 import { HiOutlineMail } from 'react-icons/Hi';
 import { AiOutlineSkype, AiOutlineWhatsApp } from 'react-icons/Ai';
-import Logo from '../../../images/Logo.svg';
+import Logo from '../../../../images/Logo.svg';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 
@@ -17,7 +17,6 @@ const LetsTalk = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
 
-  console.log(watch('example'));
   return (
     <section className={styles.main}>
       <div
