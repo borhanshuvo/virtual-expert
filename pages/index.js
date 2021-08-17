@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import Amazon from '../src/components/home/amazon/amazon';
-import HowToPlaceAnOrder from '../src/components/home/howToPlaceAnOrder/howToPlaceAnOrder';
-import ScheduleMeeting from '../src/components/home/scheduleMeeting/scheduleMeeting';
-import Testimonial from '../src/components/home/testimonial/testimonial';
-import WhyChooseVirtualExports from '../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports';
-import TopServices from './../src/components/topServices/topServices';
-import Banner from '../src/components/home/banner/banner';
+import Head from "next/head";
+import Amazon from "../src/components/home/amazon/amazon";
+import Banner from "../src/components/home/banner/banner";
+import HowToPlaceAnOrder from "../src/components/home/howToPlaceAnOrder/howToPlaceAnOrder";
+import ScheduleMeeting from "../src/components/home/scheduleMeeting/scheduleMeeting";
+import Testimonial from "../src/components/home/testimonial/testimonial";
+import TopServices from "../src/components/home/topServices/topServices";
+import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
 
 export default function Home() {
   return (
@@ -19,9 +19,9 @@ export default function Home() {
         <Banner />
         <Amazon />
         <WhyChooseVirtualExports />
+        <TopServices />
         <HowToPlaceAnOrder />
         <Testimonial />
-        <TopServices />
         <ScheduleMeeting />
       </main>
     </>

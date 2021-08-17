@@ -1,10 +1,8 @@
-import React from "react";
 import Image from "next/image";
-import styles from "./topServices.module.css"
-
-import img1 from "../../../images/Img-1.svg";
-import img2 from "../../../images/Img-2.svg";
-import img3 from "../../../images/Img-3.svg";
+import img1 from "../../../../images/Img-1.svg";
+import img2 from "../../../../images/Img-2.svg";
+import img3 from "../../../../images/Img-3.svg";
+import styles from "./topServices.module.css";
 
 const services = [
   {
@@ -31,9 +29,13 @@ const TopServices = () => {
   return (
     <div>
       <div className="container">
-        {services.map((service) => (
-          <div>
-            <Image className={`${styles.bannerContainer} img-fluid service-img`} src={service.img} alt="" />
+        {services.map((service, index) => (
+          <div key={index}>
+            <Image
+              className={`${styles.bannerContainer} img-fluid service-img`}
+              src={service.img}
+              alt=""
+            />
             <h6>{service.title}</h6>
             <p>{service.description}</p>
             <p>Order</p>
