@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "./amazon.module.css";
-import amazonImg from "../../../images/Img-4.svg";
+import amazonImg from "../../../../images/Img-4.svg";
 
 const Amazon = () => {
   return (
