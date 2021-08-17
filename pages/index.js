@@ -1,11 +1,10 @@
 import Head from "next/head";
-
-import Navbar from "../src/components/navbar/navbar";
-import Banner from "../src/components/banner/banner";
-import Amazon from "../src/components/amazon/amazon";
-import Testimonial from "../src/components/testimonial/testimonial";
-import Footer from "../src/components/footer/footer";
-import TopServices from "../src/components/topServices/topServices";
+import Amazon from "../src/components/home/amazon/amazon";
+import Banner from "../src/components/home/banner/banner";
+import HowToPlaceAnOrder from "../src/components/home/howToPlaceAnOrder/howToPlaceAnOrder";
+import ScheduleMeeting from "../src/components/home/scheduleMeeting/scheduleMeeting";
+import Testimonial from "../src/components/home/testimonial/testimonial";
+import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
 
 export default function Home() {
   return (
@@ -16,12 +15,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <Navbar />
         <Banner />
         <Amazon />
+        <WhyChooseVirtualExports />
+        <HowToPlaceAnOrder />
         <Testimonial />
         <TopServices/>
-        <Footer />
+        <ScheduleMeeting />
       </main>
     </>
   );
