@@ -5,6 +5,7 @@ import HowToPlaceAnOrder from "../src/components/home/howToPlaceAnOrder/howToPla
 import ScheduleMeeting from "../src/components/home/scheduleMeeting/scheduleMeeting";
 import Testimonial from "../src/components/home/testimonial/testimonial";
 import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
+import TopServices from './../src/components/topServices/topServices';
 
 export default function Home() {
   return (
