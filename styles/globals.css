@@ -20,7 +20,6 @@ a {
 
 p {
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
 }
 
 h6 {
@@ -59,4 +58,36 @@ ul {
   bottom: 0;
   opacity: 1;
   z-index: -1;
+}
+
+.fs-36 {
+  font-size: 36px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-14 {
+  font-size: 14px;
 }
