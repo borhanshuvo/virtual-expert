@@ -16,10 +16,10 @@ const Testimonial = () => {
   return (
     <section>
       <div className="container py-5">
-        <h6 className="text-center py-3 rounded-3 fs-32">
+        <h6 className="text-center py-3 rounded-3 fs-32 textCenterAfterEffect">
           Our TOP Amazon Clients
         </h6>
-        <div className="col-12 col-md-6 boxShadow mx-auto mb-3 position-relative">
+        <div className="col-12 col-md-6 boxShadow mx-auto my-3 position-relative">
           <div className="position-absolute left-38">
             <Image src={quoteIcon} alt="quoteIcon" height="80" width="80" />
           </div>
