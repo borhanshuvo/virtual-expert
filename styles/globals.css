@@ -115,3 +115,7 @@ ul {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.text-color {
+  color: #828B9A;
+}
