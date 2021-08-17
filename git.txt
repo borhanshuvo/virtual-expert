@@ -1,6 +1,6 @@
 First time:
-git clone link
-git checkout -b YourName
+git clone https://github.com/borhanshuvo/virtual-expert-client
+git checkout -b YourBranch
 
 
 Next Time : 
@@ -8,11 +8,11 @@ git pull origin development
 git add .
 git commit -m "your commit"
 git fetch && git pull origin development
-git push origin YourName
+git push origin YourBranch
 
 after that:
 git checkout development
-git merge yourname
+git merge YourBranch
 git push origin development
 
 For branch Delete :
