@@ -87,11 +87,11 @@ const LetsTalk = () => {
 
           <div className="col-md-6">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="d-md-flex gap-4 mt-5 mb-5 justify-content-center">
+              <div className="d-md-flex gap-4 mt-5 mb-md-5 mb-sm-2 justify-content-center">
                 <input
                   placeholder="Name"
                   {...register('example')}
-                  className={`${styles.input} form-control `}
+                  className={`${styles.input} form-control mb-4 mb-md-0 `}
                 />
                 <input
                   placeholder="Email"
@@ -99,11 +99,11 @@ const LetsTalk = () => {
                   className={`${styles.input} form-control`}
                 />
               </div>
-              <div className="d-flex gap-4 mt-5 mb-5 justify-content-center">
+              <div className="d-md-flex gap-4 mt-4 mb-5 justify-content-center">
                 <input
                   placeholder="Phone"
                   {...register('example')}
-                  className={`${styles.input} form-control`}
+                  className={`${styles.input} form-control mb-4 mb-md-0`}
                 />
                 <input
                   placeholder="Subject"
