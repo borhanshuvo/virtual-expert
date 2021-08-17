@@ -1,0 +1,13 @@
+.bannerContainer {
+  background-color: #f5f8fe;
+}
+
+.bannerBtn {
+  background-color: #f5f8fe;
+  border: 1px solid #ff9f26;
+}
+
+.bannerBtn:hover {
+  background-color: #ff9f26;
+  transition: ease-out 0.3s;
+}
