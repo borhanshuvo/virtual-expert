@@ -3,6 +3,7 @@ import Amazon from "../src/components/home/amazon/amazon";
 import Banner from "../src/components/home/banner/banner";
 import ScheduleMeeting from "../src/components/home/scheduleMeeting/scheduleMeeting";
 import Testimonial from "../src/components/home/testimonial/testimonial";
+import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <Banner />
         <Amazon />
+        <WhyChooseVirtualExports />
         <Testimonial />
         <ScheduleMeeting />
       </main>

@@ -37,11 +37,11 @@ const Testimonial = () => {
             <h6 className="fw-bold fs-18">{currentTestimonials.name}</h6>
             <p className="fs-14">{currentTestimonials.jobTitle}</p>
           </div>
-          <div className="position-absolute bottom-0 right-38">
+          <div className="position-absolute right-38 d-flex flex-md-column">
             {testimonials.map((data, index) => (
               <div
                 key={data.id}
-                className="cursor-pointer"
+                className="cursor-pointer mx-1"
                 onClick={() => handleChange(index)}
               >
                 {currentTestimonials.id === data.id ? (
