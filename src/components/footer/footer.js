@@ -1,16 +1,16 @@
-import Image from "next/image";
-import React from "react";
-import { AiFillInstagram } from "react-icons/Ai";
-import { FaFacebook, FaSkype, FaTelegram } from "react-icons/Fa";
-import { ImTwitter } from "react-icons/Im";
-import { IoLogoWhatsapp } from "react-icons/Io";
-import { MdEmail } from "react-icons/Md";
-import Logo from "../../../images/Logo.svg";
-import BTC from "../../../images/Others/Bitcoin.svg";
-import Payoneer from "../../../images/Others/Payoneer.svg";
-import PayPal from "../../../images/Others/PayPal.svg";
-import skrill from "../../../images/Others/Skrill.svg";
-import styles from "./footer.module.css";
+import Image from 'next/image';
+import React from 'react';
+import { AiFillInstagram } from 'react-icons/Ai';
+import { FaFacebook, FaSkype, FaTelegram } from 'react-icons/Fa';
+import { ImTwitter } from 'react-icons/Im';
+import { IoLogoWhatsapp } from 'react-icons/Io';
+import { MdEmail } from 'react-icons/Md';
+import Logo from '../../../images/Logo.svg';
+import BTC from '../../../images/Others/Bitcoin.svg';
+import Payoneer from '../../../images/Others/Payoneer.svg';
+import PayPal from '../../../images/Others/PayPal.svg';
+import skrill from '../../../images/Others/Skrill.svg';
+import styles from './footer.module.css';
 
 const Footer = () => {
   return (
@@ -29,18 +29,18 @@ const Footer = () => {
             <div className="text-center text-md-start">
               <h6 className={`${styles.title}`}>Get in Touch</h6>
             </div>
-            <p className="mt-3">
-              {" "}
+            <p className="mt-3 text-muted">
+              {' '}
               <MdEmail className={`${styles.logo}`} />
               Email: help@gmail.com
             </p>
-            <p>
-              {" "}
+            <p className=" text-muted">
+              {' '}
               <FaSkype className={`${styles.logo}`} />
               Skype: +014578218
             </p>
-            <p>
-              {" "}
+            <p className=" text-muted">
+              {' '}
               <IoLogoWhatsapp className={`${styles.logo}`} />
               Email: +014578218
             </p>

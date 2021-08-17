@@ -1,11 +1,12 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import Navbar from "../src/components/navbar/navbar";
-import Banner from "../src/components/banner/banner";
-import Amazon from "../src/components/amazon/amazon";
-import Testimonial from "../src/components/testimonial/testimonial";
-import ScheduleMeeting from "../src/components/scheduleMeeting/scheduleMeeting";
-import Footer from "../src/components/footer/footer";
+import Navbar from '../src/components/navbar/navbar';
+import Banner from '../src/components/banner/banner';
+import Amazon from '../src/components/amazon/amazon';
+import Testimonial from '../src/components/testimonial/testimonial';
+import ScheduleMeeting from '../src/components/scheduleMeeting/scheduleMeeting';
+import Footer from '../src/components/footer/footer';
+import LetsTalk from '../src/components/letsTalk/letsTalk';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Amazon />
         <Testimonial />
         <ScheduleMeeting />
+        <LetsTalk />
         <Footer />
       </main>
     </>
