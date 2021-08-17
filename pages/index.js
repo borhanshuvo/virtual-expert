@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Footer from '../src/components/footer/footer';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main>
         <p className="text-center">Hello World</p>
       </main>
+      <Footer />
     </div>
   );
 }
