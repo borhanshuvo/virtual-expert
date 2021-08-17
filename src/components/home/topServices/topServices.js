@@ -3,7 +3,7 @@ import img1 from "../../../../public/home_top_service_card_image1.svg";
 import img2 from "../../../../public/home_top_service_card_image2.svg";
 import img3 from "../../../../public/home_top_service_card_image3.svg";
 
-import { RiArrowRightSLine } from 'react-icons/Ri'
+import { RiArrowRightSLine } from 'react-icons/ri'
 import styles from "./topServices.module.css";
 
 const services = [

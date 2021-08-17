@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
-import { AiFillInstagram } from 'react-icons/Ai';
-import { FaFacebook, FaSkype, FaTelegram } from 'react-icons/Fa';
-import { ImTwitter } from 'react-icons/Im';
-import { IoLogoWhatsapp } from 'react-icons/Io';
-import { MdEmail } from 'react-icons/Md';
+import { AiFillInstagram } from 'react-icons/ai';
+import { FaFacebook, FaSkype, FaTelegram } from 'react-icons/fa';
+import { ImTwitter } from 'react-icons/im';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { MdEmail } from 'react-icons/md';
 import Logo from '../../../images/Logo.svg';
 import BTC from '../../../images/Others/Bitcoin.svg';
 import Payoneer from '../../../images/Others/Payoneer.svg';
