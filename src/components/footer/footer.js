@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
           <div className="col-md-4 px-5">
             <div className="text-center text-md-start">
-              <h6 className={`${styles.title}`}>Get in Touch</h6>
+              <h6 className={`${styles.title} fs-16`}>Get in Touch</h6>
             </div>
             <p className="mt-3 text-muted">
               {' '}

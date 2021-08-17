@@ -1,11 +1,10 @@
 import React from "react";
-
 import styles from "./scheduleMeeting.module.css";
 
 const ScheduleMeeting = () => {
   return (
     <>
-      <div className="container my-5 pb-3 rounded px-5">
+      <div className="container my-5 pb-3 rounded-3 px-5">
         <div className={`${styles.meetingContainer} py-5`}>
           <div className="col-12 col-md-6 mx-auto mb-3 text-center">
             <h6 className="fs-24">
