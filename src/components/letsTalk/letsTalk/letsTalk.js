@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/Ai";
-import { GoLocation } from "react-icons/Go";
-import { HiOutlineMail } from "react-icons/Hi";
-import { IoIosArrowForward } from "react-icons/Io";
+import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/ai";
+import { GoLocation } from "react-icons/go";
+import { HiOutlineMail } from "react-icons/hi";
+import { IoIosArrowForward } from "react-icons/io";
 import Logo from "../../../../images/Logo.svg";
 import styles from "./letsTalk.module.css";
 
