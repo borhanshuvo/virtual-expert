@@ -2,6 +2,7 @@ import Head from "next/head";
 import Banner from "../src/components/banner/banner";
 import Footer from "../src/components/footer/footer";
 import Navbar from "../src/components/navbar/navbar";
+import Testimonial from "../src/components/testimonial/testimonial";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Navbar />
         <Banner />
+        <Testimonial />
       </main>
       <Footer />
     </>
