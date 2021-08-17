@@ -1,7 +1,7 @@
-import Image from "next/image";
-import React from "react";
-import amazonImg from "../../../../images/Img-4.svg";
-import styles from "./amazon.module.css";
+import Image from 'next/image';
+import React from 'react';
+import amazonImg from '../../../../images/Img-4.svg';
+import styles from './amazon.module.css';
 
 const Amazon = () => {
   return (

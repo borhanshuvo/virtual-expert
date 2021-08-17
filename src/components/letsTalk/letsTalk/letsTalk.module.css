@@ -1,11 +1,10 @@
-.main{
-    margin: 50px 0px;
-}
+
 .top{
     background-color: #F5F8FE;
     width: 100vw;
-    height: 179px;
-    margin-bottom: 50px;
+    height: 120px;
+    margin-bottom: 120px;
+    color: #828B9A;
 }
 .logo {
     color: #ff9f26;
@@ -33,6 +32,7 @@
     left: 0;
     background: #ff9f26 0% 0% no-repeat padding-box;
   }
+ 
   .input{
       border: none;
       border: 1px solid #1F2A3633;

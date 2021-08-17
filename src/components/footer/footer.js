@@ -70,7 +70,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <footer className="text-center py-4 text-muted">
+        <footer className="text-center  text-muted">
           <p className="mt-2 text-muted">
             © 2021 Virtual Experts. All Right Reserved.
           </p>

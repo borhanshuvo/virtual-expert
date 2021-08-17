@@ -59,7 +59,9 @@ ul {
   opacity: 1;
   z-index: -1;
 }
-
+.fs-30{
+  font-size: 30px;
+}
 .fs-36 {
   font-size: 36px;
 }
