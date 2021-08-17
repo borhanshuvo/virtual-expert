@@ -20,7 +20,6 @@ a {
 
 p {
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
 }
 
 h6 {
@@ -29,6 +28,68 @@ h6 {
 
 ul {
   list-style: none;
+}
+
+.button {
+  background-color: #f5f8fe;
+  border: 1px solid #ff9f26;
+  transition: ease-out 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  transition: 0.3s all ease;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  top: 50%;
+  opacity: 0;
+  content: "";
+  background-color: #ff9f26;
+}
+
+.button:hover::before {
+  transition: 0.3s all ease;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  z-index: -1;
+}
+
+.fs-36 {
+  font-size: 36px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-14 {
+  font-size: 14px;
 }
 
 .boxShadow {
