@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import Head from "next/head";
 import Footer from "../src/components/footer/footer";
 import Navbar from "../src/components/navbar/navbar";
