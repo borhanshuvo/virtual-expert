@@ -71,7 +71,7 @@
   height: 25px;
   background: #ff9f26;
   left: 50%;
-  transition: 0.3s all ease;
+  transition: 0.3s all ease-in-out;
 }
 .name:hover::before {
   content: "";
@@ -85,5 +85,5 @@
 }
 .name:hover {
   transform: translateY(-15px);
-  transition: 0.3s all ease;
+  transition: 0.3s all ease-in-out;
 }

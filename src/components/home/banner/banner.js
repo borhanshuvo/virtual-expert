@@ -14,7 +14,7 @@ const Banner = () => {
               <h6 className="fs-36">Amazon FBA/Kindle & Digital Markketing Consultant.</h6>
               <p className="fs-15">Grow your brands on Amazon!</p>
               <button className="button px-4 py-1">
-                <p className="d-inline fs-14">Get Free Quote!</p>
+                <h6 className="d-inline fs-14">Get Free Quote!</h6>
               </button>
             </div>
             <div className="col-md-6 order-1 order-md-2 pb-5 pb-md-0">

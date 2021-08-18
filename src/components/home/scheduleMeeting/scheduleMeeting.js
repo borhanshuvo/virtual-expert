@@ -9,7 +9,7 @@ const ScheduleMeeting = () => {
               potential sales
             </h6>
             <button className="button px-4 py-1 mt-4">
-              <p className="d-inline fs-14">Schedule a Meeting</p>
+              <h6 className="d-inline fs-14">Schedule a Meeting</h6>
             </button>
           </div>
         </div>

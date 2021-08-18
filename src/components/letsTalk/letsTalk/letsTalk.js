@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
-import { IoIosArrowForward } from "react-icons/io";
 import Logo from "../../../../images/Logo.svg";
 import styles from "./letsTalk.module.css";
 
@@ -14,24 +13,16 @@ const LetsTalk = () => {
 
   return (
     <section className="mb-5 pb-5 overflow-hidden">
-      <div
-        className={`${styles.top} d-flex justify-content-between align-items-center`}
-      >
-        <div className="container">
-          <div className=" d-md-flex justify-content-between align-items-center">
-            <h6 className="text-dark fs-30">Let’s Talk</h6>
-            <div className="d-flex align-items-center ">
-              <p className="fs-14">Home</p>{" "}
-              <p>
-                <IoIosArrowForward className={`${styles.logo}`} />
-              </p>{" "}
-              <p className="fs-14">Let’s Talk</p>{" "}
-            </div>
-          </div>
+      <div className="background-color-skyblue">
+        <div className="container d-md-flex justify-content-between align-items-center py-5">
+          <h6 className="fs-30">Let's Talk</h6>
+          <p className="fs-14">
+            Home <span className="text-warning mx-2">{`>`}</span> Let's Talk'
+          </p>
         </div>
       </div>
       {/* //form part */}
-      <div className="container">
+      <div className="container pt-5 mt-5">
         <div className="row">
           <div className="col-md-6">
             <div>

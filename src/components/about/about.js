@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { IoIosArrowForward } from "react-icons/io";
 import about1 from "../../../images/about/img-1.svg";
 import about2 from "../../../images/about/Img.svg";
 import model from "../../../images/isa.jpg";
@@ -10,27 +9,20 @@ import styles from "./about.module.css";
 const AboutC = () => {
   return (
     <section className="overflow-hidden">
-      <div
-        className={`${styles.top} d-flex justify-content-between align-items-center`}
-      >
-        <div className="container">
-          <div className=" d-md-flex justify-content-between align-items-center">
-            <h6 className="text-dark fs-30">About Us</h6>
-            <div className="d-flex align-items-center ">
-              <p className="fs-14">Home</p>{" "}
-              <p>
-                <IoIosArrowForward className={`${styles.logo}`} />
-              </p>{" "}
-              <p className="fs-14">About</p>{" "}
-            </div>
+
+        <div className="background-color-skyblue">
+          <div className="container d-md-flex justify-content-between align-items-center py-5">
+            <h6 className="fs-30">About</h6>
+            <p className="fs-14">
+              Home <span className="text-warning mx-2">{`>`}</span> About
+            </p>
           </div>
         </div>
-      </div>
 
       {/* ================================= */}
 
       <div className="container">
-        <div className="row py-5">
+        <div className="row py-5 align-items-center">
           <div className="col-md-6 order-2 order-md-1">
             <h6 className={`${styles.title} fs-28 mt-5`}>
               Who are Virtual Experts?

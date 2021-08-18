@@ -19,7 +19,7 @@ const ServicesCard = ({ servicesCardData }) => {
                   height={200}
                 />
                 <div
-                  className="bg-white p-3 rounded-3"
+                  className="bg-white p-3 borderRadius"
                   style={{ height: "300px" }}
                 >
                   <h6 className="fs-18">{servicesCard.title}</h6>
