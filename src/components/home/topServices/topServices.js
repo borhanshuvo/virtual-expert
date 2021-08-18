@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { RiArrowRightSLine } from "react-icons/ri";
 import styles from "./topServices.module.css";
 
@@ -14,7 +13,7 @@ const TopServices = ({ topServicesData }) => {
           {topServicesData.map((service, index) => (
             <div
               key={service._id}
-              className={`${styles.serviceCard} col-4 p-4  mt-md-5`}
+              className={`${styles.serviceCard} col-12 col-md-4 p-4  mt-md-5`}
             >
               <div className="d-flex justify-content-center">
                 <Image

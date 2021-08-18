@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Service1 from "../../../../images/Group 150.svg";
 
 const WhyChooseVirtualExports = ({ virtualServicesData }) => {
   console.log(virtualServicesData);
@@ -16,13 +15,16 @@ const WhyChooseVirtualExports = ({ virtualServicesData }) => {
         </p>
         <div className="row">
           {virtualServicesData.map((virtualService) => (
-            <div className="col-12 col-md-4">
-              <div className="mx-1 my-2 bg-white p-3">
-                <Image src={virtualService.img} alt="service" height="60" width="60" />
-                <h6 className="fs-16">{virtualService.title}</h6>
-                <p className="fs-14">
-                  {virtualService.description}
-                </p>
+            <div className="col-12 my-3 col-md-4" key={virtualService._id}>
+              <div className="mx-1 bg-white p-3 h-100">
+                <Image
+                  src={virtualService.img}
+                  alt="service"
+                  height="60"
+                  width="60"
+                />
+                <h6 className="fs-16 mt-2">{virtualService.title}</h6>
+                <p className="fs-14">{virtualService.description}</p>
               </div>
             </div>
           ))}
