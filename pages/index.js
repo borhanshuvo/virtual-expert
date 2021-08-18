@@ -7,7 +7,7 @@ import Testimonial from "../src/components/home/testimonial/testimonial";
 import TopServices from "../src/components/home/topServices/topServices";
 import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
 
-export default function Home() {
+export default function Home({topServicesData}) {
   return (
     <>
       <Head>
@@ -19,7 +19,7 @@ export default function Home() {
         <Banner />
         <Amazon />
         <WhyChooseVirtualExports />
-        <TopServices />
+        <TopServices topServicesData={topServicesData} />
         <HowToPlaceAnOrder />
         <Testimonial />
         <ScheduleMeeting />
@@ -27,3 +27,15 @@ export default function Home() {
     </>
   );
 }
+export async function getServerSideProps(context) {
+  const res = await fetch("http://localhost:8000/topServices");
+  const topServicesData = await res.json();
+  console.log(topServicesData)
+  return {
+    props: {
+      topServicesData,
+    },
+  };
+}
+
+
