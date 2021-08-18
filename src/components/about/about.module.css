@@ -1,93 +1,89 @@
-.top{
-    background-color: #F5F8FE;
-    width: 100vw;
-    height: 120px;
-    margin-bottom: 120px;
-    color: #828B9A;
+.top {
+  background-color: #f5f8fe;
+  width: 100vw;
+  height: 100px;
+  margin-bottom: 70px;
+  color: #828b9a;
 }
 .logo {
-    color: #ff9f26;
-    font-size: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  .number {
-    position: relative;
-    display: inline-block;
-    z-index: 1;
-    margin-right: 10px;
-  }
-  .number::after {
-    content: "";
-    position: absolute;
-    top:8px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #FF9F26;
-    z-index: -1;
-    left: -7px;
-    
-  }
-  .title{
-    position: relative;
-    display: inline-block;
-    margin-bottom: 40px;
+  color: #ff9f26;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
-.title::before{
-    content: "";
-    position: absolute;
-    color: #222f3e;
-    bottom: -15px;
-    width: 30px;
-    height: 4px;
-    left: 0;
-    background: #ff9f26 0% 0% no-repeat padding-box;
+.number {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  margin-right: 10px;
+}
+.number::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff9f26;
+  z-index: -1;
+  left: -7px;
+}
+.title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+.title::before {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -15px;
+  width: 30px;
+  height: 4px;
+  left: 0;
+  background: #ff9f26 0% 0% no-repeat padding-box;
 }
 .title1 {
-    position: relative;
-    display: inline-block;
-  }
-  .title1::before {
-    content: "";
-      position: absolute;
-      color: #222f3e;
-      bottom: -11px;
-      width: 30px;
-      height: 3px;
-      background: #ff9f26;
-      left: 40%;
-  }
-  
-  .name{
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
+}
+.title1::before {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -11px;
+  width: 30px;
+  height: 3px;
+  background: #ff9f26;
+  left: 40%;
+}
 
-  }
-  .name::before {
-    content: "";
-      position: absolute;
-      color: #222f3e;
-      top: -25px;
-      width: 3px;
-      height: 20px;
-      background: #ff9f26;
-      left: 40%;
-      transition: 0.3s all ease;
-  }
-  .name:hover::before{
-    content: "";
-      position: absolute;
-      color: #222f3e;
-      top: -25px;
-      width: 0px;
-      height: 0px;
-      background: #ff9f26;
-      left: 40%;
-
-  }
-  .name:hover{
-    transform: translateY(-13px);
-    transition: 0.3s all ease;
-  }
-  
+.name {
+  position: relative;
+  display: inline-block;
+}
+.name::before {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  top: -25px;
+  width: 3px;
+  height: 20px;
+  background: #ff9f26;
+  left: 40%;
+  transition: 0.3s all ease;
+}
+.name:hover::before {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  top: -25px;
+  width: 0px;
+  height: 0px;
+  background: #ff9f26;
+  left: 40%;
+}
+.name:hover {
+  transform: translateY(-13px);
+  transition: 0.3s all ease;
+}

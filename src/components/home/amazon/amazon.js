@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
-import amazonImg from '../../../../images/Img-4.svg';
-import styles from './amazon.module.css';
+import Image from "next/image";
+import React from "react";
+import amazonImg from "../../../../images/Img-4.svg";
+import styles from "./amazon.module.css";
 
 const Amazon = () => {
   return (
@@ -9,14 +9,14 @@ const Amazon = () => {
       <div className={`${styles.amazonContainer}`}>
         <div className="container py-5">
           <div className="row d-flex align-items-center">
-            <div className="col-md-6 pb-5 pb-md-0">
+            <div className="col-md-6 pb-5 pb-md-0 px-5">
               <Image src={amazonImg} alt="banner-image" />
             </div>
             <div className="col-md-6">
               <h6 className="fs-28 textLeftAfterEffect">
                 Why Amazon FBA/Kindle & Digital Marketing?
               </h6>
-              <p className="fs-15 mt-4">
+              <p className="fs-14 mt-4 lh-lg">
                 Online Shopping US 2015 report reveals that 70% of Americans
                 shopping online every week. So maximum Products/Brands are
                 already moving to Online Stores. Some of them sell products on

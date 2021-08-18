@@ -1,13 +1,15 @@
-import React from 'react';
-import Image from 'next/image';
-import { IoIosArrowForward } from 'react-icons/io';
-import styles from './about.module.css';
-import about1 from '../../../images/about/img-1.svg';
-import about2 from '../../../images/about/Img.svg';
-import model from '../../../images/isa.jpg';
+import Image from "next/image";
+import React from "react";
+import { IoIosArrowForward } from "react-icons/io";
+import about1 from "../../../images/about/img-1.svg";
+import about2 from "../../../images/about/Img.svg";
+import model from "../../../images/isa.jpg";
+import ScheduleMeeting from "../home/scheduleMeeting/scheduleMeeting";
+import styles from "./about.module.css";
+
 const AboutC = () => {
   return (
-    <section>
+    <section className="overflow-hidden">
       <div
         className={`${styles.top} d-flex justify-content-between align-items-center`}
       >
@@ -15,11 +17,11 @@ const AboutC = () => {
           <div className=" d-md-flex justify-content-between align-items-center">
             <h6 className="text-dark fs-30">About Us</h6>
             <div className="d-flex align-items-center ">
-              <p className="fs-14">Home</p>{' '}
+              <p className="fs-14">Home</p>{" "}
               <p>
                 <IoIosArrowForward className={`${styles.logo}`} />
-              </p>{' '}
-              <p className="fs-14">About</p>{' '}
+              </p>{" "}
+              <p className="fs-14">About</p>{" "}
             </div>
           </div>
         </div>
@@ -29,8 +31,8 @@ const AboutC = () => {
 
       <div className="container mb-5">
         <div className="row">
-          <div className="col-md-6">
-            <h6 className={`${styles.title} fs-28`}>
+          <div className="col-md-6 order-2 order-md-1">
+            <h6 className={`${styles.title} fs-28 mt-5`}>
               Who are Virtual Experts?
             </h6>
             <p className="text-muted fs-15 lh-lg">
@@ -43,7 +45,7 @@ const AboutC = () => {
               here. We are always here to help you guys.
             </p>
           </div>
-          <div className="col-md-6 text-center">
+          <div className="col-md-6 text-center order-1 order-md-2 px-4">
             <Image src={about1} alt="image" />
           </div>
         </div>
@@ -58,11 +60,11 @@ const AboutC = () => {
               <Image src={about2} alt="image.svg" />
             </div>
             <div className="col-md-6 text-muted">
-              <h6 className={`${styles.title} text-dark fs-24`}>
+              <h6 className={`${styles.title} text-dark fs-24 mt-5`}>
                 Why We are Unique?
               </h6>
               <div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     01
                   </span>
@@ -71,7 +73,7 @@ const AboutC = () => {
                     So, it is safe.
                   </p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     02
                   </span>
@@ -80,7 +82,7 @@ const AboutC = () => {
                     your identity with anyone else.
                   </p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     03
                   </span>
@@ -89,7 +91,7 @@ const AboutC = () => {
                     addresses & purchases history.
                   </p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     04
                   </span>
@@ -98,7 +100,7 @@ const AboutC = () => {
                     addresses.
                   </p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     05
                   </span>
@@ -107,7 +109,7 @@ const AboutC = () => {
                     capability to work perfectly.
                   </p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     06
                   </span>
@@ -115,7 +117,7 @@ const AboutC = () => {
                     We are always up to date with Amazon Terms & Conditions.
                   </p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     07
                   </span>
@@ -124,19 +126,19 @@ const AboutC = () => {
                     transaction.
                   </p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     08
                   </span>
                   <p>We have the option of half-payment for new clients.</p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     09
                   </span>
                   <p>We always Exchange Browsers & Delete Cookies.</p>
                 </div>
-                <div className="d-flex fs-14 mt-4">
+                <div className="d-flex fs-14 mt-3">
                   <span className="me-2 numberBefore fw-bold text-dark">
                     10
                   </span>
@@ -155,7 +157,7 @@ const AboutC = () => {
 
       <div className="container ">
         <div className="d-flex justify-content-center align-items-center">
-          <div className="w-50 text-center  mt-5 pt-3">
+          <div className="col-12 col-md-7 mx-auto text-center  mt-5 pt-3">
             <h6 className={`${styles.title1} fs-24 `}>Meet The Team</h6>
             <p className="text-muted fs-15 mt-3 mb-5 lh-lg">
               Virtual Experts has around 7 years of experience in Amazon
@@ -189,21 +191,7 @@ const AboutC = () => {
         </div>
       </div>
       {/* ============================ */}
-
-      <div className="container p-5 my-3 w-md-75 w-100">
-        <div className="d-flex justify-content-center align-items-center background-color-skyblue py-5">
-          <div className="w-75 text-center py-2">
-            <h6 className={`fs-24`}>
-              Our professional team has helped{' '}
-              <span style={{ color: '#FE9332' }}>5,000+</span> Amazon sellers to
-              gain potential sales
-            </h6>
-            <button type="submit" className="button mt-3">
-              Schedule a Meeting
-            </button>
-          </div>
-        </div>
-      </div>
+      <ScheduleMeeting />
     </section>
   );
 };
