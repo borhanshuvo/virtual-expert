@@ -36,20 +36,12 @@ const TopServices = ({ topServicesData }) => {
           ))}
         </div>
         <div className="d-flex justify-content-center">
-<<<<<<< HEAD
-          <p
-            className={`${styles.viewButonStyle} borderColor text-center fs-14  py-2 px-3`}
-          >
-            View all Amazon Services
-          </p>
-=======
           <button
             className="button"
             style={{ backgroundColor: "white", padding: "5px 20px" }}
           >
             <h6 className="d-inline">View all Amazon Services</h6>
           </button>
->>>>>>> 079aa636f430f0f877a718515d725494ff2fedeb
         </div>
       </div>
     </div>
