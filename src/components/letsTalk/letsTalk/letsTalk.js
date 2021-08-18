@@ -9,12 +9,7 @@ import Logo from "../../../../images/Logo.svg";
 import styles from "./letsTalk.module.css";
 
 const LetsTalk = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
   return (
@@ -42,7 +37,7 @@ const LetsTalk = () => {
             <div>
               <Image src={Logo} alt="logo" />
             </div>
-            <h6 className={`${styles.title} fs-24`}>
+            <h6 className={`${styles.title} fs-24 mt-2`}>
               Amazon Growth & Results.
             </h6>
             <p className="text-muted my-4 fs-15">
@@ -51,23 +46,25 @@ const LetsTalk = () => {
               Skype/WhatsApp.
             </p>
             <div className="text-muted mb-5 ">
-              <p>
+              <p className="fs-15 d-flex align-items-center">
                 {" "}
-                <GoLocation className={`${styles.logo} fs-15`} />
-                <span className="fw-bold">Address</span>: 226 West 26th Street,
-                New York, NY 10001, USA
+                <GoLocation className={`${styles.logo}`} />
+                <span>
+                  <span className="fw-bold">Address</span> : 226 West 26th
+                  Street, New York, NY 10001, USA
+                </span>
               </p>
-              <p>
+              <p className="fs-15 d-flex align-items-center">
                 {" "}
-                <HiOutlineMail className={`${styles.logo} fs-15`} />
+                <HiOutlineMail className={`${styles.logo}`} />
                 <span className="fw-bold">Email</span>: help@virtualexperts.net
               </p>
-              <p>
+              <p className="fs-15 d-flex align-items-center">
                 {" "}
                 <AiOutlineSkype className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Skype</span>: VirtualExpertsLTD
               </p>
-              <p>
+              <p className="fs-15 d-flex align-items-center">
                 {" "}
                 <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Whatsapp</span>: +13473528622
@@ -88,11 +85,11 @@ const LetsTalk = () => {
 
           <div className="col-md-6">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="d-md-flex gap-4 mt-5 mb-md-5 mb-sm-2 justify-content-center">
+              <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center">
                 <input
                   placeholder="Name"
                   {...register("example")}
-                  className={`${styles.input} form-control mb-4 mb-md-0 `}
+                  className={`${styles.input} form-control mb-3 mb-md-0 `}
                 />
                 <input
                   placeholder="Email"
@@ -100,7 +97,7 @@ const LetsTalk = () => {
                   className={`${styles.input} form-control`}
                 />
               </div>
-              <div className="d-md-flex gap-4 mt-4 mb-5 justify-content-center">
+              <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center">
                 <input
                   placeholder="Phone"
                   {...register("example")}
@@ -112,7 +109,7 @@ const LetsTalk = () => {
                   className={`${styles.input} form-control`}
                 />
               </div>
-              <div className="mt-5 mb-5 ">
+              <div className="mt-4 mb-4">
                 <textarea
                   className={`${styles.input} form-control w-100`}
                   id="w3review"
