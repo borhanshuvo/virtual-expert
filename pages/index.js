@@ -28,9 +28,8 @@ export default function Home({topServicesData}) {
   );
 }
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:8000/topServices");
+  const res = await fetch("https://virtual-expert.herokuapp.com/topServices");
   const topServicesData = await res.json();
-  console.log(topServicesData)
   return {
     props: {
       topServicesData,
