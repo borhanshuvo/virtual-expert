@@ -5,7 +5,7 @@ import styles from './about.module.css';
 import about1 from '../../../images/about/img-1.svg';
 import about2 from '../../../images/about/Img.svg';
 import model from '../../../images/isa.jpg';
-const AboutC = () => {
+const AboutC = ({ aboutData, aboutTeamData }) => {
   return (
     <section>
       <div
@@ -30,18 +30,8 @@ const AboutC = () => {
       <div className="container mb-5">
         <div className="row">
           <div className="col-md-6">
-            <h6 className={`${styles.title} fs-28`}>
-              Who are Virtual Experts?
-            </h6>
-            <p className="text-muted fs-15 lh-lg">
-              Virtual Experts is a well-known USA-based Digital Marketing
-              Agency. Who works to promote your Amazon products/brands and
-              improves your product brand value Online. Virtual Experts Ltd. has
-              more than 6 Years of experience at this service. We have more than
-              50 employees and they are qualified enough. If you want to improve
-              your product sales and branding, then you can check our services
-              here. We are always here to help you guys.
-            </p>
+            <h6 className={`${styles.title} fs-28`}>{aboutData?.title}</h6>
+            <p className="text-muted fs-15 lh-lg">{aboutData?.discription}</p>
           </div>
           <div className="col-md-6 text-center">
             <Image src={about1} alt="image" />
@@ -156,11 +146,11 @@ const AboutC = () => {
       <div className="container ">
         <div className="d-flex justify-content-center align-items-center">
           <div className="w-50 text-center  mt-5 pt-3">
-            <h6 className={`${styles.title1} fs-24 `}>Meet The Team</h6>
+            <h6 className={`${styles.title1} fs-24 `}>
+              {aboutTeamData?.title}
+            </h6>
             <p className="text-muted fs-15 mt-3 mb-5 lh-lg">
-              Virtual Experts has around 7 years of experience in Amazon
-              FBA/Kindle business model and Digital Marketing consultancy. We
-              also sell products on Amazon besides being a marketing agency.
+              {aboutTeamData?.discription}
             </p>
           </div>
         </div>
