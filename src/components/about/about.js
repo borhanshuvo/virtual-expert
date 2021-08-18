@@ -29,8 +29,8 @@ const AboutC = () => {
 
       {/* ================================= */}
 
-      <div className="container mb-5">
-        <div className="row">
+      <div className="container">
+        <div className="row py-5">
           <div className="col-md-6 order-2 order-md-1">
             <h6 className={`${styles.title} fs-28 mt-5`}>
               Who are Virtual Experts?
@@ -53,8 +53,8 @@ const AboutC = () => {
 
       {/* ================================= */}
 
-      <div className="background-color-skyblue my-5 py-5">
-        <div className="container py-5">
+      <div className="background-color-skyblue py-5">
+        <div className="container">
           <div className="row">
             <div className="col-md-6 d-flex justify-content-center align-items-center">
               <Image src={about2} alt="image.svg" />
