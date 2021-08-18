@@ -68,9 +68,9 @@
   color: #222f3e;
   top: -25px;
   width: 3px;
-  height: 20px;
+  height: 25px;
   background: #ff9f26;
-  left: 40%;
+  left: 50%;
   transition: 0.3s all ease;
 }
 .name:hover::before {
@@ -81,9 +81,9 @@
   width: 0px;
   height: 0px;
   background: #ff9f26;
-  left: 40%;
+  left: 50%;
 }
 .name:hover {
-  transform: translateY(-13px);
+  transform: translateY(-15px);
   transition: 0.3s all ease;
 }
