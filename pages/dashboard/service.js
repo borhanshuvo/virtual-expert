@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AiFillEdit } from "react-icons/ai";
+import { AiFillEdit, AiOutlinePlus } from "react-icons/ai";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const Service = ({ whatWeDo }) => {
@@ -40,17 +40,25 @@ const Service = ({ whatWeDo }) => {
           <div className="p-3 boxShadow me-4 mb-5">
             <div className="d-flex justify-content-between">
               <h6 className="fs-24">Service Card</h6>
-              <AiFillEdit size={24} className="text-warning" />
+              <AiOutlinePlus size={24} className="text-dark" />
             </div>
             <div className="row">
-              {servicesCardData.map((servicesCard) => (
+              {servicesCardData.map((servicesCard, index) => (
                 <div className="col-md-4 pb-3" key={servicesCard._id}>
-                  {/* <Image
-                    src={servicesCard.img}
-                    alt={servicesCard.img}
-                    width={200}
-                    height={200}
-                  /> */}
+                  <div className="d-flex justify-content-between">
+                    {/* <Image
+                      src={servicesCard.img}
+                      alt={servicesCard.img}
+                      width={200}
+                      height={200}
+                    /> */}
+                    <AiFillEdit
+                      size={24}
+                      className="text-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target={`#card${index + 1}`}
+                    />
+                  </div>
                   <div
                     className="bg-white p-3 borderRadius"
                     style={{ height: "300px" }}
@@ -90,12 +98,42 @@ const Service = ({ whatWeDo }) => {
                         Maintenence : ${servicesCard.maintenence} per month
                       </p>
                     )}
-                    <button
-                      className="button"
-                      style={{ padding: "5px 20px", backgroundColor: "white" }}
-                    >
-                      <h6 className="fs-14 d-inline">Order Now</h6>
-                    </button>
+                  </div>
+                  <div
+                    className="modal fade"
+                    id={`card${index + 1}`}
+                    tabIndex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog modal-dialog-centered">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="exampleModalLabel">
+                            Modal title
+                          </h5>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">...</div>
+                        <div className="modal-footer">
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button type="button" className="btn btn-primary">
+                            Save changes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
