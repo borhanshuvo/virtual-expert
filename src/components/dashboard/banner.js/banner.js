@@ -36,7 +36,6 @@ const AdminBanner = () => {
       .then((res) => res.json())
       .then((data) => {
         setNumber(number + 1);
-        console.log(data);
       });
   };
 
