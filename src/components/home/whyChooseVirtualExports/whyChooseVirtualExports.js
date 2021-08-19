@@ -1,17 +1,17 @@
 import Image from "next/image";
 
-const WhyChooseVirtualExports = ({ virtualServicesData }) => {
-  console.log(virtualServicesData);
+const WhyChooseVirtualExports = ({
+  virtualServicesData,
+  headerInfoVirtualExportsData,
+}) => {
   return (
     <section className="py-5 background-color-skyblue">
       <div className="container">
         <h6 className="fs-32 text-center textCenterAfterEffect">
-          Why Choose Virtual Experts?
+          {headerInfoVirtualExportsData[0].title}
         </h6>
         <p className="col-12 col-md-8 mx-auto fs-14 text-center">
-          Virtual Experts LTD has around 7 years of experience in Amazon
-          FBA/Kindle business model and consultancy. We also sell products on
-          Amazon besides being a marketing agency.
+          {headerInfoVirtualExportsData[0].description}
         </p>
         <div className="row">
           {virtualServicesData.map((virtualService) => (
