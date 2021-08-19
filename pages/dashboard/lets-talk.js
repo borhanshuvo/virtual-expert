@@ -1,18 +1,18 @@
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
-const Service = () => {
+const LetsTalk = () => {
   return (
     <div className="row">
       <div className="col-2">
         <Sidebar />
       </div>
-      <div className="col-10">Hello this is service section</div>
+      <div className="col-10">Hello this is LetsTalk section</div>
     </div>
   );
 };
 
-export default Service;
+export default LetsTalk;
 
-Service.getLayout = function PageLayout(page) {
+LetsTalk.getLayout = function PageLayout(page) {
   return <>{page}</>;
 };

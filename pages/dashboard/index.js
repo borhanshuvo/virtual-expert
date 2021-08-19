@@ -1,13 +1,11 @@
-import Link from "next/link";
+import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const Dashboard = () => {
   return (
     <section>
       <div className="row">
         <div className="col-2">
-          <Link href="/dashboard/service">
-            <a>service</a>
-          </Link>
+          <Sidebar />
         </div>
         <div className="col-10">nested page goes here</div>
       </div>
