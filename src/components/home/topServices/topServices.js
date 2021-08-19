@@ -2,12 +2,13 @@ import Image from "next/image";
 import { RiArrowRightSLine } from "react-icons/ri";
 import styles from "./topServices.module.css";
 
-const TopServices = ({ topServicesData }) => {
+const TopServices = ({ topServicesData,headerInfoTopServicesData }) => {
+  console.log(headerInfoTopServicesData)
   return (
     <div className="container py-5">
       <div className="py-5">
         <h6 className="fs-28 text-center textCenterAfterEffect">
-          Our TOP 3 Services for Amazon FBA/Kindle Business
+          {headerInfoTopServicesData[0].title}
         </h6>
         <div className="row">
           {topServicesData.map((service, index) => (
