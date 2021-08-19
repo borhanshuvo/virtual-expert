@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Sidebar = () => {
   return (
-    <nav>
+    <nav className="vh-100 bg-dark px-3 text-white">
       <Link href="/dashboard/">
         <a className="d-block">Home</a>
       </Link>

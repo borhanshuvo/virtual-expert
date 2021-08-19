@@ -2,12 +2,14 @@ import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const About = () => {
   return (
-    <div className="row">
-      <div className="col-2">
-        <Sidebar />
+    <section className="overflow-hidden">
+      <div className="row">
+        <div className="col-2">
+          <Sidebar />
+        </div>
+        <div className="col-9">Hello this is About section</div>
       </div>
-      <div className="col-10">Hello this is About section</div>
-    </div>
+    </section>
   );
 };
 

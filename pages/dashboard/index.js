@@ -2,12 +2,12 @@ import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const Dashboard = () => {
   return (
-    <section>
+    <section className="overflow-hidden">
       <div className="row">
         <div className="col-2">
           <Sidebar />
         </div>
-        <div className="col-10">nested page goes here</div>
+        <div className="col-9">nested page goes here</div>
       </div>
     </section>
   );

@@ -2,12 +2,14 @@ import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const LetsTalk = () => {
   return (
-    <div className="row">
-      <div className="col-2">
-        <Sidebar />
+    <section className="overflow-hidden">
+      <div className="row">
+        <div className="col-2">
+          <Sidebar />
+        </div>
+        <div className="col-10">Hello this is LetsTalk section</div>
       </div>
-      <div className="col-10">Hello this is LetsTalk section</div>
-    </div>
+    </section>
   );
 };
 
