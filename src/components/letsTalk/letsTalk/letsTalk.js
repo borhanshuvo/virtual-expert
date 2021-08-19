@@ -15,9 +15,9 @@ const LetsTalk = () => {
     <section className="mb-5 pb-5 overflow-hidden">
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
-          <h6 className="fs-30">Let's Talk</h6>
+          <h6 className="fs-30">Let&#x27;s Talk</h6>
           <p className="fs-14">
-            Home <span className="text-warning mx-2">{`>`}</span> Let's Talk'
+            Home <span className="text-warning mx-2">{`>`}</span> Let&#x27;s Talk
           </p>
         </div>
       </div>

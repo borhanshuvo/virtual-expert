@@ -8,7 +8,6 @@ import TopServices from "../src/components/home/topServices/topServices";
 import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
 
 export default function Home({topServicesData,virtualServicesData,bannerData,headerInfoVirtualExportsData,headerInfoTopServicesData}) {
-  console.log(headerInfoTopServicesData)
   return (
     <>
       <Head>
@@ -34,13 +33,12 @@ export async function getServerSideProps(context) {
   const topServicesData = await resTopServices.json();
   const resHeaderInfoTopServices = await fetch("http://localhost:8000/headerInfoTopServices");
   const headerInfoTopServicesData = await resHeaderInfoTopServices.json();
-  const resVirtualService = await fetch("http://localhost:8000/virtualService");
+  const resVirtualService = await fetch("https://virtual-expert.herokuapp.com/virtualService");
   const virtualServicesData = await resVirtualService.json();
   const resHeaderInfoVirtualExports = await fetch("http://localhost:8000/headerInfoVirtualExports");
   const headerInfoVirtualExportsData = await resHeaderInfoVirtualExports.json();
   const resBanner = await fetch("http://localhost:8000/banner");
   const bannerData = await resBanner.json();
-  console.log(headerInfoTopServicesData)
   return {
     props: {
       topServicesData,
