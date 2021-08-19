@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
-import image from "next/image";
 
 const Service = ({ whatWeDo }) => {
   const [serviceBanner, setServiceBanner] = useState({});
@@ -16,7 +15,6 @@ const Service = ({ whatWeDo }) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -35,7 +33,7 @@ const Service = ({ whatWeDo }) => {
     setFile(newFile);
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("title", data.title);
@@ -56,7 +54,7 @@ const Service = ({ whatWeDo }) => {
       .then((result) => {
         if (result) {
           toast.success("Service Add Successfully");
-          console.log(result);
+          e.target.reset();
           setNumber(number + 1);
         }
       });
@@ -107,8 +105,6 @@ const Service = ({ whatWeDo }) => {
             <div className="row">
               {servicesCardData.map((servicesCard, index) => {
                 let imgType;
-                const svg = "data:image/svg+xml";
-                const jpg = "data:image/jpg";
                 if (servicesCard.img.contentType === "image/svg+xml") {
                   imgType = "data:image/svg+xml";
                 } else if (servicesCard.img.contentType === "image/png") {
@@ -133,7 +129,7 @@ const Service = ({ whatWeDo }) => {
                     />
 
                     <div
-                      className="bg-white p-3 borderRadius"
+                      className="boxShadow p-3 borderRadius"
                       style={{ height: "300px" }}
                     >
                       <h6 className="fs-18">{servicesCard.title}</h6>
@@ -163,13 +159,12 @@ const Service = ({ whatWeDo }) => {
                       )}
                       {servicesCard.warranty && (
                         <p className="fs-14">
-                          Warranty : {servicesCard.warranty} days free
-                          maintenence
+                          Warranty : {servicesCard.warranty}
                         </p>
                       )}
-                      {servicesCard.maintenence && (
+                      {servicesCard.maintenance && (
                         <p className="fs-14">
-                          Maintenence : ${servicesCard.maintenence} per month
+                          Maintenence : ${servicesCard.maintenance} per month
                         </p>
                       )}
                     </div>
@@ -243,11 +238,15 @@ const Service = ({ whatWeDo }) => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("title")}
                     name="title"
                     id="title"
+                    autoComplete="off"
                     className="form-control"
+                    {...register("title", { required: true })}
                   />
+                  {errors.title && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -255,11 +254,15 @@ const Service = ({ whatWeDo }) => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("subTitle")}
+                    {...register("subTitle", { required: true })}
                     name="subTitle"
                     id="subTitle"
+                    autoComplete="off"
                     className="form-control"
                   />
+                  {errors.subTitle && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -270,6 +273,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("regularReview")}
                     name="regularReview"
                     id="regularReview"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -282,6 +286,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("videoReview")}
                     name="videoReview"
                     id="videoReview"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -294,6 +299,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("top50Reviewers")}
                     name="top50Reviewers"
                     id="top50Reviewers"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -306,6 +312,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("delivery")}
                     name="delivery"
                     id="delivery"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -318,6 +325,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("warranty")}
                     name="warranty"
                     id="warranty"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -330,6 +338,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("price")}
                     name="price"
                     id="price"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -342,6 +351,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("maintenance")}
                     name="maintenance"
                     id="maintenance"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -353,8 +363,12 @@ const Service = ({ whatWeDo }) => {
                     name="img"
                     id="img"
                     className="form-control"
+                    {...register("img", { required: true })}
                     onChange={handleFileChange}
                   />
+                  {errors.img && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group mt-3">
@@ -363,7 +377,6 @@ const Service = ({ whatWeDo }) => {
                     name="submit"
                     className="btn btn-primary"
                     value="Save Changes"
-                    data-bs-dismiss="modal"
                   />
                 </div>
               </form>
