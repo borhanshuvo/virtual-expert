@@ -41,24 +41,27 @@ export default function Home({
 }
 //top three services fetching
 export async function getServerSideProps(context) {
-  const resTopServices = await fetch(
-    "https://virtual-expert.herokuapp.com/topServices"
-  );
+  const resTopServices = await fetch("http://localhost:8000/topServices");
   const topServicesData = await resTopServices.json();
+
   const resHeaderInfoTopServices = await fetch(
     "http://localhost:8000/headerInfoTopServices"
   );
   const headerInfoTopServicesData = await resHeaderInfoTopServices.json();
+
   const resVirtualService = await fetch(
     "https://virtual-expert.herokuapp.com/virtualService"
   );
   const virtualServicesData = await resVirtualService.json();
+
   const resHeaderInfoVirtualExports = await fetch(
     "http://localhost:8000/headerInfoVirtualExports"
   );
   const headerInfoVirtualExportsData = await resHeaderInfoVirtualExports.json();
+
   const resBanner = await fetch("http://localhost:8000/banner");
   const bannerData = await resBanner.json();
+
   return {
     props: {
       topServicesData,
