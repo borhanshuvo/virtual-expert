@@ -7,7 +7,13 @@ import Testimonial from "../src/components/home/testimonial/testimonial";
 import TopServices from "../src/components/home/topServices/topServices";
 import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
 
-export default function Home({ topServicesData, virtualServicesData }) {
+export default function Home({
+  topServicesData,
+  virtualServicesData,
+  bannerData,
+  headerInfoVirtualExportsData,
+  headerInfoTopServicesData,
+}) {
   return (
     <>
       <Head>
@@ -16,10 +22,16 @@ export default function Home({ topServicesData, virtualServicesData }) {
       </Head>
 
       <main>
-        <Banner />
+        <Banner bannerData={bannerData} />
         <Amazon />
-        <WhyChooseVirtualExports virtualServicesData={virtualServicesData} />
-        <TopServices topServicesData={topServicesData} />
+        <WhyChooseVirtualExports
+          virtualServicesData={virtualServicesData}
+          headerInfoVirtualExportsData={headerInfoVirtualExportsData}
+        />
+        <TopServices
+          topServicesData={topServicesData}
+          headerInfoTopServicesData={headerInfoTopServicesData}
+        />
         <HowToPlaceAnOrder />
         <Testimonial />
         <ScheduleMeeting />
@@ -33,14 +45,27 @@ export async function getServerSideProps(context) {
     "https://virtual-expert.herokuapp.com/topServices"
   );
   const topServicesData = await resTopServices.json();
+  const resHeaderInfoTopServices = await fetch(
+    "http://localhost:8000/headerInfoTopServices"
+  );
+  const headerInfoTopServicesData = await resHeaderInfoTopServices.json();
   const resVirtualService = await fetch(
     "https://virtual-expert.herokuapp.com/virtualService"
   );
   const virtualServicesData = await resVirtualService.json();
+  const resHeaderInfoVirtualExports = await fetch(
+    "http://localhost:8000/headerInfoVirtualExports"
+  );
+  const headerInfoVirtualExportsData = await resHeaderInfoVirtualExports.json();
+  const resBanner = await fetch("http://localhost:8000/banner");
+  const bannerData = await resBanner.json();
   return {
     props: {
       topServicesData,
+      headerInfoTopServicesData,
+      headerInfoVirtualExportsData,
       virtualServicesData,
+      bannerData,
     },
   };
 }
