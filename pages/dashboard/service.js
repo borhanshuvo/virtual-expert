@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { AiFillEdit, AiOutlinePlus } from "react-icons/ai";
+import { AiFillEdit, AiFillDelete } from "react-icons/ai";
+import { GoPlus } from "react-icons/go";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
-import image from "next/image";
+import AdminServiceCard from "../../src/components/dashboard/service/adminServiceCard/adminServiceCard";
 
-const Service = ({ whatWeDo }) => {
+const Service = () => {
   const [serviceBanner, setServiceBanner] = useState({});
   const [servicesCardData, setServicesCardData] = useState([]);
   const [number, setNumber] = useState(0);
@@ -16,7 +17,6 @@ const Service = ({ whatWeDo }) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -35,7 +35,7 @@ const Service = ({ whatWeDo }) => {
     setFile(newFile);
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("title", data.title);
@@ -56,7 +56,7 @@ const Service = ({ whatWeDo }) => {
       .then((result) => {
         if (result) {
           toast.success("Service Add Successfully");
-          console.log(result);
+          e.target.reset();
           setNumber(number + 1);
         }
       });
@@ -84,7 +84,7 @@ const Service = ({ whatWeDo }) => {
           <div className="p-3 boxShadow me-4 mb-5">
             <div className="d-flex justify-content-between">
               <h6 className="fs-24">Service Banner</h6>
-              <AiFillEdit size={24} className="text-warning" />
+              <AiFillEdit size={24} className="text-warning cursor-pointer" />
             </div>
             <h6 className="mt-3 fs-18">Title</h6>
             <p classNames="fs-14">{serviceBanner.title}</p>
@@ -97,9 +97,9 @@ const Service = ({ whatWeDo }) => {
           <div className="p-3 boxShadow me-4 mb-5">
             <div className="d-flex justify-content-between">
               <h6 className="fs-24">Service Card</h6>
-              <AiOutlinePlus
+              <GoPlus
                 size={24}
-                className="text-dark"
+                className="text-dark cursor-pointer"
                 data-bs-toggle="modal"
                 data-bs-target="#addServiceModal"
               />
@@ -107,8 +107,6 @@ const Service = ({ whatWeDo }) => {
             <div className="row">
               {servicesCardData.map((servicesCard, index) => {
                 let imgType;
-                const svg = "data:image/svg+xml";
-                const jpg = "data:image/jpg";
                 if (servicesCard.img.contentType === "image/svg+xml") {
                   imgType = "data:image/svg+xml";
                 } else if (servicesCard.img.contentType === "image/png") {
@@ -117,105 +115,22 @@ const Service = ({ whatWeDo }) => {
                   imgType = "data:image/jpg";
                 }
                 return (
-                  <div className="col-md-4 pb-3" key={servicesCard._id}>
-                    <AiFillEdit
-                      size={24}
-                      className="text-primary d-block ms-auto"
-                      data-bs-toggle="modal"
-                      data-bs-target={`#card${index + 1}`}
-                    />
-
-                    <Image
-                      src={`${imgType} ; base64, ${servicesCard.img.img}`}
-                      alt="waiting.."
-                      width={200}
-                      height={200}
-                    />
-
-                    <div
-                      className="bg-white p-3 borderRadius"
-                      style={{ height: "300px" }}
-                    >
-                      <h6 className="fs-18">{servicesCard.title}</h6>
-                      <h6 className="fs-14 mt-2">{servicesCard.subTitle}</h6>
-                      {servicesCard.regularReview && (
-                        <p className="fs-14">
-                          Regular Review : ${servicesCard.regularReview} each
-                        </p>
-                      )}
-                      {servicesCard.videoReview && (
-                        <p className="fs-14">
-                          Video Review : ${servicesCard.videoReview} each
-                        </p>
-                      )}
-                      {servicesCard.top50Reviewers && (
-                        <p className="fs-14">
-                          Top 50 Reviewers : ${servicesCard.top50Reviewers} each
-                        </p>
-                      )}
-                      {servicesCard.price && (
-                        <p className="fs-14">Price : {servicesCard.price}</p>
-                      )}
-                      {servicesCard.delivery && (
-                        <p className="fs-14">
-                          Delivery : {servicesCard.delivery} days
-                        </p>
-                      )}
-                      {servicesCard.warranty && (
-                        <p className="fs-14">
-                          Warranty : {servicesCard.warranty} days free
-                          maintenence
-                        </p>
-                      )}
-                      {servicesCard.maintenence && (
-                        <p className="fs-14">
-                          Maintenence : ${servicesCard.maintenence} per month
-                        </p>
-                      )}
-                    </div>
-                    <div
-                      className="modal fade"
-                      id={`card${index + 1}`}
-                      tabIndex="-1"
-                      aria-labelledby="exampleModalLabel"
-                      aria-hidden="true"
-                    >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">
-                              Modal title
-                            </h5>
-                            <button
-                              type="button"
-                              className="btn-close"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"
-                            ></button>
-                          </div>
-                          <div className="modal-body">...</div>
-                          <div className="modal-footer">
-                            <button
-                              type="button"
-                              className="btn btn-secondary"
-                              data-bs-dismiss="modal"
-                            >
-                              Close
-                            </button>
-                            <button type="button" className="btn btn-primary">
-                              Save changes
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <AdminServiceCard
+                    servicesCard={servicesCard}
+                    imgType={imgType}
+                    index={index}
+                    servicesCardData={servicesCardData}
+                    setServicesCardData={setServicesCardData}
+                    setNumber={setNumber}
+                  />
                 );
               })}
             </div>
           </div>
         </div>
       </div>
+
+      {/* For Add Card data Start */}
       <div
         className="modal fade"
         id="addServiceModal"
@@ -243,11 +158,15 @@ const Service = ({ whatWeDo }) => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("title")}
                     name="title"
                     id="title"
+                    autoComplete="off"
                     className="form-control"
+                    {...register("title", { required: true })}
                   />
+                  {errors.title && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -255,11 +174,15 @@ const Service = ({ whatWeDo }) => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("subTitle")}
+                    {...register("subTitle", { required: true })}
                     name="subTitle"
                     id="subTitle"
+                    autoComplete="off"
                     className="form-control"
                   />
+                  {errors.subTitle && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -270,6 +193,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("regularReview")}
                     name="regularReview"
                     id="regularReview"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -282,6 +206,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("videoReview")}
                     name="videoReview"
                     id="videoReview"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -294,6 +219,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("top50Reviewers")}
                     name="top50Reviewers"
                     id="top50Reviewers"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -306,6 +232,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("delivery")}
                     name="delivery"
                     id="delivery"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -318,6 +245,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("warranty")}
                     name="warranty"
                     id="warranty"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -330,6 +258,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("price")}
                     name="price"
                     id="price"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -342,6 +271,7 @@ const Service = ({ whatWeDo }) => {
                     {...register("maintenance")}
                     name="maintenance"
                     id="maintenance"
+                    autoComplete="off"
                     className="form-control"
                   />
                 </div>
@@ -353,8 +283,12 @@ const Service = ({ whatWeDo }) => {
                     name="img"
                     id="img"
                     className="form-control"
+                    {...register("img", { required: true })}
                     onChange={handleFileChange}
                   />
+                  {errors.img && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group mt-3">
@@ -362,8 +296,7 @@ const Service = ({ whatWeDo }) => {
                     type="submit"
                     name="submit"
                     className="btn btn-primary"
-                    value="Save Changes"
-                    data-bs-dismiss="modal"
+                    value="Submit"
                   />
                 </div>
               </form>
@@ -371,6 +304,7 @@ const Service = ({ whatWeDo }) => {
           </div>
         </div>
       </div>
+      {/* For Add Card data Finish */}
     </section>
   );
 };
