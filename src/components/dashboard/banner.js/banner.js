@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
 import { AiFillEdit } from "react-icons/ai";
 
 const AdminBanner = () => {
+  const [number, setNumber] = useState(0);
+  useEffect(() => {}, [number]);
+
   return (
     <div className="p-3 boxShadow me-3 mb-3">
       <div className="d-flex justify-content-between">

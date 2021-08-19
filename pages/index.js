@@ -7,7 +7,7 @@ import Testimonial from "../src/components/home/testimonial/testimonial";
 import TopServices from "../src/components/home/topServices/topServices";
 import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
 
-export default function Home({topServicesData,virtualServicesData}) {
+export default function Home({ topServicesData, virtualServicesData }) {
   return (
     <>
       <Head>
@@ -29,9 +29,13 @@ export default function Home({topServicesData,virtualServicesData}) {
 }
 //top three services fetching
 export async function getServerSideProps(context) {
-  const resTopServices = await fetch("https://virtual-expert.herokuapp.com/topServices");
+  const resTopServices = await fetch(
+    "https://virtual-expert.herokuapp.com/topServices"
+  );
   const topServicesData = await resTopServices.json();
-  const resVirtualService = await fetch("https://virtual-expert.herokuapp.com/virtualService");
+  const resVirtualService = await fetch(
+    "https://virtual-expert.herokuapp.com/virtualService"
+  );
   const virtualServicesData = await resVirtualService.json();
   return {
     props: {
@@ -40,6 +44,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-
-
-
