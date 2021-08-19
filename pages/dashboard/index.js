@@ -11,7 +11,7 @@ const Dashboard = () => {
         <div className="col-2">
           <Sidebar />
         </div>
-        <div className="col-10 my-4">
+        <div className="col-10 py-4 vh-100 scroll">
           <AdminBanner />
           <AdminAmazon />
           <AdminWhyChooseVirtualExperts />

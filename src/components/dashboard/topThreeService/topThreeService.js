@@ -12,11 +12,15 @@ const AdminTopThreeService = () => {
       <div className="row">
         <div className="col-6">
           <div className="boxShadow p-3">
-            <div className="flex">
+            <AiFillEdit size={24} className="text-warning d-block ms-auto" />
+            <div className="d-flex justify-content-between my-2">
               <div>Image goes here</div>
               <AiFillEdit size={24} className="text-warning" />
             </div>
-            <h6>Title</h6>
+            <h6 className="fs-18">Title</h6>
+            <p>Title goes here</p>
+            <h6 className="fs-18">Subtitle</h6>
+            <p>Subtitle goes here</p>
           </div>
         </div>
       </div>
