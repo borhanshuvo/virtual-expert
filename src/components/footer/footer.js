@@ -1,24 +1,22 @@
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import { AiFillInstagram } from 'react-icons/ai';
-import { FaFacebook, FaSkype, FaTelegram } from 'react-icons/fa';
-import { ImTwitter } from 'react-icons/im';
-import { IoLogoWhatsapp } from 'react-icons/io';
-import { MdEmail } from 'react-icons/md';
-import Logo from '../../../images/Logo.svg';
-import BTC from '../../../images/Others/Bitcoin.svg';
-import Payoneer from '../../../images/Others/Payoneer.svg';
-import PayPal from '../../../images/Others/PayPal.svg';
-import skrill from '../../../images/Others/Skrill.svg';
-import styles from './footer.module.css';
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaFacebook, FaSkype, FaTelegram } from "react-icons/fa";
+import { ImTwitter } from "react-icons/im";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import Logo from "../../../images/Logo.svg";
+import BTC from "../../../images/Others/Bitcoin.svg";
+import Payoneer from "../../../images/Others/Payoneer.svg";
+import PayPal from "../../../images/Others/PayPal.svg";
+import skrill from "../../../images/Others/Skrill.svg";
+import styles from "./footer.module.css";
 
 const Footer = () => {
   const [footer, setFooter] = useState(null);
-  console.log(footer, 'footer');
-  // const { email, description, skype, whatsApp } = footer;
   useEffect(() => {
     async function fetchAPI() {
-      const response = await fetch('https://virtual-expert.herokuapp.com/footer/');
+      const response = await fetch('https://virtual-expert.herokuapp.com/footer');
       const data = await response.json();
       setFooter(data[0]);
     }
@@ -45,17 +43,17 @@ const Footer = () => {
               </h6>
             </div>
             <p className="mt-3 text-muted fs-14">
-              {' '}
+              {" "}
               <MdEmail className={`${styles.logo}`} />
               Email: {footer?.email}
             </p>
             <p className=" text-muted fs-14">
-              {' '}
+              {" "}
               <FaSkype className={`${styles.logo}`} />
               Skype: {footer?.skype}
             </p>
             <p className=" text-muted fs-14">
-              {' '}
+              {" "}
               <IoLogoWhatsapp className={`${styles.logo}`} />
               Whatsapp: {footer?.whatsApp}
             </p>
