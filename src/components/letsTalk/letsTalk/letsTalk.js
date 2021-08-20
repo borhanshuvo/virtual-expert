@@ -1,12 +1,12 @@
-import Image from "next/image";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/Ai";
-import { GoLocation } from "react-icons/Go";
-import { HiOutlineMail } from "react-icons/Hi";
-import { IoIosArrowForward } from "react-icons/Io";
-import Logo from "../../../../images/Logo.svg";
-import styles from "./letsTalk.module.css";
+import Image from 'next/image';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { AiOutlineSkype, AiOutlineWhatsApp } from 'react-icons/Ai';
+import { GoLocation } from 'react-icons/Go';
+import { HiOutlineMail } from 'react-icons/Hi';
+import { IoIosArrowForward } from 'react-icons/Io';
+import Logo from '../../../../images/Shape.svg';
+import styles from './letsTalk.module.css';
 
 const LetsTalk = () => {
   const {
@@ -26,11 +26,11 @@ const LetsTalk = () => {
           <div className=" d-md-flex justify-content-between align-items-center">
             <h6 className="text-dark fs-30">Let’s Talk</h6>
             <div className="d-flex align-items-center ">
-              <p className="fs-14">Home</p>{" "}
+              <p className="fs-14">Home</p>{' '}
               <p>
                 <IoIosArrowForward className={`${styles.logo}`} />
-              </p>{" "}
-              <p className="fs-14">Let’s Talk</p>{" "}
+              </p>{' '}
+              <p className="fs-14">Let’s Talk</p>{' '}
             </div>
           </div>
         </div>
@@ -52,23 +52,23 @@ const LetsTalk = () => {
             </p>
             <div className="text-muted mb-5 ">
               <p>
-                {" "}
+                {' '}
                 <GoLocation className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Address</span>: 226 West 26th Street,
                 New York, NY 10001, USA
               </p>
               <p>
-                {" "}
+                {' '}
                 <HiOutlineMail className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Email</span>: help@virtualexperts.net
               </p>
               <p>
-                {" "}
+                {' '}
                 <AiOutlineSkype className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Skype</span>: VirtualExpertsLTD
               </p>
               <p>
-                {" "}
+                {' '}
                 <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Whatsapp</span>: +13473528622
               </p>
@@ -91,24 +91,24 @@ const LetsTalk = () => {
               <div className="d-md-flex gap-4 mt-5 mb-md-5 mb-sm-2 justify-content-center">
                 <input
                   placeholder="Name"
-                  {...register("example")}
+                  {...register('example')}
                   className={`${styles.input} form-control mb-4 mb-md-0 `}
                 />
                 <input
                   placeholder="Email"
-                  {...register("example")}
+                  {...register('example')}
                   className={`${styles.input} form-control`}
                 />
               </div>
               <div className="d-md-flex gap-4 mt-4 mb-5 justify-content-center">
                 <input
                   placeholder="Phone"
-                  {...register("example")}
+                  {...register('example')}
                   className={`${styles.input} form-control mb-4 mb-md-0`}
                 />
                 <input
                   placeholder="Subject"
-                  {...register("example")}
+                  {...register('example')}
                   className={`${styles.input} form-control`}
                 />
               </div>

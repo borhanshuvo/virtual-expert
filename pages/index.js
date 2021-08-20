@@ -1,13 +1,13 @@
-import Head from "next/head";
-import Amazon from "../src/components/home/amazon/amazon";
-import Banner from "../src/components/home/banner/banner";
-import HowToPlaceAnOrder from "../src/components/home/howToPlaceAnOrder/howToPlaceAnOrder";
-import ScheduleMeeting from "../src/components/home/scheduleMeeting/scheduleMeeting";
-import Testimonial from "../src/components/home/testimonial/testimonial";
-import TopServices from "../src/components/home/topServices/topServices";
-import WhyChooseVirtualExports from "../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports";
+import Head from 'next/head';
+import Amazon from '../src/components/home/amazon/amazon';
+import Banner from '../src/components/home/banner/banner';
+import HowToPlaceAnOrder from '../src/components/home/howToPlaceAnOrder/howToPlaceAnOrder';
+import ScheduleMeeting from '../src/components/home/scheduleMeeting/scheduleMeeting';
+import Testimonial from '../src/components/home/testimonial/testimonial';
+import TopServices from '../src/components/home/topServices/topServices';
+import WhyChooseVirtualExports from '../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports';
 
-export default function Home() {
+export default function Home({ placeAnOrderData, placeAnOrderListData }) {
   return (
     <>
       <Head>
@@ -20,10 +20,32 @@ export default function Home() {
         <Amazon />
         <WhyChooseVirtualExports />
         <TopServices />
-        <HowToPlaceAnOrder />
+        <HowToPlaceAnOrder
+          placeAnOrderData={placeAnOrderData}
+          placeAnOrderListData={placeAnOrderListData}
+        />
         <Testimonial />
         <ScheduleMeeting />
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const placeAnOrderResponse = await fetch(
+    'http://localhost:8000/placeAnOrder'
+  );
+  const placeAnOrderData = await placeAnOrderResponse.json();
+
+  const placeAnOrderListResponse = await fetch(
+    'http://localhost:8000/placeAnOrderList'
+  );
+  const placeAnOrderListData = await placeAnOrderListResponse.json();
+
+  return {
+    props: {
+      placeAnOrderData: placeAnOrderData[0],
+      placeAnOrderListData: placeAnOrderListData,
+    },
+  };
 }

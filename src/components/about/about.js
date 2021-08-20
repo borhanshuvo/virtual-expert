@@ -5,7 +5,12 @@ import styles from './about.module.css';
 import about1 from '../../../images/about/img-1.svg';
 import about2 from '../../../images/about/Img.svg';
 import model from '../../../images/isa.jpg';
-const AboutC = ({ aboutData, aboutTeamData }) => {
+const AboutC = ({
+  aboutData,
+  aboutTeamData,
+  aboutUniquetData,
+  aboutUniquetListData,
+}) => {
   return (
     <section>
       <div
@@ -49,92 +54,17 @@ const AboutC = ({ aboutData, aboutTeamData }) => {
             </div>
             <div className="col-md-6 text-muted">
               <h6 className={`${styles.title} text-dark fs-24`}>
-                Why We are Unique?
+                {aboutUniquetData.title}
               </h6>
               <div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    01
-                  </span>
-                  <p>
-                    Our work is 100% compatible with the Amazon A10 algorithm.
-                    So, it is safe.
-                  </p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    02
-                  </span>
-                  <p>
-                    We will give you 100% Privacy & Protection by never sharing
-                    your identity with anyone else.
-                  </p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    03
-                  </span>
-                  <p>
-                    We always use 100% Verified Amazon Accounts with real
-                    addresses & purchases history.
-                  </p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    04
-                  </span>
-                  <p>
-                    We have 50+ different computers with Different MAC & IP
-                    addresses.
-                  </p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    05
-                  </span>
-                  <p>
-                    We have 50+ Real Employee who has enough expertise and
-                    capability to work perfectly.
-                  </p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    06
-                  </span>
-                  <p>
-                    We are always up to date with Amazon Terms & Conditions.
-                  </p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    07
-                  </span>
-                  <p>
-                    We use PayPal, Payoneer, Skrill & Bitcoin for a smooth
-                    transaction.
-                  </p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    08
-                  </span>
-                  <p>We have the option of half-payment for new clients.</p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    09
-                  </span>
-                  <p>We always Exchange Browsers & Delete Cookies.</p>
-                </div>
-                <div className="d-flex fs-14 mt-4">
-                  <span className="me-2 numberBefore fw-bold text-dark">
-                    10
-                  </span>
-                  <p>
-                    So, there is NO Risk of Cookies. Free advice & 24/7 customer
-                    support.
-                  </p>
-                </div>
+                {aboutUniquetListData.map((item, index) => (
+                  <div key={item._id} className="d-flex fs-14 mt-4">
+                    <span className="me-2 numberBefore fw-bold text-dark">
+                      {index + 1 > 9 ? index + 1 : ` 0${index + 1}`}
+                    </span>
+                    <p>{item.title}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
