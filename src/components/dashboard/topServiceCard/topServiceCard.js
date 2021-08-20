@@ -68,7 +68,7 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
         <div className="boxShadow p-3 h-100">
           <AiFillEdit
             size={24}
-            className="text-warning d-block ms-auto"
+            className="text-warning d-block ms-auto cursor-pointer"
             data-bs-toggle="modal"
             data-bs-target={`#topService${index + 1}`}
           />
