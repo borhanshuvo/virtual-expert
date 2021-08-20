@@ -12,7 +12,7 @@ const AdminHowToPlaceAnOrder = () => {
         <h6 className="mt-3 fs-18">Answers</h6>
         <AiFillEdit size={24} className="text-warning" />
       </div>
-      <p classNames="fs-14">Text goes here</p>
+      <p className="fs-14">Text goes here</p>
     </div>
   );
 };

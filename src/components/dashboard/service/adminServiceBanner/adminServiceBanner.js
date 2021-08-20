@@ -39,11 +39,11 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
         />
       </div>
       <h6 className="mt-3 fs-18">Title</h6>
-      <p classNames="fs-14">{title}</p>
+      <p className="fs-14">{title}</p>
       <h6 className="fs-18 mt-3">Description</h6>
-      <p classNames="fs-14">{description}</p>
+      <p className="fs-14">{description}</p>
       <h6 className="fs-18 mt-3">SubDescription</h6>
-      <p classNames="fs-14">{subDescription}</p>
+      <p className="fs-14">{subDescription}</p>
 
       {/* For Edit service banner data Start */}
       <div

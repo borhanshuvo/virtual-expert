@@ -3,7 +3,6 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import styles from "./topServices.module.css";
 
 const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
-  console.log(topServicesData);
   return (
     <div className="container py-5">
       <div className="py-5">
