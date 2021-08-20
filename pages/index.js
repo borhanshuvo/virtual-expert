@@ -36,7 +36,6 @@ export default function Home({
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
         />
-        <HowToPlaceAnOrder />
         <Testimonial testimonials={testimonials} />
         <HowToPlaceAnOrder
           placeAnOrderData={placeAnOrderData}

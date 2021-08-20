@@ -1,9 +1,28 @@
-import '../styles/globals.css';
-import Head from 'next/head';
-import Footer from '../src/components/footer/footer';
-import Navbar from '../src/components/navbar/navbar';
+import Head from "next/head";
+import Router from "next/router";
+import nProgress from "nprogress";
+import "nprogress/nprogress.css";
+import Footer from "../src/components/footer/footer";
+import Navbar from "../src/components/navbar/navbar";
+import "../styles/globals.css";
+
+nProgress.configure(
+  { showSpinner: false },
+  {
+    template: "<div role='bar' className='bg-info'>...</div>",
+  }
+);
 
 function MyApp({ Component, pageProps }) {
+  //showing n-progress
+  Router.events.on("routeChangeStart", (url) => {
+    nProgress.start();
+  });
+  Router.events.on("routeChangeComplete", (url) => {
+    nProgress.done();
+  });
+  Router.events.on("routeChangeError", () => nProgress.done());
+
   if (Component.getLayout) {
     return Component.getLayout(
       <>
