@@ -16,12 +16,12 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
   const handleUpdateInfo = (data) => {
     const newTitle = data.title || serviceCard.title;
     const _id = serviceCard._id;
-    const description = data.description || serviceCard.description;
+    const newDescription = data.description || serviceCard.description;
 
     const newData = {
       title: newTitle,
       _id: serviceCard._id,
-      description: serviceCard.description,
+      description: newDescription,
       img: serviceCard.img,
       uploadImage: false,
     };
@@ -40,7 +40,7 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
     formData.append("file", file);
     formData.append("title", newTitle);
     formData.append("_id", _id);
-    formData.append("description", description);
+    formData.append("description", newDescription);
 
     if (file === null) {
       fetch("http://localhost:8000/topServices/update", {

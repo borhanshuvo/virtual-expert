@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const AdminServiceCard = ({
   imgType,
@@ -37,6 +38,7 @@ const AdminServiceCard = ({
       .then((res) => res.json())
       .then((result) => {
         if (result) {
+          toast.error("Service Delete Successfully");
           const newServicesCard = servicesCardData.filter(
             (servicesCard) => servicesCard._id !== id
           );
@@ -47,8 +49,70 @@ const AdminServiceCard = ({
   };
 
   const onSubmitEdit = (data) => {
-    console.log(data);
+    const newTitle = data.title || servicesCard.title;
+    const newSubTitle = data.subTitle || servicesCard.subTitle;
+    const newRegularReview = data.regularReview || servicesCard.regularReview;
+    const newVideoReview = data.videoReview || servicesCard.videoReview;
+    const newTop50Reviewers =
+      data.top50Reviewers || servicesCard.top50Reviewers;
+    const newDelivery = data.delivery || servicesCard.delivery;
+    const newWarranty = data.warranty || servicesCard.warranty;
+    const newPrice = data.price || servicesCard.price;
+    const newMaintenance = data.maintenance || servicesCard.maintenance;
+    const _id = servicesCard._id;
+
+    const newData = {
+      _id: _id,
+      title: newTitle,
+      subTitle: newSubTitle,
+      regularReview: newRegularReview,
+      videoReview: newVideoReview,
+      top50Reviewers: newTop50Reviewers,
+      delivery: newDelivery,
+      warranty: newWarranty,
+      price: newPrice,
+      maintenance: newMaintenance,
+      img: servicesCard.img,
+      uploadImage: false,
+    };
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("_id", _id);
+    formData.append("title", newTitle);
+    formData.append("subTitle", newSubTitle);
+    formData.append("regularReview", newRegularReview);
+    formData.append("videoReview", newVideoReview);
+    formData.append("top50Reviewers", newTop50Reviewers);
+    formData.append("delivery", newDelivery);
+    formData.append("warranty", newWarranty);
+    formData.append("price", newPrice);
+    formData.append("maintenance", newMaintenance);
+
+    if (file === null) {
+      fetch("http://localhost:8000/servicesCard/update", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          toast.success("Service Edit Successfully");
+          setNumber((prvState) => prvState + 1);
+        });
+    } else {
+      fetch("http://localhost:8000/servicesCard/update", {
+        method: "PUT",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          toast.success("Service Edit Successfully");
+          setNumber((prvState) => prvState + 1);
+        });
+    }
   };
+
   return (
     <>
       <div className="col-md-4 pb-3" key={servicesCard._id}>
@@ -91,7 +155,7 @@ const AdminServiceCard = ({
             </p>
           )}
           {servicesCard.price && (
-            <p className="fs-14">Price : {servicesCard.price}</p>
+            <p className="fs-14">Price : ${servicesCard.price}</p>
           )}
           {servicesCard.delivery && (
             <p className="fs-14">Delivery : {servicesCard.delivery} days</p>
@@ -113,7 +177,7 @@ const AdminServiceCard = ({
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
@@ -129,7 +193,7 @@ const AdminServiceCard = ({
               <div className="modal-body">
                 <form onSubmit={handleSubmit(onSubmitEdit)}>
                   <div className="form-group">
-                    <label htmlFor="titles">Title</label>
+                    <label htmlFor="title">Title</label>
                     <textarea
                       rows="5"
                       cols="5"
@@ -142,7 +206,7 @@ const AdminServiceCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="title">Sub Title</label>
+                    <label htmlFor="subTitle">Sub Title</label>
                     <textarea
                       rows="5"
                       cols="5"
@@ -155,7 +219,7 @@ const AdminServiceCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="title">Regular Review</label>
+                    <label htmlFor="regularReview">Regular Review</label>
                     <input
                       type="text"
                       defaultValue={regularReview}
@@ -168,7 +232,7 @@ const AdminServiceCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="title">Video Review</label>
+                    <label htmlFor="videoReview">Video Review</label>
                     <input
                       type="text"
                       defaultValue={videoReview}
@@ -181,7 +245,7 @@ const AdminServiceCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="title">Top 50 Reviewers</label>
+                    <label htmlFor="top50Reviewers">Top 50 Reviewers</label>
                     <input
                       type="text"
                       defaultValue={top50Reviewers}
@@ -194,7 +258,7 @@ const AdminServiceCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="title">Delivery</label>
+                    <label htmlFor="delivery">Delivery</label>
                     <input
                       type="text"
                       defaultValue={delivery}
@@ -207,7 +271,7 @@ const AdminServiceCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="title">Warranty</label>
+                    <label htmlFor="warranty">Warranty</label>
                     <input
                       type="text"
                       defaultValue={warranty}
@@ -220,7 +284,7 @@ const AdminServiceCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="title">Price</label>
+                    <label htmlFor="price">Price</label>
                     <input
                       type="text"
                       defaultValue={price}
@@ -233,7 +297,7 @@ const AdminServiceCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="title">Maintenance</label>
+                    <label htmlFor="maintenance">Maintenance</label>
                     <input
                       type="text"
                       defaultValue={maintenance}
@@ -272,6 +336,7 @@ const AdminServiceCard = ({
           </div>
         </div>
         {/* For Edit Card data Finish */}
+
         {/* For Delete Card data Start */}
         <div
           className="modal fade"
@@ -294,12 +359,12 @@ const AdminServiceCard = ({
                 ></button>
               </div>
               <div className="modal-body">
-                <p>Are you want you to delete this?</p>
+                <p>Are you want to delete this?</p>
               </div>
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-danger"
                   data-bs-dismiss="modal"
                   onClick={() => deleteService(servicesCard._id)}
                 >
@@ -307,7 +372,7 @@ const AdminServiceCard = ({
                 </button>
                 <button
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn btn-success"
                   data-bs-dismiss="modal"
                 >
                   No
