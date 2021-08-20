@@ -16,6 +16,7 @@
 .title::after {
   content: "";
   position: absolute;
+  font-weight: bold;
   color: #222f3e;
   bottom: -10px;
   width: 25px;

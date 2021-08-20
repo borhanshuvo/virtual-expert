@@ -1,49 +1,33 @@
 import Image from "next/image";
-import Service1 from "../../../../images/Group 150.svg";
 
-const WhyChooseVirtualExports = () => {
+const WhyChooseVirtualExports = ({
+  virtualServicesData,
+  headerInfoVirtualExportsData,
+}) => {
   return (
     <section className="py-5 background-color-skyblue">
       <div className="container">
         <h6 className="fs-32 text-center textCenterAfterEffect">
-          Why Choose Virtual Experts?
+          {headerInfoVirtualExportsData[0].title}
         </h6>
         <p className="col-12 col-md-8 mx-auto fs-14 text-center">
-          Virtual Experts LTD has around 7 years of experience in Amazon
-          FBA/Kindle business model and consultancy. We also sell products on
-          Amazon besides being a marketing agency.
+          {headerInfoVirtualExportsData[0].description}
         </p>
         <div className="row">
-          <div className="col-12 col-md-4">
-            <div className="mx-1 my-2 bg-white p-3">
-              <Image src={Service1} alt="service" height="60" width="60" />
-              <h6 className="fs-16">Experienced</h6>
-              <p className="fs-14">
-                We have 7 years of experience in Amazon FBA/FBM Business &
-                Marketing strategy as well.
-              </p>
+          {virtualServicesData.map((virtualService) => (
+            <div className="col-12 my-3 col-md-4" key={virtualService._id}>
+              <div className="mx-1 bg-white p-3 h-100">
+                <Image
+                  src={virtualService?.img}
+                  alt="service"
+                  height="60"
+                  width="60"
+                />
+                <h6 className="fs-16 mt-2">{virtualService.title}</h6>
+                <p className="fs-14">{virtualService.description}</p>
+              </div>
             </div>
-          </div>
-          <div className="col-12 col-md-4">
-            <div className="mx-1 my-2 bg-white p-3">
-              <Image src={Service1} alt="service" height="60" width="60" />
-              <h6 className="fs-16">Experienced</h6>
-              <p className="fs-14">
-                We have 7 years of experience in Amazon FBA/FBM Business &
-                Marketing strategy as well.
-              </p>
-            </div>
-          </div>
-          <div className="col-12 col-md-4">
-            <div className="mx-1 my-2 bg-white p-3">
-              <Image src={Service1} alt="service" height="60" width="60" />
-              <h6 className="fs-16">Experienced</h6>
-              <p className="fs-14">
-                We have 7 years of experience in Amazon FBA/FBM Business &
-                Marketing strategy as well.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

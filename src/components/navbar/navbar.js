@@ -9,7 +9,11 @@ const Navbar = () => {
     <nav>
       <div className="d-flex justify-content-between align-items-center container py-3">
         <div className="d-none d-md-block">
-          <Image src={logo} alt="logo" height="50" width="278" />
+          <Link href="/">
+            <a>
+              <Image src={logo} alt="logo" height="50" width="278" />
+            </a>
+          </Link>
         </div>
         <div className="d-block d-md-none">
           <Image src={logo} alt="logo" height="31" width="170" />

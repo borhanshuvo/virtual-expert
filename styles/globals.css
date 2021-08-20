@@ -20,10 +20,12 @@ a {
 
 p {
   font-family: "Poppins", sans-serif;
+  color: #828b9a;
 }
 
 h6 {
   font-family: "Roboto Slab", serif;
+  color: #222f3e;
 }
 
 ul {
@@ -106,6 +108,10 @@ ul {
   border: 3px solid #fe9332 !important;
 }
 
+.borderRadius {
+  border-radius: 10px;
+}
+
 .left-38 {
   left: -38px;
 }
@@ -134,8 +140,8 @@ ul {
   color: #828b9a;
 }
 
-.order-color{
-  color:#FF9F26
+.order-color {
+  color: #ff9f26;
 }
 
 .numberBefore {
@@ -207,3 +213,45 @@ ul {
   background-image: ;
   background-repeat: no-repeat;
 } */
+
+/*Working on font size responsiveness*/
+@media only screen and (max-width: 600px) {
+  .fs-30 {
+    font-size: 30px;
+  }
+  .fs-36 {
+    font-size: 24px;
+  }
+
+  .fs-32 {
+    font-size: 24px;
+  }
+
+  .fs-28 {
+    font-size: 24px;
+  }
+
+  .fs-24 {
+    font-size: 22px;
+  }
+
+  .fs-18 {
+    font-size: 16px;
+  }
+
+  .fs-16 {
+    font-size: 16px;
+  }
+
+  .fs-15 {
+    font-size: 14px;
+  }
+
+  .fs-14 {
+    font-size: 14px;
+  }
+}
+
+.scroll {
+  overflow-y: auto;
+}

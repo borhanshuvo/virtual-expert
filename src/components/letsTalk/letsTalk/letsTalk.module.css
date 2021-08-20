@@ -1,27 +1,53 @@
-
-.top{
-    background-color: #F5F8FE;
-    width: 100vw;
-    height: 120px;
-    margin-bottom: 120px;
-    color: #828B9A;
+.top {
+  background-color: #f5f8fe;
+  width: 100vw;
+  height: 120px;
+  margin-bottom: 120px;
+  color: #828b9a;
 }
 .logo {
-    color: #ff9f26;
-    font-size: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  .logoBottom{
-    color: #ff9f26;
-    font-size: 25px;
-    margin-right: 20px;
-    margin-top: 10px;
-  }
-  .title {
-    position: relative;
-    display: inline-block;
-  }
+  color: #ff9f26;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.logoBottom {
+  color: #ff9f26;
+  font-size: 22px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.title {
+  position: relative;
+  display: inline-block;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -10px;
+  width: 25px;
+  height: 2px;
+  left: 0;
+  background: #ff9f26 0% 0% no-repeat padding-box;
+}
+
+.input {
+  border: none;
+  border: 1px solid #1f2a3633;
+  color: #828b9a;
+  padding: 10px;
+}
+.button {
+  border: none;
+  background-color: #ff9f26;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  padding: 10px 25px;
+}
+
+@media only screen and (max-width: 600px) {
   .title::after {
     content: "";
     position: absolute;
@@ -29,34 +55,7 @@
     bottom: -10px;
     width: 25px;
     height: 2px;
-    left: 0;
+
     background: #ff9f26 0% 0% no-repeat padding-box;
   }
- 
-  .input{
-      border: none;
-      border: 1px solid #1F2A3633;
-      color: #828B9A;
-      padding: 10px;
-  }
-  .button{
-      border: none;
-      background-color: #FF9F26;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: white;
-      padding: 10px 25px;
-  }
-
-  @media only screen and (max-width: 600px) {
-    .title::after {
-      content: "";
-      position: absolute;
-      color: #222f3e;
-      bottom: -10px;
-      width: 25px;
-      height: 2px;
-      
-      background: #ff9f26 0% 0% no-repeat padding-box;
-    }
-  }
+}

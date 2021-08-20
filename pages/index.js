@@ -7,7 +7,17 @@ import Testimonial from '../src/components/home/testimonial/testimonial';
 import TopServices from '../src/components/home/topServices/topServices';
 import WhyChooseVirtualExports from '../src/components/home/whyChooseVirtualExports/whyChooseVirtualExports';
 
+<<<<<<< HEAD
 export default function Home({ placeAnOrderData, placeAnOrderListData }) {
+=======
+export default function Home({
+  topServicesData,
+  virtualServicesData,
+  bannerData,
+  headerInfoVirtualExportsData,
+  headerInfoTopServicesData,
+}) {
+>>>>>>> ebc29d1bf7f1cf916d62249309e79825a767a1c1
   return (
     <>
       <Head>
@@ -16,36 +26,53 @@ export default function Home({ placeAnOrderData, placeAnOrderListData }) {
       </Head>
 
       <main>
-        <Banner />
+        <Banner bannerData={bannerData} />
         <Amazon />
-        <WhyChooseVirtualExports />
-        <TopServices />
-        <HowToPlaceAnOrder
-          placeAnOrderData={placeAnOrderData}
-          placeAnOrderListData={placeAnOrderListData}
+        <WhyChooseVirtualExports
+          virtualServicesData={virtualServicesData}
+          headerInfoVirtualExportsData={headerInfoVirtualExportsData}
         />
+        <TopServices
+          topServicesData={topServicesData}
+          headerInfoTopServicesData={headerInfoTopServicesData}
+        />
+        <HowToPlaceAnOrder />
         <Testimonial />
         <ScheduleMeeting />
       </main>
     </>
   );
 }
+//top three services fetching
+export async function getServerSideProps(context) {
+  const resTopServices = await fetch("http://localhost:8000/topServices");
+  const topServicesData = await resTopServices.json();
 
-export async function getServerSideProps() {
-  const placeAnOrderResponse = await fetch(
-    'http://localhost:8000/placeAnOrder'
+  const resHeaderInfoTopServices = await fetch(
+    "http://localhost:8000/headerInfoTopServices"
   );
-  const placeAnOrderData = await placeAnOrderResponse.json();
+  const headerInfoTopServicesData = await resHeaderInfoTopServices.json();
 
-  const placeAnOrderListResponse = await fetch(
-    'http://localhost:8000/placeAnOrderList'
+  const resVirtualService = await fetch(
+    "https://virtual-expert.herokuapp.com/virtualService"
   );
-  const placeAnOrderListData = await placeAnOrderListResponse.json();
+  const virtualServicesData = await resVirtualService.json();
+
+  const resHeaderInfoVirtualExports = await fetch(
+    "http://localhost:8000/headerInfoVirtualExports"
+  );
+  const headerInfoVirtualExportsData = await resHeaderInfoVirtualExports.json();
+
+  const resBanner = await fetch("http://localhost:8000/banner");
+  const bannerData = await resBanner.json();
 
   return {
     props: {
-      placeAnOrderData: placeAnOrderData[0],
-      placeAnOrderListData: placeAnOrderListData,
+      topServicesData,
+      headerInfoTopServicesData,
+      headerInfoVirtualExportsData,
+      virtualServicesData,
+      bannerData,
     },
   };
 }
