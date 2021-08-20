@@ -13,6 +13,7 @@ export default function Home({
   bannerData,
   headerInfoVirtualExportsData,
   headerInfoTopServicesData,
+  amazonData
 }) {
   return (
     <>
@@ -23,7 +24,7 @@ export default function Home({
 
       <main>
         <Banner bannerData={bannerData} />
-        <Amazon />
+        <Amazon amazonData={amazonData} />
         <WhyChooseVirtualExports
           virtualServicesData={virtualServicesData}
           headerInfoVirtualExportsData={headerInfoVirtualExportsData}
@@ -50,7 +51,7 @@ export async function getServerSideProps(context) {
   const headerInfoTopServicesData = await resHeaderInfoTopServices.json();
 
   const resVirtualService = await fetch(
-    "https://virtual-expert.herokuapp.com/virtualService"
+    "http://localhost:8000/virtualService"
   );
   const virtualServicesData = await resVirtualService.json();
 
@@ -62,6 +63,9 @@ export async function getServerSideProps(context) {
   const resBanner = await fetch("http://localhost:8000/banner");
   const bannerData = await resBanner.json();
 
+  const resAmazon = await fetch("http://localhost:8000/amazon");
+  const amazonData = await resAmazon.json();
+
   return {
     props: {
       topServicesData,
@@ -69,6 +73,7 @@ export async function getServerSideProps(context) {
       headerInfoVirtualExportsData,
       virtualServicesData,
       bannerData,
+      amazonData
     },
   };
 }

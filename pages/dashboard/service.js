@@ -6,20 +6,26 @@ import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 import AdminServiceCard from "../../src/components/dashboard/service/adminServiceCard/adminServiceCard";
 import AdminAddServices from "../../src/components/dashboard/service/adminAddServices/adminAddServices";
 import AdminServiceBanner from "../../src/components/dashboard/service/adminServiceBanner/adminServiceBanner";
+import ServiceCardHeader from "../../src/components/dashboard/service/serviceCardHeader/serviceCardHeader";
 
 const Service = () => {
   const [serviceBanner, setServiceBanner] = useState({});
   const [servicesCardData, setServicesCardData] = useState([]);
+  const [serviceCardHeader, setServiceCardHeader] = useState({});
   const [number, setNumber] = useState(0);
 
   useEffect(() => {
-    fetch("https://virtual-expert.herokuapp.com/whatWeDo")
+    fetch("http://localhost:8000/whatWeDo")
       .then((res) => res.json())
       .then((data) => setServiceBanner(data));
 
-    fetch("https://virtual-expert.herokuapp.com/servicesCard")
+    fetch("http://localhost:8000/servicesCard")
       .then((res) => res.json())
       .then((data) => setServicesCardData(data));
+
+      fetch("http://localhost:8000/serviceCardHeader")
+      .then((res) => res.json())
+      .then((data) => setServiceCardHeader(data));
   }, [number]);
 
   return (
@@ -42,6 +48,10 @@ const Service = () => {
         <div className="col-10 container pt-5 vh-100 scroll">
           <div className="p-3 boxShadow me-4 mb-5">
             <AdminServiceBanner serviceBanner={serviceBanner} setNumber={setNumber} />
+          </div>
+
+          <div className="p-3 boxShadow me-4 mb-5">
+            <ServiceCardHeader serviceCardHeader={serviceCardHeader} setNumber={setNumber} />
           </div>
 
           <div className="p-3 boxShadow me-4 mb-5">
