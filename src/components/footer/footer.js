@@ -1,32 +1,16 @@
-<<<<<<< HEAD
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import { AiFillInstagram } from 'react-icons/Ai';
-import { FaFacebook, FaSkype, FaTelegram } from 'react-icons/Fa';
-import { ImTwitter } from 'react-icons/Im';
-import { IoLogoWhatsapp } from 'react-icons/Io';
-import { MdEmail } from 'react-icons/Md';
+import React from 'react';
+import { AiFillInstagram } from 'react-icons/ai';
+import { FaFacebook, FaSkype, FaTelegram } from 'react-icons/fa';
+import { ImTwitter } from 'react-icons/im';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { MdEmail } from 'react-icons/md';
 import Logo from '../../../images/Logo.svg';
 import BTC from '../../../images/Others/Bitcoin.svg';
 import Payoneer from '../../../images/Others/Payoneer.svg';
 import PayPal from '../../../images/Others/PayPal.svg';
 import skrill from '../../../images/Others/Skrill.svg';
 import styles from './footer.module.css';
-=======
-import Image from "next/image";
-import React from "react";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaFacebook, FaSkype, FaTelegram } from "react-icons/fa";
-import { ImTwitter } from "react-icons/im";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import Logo from "../../../images/Logo.svg";
-import BTC from "../../../images/Others/Bitcoin.svg";
-import Payoneer from "../../../images/Others/Payoneer.svg";
-import PayPal from "../../../images/Others/PayPal.svg";
-import skrill from "../../../images/Others/Skrill.svg";
-import styles from "./footer.module.css";
->>>>>>> ebc29d1bf7f1cf916d62249309e79825a767a1c1
 
 const Footer = () => {
   const [footer, setFooter] = useState(null);
@@ -48,15 +32,10 @@ const Footer = () => {
         <div className={`${styles.bottom} row p-2 p-md-5`}>
           <div className="col-md-4">
             <Image src={Logo} alt="logo" />
-<<<<<<< HEAD
-            <p className="text-muted text-center text-md-start">
-              {footer?.description}
-=======
             <p className="fs-15 mt-2 text-muted text-center text-md-start">
               Virtual Experts is a real Amazon FBA/Kindle Book & Digital
               Marketer with 7 years of experience, who can help you to improve
               your sales significantly.
->>>>>>> ebc29d1bf7f1cf916d62249309e79825a767a1c1
             </p>
           </div>
           <div className="col-md-4 px-5">
@@ -66,17 +45,17 @@ const Footer = () => {
               </h6>
             </div>
             <p className="mt-3 text-muted fs-14">
-              {" "}
+              {' '}
               <MdEmail className={`${styles.logo}`} />
               Email: {footer?.email}
             </p>
             <p className=" text-muted fs-14">
-              {" "}
+              {' '}
               <FaSkype className={`${styles.logo}`} />
               Skype: {footer?.skype}
             </p>
             <p className=" text-muted fs-14">
-              {" "}
+              {' '}
               <IoLogoWhatsapp className={`${styles.logo}`} />
               Whatsapp: {footer?.whatsApp}
             </p>
