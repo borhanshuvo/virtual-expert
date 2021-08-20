@@ -12,7 +12,7 @@ const Sidebar = () => {
           <a
             className={`d-block py-2 ${
               pathname === "/dashboard" ? "bg-primary" : ""
-            } px-3 rounded-3 text-white my-2`}
+            } px-3 rounded-3 text-white my-2 navHover`}
           >
             Home
           </a>
@@ -21,7 +21,7 @@ const Sidebar = () => {
           <a
             className={`d-block py-2 ${
               pathname === "/dashboard/service" ? "bg-primary" : ""
-            } px-3 rounded-3 text-white my-2`}
+            } px-3 rounded-3 text-white my-2 navHover`}
           >
             Service
           </a>
@@ -30,7 +30,7 @@ const Sidebar = () => {
           <a
             className={`d-block py-2 ${
               pathname === "/dashboard/about" ? "bg-primary" : ""
-            } px-3 rounded-3 text-white my-2`}
+            } px-3 rounded-3 text-white my-2 navHover`}
           >
             About
           </a>
@@ -39,7 +39,7 @@ const Sidebar = () => {
           <a
             className={`d-block py-2 ${
               pathname === "/dashboard/lets-talk" ? "bg-primary" : ""
-            } px-3 rounded-3 text-white my-2`}
+            } px-3 rounded-3 text-white my-2 navHover`}
           >
             Let&apos;s talk
           </a>

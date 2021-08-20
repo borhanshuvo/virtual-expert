@@ -255,3 +255,8 @@ ul {
 .scroll {
   overflow-y: auto;
 }
+
+.navHover:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
