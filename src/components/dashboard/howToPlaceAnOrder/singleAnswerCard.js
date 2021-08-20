@@ -7,7 +7,7 @@ const SingleAnswerCard = ({ answer, index, setNumber }) => {
   const onSubmit = (data) => {
     const title = data.title || answer.title;
     console.log(title);
-    fetch("http://localhost:8000/placeAnOrderList/update", {
+    fetch("https://virtual-expert.herokuapp.com/placeAnOrderList/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({

@@ -14,13 +14,13 @@ const AdminWhyChooseVirtualExperts = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:8000/headerInfoVirtualExports")
+    fetch("https://virtual-expert.herokuapp.com/headerInfoVirtualExports")
       .then((res) => res.json())
       .then((result) => {
         setInfo(result[0]);
       });
 
-    fetch("http://localhost:8000/virtualService")
+    fetch("https://virtual-expert.herokuapp.com/virtualService")
       .then((res) => res.json())
       .then((result) => setCardsData(result));
   }, [number]);
@@ -28,7 +28,7 @@ const AdminWhyChooseVirtualExperts = () => {
   const handleUpdateInfo = (data) => {
     const title = data.title || titleData;
     const description = data.description || descriptionData;
-    fetch("http://localhost:8000/headerInfoVirtualExports/update", {
+    fetch("https://virtual-expert.herokuapp.com/headerInfoVirtualExports/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ title, _id: info._id, description }),

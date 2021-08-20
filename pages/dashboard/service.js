@@ -14,15 +14,15 @@ const Service = () => {
   const [number, setNumber] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:8000/whatWeDo")
+    fetch("https://virtual-expert.herokuapp.com/whatWeDo")
       .then((res) => res.json())
       .then((data) => setServiceBanner(data));
 
-    fetch("http://localhost:8000/servicesCard")
+    fetch("https://virtual-expert.herokuapp.com/servicesCard")
       .then((res) => res.json())
       .then((data) => setServicesCardData(data));
 
-    fetch("http://localhost:8000/serviceCardHeader")
+    fetch("https://virtual-expert.herokuapp.com/serviceCardHeader")
       .then((res) => res.json())
       .then((data) => setServiceCardHeader(data));
   }, [number]);

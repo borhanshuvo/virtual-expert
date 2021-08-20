@@ -11,18 +11,18 @@ const AdminTopThreeService = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:8000/headerInfoTopServices")
+    fetch("https://virtual-expert.herokuapp.com/headerInfoTopServices")
       .then((res) => res.json())
       .then((result) => setTitle(result[0]));
 
-    fetch("http://localhost:8000/topServices")
+    fetch("https://virtual-expert.herokuapp.com/topServices")
       .then((res) => res.json())
       .then((result) => setServiceCards(result));
   }, [number]);
 
   const handleUpdateInfo = (data) => {
     const newTitle = data.title || title.title;
-    fetch("http://localhost:8000/headerInfoTopServices/update", {
+    fetch("https://virtual-expert.herokuapp.com/headerInfoTopServices/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ title: newTitle, _id: title._id }),

@@ -10,11 +10,11 @@ const AdminFooter = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:8000/footer")
+    fetch("https://virtual-expert.herokuapp.com/footer")
       .then((res) => res.json())
       .then((data) => setFooterData(data[0]));
 
-    fetch("http://localhost:8000/footerLink")
+    fetch("https://virtual-expert.herokuapp.com/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, [number]);
@@ -26,7 +26,7 @@ const AdminFooter = () => {
     const whatsApp = data.whatsApp || footerData.whatsApp;
     const _id = footerData._id;
 
-    fetch("http://localhost:8000/footer/update", {
+    fetch("https://virtual-expert.herokuapp.com/footer/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ description, email, skype, whatsApp, _id }),
@@ -44,7 +44,7 @@ const AdminFooter = () => {
     const telegram = data.telegram || footerLink.telegram;
     const twitter = data.twitter || footerLink.twitter;
 
-    fetch("http://localhost:8000/footerLink/update", {
+    fetch("https://virtual-expert.herokuapp.com/footerLink/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ _id, facebook, instagram, telegram, twitter }),

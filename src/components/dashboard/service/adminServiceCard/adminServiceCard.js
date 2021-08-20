@@ -32,7 +32,7 @@ const AdminServiceCard = ({
   };
 
   const deleteService = (id) => {
-    fetch(`http://localhost:8000/servicesCard/delete/${id}`, {
+    fetch(`https://virtual-expert.herokuapp.com/servicesCard/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -90,7 +90,7 @@ const AdminServiceCard = ({
     formData.append("maintenance", newMaintenance);
 
     if (file === null) {
-      fetch("http://localhost:8000/servicesCard/update", {
+      fetch("https://virtual-expert.herokuapp.com/servicesCard/update", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newData),
@@ -101,7 +101,7 @@ const AdminServiceCard = ({
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("http://localhost:8000/servicesCard/update", {
+      fetch("https://virtual-expert.herokuapp.com/servicesCard/update", {
         method: "PUT",
         body: formData,
       })

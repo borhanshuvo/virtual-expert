@@ -18,7 +18,7 @@ const Footer = () => {
   // const { email, description, skype, whatsApp } = footer;
   useEffect(() => {
     async function fetchAPI() {
-      const response = await fetch('http://localhost:8000/footer/');
+      const response = await fetch('https://virtual-expert.herokuapp.com/footer/');
       const data = await response.json();
       setFooter(data[0]);
     }

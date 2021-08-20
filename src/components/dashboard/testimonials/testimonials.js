@@ -10,7 +10,7 @@ const AdminTestimonials = () => {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/testimonials")
+    fetch("https://virtual-expert.herokuapp.com/testimonials")
       .then((res) => res.json())
       .then((data) => setTestimonials(data));
   }, [number]);
@@ -31,7 +31,7 @@ const AdminTestimonials = () => {
     formData.append("jobTitle", jobTitle);
     formData.append("review", review);
 
-    fetch("http://localhost:8000/testimonials/post", {
+    fetch("https://virtual-expert.herokuapp.com/testimonials/post", {
       method: "POST",
       body: formData,
     })

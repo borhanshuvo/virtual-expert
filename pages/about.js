@@ -23,18 +23,18 @@ const About = ({
 export default About;
 
 export async function getServerSideProps() {
-  const aboutResponse = await fetch('http://localhost:8000/about');
+  const aboutResponse = await fetch('https://virtual-expert.herokuapp.com/about');
   const aboutData = await aboutResponse.json();
 
-  const aboutUniqueResponse = await fetch('http://localhost:8000/aboutUnique');
+  const aboutUniqueResponse = await fetch('https://virtual-expert.herokuapp.com/aboutUnique');
   const aboutUniquetData = await aboutUniqueResponse.json();
 
   const aboutUniqueListResponse = await fetch(
-    'http://localhost:8000/aboutUniqueList'
+    'https://virtual-expert.herokuapp.com/aboutUniqueList'
   );
   const aboutUniquetListData = await aboutUniqueListResponse.json();
 
-  const aboutTeamResponse = await fetch('http://localhost:8000/aboutTeam');
+  const aboutTeamResponse = await fetch('https://virtual-expert.herokuapp.com/aboutTeam');
   const aboutTeamData = await aboutTeamResponse.json();
 
   return {
