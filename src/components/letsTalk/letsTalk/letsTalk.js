@@ -1,11 +1,11 @@
-import Image from "next/image";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/ai";
-import { GoLocation } from "react-icons/go";
-import { HiOutlineMail } from "react-icons/hi";
-import Logo from "../../../../images/Logo.svg";
-import styles from "./letsTalk.module.css";
+import Image from 'next/image';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { AiOutlineSkype, AiOutlineWhatsApp } from 'react-icons/ai';
+import { GoLocation } from 'react-icons/go';
+import { HiOutlineMail } from 'react-icons/hi';
+import Logo from '../../../../images/Logo.svg';
+import styles from './letsTalk.module.css';
 
 const LetsTalk = () => {
   const { register, handleSubmit } = useForm();
@@ -17,7 +17,8 @@ const LetsTalk = () => {
         <div className="container d-md-flex justify-content-between align-items-center py-5">
           <h6 className="fs-30">Let&#x27;s Talk</h6>
           <p className="fs-14">
-            Home <span className="text-warning mx-2">{`>`}</span> Let&#x27;s Talk
+            Home <span className="text-warning mx-2">{`>`}</span> Let&#x27;s
+            Talk
           </p>
         </div>
       </div>
@@ -38,7 +39,7 @@ const LetsTalk = () => {
             </p>
             <div className="text-muted mb-5 ">
               <p className="fs-15 d-flex align-items-center">
-                {" "}
+                {' '}
                 <GoLocation className={`${styles.logo}`} />
                 <span>
                   <span className="fw-bold">Address</span> : 226 West 26th
@@ -46,17 +47,17 @@ const LetsTalk = () => {
                 </span>
               </p>
               <p className="fs-15 d-flex align-items-center">
-                {" "}
+                {' '}
                 <HiOutlineMail className={`${styles.logo}`} />
                 <span className="fw-bold">Email</span>: help@virtualexperts.net
               </p>
               <p className="fs-15 d-flex align-items-center">
-                {" "}
+                {' '}
                 <AiOutlineSkype className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Skype</span>: VirtualExpertsLTD
               </p>
               <p className="fs-15 d-flex align-items-center">
-                {" "}
+                {' '}
                 <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Whatsapp</span>: +13473528622
               </p>
@@ -79,24 +80,24 @@ const LetsTalk = () => {
               <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center">
                 <input
                   placeholder="Name"
-                  {...register("example")}
+                  {...register('example')}
                   className={`${styles.input} form-control mb-3 mb-md-0 `}
                 />
                 <input
                   placeholder="Email"
-                  {...register("example")}
+                  {...register('example')}
                   className={`${styles.input} form-control`}
                 />
               </div>
               <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center">
                 <input
                   placeholder="Phone"
-                  {...register("example")}
+                  {...register('example')}
                   className={`${styles.input} form-control mb-4 mb-md-0`}
                 />
                 <input
                   placeholder="Subject"
-                  {...register("example")}
+                  {...register('example')}
                   className={`${styles.input} form-control`}
                 />
               </div>

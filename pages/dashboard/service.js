@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
-import AdminServiceCard from "../../src/components/dashboard/service/adminServiceCard/adminServiceCard";
 import AdminAddServices from "../../src/components/dashboard/service/adminAddServices/adminAddServices";
 import AdminServiceBanner from "../../src/components/dashboard/service/adminServiceBanner/adminServiceBanner";
+import AdminServiceCard from "../../src/components/dashboard/service/adminServiceCard/adminServiceCard";
 import ServiceCardHeader from "../../src/components/dashboard/service/serviceCardHeader/serviceCardHeader";
+import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const Service = () => {
   const [serviceBanner, setServiceBanner] = useState({});
@@ -23,7 +22,7 @@ const Service = () => {
       .then((res) => res.json())
       .then((data) => setServicesCardData(data));
 
-      fetch("http://localhost:8000/serviceCardHeader")
+    fetch("http://localhost:8000/serviceCardHeader")
       .then((res) => res.json())
       .then((data) => setServiceCardHeader(data));
   }, [number]);
@@ -47,11 +46,17 @@ const Service = () => {
         </div>
         <div className="col-10 container pt-5 vh-100 scroll">
           <div className="p-3 boxShadow me-4 mb-5">
-            <AdminServiceBanner serviceBanner={serviceBanner} setNumber={setNumber} />
+            <AdminServiceBanner
+              serviceBanner={serviceBanner}
+              setNumber={setNumber}
+            />
           </div>
 
           <div className="p-3 boxShadow me-4 mb-5">
-            <ServiceCardHeader serviceCardHeader={serviceCardHeader} setNumber={setNumber} />
+            <ServiceCardHeader
+              serviceCardHeader={serviceCardHeader}
+              setNumber={setNumber}
+            />
           </div>
 
           <div className="p-3 boxShadow me-4 mb-5">
@@ -68,6 +73,7 @@ const Service = () => {
                 }
                 return (
                   <AdminServiceCard
+                    key={servicesCard._id}
                     servicesCard={servicesCard}
                     imgType={imgType}
                     index={index}

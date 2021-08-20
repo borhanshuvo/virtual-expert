@@ -15,6 +15,7 @@ export default function Home({
   headerInfoTopServicesData,
   testimonials,
   amazonData,
+  placeAnOrderListData,
 }) {
   return (
     <>
@@ -36,6 +37,8 @@ export default function Home({
         />
         <HowToPlaceAnOrder />
         <Testimonial testimonials={testimonials} />
+        <HowToPlaceAnOrder placeAnOrderListData={placeAnOrderListData} />
+        <Testimonial />
         <ScheduleMeeting />
       </main>
     </>
@@ -64,8 +67,14 @@ export async function getServerSideProps(context) {
 
   const resTestimonials = await fetch("http://localhost:8000/testimonials");
   const testimonials = await resTestimonials.json();
+
   const resAmazon = await fetch("http://localhost:8000/amazon");
   const amazonData = await resAmazon.json();
+
+  const resPlaceAnOrderList = await fetch(
+    "http://localhost:8000/placeAnOrderList"
+  );
+  const placeAnOrderListData = await resPlaceAnOrderList.json();
 
   return {
     props: {
@@ -76,6 +85,7 @@ export async function getServerSideProps(context) {
       bannerData,
       testimonials,
       amazonData,
+      placeAnOrderListData,
     },
   };
 }
