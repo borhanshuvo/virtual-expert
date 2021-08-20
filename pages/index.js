@@ -64,6 +64,7 @@ export async function getServerSideProps(context) {
 
   const resTestimonials = await fetch("http://localhost:8000/testimonials");
   const testimonials = await resTestimonials.json();
+  
   const resAmazon = await fetch("http://localhost:8000/amazon");
   const amazonData = await resAmazon.json();
 
