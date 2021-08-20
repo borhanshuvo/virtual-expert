@@ -114,8 +114,8 @@ const AdminServiceCard = ({
   };
 
   return (
-    <>
-      <div className="col-md-4 pb-3" key={servicesCard._id}>
+    <div className="col-md-4" key={servicesCard._id}>
+      <div className="my-3 mx-1 p-3 border rounded-3">
         <div className="d-flex justify-content-end">
           <AiFillEdit
             size={24}
@@ -383,7 +383,7 @@ const AdminServiceCard = ({
         </div>
         {/* For Delete Card data Finish */}
       </div>
-    </>
+    </div>
   );
 };
 
