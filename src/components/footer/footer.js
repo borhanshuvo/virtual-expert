@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillInstagram } from 'react-icons/ai';
 import { FaFacebook, FaSkype, FaTelegram } from 'react-icons/fa';
 import { ImTwitter } from 'react-icons/im';

@@ -13,6 +13,7 @@ export default function Home({
   bannerData,
   headerInfoVirtualExportsData,
   headerInfoTopServicesData,
+  placeAnOrderListData,
 }) {
   return (
     <>
@@ -32,7 +33,7 @@ export default function Home({
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
         />
-        <HowToPlaceAnOrder />
+        <HowToPlaceAnOrder placeAnOrderListData={placeAnOrderListData} />
         <Testimonial />
         <ScheduleMeeting />
       </main>
@@ -62,6 +63,11 @@ export async function getServerSideProps(context) {
   const resBanner = await fetch('http://localhost:8000/banner');
   const bannerData = await resBanner.json();
 
+  const resPlaceAnOrderList = await fetch(
+    'http://localhost:8000/placeAnOrderList'
+  );
+  const placeAnOrderListData = await resPlaceAnOrderList.json();
+
   return {
     props: {
       topServicesData,
@@ -69,6 +75,7 @@ export async function getServerSideProps(context) {
       headerInfoVirtualExportsData,
       virtualServicesData,
       bannerData,
+      placeAnOrderListData,
     },
   };
 }

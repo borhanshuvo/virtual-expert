@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 import Head from 'next/head';
 import Footer from '../src/components/footer/footer';
