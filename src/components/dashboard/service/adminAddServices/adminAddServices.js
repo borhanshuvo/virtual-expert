@@ -30,7 +30,7 @@ const AdminAddServices = ({ setNumber }) => {
     formData.append("price", data.price);
     formData.append("maintenance", data.maintenance);
 
-    fetch(`https://virtual-expert.herokuapp.com/servicesCard/post`, {
+    fetch(`http://localhost:8000/servicesCard/post`, {
       method: "POST",
       body: formData,
     })
