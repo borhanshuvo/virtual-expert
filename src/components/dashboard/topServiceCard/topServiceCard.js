@@ -11,7 +11,6 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
     const newFile = e.target.files[0];
     setFile(newFile);
   };
-  //   console.log(serviceCard.img);
 
   const handleUpdateInfo = (data) => {
     const newTitle = data.title || serviceCard.title;
@@ -25,16 +24,6 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
       img: serviceCard.img,
       uploadImage: false,
     };
-
-    console.log(newData);
-
-    // const existingFile = file || serviceCard.img;
-    // let existingFile;
-    // if (file !== null) {
-    //   existingFile = file;
-    // } else {
-    //   existingFile = serviceCard.img;
-    // }
 
     const formData = new FormData();
     formData.append("file", file);
@@ -63,6 +52,7 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
         });
     }
   };
+
   let imgType;
   if (serviceCard.img.contentType === "image/svg+xml") {
     imgType = "data:image/svg+xml";

@@ -2,8 +2,8 @@ import Image from "next/image";
 import { RiArrowRightSLine } from "react-icons/ri";
 import styles from "./topServices.module.css";
 
-const TopServices = ({ topServicesData,headerInfoTopServicesData }) => {
-  console.log(headerInfoTopServicesData)
+const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
+  console.log(topServicesData);
   return (
     <div className="container py-5">
       <div className="py-5">
@@ -11,29 +11,38 @@ const TopServices = ({ topServicesData,headerInfoTopServicesData }) => {
           {headerInfoTopServicesData[0].title}
         </h6>
         <div className="row">
-          {topServicesData.map((service, index) => (
-            <div
-              key={service._id}
-              className={`${styles.serviceCard} col-12 col-md-4 p-4  mt-md-5`}
-            >
-              <div className="d-flex justify-content-center">
-                <Image
-                  className={`${styles.bannerContainer} img-fluid`}
-                  src={service.img}
-                  alt=""
-                  height={120}
-                  width={190}
-                />
+          {topServicesData.map((service, index) => {
+            let imgType;
+            if (service.img.contentType === "image/svg+xml") {
+              imgType = "data:image/svg+xml";
+            } else if (service.img.contentType === "image/png") {
+              imgType = "data:image/png";
+            } else {
+              imgType = "data:image/jpg";
+            }
+            return (
+              <div
+                key={service._id}
+                className={`${styles.serviceCard} col-12 col-md-4 p-4  mt-md-5`}
+              >
+                <div className="d-flex justify-content-center">
+                  <Image
+                    src={`${imgType} ; base64, ${service.img.img}`}
+                    alt="Loading..."
+                    height="150"
+                    width="150"
+                  />
+                </div>
+                <h6 className="text-center mt-5">{service.title}</h6>
+                <p className="text-center fs-15 mt-3 text-color ">
+                  {service.description}
+                </p>
+                <p className="text-center order-color">
+                  Order <RiArrowRightSLine />
+                </p>
               </div>
-              <h6 className="text-center mt-5">{service.title}</h6>
-              <p className="text-center fs-15 mt-3 text-color ">
-                {service.description}
-              </p>
-              <p className="text-center order-color">
-                Order <RiArrowRightSLine />
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <div className="d-flex justify-content-center">
           <button

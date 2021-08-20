@@ -1,6 +1,20 @@
+import { useEffect, useState } from "react";
 import { AiFillEdit } from "react-icons/ai";
 
 const AdminFooter = () => {
+  const [footerData, setFooterData] = useState({});
+  const [footerLink, setFooterLink] = useState({});
+  const [number, setNumber] = useState(0);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/footer")
+      .then((res) => res.json())
+      .then((data) => setFooterData(data[0]));
+
+    fetch("http://localhost:8000/footerLink")
+      .then((res) => res.json())
+      .then((data) => setFooterLink(data[0]));
+  }, [number]);
   return (
     <div className="p-3 boxShadow me-3 my-2">
       <div className="d-flex justify-content-between">
@@ -8,7 +22,7 @@ const AdminFooter = () => {
         <AiFillEdit size={24} className="text-warning" />
       </div>
       <h6 className="mt-3 fs-18">Footer Description</h6>
-      <p className="fs-14">Description goes here</p>
+      <p className="fs-14">{footerData.description}</p>
       <div className="d-flex justify-content-between my-3">
         <h6 className="fs-18">Update Information</h6>
         <AiFillEdit size={24} className="text-warning" />
@@ -20,7 +34,7 @@ const AdminFooter = () => {
         type="text"
         className="form-control fs-14"
         name="email"
-        value="help@gmail.com"
+        value={footerData.email}
       />
       <label htmlFor="skype" className="d-block my-2">
         Skype
@@ -29,7 +43,7 @@ const AdminFooter = () => {
         type="text"
         className="form-control fs-14"
         name="skype"
-        value="+014578218"
+        value={footerData.skype}
       />
       <label htmlFor="whatsApp" className="d-block my-2">
         WhatsApp
@@ -38,7 +52,7 @@ const AdminFooter = () => {
         type="text"
         className="form-control fs-14"
         name="whatsApp"
-        value="+014578218"
+        value={footerData.whatsApp}
       />
       <div className="d-flex justify-content-between my-4">
         <h6 className="fs-18">Update Social Link</h6>
@@ -51,7 +65,7 @@ const AdminFooter = () => {
         type="text"
         className="form-control fs-14"
         name="facebook"
-        value="https://facebook.com"
+        value={footerLink.facebook}
       />
       <label htmlFor="instagram" className="d-block my-2">
         Instagram
@@ -60,7 +74,7 @@ const AdminFooter = () => {
         type="text"
         className="form-control fs-14"
         name="instagram"
-        value="https://instagram.com"
+        value={footerLink.instgram}
       />
       <label htmlFor="telegram" className="d-block my-2">
         Telegram
@@ -69,7 +83,7 @@ const AdminFooter = () => {
         type="text"
         className="form-control fs-14"
         name="telegram"
-        value="https://telegram.com"
+        // value={footerLink.}
       />
       <label htmlFor="twitter" className="d-block my-2">
         Twitter
@@ -78,7 +92,7 @@ const AdminFooter = () => {
         type="text"
         className="form-control fs-14"
         name="twitter"
-        value="https://twitter.com"
+        value={footerLink.twiter}
       />
     </div>
   );
