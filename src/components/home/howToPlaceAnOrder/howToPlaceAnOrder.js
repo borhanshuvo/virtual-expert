@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import questionImage from '../../../../images/Img.svg';
+import Image from "next/image";
+import questionImage from "../../../../images/Img.svg";
 
 const HowToPlaceAnOrder = ({ placeAnOrderData, placeAnOrderListData }) => {
   return (
@@ -18,7 +18,7 @@ const HowToPlaceAnOrder = ({ placeAnOrderData, placeAnOrderListData }) => {
             <h6 className="fs-28 textLeftAfterEffect">
               {placeAnOrderData?.title}
             </h6>
-            {placeAnOrderListData.map((item, index) => (
+            {placeAnOrderListData?.map((item, index) => (
               <div key={item._id} className="d-flex fs-14 mt-4">
                 <span className="me-2 numberBefore">
                   {index + 1 > 9 ? index + 1 : `0${index + 1}`}
