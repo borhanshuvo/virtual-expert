@@ -17,7 +17,6 @@ const AdminWhyChooseVirtualExperts = () => {
     fetch("http://localhost:8000/headerInfoVirtualExports")
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         setInfo(result[0]);
       });
 
