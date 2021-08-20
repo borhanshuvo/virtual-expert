@@ -13,6 +13,7 @@ export default function Home({
   bannerData,
   headerInfoVirtualExportsData,
   headerInfoTopServicesData,
+  testimonials,
 }) {
   return (
     <>
@@ -33,7 +34,7 @@ export default function Home({
           headerInfoTopServicesData={headerInfoTopServicesData}
         />
         <HowToPlaceAnOrder />
-        <Testimonial />
+        <Testimonial testimonials={testimonials} />
         <ScheduleMeeting />
       </main>
     </>
@@ -62,6 +63,9 @@ export async function getServerSideProps(context) {
   const resBanner = await fetch("http://localhost:8000/banner");
   const bannerData = await resBanner.json();
 
+  const resTestimonials = await fetch("http://localhost:8000/testimonials");
+  const testimonials = await resTestimonials.json();
+
   return {
     props: {
       topServicesData,
@@ -69,6 +73,7 @@ export async function getServerSideProps(context) {
       headerInfoVirtualExportsData,
       virtualServicesData,
       bannerData,
+      testimonials,
     },
   };
 }
