@@ -46,7 +46,7 @@ const AdminTopThreeService = () => {
           />
         </div>
         <h6 className="mt-3 fs-18">Title</h6>
-        <p classNames="fs-14">{title.title}</p>
+        <p className="fs-14">{title.title}</p>
 
         <div className="row">
           {serviceCards.map((serviceCard, index) => (

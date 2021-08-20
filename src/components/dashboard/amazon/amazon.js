@@ -8,7 +8,7 @@ const AdminAmazon = () => {
         <AiFillEdit size={24} className="text-warning" />
       </div>
       <h6 className="mt-3 fs-18">Title</h6>
-      <p classNames="fs-14">Text goes here</p>
+      <p className="fs-14">Text goes here</p>
       <h6 className="fs-18 mt-3">Subtitle</h6>
       <p className="fs-14">Subtitle goes here</p>
     </div>
