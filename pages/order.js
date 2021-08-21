@@ -1,5 +1,6 @@
 import Image from "next/image";
-import roundIcon from "../images/service/Ellipse 261.svg";
+
+import ring from "../images/service/Ellipse 261.svg";
 
 const Order = () => {
   return (
@@ -10,8 +11,25 @@ const Order = () => {
           <p className="fs-14">Home {`>`} Order Now</p>
         </div>
       </div>
+
       <div className="py-5 container">
-        <div className="col-12 col-md-5 mx-auto border border-1 border-warning order-section-card position-relative">
+        <div className="position-relative col-11 col-md-5 mx-auto">
+          <div className="border border-warning my-5 ring-title bg-white">
+            <h6 className="text-center fs-28 lh-base p-3 textCenterAfterEffect">
+              Place an Order to Start
+            </h6>
+          </div>
+
+          <div className="ring d-none d-md-block">
+            <Image src={ring} />
+          </div>
+
+          <div className="ring-mobile-size d-md-none d-block">
+            <Image src={ring} height={50} width={50} />
+          </div>
+        </div>
+
+        {/* <div className="col-12 col-md-5 mx-auto border border-1 border-warning order-section-card position-relative">
           <div className="position-absolute end-0">
             <Image src={roundIcon} alt="round-Icon" width="65" height="65" />
           </div>
@@ -20,7 +38,8 @@ const Order = () => {
               Place an Order to Start
             </h6>
           </div>
-        </div>
+        </div> */}
+
         <div className="col-12 col-md-6 mx-auto">
           <div className="row my-4">
             <div className="col-12 col-md-6">

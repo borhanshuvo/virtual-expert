@@ -4,12 +4,12 @@ import Header from "../src/components/services/header/header";
 import ServicesCard from "../src/components/services/servicesCard/servicesCard";
 import WhatWeDo from "../src/components/services/whatWeDo/whatWeDo";
 
-const Services = ({servicesCardData}) => {
+const Services = ({servicesCardData, whatWeDo, serviceCardHeader }) => {
   return (
     <>
       <Header />
-      <WhatWeDo />
-      <ServicesCard servicesCardData={servicesCardData} />
+      <WhatWeDo whatWeDo={whatWeDo} />
+      <ServicesCard servicesCardData={servicesCardData} serviceCardHeader={serviceCardHeader} />
       <ScheduleMeeting />
     </>
   );
@@ -18,9 +18,18 @@ const Services = ({servicesCardData}) => {
 export async function getServerSideProps(context) {
   const res = await fetch("https://virtual-expert.herokuapp.com/servicesCard");
   const servicesCardData = await res.json();
+
+  const whatWeDoRes = await fetch("https://virtual-expert.herokuapp.com/whatWeDo");
+  const whatWeDo = await whatWeDoRes.json();
+
+  const serviceCardHeaderRes = await fetch("https://virtual-expert.herokuapp.com/serviceCardHeader")
+  const serviceCardHeader = await serviceCardHeaderRes.json();
+
   return {
     props: {
       servicesCardData,
+      whatWeDo,
+      serviceCardHeader
     },
   };
 }

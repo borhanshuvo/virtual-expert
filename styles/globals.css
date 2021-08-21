@@ -21,11 +21,13 @@ a {
 p {
   font-family: "Poppins", sans-serif;
   color: #828b9a;
+  font-weight: 400;
 }
 
 h6 {
   font-family: "Roboto Slab", serif;
   color: #222f3e;
+  font-weight: 400;
 }
 
 ul {
@@ -263,4 +265,33 @@ ul {
 
 .bg-orange {
   background-color: #ffac45;
+}
+
+.ring-title {
+  position: relative;
+  z-index: 5;
+}
+
+.ring {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+}
+
+.ring-mobile-size {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+
+.angle {
+  position: absolute;
+  top: 70px;
+  left: -5px;
+}
+
+.angle-mobile-size {
+  position: absolute;
+  top: 105px;
+  left: -5px;
 }
