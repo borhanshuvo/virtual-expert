@@ -25,8 +25,8 @@ const AboutC = ({
 
       {/* ================================= */}
 
-      <div className="container mb-5">
-        <div className="row">
+      <div className="container my-5">
+        <div className="row py-5">
           <div className="col-md-6">
             <h6 className={`${styles.title} fs-28`}>{aboutData?.title}</h6>
             <p className="text-muted fs-15 lh-lg">{aboutData?.discription}</p>
@@ -40,7 +40,7 @@ const AboutC = ({
       {/* ================================= */}
 
       <div className="background-color-skyblue py-5">
-        <div className="container">
+        <div className="container my-5">
           <div className="row">
             <div className="col-md-6 d-flex justify-content-center align-items-center">
               <Image src={about2} alt="image.svg" />
@@ -51,7 +51,7 @@ const AboutC = ({
               </h6>
               <div>
                 {aboutUniquetListData.map((item, index) => (
-                  <div key={item._id} className="d-flex fs-14 mt-4">
+                  <div key={item._id} className="d-flex fs-14 mt-2">
                     <span className="me-2 numberBefore fw-bold text-dark">
                       {index + 1 > 9 ? index + 1 : ` 0${index + 1}`}
                     </span>
@@ -66,7 +66,7 @@ const AboutC = ({
 
       {/* ========================================= */}
 
-      <div className="container ">
+      <div className="container my-5">
         <div className="d-flex justify-content-center align-items-center">
           <div className="w-50 text-center  mt-5 pt-3">
             <h6 className={`${styles.title1} fs-24 `}>
