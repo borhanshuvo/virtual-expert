@@ -257,6 +257,10 @@ ul {
 }
 
 .navHover:hover {
-  background-color: #0d6efd;
+  background-color: #ffac45;
   color: #fff;
+}
+
+.bg-orange {
+  background-color: #ffac45;
 }

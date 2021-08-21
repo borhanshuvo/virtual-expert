@@ -11,7 +11,7 @@ const Sidebar = () => {
         <Link href="/dashboard/">
           <a
             className={`d-block py-2 ${
-              pathname === "/dashboard" ? "bg-primary" : ""
+              pathname === "/dashboard" ? "bg-orange" : ""
             } px-3 rounded-3 text-white my-2 navHover`}
           >
             Home
@@ -20,7 +20,7 @@ const Sidebar = () => {
         <Link href="/dashboard/service">
           <a
             className={`d-block py-2 ${
-              pathname === "/dashboard/service" ? "bg-primary" : ""
+              pathname === "/dashboard/service" ? "bg-orange" : ""
             } px-3 rounded-3 text-white my-2 navHover`}
           >
             Service
@@ -29,7 +29,7 @@ const Sidebar = () => {
         <Link href="/dashboard/about">
           <a
             className={`d-block py-2 ${
-              pathname === "/dashboard/about" ? "bg-primary" : ""
+              pathname === "/dashboard/about" ? "bg-orange" : ""
             } px-3 rounded-3 text-white my-2 navHover`}
           >
             About
@@ -38,7 +38,7 @@ const Sidebar = () => {
         <Link href="/dashboard/lets-talk">
           <a
             className={`d-block py-2 ${
-              pathname === "/dashboard/lets-talk" ? "bg-primary" : ""
+              pathname === "/dashboard/lets-talk" ? "bg-orange" : ""
             } px-3 rounded-3 text-white my-2 navHover`}
           >
             Let&apos;s talk

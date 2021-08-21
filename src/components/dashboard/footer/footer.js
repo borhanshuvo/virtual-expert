@@ -69,6 +69,8 @@ const AdminFooter = () => {
         </div>
         <h6 className="mt-3 fs-18">Footer Description</h6>
         <p className="fs-14">{footerData.description}</p>
+        <h6 className="mt-3 fs-18">Copy Right Text</h6>
+        <p className="fs-14">{footerData?.copyRightText}</p>
         <h6 className="fs-18 mt-3">Contact Info</h6>
         <label htmlFor="email" className="d-block my-2">
           Email
@@ -175,6 +177,16 @@ const AdminFooter = () => {
                   {...register("description")}
                   name="description"
                   id="description"
+                  className="form-control mb-2"
+                ></textarea>
+                <label htmlFor="copyRightText">Copy Right Text</label>
+                <textarea
+                  rows="2"
+                  cols="2"
+                  defaultValue={footerData?.copyRightText}
+                  {...register("copyRightText")}
+                  name="copyRightText"
+                  id="copyRightText"
                   className="form-control mb-2"
                 ></textarea>
                 <label htmlFor="email">Email</label>
