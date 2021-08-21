@@ -171,8 +171,8 @@ ul {
   position: absolute;
   color: #222f3e;
   bottom: -10px;
-  width: 25px;
-  height: 2px;
+  width: 30px;
+  height: 3px;
   left: 0;
   background: #ff9f26 0% 0% no-repeat padding-box;
 }
@@ -186,9 +186,9 @@ ul {
   position: absolute;
   color: #222f3e;
   bottom: 0;
-  width: 25px;
-  height: 2px;
-  left: 50%;
+  width: 30px;
+  height: 3px;
+  left: 45%;
   background: #ff9f26 0% 0% no-repeat padding-box;
 }
 

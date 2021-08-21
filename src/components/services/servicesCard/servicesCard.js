@@ -27,7 +27,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
           </div>
 
           <div className="angle-mobile-size d-md-none d-block">
-            <Image src={angle} height={50} width={50} />
+            <Image src={angle} height={40} width={40} />
           </div>
         </div>
 
