@@ -14,9 +14,15 @@ const Amazon = ({ amazonData }) => {
             </div>
             <div className="col-md-6">
               <h6 className="fs-28 textLeftAfterEffect">{amazonData.title}</h6>
-              <p className="fs-14 mt-4 lh-lg">{amazonData.description_part_1}</p>
-              <p className="fs-14 mt-4 lh-lg">{amazonData.description_part_2}</p>
-              <p className="fs-14 mt-4 lh-lg">{amazonData.description_part_3}</p>
+              <p className="fs-14 mt-4 lh-lg">
+                {amazonData.description_part_1}
+              </p>
+              <p className="fs-14 mt-4 lh-lg">
+                {amazonData.description_part_2}
+              </p>
+              <p className="fs-14 mt-4 lh-lg">
+                {amazonData.description_part_3}
+              </p>
             </div>
           </div>
         </div>

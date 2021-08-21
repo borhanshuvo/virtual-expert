@@ -1,13 +1,12 @@
 import Image from "next/image";
 import React from "react";
-import ring from "../../../../images/service/Ellipse 261.svg";
 import angle from "../../../../images/Rectangle 266.svg";
+import ring from "../../../../images/service/Ellipse 261.svg";
 
 const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
   return (
     <>
       <div className="background-color-skyblue py-5">
-
         <div className="position-relative col-9 col-md-3 mx-auto">
           <div className="border border-warning my-5 ring-title background-color-skyblue">
             <h6 className="text-center fs-28 lh-base p-3 textCenterAfterEffect">
@@ -30,7 +29,6 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
           <div className="angle-mobile-size d-md-none d-block">
             <Image src={angle} height={50} width={50} />
           </div>
-          
         </div>
 
         <div className="container">
@@ -47,21 +45,20 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
 
               return (
                 <div className="col-md-4 pb-3" key={servicesCard._id}>
-                  <div class="card h-100 border-0 borderRadius">
+                  <div className="card h-100 border-0 borderRadius">
                     <div className="background-color-skyblue">
                       <Image
                         src={`${imgType} ; base64, ${servicesCard.img.img}`}
                         alt="waiting.."
                         width={200}
                         height={200}
-                        alt=""
                       />
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                       <h6 className="fs-18 lh-base">{servicesCard.title}</h6>
-                      <h6 className="fs-14 lh-lg">
+                      <p className="fs-14 lh-26 font-medium">
                         {servicesCard.subTitle}
-                      </h6>
+                      </p>
                       {servicesCard.regularReview && (
                         <p className="fs-14 m-0">
                           Regular Review : ${servicesCard.regularReview} each
@@ -78,7 +75,9 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                         </p>
                       )}
                       {servicesCard.price && (
-                        <p className="fs-14 m-0">Price : {servicesCard.price}</p>
+                        <p className="fs-14 m-0">
+                          Price : {servicesCard.price}
+                        </p>
                       )}
                       {servicesCard.delivery && (
                         <p className="fs-14 m-0">

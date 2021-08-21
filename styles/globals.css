@@ -252,6 +252,16 @@ ul {
   .fs-14 {
     font-size: 14px;
   }
+
+  .lh-30 {
+    line-height: 26px;
+  }
+  .lh-26 {
+    line-height: 26px;
+  }
+  .lh-36 {
+    line-height: 36px;
+  }
 }
 
 .scroll {
@@ -286,12 +296,33 @@ ul {
 
 .angle {
   position: absolute;
-  top: 70px;
+  bottom: -12px;
   left: -5px;
 }
 
 .angle-mobile-size {
   position: absolute;
-  top: 105px;
+  bottom: -12px;
   left: -5px;
+}
+
+/*working with line height and font weight*/
+.lh-26 {
+  line-height: 26px;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.lh-30 {
+  line-height: 30px;
+}
+
+.lh-36 {
+  line-height: 36px;
 }
