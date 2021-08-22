@@ -1,15 +1,25 @@
-import Image from 'next/image';
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { AiOutlineSkype, AiOutlineWhatsApp } from 'react-icons/ai';
-import { GoLocation } from 'react-icons/go';
-import { HiOutlineMail } from 'react-icons/hi';
-import Logo from '../../../../images/Logo.svg';
-import styles from './letsTalk.module.css';
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/ai";
+import { FaFacebook, FaInstagram, FaTelegram } from "react-icons/fa";
+import { GoLocation } from "react-icons/go";
+import { HiOutlineMail } from "react-icons/hi";
+import { ImTwitter } from "react-icons/im";
+import Logo from "../../../../images/Shape.svg";
+import styles from "./letsTalk.module.css";
 
 const LetsTalk = () => {
+  const [footerLink, setFooterLink] = useState({});
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  useEffect(() => {
+    fetch("https://virtual-expert.herokuapp.com/footerLink")
+      .then((res) => res.json())
+      .then((data) => setFooterLink(data[0]));
+  }, []);
 
   return (
     <section className="mb-5 pb-5 overflow-hidden">
@@ -39,7 +49,7 @@ const LetsTalk = () => {
             </p>
             <div className="text-muted mb-5 ">
               <p className="fs-15 d-flex align-items-center">
-                {' '}
+                {" "}
                 <GoLocation className={`${styles.logo}`} />
                 <span>
                   <span className="fw-bold">Address</span> : 226 West 26th
@@ -47,17 +57,17 @@ const LetsTalk = () => {
                 </span>
               </p>
               <p className="fs-15 d-flex align-items-center">
-                {' '}
+                {" "}
                 <HiOutlineMail className={`${styles.logo}`} />
                 <span className="fw-bold">Email</span>: help@virtualexperts.net
               </p>
               <p className="fs-15 d-flex align-items-center">
-                {' '}
+                {" "}
                 <AiOutlineSkype className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Skype</span>: VirtualExpertsLTD
               </p>
               <p className="fs-15 d-flex align-items-center">
-                {' '}
+                {" "}
                 <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
                 <span className="fw-bold">Whatsapp</span>: +13473528622
               </p>
@@ -65,10 +75,36 @@ const LetsTalk = () => {
             <div>
               <h6 className={`${styles.title} fs-18`}>Connect with us</h6>
               <div className="d-flex mt-2">
-                <GoLocation className={`${styles.logoBottom}`} />
-                <HiOutlineMail className={`${styles.logoBottom}`} />
-                <AiOutlineSkype className={`${styles.logoBottom}`} />
-                <AiOutlineWhatsApp className={`${styles.logoBottom}`} />
+                {footerLink?.facebook && (
+                  <Link href={footerLink.facebook}>
+                    <a target="_blank">
+                      <FaFacebook className={`${styles.logo} me-3`} />
+                    </a>
+                  </Link>
+                )}
+                {footerLink?.instagram && (
+                  <Link href={footerLink.instagram}>
+                    <a target="_blank">
+                      <FaInstagram className={`${styles.logo} me-3`} />
+                    </a>
+                  </Link>
+                )}
+
+                {footerLink?.telegram && (
+                  <Link href={footerLink.telegram}>
+                    <a target="_blank">
+                      <FaTelegram className={`${styles.logo} me-3`} />
+                    </a>
+                  </Link>
+                )}
+
+                {footerLink?.twitter && (
+                  <Link href={footerLink.twitter}>
+                    <a target="_blank">
+                      <ImTwitter className={`${styles.logo} me-3`} />
+                    </a>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -80,24 +116,24 @@ const LetsTalk = () => {
               <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center">
                 <input
                   placeholder="Name"
-                  {...register('example')}
+                  {...register("example")}
                   className={`${styles.input} form-control mb-3 mb-md-0 `}
                 />
                 <input
                   placeholder="Email"
-                  {...register('example')}
+                  {...register("example")}
                   className={`${styles.input} form-control`}
                 />
               </div>
               <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center">
                 <input
                   placeholder="Phone"
-                  {...register('example')}
+                  {...register("example")}
                   className={`${styles.input} form-control mb-4 mb-md-0`}
                 />
                 <input
                   placeholder="Subject"
-                  {...register('example')}
+                  {...register("example")}
                   className={`${styles.input} form-control`}
                 />
               </div>

@@ -8,10 +8,7 @@ const WhyChooseVirtualExports = ({
   return (
     <section className="py-5 background-color-skyblue">
       <div className="container">
-        {/* <h6 className="fs-32 text-center textCenterAfterEffect">
-          {headerInfoVirtualExportsData[0].title}
-        </h6> */}
-        <SectionTitle />
+        <SectionTitle title={headerInfoVirtualExportsData[0].title} />
         <p className="col-12 col-md-8 mx-auto fs-14 text-center">
           {headerInfoVirtualExportsData[0].description}
         </p>

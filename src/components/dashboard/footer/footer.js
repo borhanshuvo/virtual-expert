@@ -244,7 +244,7 @@ const AdminFooter = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Edit Footer Information
+                Edit Footer Link
               </h5>
               <button
                 type="button"
@@ -255,10 +255,10 @@ const AdminFooter = () => {
             </div>
             <div className="modal-body">
               <form onSubmit={handleSubmit(handleUpdateFooterLink)}>
-                <label htmlFor="facebook">Description</label>
+                <label htmlFor="facebook">Facebook</label>
                 <textarea
-                  rows="5"
-                  cols="5"
+                  rows="2"
+                  cols="2"
                   defaultValue={footerLink.facebook}
                   {...register("facebook")}
                   name="facebook"

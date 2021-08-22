@@ -1,10 +1,13 @@
-import parse from "html-react-parser";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { FaFacebook, FaInstagram, FaTelegram } from "react-icons/fa";
+import { ImTwitter } from "react-icons/im";
 import bannerImg from "../../../../images/Img-5.svg";
 import styles from "./banner.module.css";
 
-const Banner = ({ bannerData }) => {
+const Banner = ({ bannerData, footerLink }) => {
+  console.log(footerLink);
   return (
     <>
       <div className={`${styles.bannerContainer}`}>
@@ -12,7 +15,7 @@ const Banner = ({ bannerData }) => {
           <div className="row d-flex align-items-center">
             <div className="col-md-6 order-2 order-md-1">
               <h6 className="fs-36">{bannerData[0].title}</h6>
-              <p className="fs-15">{parse(bannerData[0].description)}</p>
+              <p className="fs-15">{bannerData[0].description}</p>
               <button className="button px-4 py-1">
                 <h6 className="d-inline fs-14">Get Free Quote!</h6>
               </button>
@@ -22,6 +25,29 @@ const Banner = ({ bannerData }) => {
             </div>
           </div>
         </div>
+      </div>
+      {/* social link goes here */}
+      <div className="position-fixed left-0 top-50 px-2 bg-white d-none d-md-block">
+        <Link href={footerLink[0].facebook}>
+          <a target="_blank">
+            <FaFacebook className="d-block my-2 order-color" />
+          </a>
+        </Link>
+        <Link href={footerLink[0].instagram}>
+          <a target="_blank" title="Hello world">
+            <FaInstagram className="d-block my-2 order-color" />
+          </a>
+        </Link>
+        <Link href={footerLink[0].telegram}>
+          <a target="_blank" title="Hello world">
+            <FaTelegram className="d-block my-2 order-color" />
+          </a>
+        </Link>
+        <Link href={footerLink[0].twitter}>
+          <a target="_blank" title="Hello world">
+            <ImTwitter className="d-block my-2 order-color" />
+          </a>
+        </Link>
       </div>
     </>
   );

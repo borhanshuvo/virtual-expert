@@ -1,5 +1,6 @@
 import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
+import AdminWhoAreVirtualExperts from "../../src/components/dashboard/about.js/whoAreVirtualExperts/whoAreVirtualExperts";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const About = () => {
@@ -37,7 +38,9 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="col-9">Hello this is About section</div>
+        <div className="col-12 col-md-10">
+          <AdminWhoAreVirtualExperts />
+        </div>
       </div>
     </section>
   );

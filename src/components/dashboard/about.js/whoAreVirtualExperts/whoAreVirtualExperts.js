@@ -2,61 +2,57 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 
-const AdminBanner = () => {
+const AdminWhoAreVirtualExperts = () => {
   const [number, setNumber] = useState(0);
-  const [bannerData, setBannerData] = useState({});
-
-  const titleData = bannerData.title;
-  const descriptionData = bannerData.description;
+  const [aboutData, setAboutData] = useState({});
 
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    const loadData = async () => {
-      const resBanner = await fetch(
-        "https://virtual-expert.herokuapp.com/banner"
+    const loadData = async (req, res) => {
+      const aboutResponse = await fetch(
+        "https://virtual-expert.herokuapp.com/about"
       );
-      const bannerData = await resBanner.json();
-      setBannerData(bannerData[0]);
+      const aboutData = await aboutResponse.json();
+      setAboutData(aboutData[0]);
     };
     loadData();
   }, [number]);
 
   const onSubmit = (data) => {
-    const title = data.title || titleData;
-    const description = data.description || descriptionData;
-    fetch("https://virtual-expert.herokuapp.com/banner/update", {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ title, _id: bannerData._id, description }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setNumber(number + 1);
-      });
+    // const title = data.title || titleData;
+    // const description = data.description || descriptionData;
+    // fetch("https://virtual-expert.herokuapp.com/banner/update", {
+    //   method: "PUT",
+    //   headers: { "content-type": "application/json" },
+    //   body: JSON.stringify({ title, _id: bannerData._id, description }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setNumber(number + 1);
+    //   });
   };
 
   return (
     <>
-      <div className="p-3 boxShadow me-3 mb-3">
+      <section className="my-2 boxShadow me-3 p-3">
         <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Banner</h6>
+          <h1 className="fs-24">{aboutData?.title}</h1>
           <AiFillEdit
             size={24}
             className="text-warning cursor-pointer "
             data-bs-toggle="modal"
-            data-bs-target="#bannerId"
+            data-bs-target="#aboutID"
           />
         </div>
-        <h6 className="mt-3 fs-18">Title</h6>
-        <p className="fs-14">{bannerData.title}</p>
-        <h6 className="fs-18 mt-3">Subtitle</h6>
-        <p className="fs-14">{bannerData.description}</p>
-      </div>
-
+        <h6 className="fs-18 mt-2">Title</h6>
+        <p className="fs-14">{aboutData?.title}</p>
+        <h6 className="fs-18 mt-2">Sub Title</h6>
+        <p className="fs-14">{aboutData?.discription}</p>
+      </section>
       <div
         className="modal fade"
-        id="bannerId"
+        id="aboutID"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -79,7 +75,7 @@ const AdminBanner = () => {
                 <textarea
                   rows="5"
                   cols="5"
-                  defaultValue={bannerData.title}
+                  defaultValue={aboutData?.title}
                   {...register("title")}
                   name="title"
                   id="title"
@@ -88,7 +84,7 @@ const AdminBanner = () => {
                 <textarea
                   rows="5"
                   cols="5"
-                  defaultValue={bannerData.description}
+                  defaultValue={aboutData?.discription}
                   {...register("description")}
                   name="description"
                   id="description"
@@ -109,4 +105,4 @@ const AdminBanner = () => {
   );
 };
 
-export default AdminBanner;
+export default AdminWhoAreVirtualExperts;

@@ -17,6 +17,7 @@ export default function Home({
   amazonData,
   placeAnOrderListData,
   placeAnOrderData,
+  footerLink,
 }) {
   console.log(placeAnOrderData);
   return (
@@ -27,7 +28,7 @@ export default function Home({
       </Head>
 
       <main>
-        <Banner bannerData={bannerData} />
+        <Banner bannerData={bannerData} footerLink={footerLink} />
         <Amazon amazonData={amazonData} />
         <WhyChooseVirtualExports
           virtualServicesData={virtualServicesData}
@@ -90,6 +91,11 @@ export async function getServerSideProps(context) {
   );
   const placeAnOrderData = await resPlaceAnOrder.json();
 
+  const resFooter = await fetch(
+    "https://virtual-expert.herokuapp.com/footerLink"
+  );
+  const footerLink = await resFooter.json();
+
   return {
     props: {
       topServicesData,
@@ -101,6 +107,7 @@ export async function getServerSideProps(context) {
       amazonData,
       placeAnOrderListData,
       placeAnOrderData,
+      footerLink,
     },
   };
 }

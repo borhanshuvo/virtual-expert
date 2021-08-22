@@ -2,12 +2,12 @@ import Image from "next/image";
 import angle from "../../../images/Rectangle 266.svg";
 import ring from "../../../images/service/Ellipse 261.svg";
 
-const SectionTitle = () => {
+const SectionTitle = ({ title }) => {
   return (
     <div className="position-relative col-11 col-md-5 mx-auto">
       <div className="border border-warning my-5 ring-title background-color-skyblue">
         <h6 className="text-center fs-28 lh-base p-3 textCenterAfterEffect lh-36">
-          Hello I am hello World Text
+          {title}
         </h6>
       </div>
 

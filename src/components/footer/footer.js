@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaFacebook, FaSkype, FaTelegram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaSkype, FaTelegram } from "react-icons/fa";
 import { ImTwitter } from "react-icons/im";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
@@ -14,14 +14,15 @@ import styles from "./footer.module.css";
 
 const Footer = () => {
   const [footer, setFooter] = useState(null);
+  const [footerLink, setFooterLink] = useState({});
   useEffect(() => {
-    async function fetchAPI() {
-      const response = await fetch('https://virtual-expert.herokuapp.com/footer');
-      const data = await response.json();
-      setFooter(data[0]);
-    }
+    fetch("https://virtual-expert.herokuapp.com/footer")
+      .then((res) => res.json())
+      .then((data) => setFooter(data[0]));
 
-    fetchAPI();
+    fetch("https://virtual-expert.herokuapp.com/footerLink")
+      .then((res) => res.json())
+      .then((data) => setFooterLink(data[0]));
   }, []);
 
   return (
@@ -31,9 +32,7 @@ const Footer = () => {
           <div className="col-md-4">
             <Image src={Logo} alt="logo" />
             <p className="fs-15 mt-2 text-muted text-center text-md-start">
-              Virtual Experts is a real Amazon FBA/Kindle Book & Digital
-              Marketer with 7 years of experience, who can help you to improve
-              your sales significantly.
+              {footer?.description}
             </p>
           </div>
           <div className="col-md-4 px-5">
@@ -61,10 +60,36 @@ const Footer = () => {
           <div className="col-md-4 text-center text-md-start mt-4 mt-md-0">
             <h6 className={styles.title}>Let’s Get Social</h6>
             <div className="d-flex align-items-center my-4 justify-content-center justify-content-md-start">
-              <FaFacebook className={`${styles.logo} me-3`} />
-              <AiFillInstagram className={`${styles.logo} mx-3`} />
-              <FaTelegram className={`${styles.logo} mx-3`} />
-              <ImTwitter className={`${styles.logo} mx-3`} />
+              {footerLink?.facebook && (
+                <Link href={footerLink.facebook}>
+                  <a target="_blank">
+                    <FaFacebook className={`${styles.logo} me-3`} />
+                  </a>
+                </Link>
+              )}
+              {footerLink?.instagram && (
+                <Link href={footerLink.instagram}>
+                  <a target="_blank">
+                    <FaInstagram className={`${styles.logo} me-3`} />
+                  </a>
+                </Link>
+              )}
+
+              {footerLink?.telegram && (
+                <Link href={footerLink.telegram}>
+                  <a target="_blank">
+                    <FaTelegram className={`${styles.logo} me-3`} />
+                  </a>
+                </Link>
+              )}
+
+              {footerLink?.twitter && (
+                <Link href={footerLink.twitter}>
+                  <a target="_blank">
+                    <ImTwitter className={`${styles.logo} me-3`} />
+                  </a>
+                </Link>
+              )}
             </div>
             <h6 className={`${styles.title} mt-4 mt-md-0`}>Payment method</h6>
             <div className="d-flex align-items-center mt-2 justify-content-center justify-content-md-start">
@@ -85,9 +110,7 @@ const Footer = () => {
         </div>
       </div>
       <footer className="text-center  text-muted">
-        <p className="py-2 fs-14 text-muted">
-          © 2021 Virtual Experts. All Right Reserved.
-        </p>
+        <p className="py-2 fs-14 text-muted">{footer?.copyRightText}</p>
       </footer>
     </section>
   );

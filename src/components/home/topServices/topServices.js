@@ -1,14 +1,13 @@
 import Image from "next/image";
 import { RiArrowRightSLine } from "react-icons/ri";
+import SectionTitle from "../../sectionTitle/sectionTitle";
 import styles from "./topServices.module.css";
 
 const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
   return (
     <div className="container py-5">
       <div className="py-5">
-        <h6 className="fs-28 text-center textCenterAfterEffect">
-          {headerInfoTopServicesData[0].title}
-        </h6>
+        <SectionTitle title={headerInfoTopServicesData[0].title} />
         <div className="row">
           {topServicesData.map((service, index) => {
             let imgType;

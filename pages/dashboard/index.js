@@ -4,6 +4,7 @@ import AdminAmazon from "../../src/components/dashboard/amazon/amazon";
 import AdminBanner from "../../src/components/dashboard/banner.js/banner";
 import AdminFooter from "../../src/components/dashboard/footer/footer";
 import AdminHowToPlaceAnOrder from "../../src/components/dashboard/howToPlaceAnOrder/howToPlaceAnOrder";
+import ScheduleMeeting from "../../src/components/dashboard/scheduleMeeting/scheduleMeeting";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 import AdminTestimonials from "../../src/components/dashboard/testimonials/testimonials";
 import AdminTopThreeService from "../../src/components/dashboard/topThreeService/topThreeService";
@@ -51,6 +52,7 @@ const Dashboard = () => {
           <AdminTopThreeService />
           <AdminHowToPlaceAnOrder />
           <AdminTestimonials />
+          <ScheduleMeeting />
           <AdminFooter />
         </div>
       </div>

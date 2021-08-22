@@ -1,36 +1,12 @@
 import Image from "next/image";
 import React from "react";
-import angle from "../../../../images/Rectangle 266.svg";
-import ring from "../../../../images/service/Ellipse 261.svg";
+import SectionTitle from "../../sectionTitle/sectionTitle";
 
 const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
   return (
     <>
       <div className="background-color-skyblue py-5">
-        <div className="position-relative col-9 col-md-3 mx-auto">
-          <div className="border border-warning my-5 ring-title background-color-skyblue">
-            <h6 className="text-center fs-28 lh-base p-3 textCenterAfterEffect">
-              {serviceCardHeader?.title}
-            </h6>
-          </div>
-
-          <div className="ring d-none d-md-block">
-            <Image src={ring} />
-          </div>
-
-          <div className="angle d-none d-md-block">
-            <Image src={angle} />
-          </div>
-
-          <div className="ring-mobile-size d-md-none d-block">
-            <Image src={ring} height={50} width={50} />
-          </div>
-
-          <div className="angle-mobile-size d-md-none d-block">
-            <Image src={angle} height={40} width={40} />
-          </div>
-        </div>
-
+        <SectionTitle title={serviceCardHeader?.title} />
         <div className="container">
           <div className="row">
             {servicesCardData.map((servicesCard) => {
