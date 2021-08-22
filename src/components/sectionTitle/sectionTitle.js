@@ -6,9 +6,9 @@ const SectionTitle = ({ title }) => {
   return (
     <div className="position-relative col-11 col-md-5 mx-auto">
       <div className="border border-warning my-5 ring-title background-color-skyblue">
-        <h6 className="text-center fs-28 lh-base p-3 textCenterAfterEffect lh-36">
+        <h2 className="text-center fs-28 lh-base p-3 textCenterAfterEffect lh-36 font-family-roboto">
           {title}
-        </h6>
+        </h2>
       </div>
 
       <div className="ring d-none d-md-block">

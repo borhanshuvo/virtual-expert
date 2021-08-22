@@ -24,7 +24,13 @@ p {
   font-weight: 400;
 }
 
-h6 {
+/* h6 {
+  font-family: "Roboto Slab", serif;
+  color: #222f3e;
+  font-weight: 400;
+} */
+
+.font-family-roboto {
   font-family: "Roboto Slab", serif;
   color: #222f3e;
   font-weight: 400;

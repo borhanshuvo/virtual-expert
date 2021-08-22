@@ -31,7 +31,7 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
                     width="150"
                   />
                 </div>
-                <h6 className="text-center mt-5">{service.title}</h6>
+                <h2 className="text-center mt-5 font-family-roboto fs-18">{service.title}</h2>
                 <p className="text-center fs-15 mt-3 text-color ">
                   {service.description}
                 </p>
@@ -47,7 +47,7 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
             className="button"
             style={{ backgroundColor: "white", padding: "5px 20px" }}
           >
-            <h6 className="d-inline">View all Amazon Services</h6>
+            <h4 className="d-inline font-family-roboto fs-14">View all Amazon Services</h4>
           </button>
         </div>
       </div>

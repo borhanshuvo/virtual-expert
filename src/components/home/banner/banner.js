@@ -14,10 +14,10 @@ const Banner = ({ bannerData, footerLink }) => {
         <div className="container py-5">
           <div className="row d-flex align-items-center">
             <div className="col-md-6 order-2 order-md-1">
-              <h6 className="fs-36">{bannerData[0].title}</h6>
+              <h1 className="fs-36 font-family-roboto">{bannerData[0].title}</h1>
               <p className="fs-15">{bannerData[0].description}</p>
               <button className="button px-4 py-1">
-                <h6 className="d-inline fs-14">Get Free Quote!</h6>
+                <h4 className="d-inline fs-14 font-family-roboto">Get Free Quote!</h4>
               </button>
             </div>
             <div className="col-md-6 order-1 order-md-2 pb-5 pb-md-0">

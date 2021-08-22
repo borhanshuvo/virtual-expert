@@ -16,9 +16,9 @@ const HowToPlaceAnOrder = ({ placeAnOrderData, placeAnOrderListData }) => {
             />
           </div>
           <div className="col-12 col-md-7">
-            <h6 className="fs-28 textLeftAfterEffect">
+            <h2 className="fs-28 textLeftAfterEffect font-family-roboto">
               {placeAnOrderData[0].title}
-            </h6>
+            </h2>
             {placeAnOrderListData?.map((item, index) => (
               <div key={item._id} className="d-flex fs-14 mt-4">
                 <span className="me-2 numberBefore">
