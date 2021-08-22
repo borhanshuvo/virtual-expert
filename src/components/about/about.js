@@ -43,7 +43,7 @@ const AboutC = ({
         <div className="container my-5">
           <div className="row">
             <div className="col-md-6 d-flex justify-content-center align-items-center">
-              <Image src={about2} alt="image.svg" />
+              <Image src={about2} alt="waiting..." />
             </div>
             <div className="col-md-6 text-muted">
               <h6 className={`${styles.title} text-dark fs-24`}>

@@ -40,7 +40,7 @@ const Testimonial = ({ testimonials }) => {
             <p className="fst-italic my-3 fs-14 lh-lg">
               “{currentTestimonials.review}”
             </p>
-            <h6 className="fw-bold fs-18">{currentTestimonials.name}</h6>
+            <h3 className="fw-bold fs-18 font-family-roboto">{currentTestimonials.name}</h3>
             <p className="fs-14">{currentTestimonials.jobTitle}</p>
           </div>
           <div className="position-absolute right-38 d-flex flex-md-column">

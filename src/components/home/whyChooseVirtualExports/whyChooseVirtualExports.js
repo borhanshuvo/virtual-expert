@@ -22,7 +22,7 @@ const WhyChooseVirtualExports = ({
                   height="60"
                   width="60"
                 />
-                <h6 className="fs-16 mt-2">{virtualService.title}</h6>
+                <h3 className="fs-16 mt-2 font-family-roboto">{virtualService.title}</h3>
                 <p className="fs-14">{virtualService.description}</p>
               </div>
             </div>

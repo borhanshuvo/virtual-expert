@@ -5,7 +5,7 @@ const ScheduleMeeting = () => {
   const [scheduleTitle, setScheduleTitle] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:8000/scheduleMeeting")
+    fetch("https://virtual-expert.herokuapp.com/scheduleMeeting")
       .then((res) => res.json())
       .then((data) => setScheduleTitle(data));
   }, []);
@@ -15,12 +15,12 @@ const ScheduleMeeting = () => {
         <div className="background-color-skyblue py-5 px-2 borderRadius">
           <div className="col-12 col-md-6 mx-auto mb-3 text-center">
             {scheduleTitle.title && (
-              <h6 className="fs-24 lh-base">
+              <h3 className="fs-24 lh-base font-family-roboto">
                 {ReactHtmlParser(scheduleTitle.title)}
-              </h6>
+              </h3>
             )}
             <button className="button px-4 py-1 mt-4">
-              <h6 className="d-inline fs-14">Schedule a Meeting</h6>
+              <h4 className="d-inline fs-14 font-family-roboto">Schedule a Meeting</h4>
             </button>
           </div>
         </div>
