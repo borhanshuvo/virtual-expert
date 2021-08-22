@@ -1,16 +1,16 @@
-import Image from 'next/image';
-import React from 'react';
-import about1 from '../../../images/about/img-1.svg';
-import about2 from '../../../images/about/Img.svg';
-import model from '../../../images/isa.jpg';
-import ScheduleMeeting from '../home/scheduleMeeting/scheduleMeeting';
-import styles from './about.module.css';
+import Image from "next/image";
+import React from "react";
+import about1 from "../../../images/about/img-1.svg";
+import about2 from "../../../images/about/Img.svg";
+import ScheduleMeeting from "../home/scheduleMeeting/scheduleMeeting";
+import styles from "./about.module.css";
 
 const AboutC = ({
   aboutData,
   aboutTeamData,
   aboutUniquetData,
   aboutUniquetListData,
+  teams,
 }) => {
   return (
     <section className="overflow-hidden">
@@ -78,27 +78,33 @@ const AboutC = ({
           </div>
         </div>
         <div className="row">
-          <div className="col-md-4 text-center ">
-            <Image src={model} alt="isabaleIsCute" />
-            <div className={`${styles.name} mt-4`}>
-              <h6 className="fs-18">Richard</h6>
-              <p className="fs-15">Founder & CEO</p>
-            </div>
-          </div>
-          <div className="col-md-4 text-center">
-            <Image src={model} alt="isabaleIsCute" />
-            <div className={`${styles.name} mt-4`}>
-              <h6 className="fs-18">Richard</h6>
-              <p className="fs-15">Founder & CEO</p>
-            </div>
-          </div>
-          <div className="col-md-4 text-center">
-            <Image src={model} alt="isabaleIsCute" />
-            <div className={`${styles.name} mt-4`}>
-              <h6 className="fs-18">Richard</h6>
-              <p className="fs-15">Founder & CEO</p>
-            </div>
-          </div>
+          {teams.map((team) => {
+            let imgType;
+            if (team.img.contentType === "image/svg+xml") {
+              imgType = "data:image/svg+xml";
+            } else if (team.img.contentType === "image/png") {
+              imgType = "data:image/png";
+            } else {
+              imgType = "data:image/jpg";
+            }
+            return (
+              <div className="col-md-4 text-center" key={team._id}>
+                <div className="m-3 p-2">
+                  <Image
+                    src={`${imgType} ; base64, ${team.img.img}`}
+                    alt="Loading..."
+                    height="350"
+                    width="300"
+                    layout="responsive"
+                  />
+                  <div className={`${styles.name} mt-4`}>
+                    <h6 className="fs-18">{team.name}</h6>
+                    <p className="fs-15">{team.jobTitle}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       {/* ============================ */}

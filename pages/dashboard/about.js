@@ -1,6 +1,9 @@
 import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
+import AdminTeam from "../../src/components/dashboard/about.js/team/team";
+import AdminTeamSection from "../../src/components/dashboard/about.js/teamSection/teamSection";
 import AdminWhoAreVirtualExperts from "../../src/components/dashboard/about.js/whoAreVirtualExperts/whoAreVirtualExperts";
+import AdminWhyWeAreUnique from "../../src/components/dashboard/about.js/whyWeAreUnique/whyWeAreUnique";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const About = () => {
@@ -38,8 +41,11 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-10">
+        <div className="col-12 col-md-10 scroll vh-100">
           <AdminWhoAreVirtualExperts />
+          <AdminWhyWeAreUnique />
+          <AdminTeamSection />
+          <AdminTeam />
         </div>
       </div>
     </section>

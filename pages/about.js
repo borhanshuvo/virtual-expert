@@ -1,13 +1,14 @@
-import React from 'react';
-import AboutC from '../src/components/about/about';
+import React from "react";
+import AboutC from "../src/components/about/about";
 
 const About = ({
   aboutData,
   aboutTeamData,
   aboutUniquetData,
   aboutUniquetListData,
+  teams,
 }) => {
-  console.log(aboutUniquetListData, 'aboutList');
+  console.log(aboutUniquetListData, "aboutList");
   return (
     <div>
       <AboutC
@@ -15,6 +16,7 @@ const About = ({
         aboutTeamData={aboutTeamData}
         aboutUniquetData={aboutUniquetData}
         aboutUniquetListData={aboutUniquetListData}
+        teams={teams}
       />
     </div>
   );
@@ -23,19 +25,28 @@ const About = ({
 export default About;
 
 export async function getServerSideProps() {
-  const aboutResponse = await fetch('https://virtual-expert.herokuapp.com/about');
+  const aboutResponse = await fetch(
+    "https://virtual-expert.herokuapp.com/about"
+  );
   const aboutData = await aboutResponse.json();
 
-  const aboutUniqueResponse = await fetch('https://virtual-expert.herokuapp.com/aboutUnique');
+  const aboutUniqueResponse = await fetch(
+    "https://virtual-expert.herokuapp.com/aboutUnique"
+  );
   const aboutUniquetData = await aboutUniqueResponse.json();
 
   const aboutUniqueListResponse = await fetch(
-    'https://virtual-expert.herokuapp.com/aboutUniqueList'
+    "https://virtual-expert.herokuapp.com/aboutUniqueList"
   );
   const aboutUniquetListData = await aboutUniqueListResponse.json();
 
-  const aboutTeamResponse = await fetch('https://virtual-expert.herokuapp.com/aboutTeam');
+  const aboutTeamResponse = await fetch(
+    "https://virtual-expert.herokuapp.com/aboutTeam"
+  );
   const aboutTeamData = await aboutTeamResponse.json();
+
+  const resTeams = await fetch("http://localhost:8000/teams");
+  const teams = await resTeams.json();
 
   return {
     props: {
@@ -43,6 +54,7 @@ export async function getServerSideProps() {
       aboutUniquetData: aboutUniquetData[0],
       aboutUniquetListData: aboutUniquetListData,
       aboutTeamData: aboutTeamData[0],
+      teams,
     },
   };
 }
