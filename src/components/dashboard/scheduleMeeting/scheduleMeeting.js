@@ -9,7 +9,7 @@ const ScheduleMeeting = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:8000/scheduleMeeting")
+    fetch("https://virtual-expert.herokuapp.com/scheduleMeeting")
       .then((res) => res.json())
       .then((data) => setScheduleTitle(data));
   }, [number]);
@@ -18,7 +18,7 @@ const ScheduleMeeting = () => {
     const title = data.title || scheduleTitle.title;
     const _id = scheduleTitle._id;
 
-    fetch("http://localhost:8000/scheduleMeeting/update", {
+    fetch("https://virtual-expert.herokuapp.com/scheduleMeeting/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ title, _id }),
