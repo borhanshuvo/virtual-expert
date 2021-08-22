@@ -7,7 +7,6 @@ import bannerImg from "../../../../images/Img-5.svg";
 import styles from "./banner.module.css";
 
 const Banner = ({ bannerData, footerLink }) => {
-  console.log(footerLink);
   return (
     <>
       <div className={`${styles.bannerContainer}`}>
@@ -27,24 +26,24 @@ const Banner = ({ bannerData, footerLink }) => {
         </div>
       </div>
       {/* social link goes here */}
-      <div className="position-fixed left-0 top-50 px-2 bg-white d-none d-md-block">
+      <div className="position-fixed left-0 top-30 px-2 bg-white d-none d-md-block">
         <Link href={footerLink[0].facebook}>
-          <a target="_blank">
+          <a target="_blank" title={footerLink[0].facebook}>
             <FaFacebook className="d-block my-2 order-color" />
           </a>
         </Link>
         <Link href={footerLink[0].instagram}>
-          <a target="_blank" title="Hello world">
+          <a target="_blank" title={footerLink[0].instagram}>
             <FaInstagram className="d-block my-2 order-color" />
           </a>
         </Link>
         <Link href={footerLink[0].telegram}>
-          <a target="_blank" title="Hello world">
+          <a target="_blank" title={footerLink[0].telegram}>
             <FaTelegram className="d-block my-2 order-color" />
           </a>
         </Link>
         <Link href={footerLink[0].twitter}>
-          <a target="_blank" title="Hello world">
+          <a target="_blank" title={footerLink[0].twitter}>
             <ImTwitter className="d-block my-2 order-color" />
           </a>
         </Link>
