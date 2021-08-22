@@ -7,12 +7,12 @@ const TeamCard = ({ team, index, setNumber }) => {
   const { register, handleSubmit } = useForm();
   const [file, setFile] = useState(null);
 
-  const handleFileChange = (e) => {
+  const handleFileChanges = (e) => {
     const newFile = e.target.files[0];
     setFile(newFile);
   };
 
-  const handleUpdateInfo = (data) => {
+  const handleUpdateInfos = (data) => {
     const name = data.name || team.name;
     const _id = team._id;
     const jobTitle = data.jobTitle || team.jobTitle;
@@ -39,6 +39,7 @@ const TeamCard = ({ team, index, setNumber }) => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           setNumber((prvState) => prvState + 1);
         });
     } else {
@@ -48,6 +49,7 @@ const TeamCard = ({ team, index, setNumber }) => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           setNumber((prvState) => prvState + 1);
         });
     }
@@ -106,7 +108,7 @@ const TeamCard = ({ team, index, setNumber }) => {
               ></button>
             </div>
             <div className="modal-body">
-              <form onSubmit={handleSubmit(handleUpdateInfo)}>
+              <form onSubmit={handleSubmit(handleUpdateInfos)}>
                 <label htmlFor="name">Name</label>
                 <textarea
                   rows="1"
@@ -131,7 +133,7 @@ const TeamCard = ({ team, index, setNumber }) => {
                   type="file"
                   className="form-control mb-2"
                   name="file"
-                  onChange={handleFileChange}
+                  onChange={handleFileChanges}
                   id="img"
                 />
                 <input

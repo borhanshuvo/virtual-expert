@@ -8,7 +8,6 @@ const About = ({
   aboutUniquetListData,
   teams,
 }) => {
-  console.log(aboutUniquetListData, "aboutList");
   return (
     <div>
       <AboutC
@@ -45,7 +44,7 @@ export async function getServerSideProps() {
   );
   const aboutTeamData = await aboutTeamResponse.json();
 
-  const resTeams = await fetch("http://localhost:8000/teams");
+  const resTeams = await fetch("https://virtual-expert.herokuapp.com/teams");
   const teams = await resTeams.json();
 
   return {

@@ -96,6 +96,7 @@ const AboutC = ({
                     height="350"
                     width="300"
                     layout="responsive"
+                    className="pb-1"
                   />
                   <div className={`${styles.name} mt-4`}>
                     <h6 className="fs-18">{team.name}</h6>

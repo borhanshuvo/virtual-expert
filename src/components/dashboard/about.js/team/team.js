@@ -10,12 +10,11 @@ const AdminTeam = () => {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/teams")
+    fetch("https://virtual-expert.herokuapp.com/teams")
       .then((res) => res.json())
       .then((data) => setTeams(data));
   }, [number]);
 
-  console.log(teams);
   const handleFileChange = (e) => {
     const newFile = e.target.files[0];
     setFile(newFile);
@@ -30,7 +29,7 @@ const AdminTeam = () => {
     formData.append("name", name);
     formData.append("jobTitle", jobTitle);
 
-    fetch("http://localhost:8000/teams/post", {
+    fetch("https://virtual-expert.herokuapp.com/teams/post", {
       method: "POST",
       body: formData,
     })
