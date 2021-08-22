@@ -9,7 +9,7 @@ const AdminWhoAreVirtualExperts = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    const loadData = async (req, res) => {
+    const loadData = async () => {
       const aboutResponse = await fetch(
         "https://virtual-expert.herokuapp.com/about"
       );
@@ -20,17 +20,17 @@ const AdminWhoAreVirtualExperts = () => {
   }, [number]);
 
   const onSubmit = (data) => {
-    // const title = data.title || titleData;
-    // const description = data.description || descriptionData;
-    // fetch("https://virtual-expert.herokuapp.com/banner/update", {
-    //   method: "PUT",
-    //   headers: { "content-type": "application/json" },
-    //   body: JSON.stringify({ title, _id: bannerData._id, description }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setNumber(number + 1);
-    //   });
+    const title = data.title || aboutData.title;
+    const discription = data.discription || aboutData.discription;
+    fetch("https://virtual-expert.herokuapp.com/about/update", {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ title, _id: aboutData._id, discription }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setNumber(number + 1);
+      });
   };
 
   return (
@@ -85,9 +85,9 @@ const AdminWhoAreVirtualExperts = () => {
                   rows="5"
                   cols="5"
                   defaultValue={aboutData?.discription}
-                  {...register("description")}
-                  name="description"
-                  id="description"
+                  {...register("discription")}
+                  name="discription"
+                  id="discription"
                   className="form-control mb-2"
                 ></textarea>
                 <input
