@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const SingleAnswerCard = ({ answer, index, setNumber }) => {
   const { register, handleSubmit } = useForm();
@@ -17,6 +18,7 @@ const SingleAnswerCard = ({ answer, index, setNumber }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Updated Successful");
         setNumber((prevState) => prevState + 1);
       });
   };

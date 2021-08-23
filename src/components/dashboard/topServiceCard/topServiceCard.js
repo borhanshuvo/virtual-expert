@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
   const { register, handleSubmit } = useForm();
@@ -39,6 +40,7 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
       })
         .then((res) => res.json())
         .then((data) => {
+          toast.success("Updated Successful");
           setNumber((prvState) => prvState + 1);
         });
     } else {
@@ -48,6 +50,7 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
       })
         .then((res) => res.json())
         .then((data) => {
+          toast.success("Updated Successful");
           setNumber((prvState) => prvState + 1);
         });
     }

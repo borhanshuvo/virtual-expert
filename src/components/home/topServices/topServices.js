@@ -7,7 +7,10 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
   return (
     <div className="container py-5">
       <div className="py-5">
-        <SectionTitle title={headerInfoTopServicesData[0].title} />
+        <SectionTitle
+          title={headerInfoTopServicesData[0].title}
+          isBgWhite={true}
+        />
         <div className="row">
           {topServicesData.map((service, index) => {
             let imgType;
@@ -31,7 +34,9 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
                     width="150"
                   />
                 </div>
-                <h2 className="text-center mt-5 font-family-roboto fs-18">{service.title}</h2>
+                <h2 className="text-center mt-5 font-family-roboto fs-18">
+                  {service.title}
+                </h2>
                 <p className="text-center fs-15 mt-3 text-color ">
                   {service.description}
                 </p>
@@ -47,7 +52,9 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
             className="button"
             style={{ backgroundColor: "white", padding: "5px 20px" }}
           >
-            <h4 className="d-inline font-family-roboto fs-14">View all Amazon Services</h4>
+            <h4 className="d-inline font-family-roboto fs-14">
+              View all Amazon Services
+            </h4>
           </button>
         </div>
       </div>

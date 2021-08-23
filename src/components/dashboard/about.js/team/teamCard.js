@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const TeamCard = ({ team, index, setNumber }) => {
   const { register, handleSubmit } = useForm();
@@ -39,7 +40,7 @@ const TeamCard = ({ team, index, setNumber }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          toast.success("Updated Successful");
           setNumber((prvState) => prvState + 1);
         });
     } else {
@@ -49,7 +50,7 @@ const TeamCard = ({ team, index, setNumber }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          toast.success("Updated Successful");
           setNumber((prvState) => prvState + 1);
         });
     }

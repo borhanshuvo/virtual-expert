@@ -110,7 +110,7 @@ const Footer = () => {
         </div>
       </div>
       <footer className="text-center  text-muted">
-        <p className="py-2 fs-14 text-muted">{footer?.copyRightText}</p>
+        <p className="pt-3 fs-14 text-muted">{footer?.copyRightText}</p>
       </footer>
     </section>
   );

@@ -1,23 +1,29 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
+import Spinner from "../../spinner";
 import AdminTopServiceCard from "../topServiceCard/topServiceCard";
 
 const AdminTopThreeService = () => {
   const [title, setTitle] = useState({});
   const [number, setNumber] = useState(0);
   const [serviceCards, setServiceCards] = useState([]);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
+    setShowSpinner(true);
     fetch("https://virtual-expert.herokuapp.com/headerInfoTopServices")
       .then((res) => res.json())
       .then((result) => setTitle(result[0]));
 
     fetch("https://virtual-expert.herokuapp.com/topServices")
       .then((res) => res.json())
-      .then((result) => setServiceCards(result));
+      .then((result) => {
+        setShowSpinner(false);
+        setServiceCards(result);
+      });
   }, [number]);
 
   const handleUpdateInfo = (data) => {
@@ -48,16 +54,20 @@ const AdminTopThreeService = () => {
         <h6 className="mt-3 fs-18">Title</h6>
         <p className="fs-14">{title.title}</p>
 
-        <div className="row">
-          {serviceCards.map((serviceCard, index) => (
-            <AdminTopServiceCard
-              key={serviceCard._id}
-              serviceCard={serviceCard}
-              setNumber={setNumber}
-              index={index}
-            />
-          ))}
-        </div>
+        {showSpinner ? (
+          <Spinner />
+        ) : (
+          <div className="row">
+            {serviceCards.map((serviceCard, index) => (
+              <AdminTopServiceCard
+                key={serviceCard._id}
+                serviceCard={serviceCard}
+                setNumber={setNumber}
+                index={index}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       <div

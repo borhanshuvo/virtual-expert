@@ -8,27 +8,32 @@ import AdminServiceBanner from "../../src/components/dashboard/service/adminServ
 import AdminServiceCard from "../../src/components/dashboard/service/adminServiceCard/adminServiceCard";
 import ServiceCardHeader from "../../src/components/dashboard/service/serviceCardHeader/serviceCardHeader";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
+import Spinner from "../../src/components/spinner";
 
 const Service = () => {
   const [serviceBanner, setServiceBanner] = useState({});
   const [servicesCardData, setServicesCardData] = useState([]);
   const [serviceCardHeader, setServiceCardHeader] = useState({});
+  const [showSpinner, setShowSpinner] = useState(false);
   const [number, setNumber] = useState(0);
 
   useEffect(() => {
+    setShowSpinner(true);
     fetch("https://virtual-expert.herokuapp.com/whatWeDo")
       .then((res) => res.json())
       .then((data) => setServiceBanner(data));
 
-    fetch("https://virtual-expert.herokuapp.com/servicesCard")
-      .then((res) => res.json())
-      .then((data) => setServicesCardData(data));
-
     fetch("https://virtual-expert.herokuapp.com/serviceCardHeader")
       .then((res) => res.json())
       .then((data) => setServiceCardHeader(data));
-  }, [number]);
 
+    fetch("https://virtual-expert.herokuapp.com/servicesCard")
+      .then((res) => res.json())
+      .then((data) => {
+        setServicesCardData(data);
+      });
+    setServiceBanner(false);
+  }, [number]);
   return (
     <section className="overflow-hidden">
       <ToastContainer
@@ -91,29 +96,33 @@ const Service = () => {
 
           <div className="p-3 boxShadow me-4 mb-5">
             <AdminAddServices setNumber={setNumber} />
-            <div className="row">
-              {servicesCardData.map((servicesCard, index) => {
-                let imgType;
-                if (servicesCard.img.contentType === "image/svg+xml") {
-                  imgType = "data:image/svg+xml";
-                } else if (servicesCard.img.contentType === "image/png") {
-                  imgType = "data:image/png";
-                } else {
-                  imgType = "data:image/jpg";
-                }
-                return (
-                  <AdminServiceCard
-                    key={servicesCard._id}
-                    servicesCard={servicesCard}
-                    imgType={imgType}
-                    index={index}
-                    servicesCardData={servicesCardData}
-                    setServicesCardData={setServicesCardData}
-                    setNumber={setNumber}
-                  />
-                );
-              })}
-            </div>
+            {!showSpinner ? (
+              <Spinner />
+            ) : (
+              <div className="row">
+                {servicesCardData.map((servicesCard, index) => {
+                  let imgType;
+                  if (servicesCard.img.contentType === "image/svg+xml") {
+                    imgType = "data:image/svg+xml";
+                  } else if (servicesCard.img.contentType === "image/png") {
+                    imgType = "data:image/png";
+                  } else {
+                    imgType = "data:image/jpg";
+                  }
+                  return (
+                    <AdminServiceCard
+                      key={servicesCard._id}
+                      servicesCard={servicesCard}
+                      imgType={imgType}
+                      index={index}
+                      servicesCardData={servicesCardData}
+                      setServicesCardData={setServicesCardData}
+                      setNumber={setNumber}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </div>

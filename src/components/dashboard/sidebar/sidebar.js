@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Logo from "../../../../public/v-logo-black.svg";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -7,7 +9,8 @@ const Sidebar = () => {
 
   return (
     <nav className="vh-100 bg-dark px-3 text-white">
-      <div className="pt-4">
+      <Image src={Logo} alt="virtual-logo" height="100" width="150" />
+      <div className="pt-1">
         <Link href="/dashboard/">
           <a
             className={`d-block py-2 ${

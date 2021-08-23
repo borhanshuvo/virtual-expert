@@ -2,10 +2,14 @@ import Image from "next/image";
 import angle from "../../../images/Rectangle 266.svg";
 import ring from "../../../images/service/Ellipse 261.svg";
 
-const SectionTitle = ({ title }) => {
+const SectionTitle = ({ title, isBgWhite }) => {
   return (
     <div className="position-relative col-11 col-md-5 mx-auto">
-      <div className="border border-warning my-5 ring-title background-color-skyblue">
+      <div
+        className={`border border-warning my-5 ring-title ${
+          isBgWhite ? "bg-white" : "background-color-skyblue"
+        }`}
+      >
         <h2 className="text-center fs-28 lh-base p-3 textCenterAfterEffect lh-36 font-family-roboto">
           {title}
         </h2>
