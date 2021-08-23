@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { RiArrowRightSLine } from "react-icons/ri";
 import SectionTitle from "../../sectionTitle/sectionTitle";
 import styles from "./topServices.module.css";
@@ -40,22 +41,23 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
                 <p className="text-center fs-15 mt-3 text-color ">
                   {service.description}
                 </p>
-                <p className="text-center order-color">
-                  Order <RiArrowRightSLine />
-                </p>
+                <Link href="/">
+                  <a className="text-center order-color d-block buttonLink px-3">
+                    Order <RiArrowRightSLine />
+                  </a>
+                </Link>
               </div>
             );
           })}
         </div>
         <div className="d-flex justify-content-center">
-          <button
-            className="button"
-            style={{ backgroundColor: "white", padding: "5px 20px" }}
-          >
-            <h4 className="d-inline font-family-roboto fs-14">
-              View all Amazon Services
-            </h4>
-          </button>
+          <Link href="/services">
+            <a className="button py-1 px-3">
+              <h4 className="d-inline font-family-roboto fs-14">
+                View all Amazon Services
+              </h4>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

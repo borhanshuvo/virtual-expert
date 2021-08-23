@@ -370,3 +370,7 @@ ul {
 .cardHeaderBg {
   position: relative;
 }
+
+.buttonLink:hover {
+  color: #ff9f26;
+}
