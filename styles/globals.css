@@ -24,12 +24,6 @@ p {
   font-weight: 400;
 }
 
-.font-family-poppins {
-  font-family: "Poppins", sans-serif;
-  color: #828b9a;
-  font-weight: 400;
-}
-
 /* h6 {
   font-family: "Roboto Slab", serif;
   color: #222f3e;
@@ -352,9 +346,18 @@ ul {
 }
 
 .card-input {
-  border: 1px solid #1f2a3633;
-  width: 370px;
-  height: 40px;
+  border: 1px solid #1F2A3633;
+}
+
+.card-input:hover {
+  border: 1px solid blue;
+}
+
+.card-input::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #828B9A;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .cardHeaderImg {

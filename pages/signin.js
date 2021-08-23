@@ -10,12 +10,13 @@ import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 import cardHeaderBg from "../images/Others/Group 157.svg";
 import cardHeaderImg from "../images/Others/img.svg";
+import { UserContext } from "./_app";
 
 const Signin = () => {
   //   const [showSpinner, setShowSpinner] = useState(false);
   const router = useRouter();
   const validationSchema = Yup.object().shape({
-    email: Yup.string().required("Email is required").email("Email is invalid"),
+    username: Yup.string().required("Username is required"),
     password: Yup.string()
       .required("Password is required")
       .min(8, "Password must be at least 8 characters"),
@@ -30,30 +31,35 @@ const Signin = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  //   const [signedUser, setSignedUser] = useContext(UserContext);
+  const [signedUser, setSignedUser] = useContext(UserContext);
 
   const onSubmit = (data) => {
     // setShowSpinner(true);
-    const email = data.email;
+    const username = data.username;
     const password = data.password;
 
-    fetch("http://localhost:8000/adminLogin/login", {
+    fetch("https://virtual-expert.herokuapp.com/adminLogin/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result) {
-          toast.success(result);
-          // e.target.reset();
-          // setNumber((prvState) => prvState + 1);
+        if (result.error) {
+          toast.error(result.error);
+        } else {
+          const user = result;
+          setSignedUser(user);
+          const token = jwt_encode(user, "secret");
+          localStorage.removeItem("info");
+          localStorage.setItem("info", JSON.stringify(token));
+          router.push("/dashboard");
         }
       });
   };
 
   return (
-    <>
+    <div className="background-color-skyblue d-flex align-items-center justify-content-center vh-100">
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -65,8 +71,8 @@ const Signin = () => {
         draggable
         pauseOnHover
       />
-      <div className="d-flex align-items-center justify-content-center background-color-skyblue py-5 vh-100">
-        <div className="card py-5 my-5 px-5 borderRadius">
+      <div className="py-5 mx-auto">
+        <>
           <div className="position-relative">
             <div className="cardHeaderBg">
               <Image src={cardHeaderBg} />
@@ -76,44 +82,47 @@ const Signin = () => {
             </div>
           </div>
 
-          <div className="card-body mx-auto">
-            <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="card-body mx-auto bg-white borderRadius">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="mx-md-4 mx-0 my-5"
+            >
               <div className="my-3">
                 <input
                   autoComplete="off"
-                  className="card-input input-background py-2 px-2"
-                  type="email"
+                  className="card-input input-background py-2 px-2 w-100"
+                  type="text"
                   placeholder="Username"
                   defaultValue=""
-                  {...register("email")}
+                  {...register("username")}
                 />
-                <span role="alert" className="text-danger">
-                  {errors.email?.message}
-                </span>
               </div>
+              <span role="alert" className="text-danger">
+                {errors.username?.message}
+              </span>
 
               <div className="my-3">
                 <input
                   autoComplete="off"
-                  className="card-input input-background py-2 px-2"
+                  className="card-input input-background py-2 px-2 w-100"
                   type="password"
                   defaultValue=""
                   placeholder="Password"
                   {...register("password")}
                 />
-                <span role="alert" className="text-danger">
-                  {errors.password?.message}
-                </span>
               </div>
+              <span role="alert" className="text-danger">
+                {errors.password?.message}
+              </span>
 
-              <button className="card-button mt-3" type="submit">
+              <button className="card-button mt-2 d-block" type="submit">
                 Sign In
               </button>
             </form>
           </div>
-        </div>
+        </>
       </div>
-    </>
+    </div>
   );
 };
 

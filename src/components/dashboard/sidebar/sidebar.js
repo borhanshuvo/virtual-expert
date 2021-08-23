@@ -1,11 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { UserContext } from "../../../../pages/_app";
 import Logo from "../../../../public/v-logo-black.svg";
 
 const Sidebar = () => {
   const router = useRouter();
   const pathname = router.pathname;
+  const [signedUser, setSignedUser] = useContext(UserContext);
+
+  const logout = () => {
+    setSignedUser({});
+    localStorage.clear();
+  };
 
   return (
     <nav className="vh-100 bg-dark px-3 text-white">
@@ -38,13 +46,12 @@ const Sidebar = () => {
             About
           </a>
         </Link>
-        <Link href="/dashboard/lets-talk">
+        <Link href="/">
           <a
-            className={`d-block py-2 ${
-              pathname === "/dashboard/lets-talk" ? "bg-orange" : ""
-            } px-3 rounded-3 text-white my-2 navHover`}
+            className={`d-block py-2 px-3 rounded-3 text-white my-2 navHover`}
+            onClick={logout}
           >
-            Let&apos;s talk
+            Logout
           </a>
         </Link>
       </div>

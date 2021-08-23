@@ -2,6 +2,7 @@ import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import WithAdminAuth from "../../src/components/adminPrivateRoute";
 import AdminAmazon from "../../src/components/dashboard/amazon/amazon";
 import AdminBanner from "../../src/components/dashboard/banner.js/banner";
 import AdminFooter from "../../src/components/dashboard/footer/footer";
@@ -75,7 +76,7 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default WithAdminAuth(Dashboard);
 
 Dashboard.getLayout = function PageLayout(page) {
   return <>{page}</>;
