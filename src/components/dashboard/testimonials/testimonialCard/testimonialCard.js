@@ -1,25 +1,11 @@
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { AiOutlinePlus } from "react-icons/ai";
-import Spinner from "../../spinner";
-import TestimonialCard from "./testimonialCard/testimonialCard";
+import { AiFillEdit } from "react-icons/ai";
 
-const AdminTestimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
-  const [showSpinner, setShowSpinner] = useState(false);
-  const [number, setNumber] = useState(0);
+const TestimonialCard = ({ testimonial, index, setNumber }) => {
   const { register, handleSubmit } = useForm();
   const [file, setFile] = useState(null);
-
-  useEffect(() => {
-    setShowSpinner(true);
-    fetch("https://virtual-expert.herokuapp.com/testimonials")
-      .then((res) => res.json())
-      .then((data) => {
-        setShowSpinner(false);
-        setTestimonials(data);
-      });
-  }, [number]);
 
   const handleFileChange = (e) => {
     const newFile = e.target.files[0];
@@ -27,58 +13,85 @@ const AdminTestimonials = () => {
   };
 
   const handleUpdateInfo = (data) => {
-    const name = data.name;
-    const jobTitle = data.jobTitle;
-    const review = data.review;
+    const name = data.name || testimonial.name;
+    const _id = testimonial._id;
+    const jobTitle = data.jobTitle || testimonial.jobTitle;
+    const review = data.review || testimonial.review;
+
+    const newData = {
+      name,
+      _id,
+      jobTitle,
+      review,
+      img: testimonial.img,
+      uploadImage: false,
+    };
 
     const formData = new FormData();
     formData.append("file", file);
     formData.append("name", name);
     formData.append("jobTitle", jobTitle);
     formData.append("review", review);
+    formData.append("_id", _id);
 
-    fetch("https://virtual-expert.herokuapp.com/testimonials/post", {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // setNumber((prvState) => prvState + 1);
-      });
+    if (file === null) {
+      fetch("https://virtual-expert.herokuapp.com/testimonials/update", {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(newData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setNumber((prvState) => prvState + 1);
+        });
+    } else {
+      fetch("https://virtual-expert.herokuapp.com/testimonials/update", {
+        method: "PUT",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setNumber((prvState) => prvState + 1);
+        });
+    }
   };
+
+  let imgType;
+  if (testimonial.img.contentType === "image/svg+xml") {
+    imgType = "data:image/svg+xml";
+  } else if (testimonial.img.contentType === "image/png") {
+    imgType = "data:image/png";
+  } else {
+    imgType = "data:image/jpg";
+  }
 
   return (
     <>
-      <div className="p-3 boxShadow me-3 my-2">
-        <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Testimonials</h6>
-          <AiOutlinePlus
+      <div className="col-12 col-md-6  mx-auto my-3">
+        <div className="p-5 text-center mx-2 boxShadow cursor-pointer h-100">
+          <AiFillEdit
             size={24}
-            className="text-warning cursor-pointer"
+            className="text-warning d-block ms-auto"
             data-bs-toggle="modal"
-            data-bs-target="#addTestimonial"
+            data-bs-target={`#testimonial${index + 1}`}
           />
+          <Image
+            src={`${imgType} ; base64, ${testimonial.img.img}`}
+            alt="Loading..."
+            width="70"
+            height="70"
+            className="rounded-circle borderColor "
+          />
+          <p className="fst-italic my-3 fs-14 lh-lg">“{testimonial.review}”</p>
+          <h6 className="fw-bold fs-18">{testimonial.name}</h6>
+          <p className="fs-14">{testimonial.jobTitle}</p>
         </div>
-        {showSpinner ? (
-          <Spinner />
-        ) : (
-          <div className="row">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                testimonial={testimonial}
-                key={testimonial._id}
-                index={index}
-                setNumber={setNumber}
-              />
-            ))}
-          </div>
-        )}
       </div>
 
-      {/* Modal part start here */}
+      {/* Modal start here */}
       <div
         className="modal fade"
-        id="addTestimonial"
+        id={`testimonial${index + 1}`}
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -87,7 +100,7 @@ const AdminTestimonials = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Add Testimonials
+                Edit Banner
               </h5>
               <button
                 type="button"
@@ -100,8 +113,9 @@ const AdminTestimonials = () => {
               <form onSubmit={handleSubmit(handleUpdateInfo)}>
                 <label htmlFor="name">Name</label>
                 <textarea
-                  rows="2"
-                  cols="2"
+                  rows="1"
+                  cols="1"
+                  defaultValue={testimonial.name}
                   {...register("name")}
                   name="name"
                   id="name"
@@ -109,8 +123,9 @@ const AdminTestimonials = () => {
                 ></textarea>
                 <label htmlFor="jobTitle">Job Title</label>
                 <textarea
-                  rows="2"
-                  cols="2"
+                  rows="1"
+                  cols="1"
+                  defaultValue={testimonial.jobTitle}
                   {...register("jobTitle")}
                   name="jobTitle"
                   id="jobTitle"
@@ -119,7 +134,8 @@ const AdminTestimonials = () => {
                 <label htmlFor="review">Review</label>
                 <textarea
                   rows="5"
-                  cols="5"
+                  cols="1"
+                  defaultValue={testimonial.review}
                   {...register("review")}
                   name="review"
                   id="review"
@@ -147,4 +163,4 @@ const AdminTestimonials = () => {
   );
 };
 
-export default AdminTestimonials;
+export default TestimonialCard;

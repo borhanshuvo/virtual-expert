@@ -1,18 +1,28 @@
-import { AiFillEdit } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import SingleAnswerCard from "./singleAnswerCard";
 
 const AdminHowToPlaceAnOrder = () => {
+  const [answerList, setAnswerList] = useState([]);
+  const [number, setNumber] = useState([]);
+
+  useEffect(() => {
+    fetch("https://virtual-expert.herokuapp.com/placeAnOrderList")
+      .then((res) => res.json())
+      .then((data) => setAnswerList(data));
+  }, [number]);
+
   return (
     <div className="p-3 boxShadow me-3 my-2">
-      <div className="d-flex justify-content-between">
-        <h6 className="fs-24">How to place an order</h6>
-        <AiFillEdit size={24} className="text-warning" />
-      </div>
+      <h6 className="fs-24">Edit How to place an order</h6>
       <p>How to place an order</p>
-      <div className="d-flex justify-content-between">
-        <h6 className="mt-3 fs-18">Answers</h6>
-        <AiFillEdit size={24} className="text-warning" />
-      </div>
-      <p classNames="fs-14">Text goes here</p>
+      {answerList?.map((answer, index) => (
+        <SingleAnswerCard
+          key={answer._id}
+          answer={answer}
+          index={index}
+          setNumber={setNumber}
+        />
+      ))}
     </div>
   );
 };

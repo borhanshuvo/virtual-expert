@@ -3,33 +3,30 @@ import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const AdminBanner = () => {
+const AdminTeamSection = () => {
   const [number, setNumber] = useState(0);
-  const [bannerData, setBannerData] = useState({});
-
-  const titleData = bannerData.title;
-  const descriptionData = bannerData.description;
+  const [teamSection, setAdminTeamSection] = useState({});
 
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
     const loadData = async () => {
-      const resBanner = await fetch(
-        "https://virtual-expert.herokuapp.com/banner"
+      const aboutTeamResponse = await fetch(
+        "https://virtual-expert.herokuapp.com/aboutTeam"
       );
-      const bannerData = await resBanner.json();
-      setBannerData(bannerData[0]);
+      const aboutTeamData = await aboutTeamResponse.json();
+      setAdminTeamSection(aboutTeamData[0]);
     };
     loadData();
   }, [number]);
 
   const onSubmit = (data) => {
-    const title = data.title || titleData;
-    const description = data.description || descriptionData;
-    fetch("https://virtual-expert.herokuapp.com/banner/update", {
+    const title = data.title || teamSection.title;
+    const discription = data.discription || teamSection.discription;
+    fetch("https://virtual-expert.herokuapp.com/aboutTeam/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ title, _id: bannerData._id, description }),
+      body: JSON.stringify({ title, _id: teamSection._id, discription }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -40,25 +37,24 @@ const AdminBanner = () => {
 
   return (
     <>
-      <div className="p-3 boxShadow me-3 mb-3">
+      <section className="my-2 boxShadow me-3 p-3">
         <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Banner</h6>
+          <h1 className="fs-24">{teamSection?.title}</h1>
           <AiFillEdit
             size={24}
             className="text-warning cursor-pointer "
             data-bs-toggle="modal"
-            data-bs-target="#bannerId"
+            data-bs-target="#TeamSection"
           />
         </div>
-        <h6 className="mt-3 fs-18">Title</h6>
-        <p className="fs-14">{bannerData.title}</p>
-        <h6 className="fs-18 mt-3">Subtitle</h6>
-        <p className="fs-14">{bannerData.description}</p>
-      </div>
-
+        <h6 className="fs-18 mt-2">Title</h6>
+        <p className="fs-14">{teamSection?.title}</p>
+        <h6 className="fs-18 mt-2">Sub Title</h6>
+        <p className="fs-14">{teamSection?.discription}</p>
+      </section>
       <div
         className="modal fade"
-        id="bannerId"
+        id="TeamSection"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -67,7 +63,7 @@ const AdminBanner = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Edit Banner
+                Edit Team Section
               </h5>
               <button
                 type="button"
@@ -81,7 +77,7 @@ const AdminBanner = () => {
                 <textarea
                   rows="5"
                   cols="5"
-                  defaultValue={bannerData.title}
+                  defaultValue={teamSection?.title}
                   {...register("title")}
                   name="title"
                   id="title"
@@ -90,10 +86,10 @@ const AdminBanner = () => {
                 <textarea
                   rows="5"
                   cols="5"
-                  defaultValue={bannerData.description}
-                  {...register("description")}
-                  name="description"
-                  id="description"
+                  defaultValue={teamSection?.discription}
+                  {...register("discription")}
+                  name="discription"
+                  id="discription"
                   className="form-control mb-2"
                 ></textarea>
                 <input
@@ -111,4 +107,4 @@ const AdminBanner = () => {
   );
 };
 
-export default AdminBanner;
+export default AdminTeamSection;

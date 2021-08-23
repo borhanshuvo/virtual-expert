@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
-import Spinner from "../../spinner";
-import TestimonialCard from "./testimonialCard/testimonialCard";
+import { toast } from "react-toastify";
+import Spinner from "../../../spinner";
+import TeamCard from "./teamCard";
 
-const AdminTestimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
-  const [showSpinner, setShowSpinner] = useState(false);
+const AdminTeam = () => {
+  const [teams, setTeams] = useState([]);
   const [number, setNumber] = useState(0);
   const { register, handleSubmit } = useForm();
   const [file, setFile] = useState(null);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("https://virtual-expert.herokuapp.com/testimonials")
+    fetch("https://virtual-expert.herokuapp.com/teams")
       .then((res) => res.json())
       .then((data) => {
         setShowSpinner(false);
-        setTestimonials(data);
+        setTeams(data);
       });
   }, [number]);
 
@@ -29,21 +30,20 @@ const AdminTestimonials = () => {
   const handleUpdateInfo = (data) => {
     const name = data.name;
     const jobTitle = data.jobTitle;
-    const review = data.review;
 
     const formData = new FormData();
     formData.append("file", file);
     formData.append("name", name);
     formData.append("jobTitle", jobTitle);
-    formData.append("review", review);
 
-    fetch("https://virtual-expert.herokuapp.com/testimonials/post", {
+    fetch("https://virtual-expert.herokuapp.com/teams/post", {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
-        // setNumber((prvState) => prvState + 1);
+        toast.success("Team Member added Successful");
+        setNumber((prvState) => prvState + 1);
       });
   };
 
@@ -51,7 +51,7 @@ const AdminTestimonials = () => {
     <>
       <div className="p-3 boxShadow me-3 my-2">
         <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Testimonials</h6>
+          <h6 className="fs-24">Edit/Add Team</h6>
           <AiOutlinePlus
             size={24}
             className="text-warning cursor-pointer"
@@ -63,10 +63,10 @@ const AdminTestimonials = () => {
           <Spinner />
         ) : (
           <div className="row">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                testimonial={testimonial}
-                key={testimonial._id}
+            {teams.map((team, index) => (
+              <TeamCard
+                team={team}
+                key={team._id}
                 index={index}
                 setNumber={setNumber}
               />
@@ -87,7 +87,7 @@ const AdminTestimonials = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Add Testimonials
+                Add Team Members
               </h5>
               <button
                 type="button"
@@ -116,15 +116,6 @@ const AdminTestimonials = () => {
                   id="jobTitle"
                   className="form-control mb-2"
                 ></textarea>
-                <label htmlFor="review">Review</label>
-                <textarea
-                  rows="5"
-                  cols="5"
-                  {...register("review")}
-                  name="review"
-                  id="review"
-                  className="form-control mb-2"
-                ></textarea>
                 <input
                   type="file"
                   className="form-control mb-2"
@@ -147,4 +138,4 @@ const AdminTestimonials = () => {
   );
 };
 
-export default AdminTestimonials;
+export default AdminTeam;

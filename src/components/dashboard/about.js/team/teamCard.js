@@ -4,36 +4,36 @@ import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
+const TeamCard = ({ team, index, setNumber }) => {
   const { register, handleSubmit } = useForm();
   const [file, setFile] = useState(null);
 
-  const handleFileChange = (e) => {
+  const handleFileChanges = (e) => {
     const newFile = e.target.files[0];
     setFile(newFile);
   };
 
-  const handleUpdateInfo = (data) => {
-    const newTitle = data.title || serviceCard.title;
-    const _id = serviceCard._id;
-    const newDescription = data.description || serviceCard.description;
+  const handleUpdateInfos = (data) => {
+    const name = data.name || team.name;
+    const _id = team._id;
+    const jobTitle = data.jobTitle || team.jobTitle;
 
     const newData = {
-      title: newTitle,
-      _id: serviceCard._id,
-      description: newDescription,
-      img: serviceCard.img,
+      name,
+      _id,
+      jobTitle,
+      img: team.img,
       uploadImage: false,
     };
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("title", newTitle);
+    formData.append("name", name);
+    formData.append("jobTitle", jobTitle);
     formData.append("_id", _id);
-    formData.append("description", newDescription);
 
     if (file === null) {
-      fetch("https://virtual-expert.herokuapp.com/topServices/update", {
+      fetch("https://virtual-expert.herokuapp.com/teams/update", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(newData),
@@ -44,7 +44,7 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("https://virtual-expert.herokuapp.com/topServices/update", {
+      fetch("https://virtual-expert.herokuapp.com/teams/update", {
         method: "PUT",
         body: formData,
       })
@@ -57,9 +57,9 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
   };
 
   let imgType;
-  if (serviceCard.img.contentType === "image/svg+xml") {
+  if (team.img.contentType === "image/svg+xml") {
     imgType = "data:image/svg+xml";
-  } else if (serviceCard.img.contentType === "image/png") {
+  } else if (team.img.contentType === "image/png") {
     imgType = "data:image/png";
   } else {
     imgType = "data:image/jpg";
@@ -67,30 +67,30 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
 
   return (
     <>
-      <div className="col-12 col-md-6 my-2" key={serviceCard._id}>
-        <div className="boxShadow p-3 h-100">
+      <div className="col-12 col-md-4  mx-auto my-3">
+        <div className="p-3 text-center mx-2 boxShadow cursor-pointer h-100">
           <AiFillEdit
             size={24}
-            className="text-warning d-block ms-auto cursor-pointer"
+            className="text-warning d-block ms-auto mb-2"
             data-bs-toggle="modal"
-            data-bs-target={`#topService${index + 1}`}
+            data-bs-target={`#testimonial${index + 1}`}
           />
           <Image
-            src={`${imgType} ; base64, ${serviceCard.img.img}`}
+            src={`${imgType} ; base64, ${team.img.img}`}
             alt="Loading..."
-            height="150"
-            width="150"
+            height="350"
+            width="300"
+            layout="responsive"
           />
-          <h6 className="fs-18">Title</h6>
-          <p>{serviceCard.title}</p>
-          <h6 className="fs-18">Subtitle</h6>
-          <p>{serviceCard.description}</p>
+          <h6 className="fw-bold fs-18 mt-2">{team.name}</h6>
+          <p className="fs-14">{team.jobTitle}</p>
         </div>
       </div>
 
+      {/* Modal start here */}
       <div
         className="modal fade"
-        id={`topService${index + 1}`}
+        id={`testimonial${index + 1}`}
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -109,30 +109,32 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
               ></button>
             </div>
             <div className="modal-body">
-              <form onSubmit={handleSubmit(handleUpdateInfo)}>
+              <form onSubmit={handleSubmit(handleUpdateInfos)}>
+                <label htmlFor="name">Name</label>
                 <textarea
-                  rows="5"
-                  cols="5"
-                  defaultValue={serviceCard.title}
-                  {...register("title")}
-                  name="title"
-                  id="title"
+                  rows="1"
+                  cols="1"
+                  defaultValue={team.name}
+                  {...register("name")}
+                  name="name"
+                  id="name"
                   className="form-control mb-2"
                 ></textarea>
+                <label htmlFor="jobTitle">Job Title</label>
                 <textarea
-                  rows="5"
-                  cols="5"
-                  defaultValue={serviceCard.description}
-                  {...register("description")}
-                  name="description"
-                  id="description"
+                  rows="1"
+                  cols="1"
+                  defaultValue={team.jobTitle}
+                  {...register("jobTitle")}
+                  name="jobTitle"
+                  id="jobTitle"
                   className="form-control mb-2"
                 ></textarea>
                 <input
                   type="file"
                   className="form-control mb-2"
                   name="file"
-                  onChange={handleFileChange}
+                  onChange={handleFileChanges}
                   id="img"
                 />
                 <input
@@ -150,4 +152,4 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
   );
 };
 
-export default AdminTopServiceCard;
+export default TeamCard;

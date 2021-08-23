@@ -1,15 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import { RiArrowRightSLine } from "react-icons/ri";
+import SectionTitle from "../../sectionTitle/sectionTitle";
 import styles from "./topServices.module.css";
 
 const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
-  console.log(topServicesData);
   return (
     <div className="container py-5">
       <div className="py-5">
-        <h6 className="fs-28 text-center textCenterAfterEffect">
-          {headerInfoTopServicesData[0].title}
-        </h6>
+        <SectionTitle
+          title={headerInfoTopServicesData[0].title}
+          isBgWhite={true}
+        />
         <div className="row">
           {topServicesData.map((service, index) => {
             let imgType;
@@ -33,24 +35,29 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
                     width="150"
                   />
                 </div>
-                <h6 className="text-center mt-5">{service.title}</h6>
+                <h2 className="text-center mt-5 font-family-roboto fs-18">
+                  {service.title}
+                </h2>
                 <p className="text-center fs-15 mt-3 text-color ">
                   {service.description}
                 </p>
-                <p className="text-center order-color">
-                  Order <RiArrowRightSLine />
-                </p>
+                <Link href="/">
+                  <a className="text-center order-color d-block buttonLink px-3">
+                    Order <RiArrowRightSLine />
+                  </a>
+                </Link>
               </div>
             );
           })}
         </div>
         <div className="d-flex justify-content-center">
-          <button
-            className="button"
-            style={{ backgroundColor: "white", padding: "5px 20px" }}
-          >
-            <h6 className="d-inline">View all Amazon Services</h6>
-          </button>
+          <Link href="/services">
+            <a className="button py-1 px-3">
+              <h4 className="d-inline font-family-roboto fs-14">
+                View all Amazon Services
+              </h4>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

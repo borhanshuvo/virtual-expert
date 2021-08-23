@@ -21,11 +21,19 @@ a {
 p {
   font-family: "Poppins", sans-serif;
   color: #828b9a;
+  font-weight: 400;
 }
 
-h6 {
+/* h6 {
   font-family: "Roboto Slab", serif;
   color: #222f3e;
+  font-weight: 400;
+} */
+
+.font-family-roboto {
+  font-family: "Roboto Slab", serif;
+  color: #222f3e;
+  font-weight: 400;
 }
 
 ul {
@@ -169,8 +177,8 @@ ul {
   position: absolute;
   color: #222f3e;
   bottom: -10px;
-  width: 25px;
-  height: 2px;
+  width: 30px;
+  height: 3px;
   left: 0;
   background: #ff9f26 0% 0% no-repeat padding-box;
 }
@@ -184,9 +192,9 @@ ul {
   position: absolute;
   color: #222f3e;
   bottom: 0;
-  width: 25px;
-  height: 2px;
-  left: 50%;
+  width: 30px;
+  height: 3px;
+  left: 45%;
   background: #ff9f26 0% 0% no-repeat padding-box;
 }
 
@@ -250,6 +258,16 @@ ul {
   .fs-14 {
     font-size: 14px;
   }
+
+  .lh-30 {
+    line-height: 26px;
+  }
+  .lh-26 {
+    line-height: 26px;
+  }
+  .lh-36 {
+    line-height: 36px;
+  }
 }
 
 .scroll {
@@ -268,4 +286,108 @@ ul {
 .scrollBlog::-webkit-scrollbar-thumb {
   background-color:  #ffffff23;
   outline: 1px solid #ff9d2657;
+}
+
+.navHover:hover {
+  background-color: #ffac45;
+  color: #fff;
+}
+
+.bg-orange {
+  background-color: #ffac45;
+}
+
+.ring-title {
+  position: relative;
+  z-index: 5;
+}
+
+.ring {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+}
+
+.ring-mobile-size {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+
+.angle {
+  position: absolute;
+  bottom: -12px;
+  left: -5px;
+}
+
+.angle-mobile-size {
+  position: absolute;
+  bottom: -12px;
+  left: -5px;
+}
+
+/*working with line height and font weight*/
+.lh-26 {
+  line-height: 26px;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.lh-30 {
+  line-height: 30px;
+}
+
+.lh-36 {
+  line-height: 36px;
+}
+
+.top-30 {
+  top: 30%;
+}
+
+.card-button {
+  background-color: #ff9f26;
+  width: 105px;
+  height: 40px;
+  border: 1px solid #ff9f26;
+  color: #fff;
+}
+
+.card-input {
+  border: 1px solid #1F2A3633;
+}
+
+.card-input:hover {
+  border: 1px solid blue;
+}
+
+.card-input::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #828B9A;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.cardHeaderImg {
+  background-color: #ffffff;
+  padding: 15px 15px;
+  border-radius: 50%;
+  position: absolute;
+  left: 45%;
+  bottom: -20px;
+  border: 3px solid #ff9f26;
+}
+
+.cardHeaderBg {
+  position: relative;
+}
+
+.buttonLink:hover {
+  color: #ff9f26;
 }
