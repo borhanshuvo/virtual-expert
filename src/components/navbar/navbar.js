@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 const Navbar = () => {
   const router = useRouter();
   return (
-    <nav className={router.pathname === "/dashboard" ? "d-none" : ""}>
+    <nav className={router.pathname === "/dashboard" || router.pathname === "/dashboard/service" || router.pathname === "/dashboard/about" ? "d-none" : ""}>
       <div className="d-flex justify-content-between align-items-center container py-3">
         <div className="d-none d-md-block">
           <Link href="/">
