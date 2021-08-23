@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
+import Spinner from "../../spinner";
 import TestimonialCard from "./testimonialCard/testimonialCard";
 
 const AdminTestimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
+  const [showSpinner, setShowSpinner] = useState(false);
   const [number, setNumber] = useState(0);
   const { register, handleSubmit } = useForm();
   const [file, setFile] = useState(null);
 
   useEffect(() => {
+    setShowSpinner(true);
     fetch("https://virtual-expert.herokuapp.com/testimonials")
       .then((res) => res.json())
-      .then((data) => setTestimonials(data));
+      .then((data) => {
+        setShowSpinner(false);
+        setTestimonials(data);
+      });
   }, [number]);
 
   const handleFileChange = (e) => {
@@ -53,16 +59,20 @@ const AdminTestimonials = () => {
             data-bs-target="#addTestimonial"
           />
         </div>
-        <div className="row">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              testimonial={testimonial}
-              key={testimonial._id}
-              index={index}
-              setNumber={setNumber}
-            />
-          ))}
-        </div>
+        {showSpinner ? (
+          <Spinner />
+        ) : (
+          <div className="row">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                testimonial={testimonial}
+                key={testimonial._id}
+                index={index}
+                setNumber={setNumber}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Modal part start here */}

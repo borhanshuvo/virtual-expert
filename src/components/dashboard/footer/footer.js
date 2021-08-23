@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const AdminFooter = () => {
   const [footerData, setFooterData] = useState({});
@@ -24,15 +25,24 @@ const AdminFooter = () => {
     const email = data.email || footerData.email;
     const skype = data.skype || footerData.skype;
     const whatsApp = data.whatsApp || footerData.whatsApp;
+    const copyRightText = data.copyRightText || footerData.copyRightText;
     const _id = footerData._id;
 
     fetch("https://virtual-expert.herokuapp.com/footer/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ description, email, skype, whatsApp, _id }),
+      body: JSON.stringify({
+        description,
+        email,
+        skype,
+        whatsApp,
+        _id,
+        copyRightText,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Updated Successful");
         setNumber(number + 1);
       });
   };
@@ -51,6 +61,7 @@ const AdminFooter = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Updated Successful");
         setNumber(number + 1);
       });
   };

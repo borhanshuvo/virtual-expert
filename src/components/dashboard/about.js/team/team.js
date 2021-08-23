@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
+import { toast } from "react-toastify";
+import Spinner from "../../../spinner";
 import TeamCard from "./teamCard";
 
 const AdminTeam = () => {
@@ -8,11 +10,16 @@ const AdminTeam = () => {
   const [number, setNumber] = useState(0);
   const { register, handleSubmit } = useForm();
   const [file, setFile] = useState(null);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   useEffect(() => {
+    setShowSpinner(true);
     fetch("https://virtual-expert.herokuapp.com/teams")
       .then((res) => res.json())
-      .then((data) => setTeams(data));
+      .then((data) => {
+        setShowSpinner(false);
+        setTeams(data);
+      });
   }, [number]);
 
   const handleFileChange = (e) => {
@@ -35,7 +42,7 @@ const AdminTeam = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        toast.success("Team Member added Successful");
         setNumber((prvState) => prvState + 1);
       });
   };
@@ -52,16 +59,20 @@ const AdminTeam = () => {
             data-bs-target="#addTestimonial"
           />
         </div>
-        <div className="row">
-          {teams.map((team, index) => (
-            <TeamCard
-              team={team}
-              key={team._id}
-              index={index}
-              setNumber={setNumber}
-            />
-          ))}
-        </div>
+        {showSpinner ? (
+          <Spinner />
+        ) : (
+          <div className="row">
+            {teams.map((team, index) => (
+              <TeamCard
+                team={team}
+                key={team._id}
+                index={index}
+                setNumber={setNumber}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Modal part start here */}

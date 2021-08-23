@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const AdminWhyChooseVirtualExpertsCard = ({
   cardData,
@@ -19,6 +20,7 @@ const AdminWhyChooseVirtualExpertsCard = ({
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Updated Successful");
         setNumber((prevNumber) => prevNumber + 10);
       });
   };

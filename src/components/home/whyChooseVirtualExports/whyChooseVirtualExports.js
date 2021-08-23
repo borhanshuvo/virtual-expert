@@ -8,7 +8,10 @@ const WhyChooseVirtualExports = ({
   return (
     <section className="py-5 background-color-skyblue">
       <div className="container">
-        <SectionTitle title={headerInfoVirtualExportsData[0].title} />
+        <SectionTitle
+          title={headerInfoVirtualExportsData[0].title}
+          isBgWhite={false}
+        />
         <p className="col-12 col-md-8 mx-auto fs-14 text-center">
           {headerInfoVirtualExportsData[0].description}
         </p>
@@ -22,7 +25,9 @@ const WhyChooseVirtualExports = ({
                   height="60"
                   width="60"
                 />
-                <h3 className="fs-16 mt-2 font-family-roboto">{virtualService.title}</h3>
+                <h3 className="fs-16 mt-2 font-family-roboto">
+                  {virtualService.title}
+                </h3>
                 <p className="fs-14">{virtualService.description}</p>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { AiFillEdit } from "react-icons/ai";
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
+import { AiFillEdit } from "react-icons/ai";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AdminAmazon = () => {
@@ -49,7 +49,6 @@ const AdminAmazon = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data) {
           toast.success("Amazon Data Edit Successfully");
           setNumber(number + 1);
@@ -75,7 +74,7 @@ const AdminAmazon = () => {
           <h6 className="fs-24">Amazon</h6>
           <AiFillEdit
             size={24}
-            className="text-primary cursor-pointer"
+            className="text-warning cursor-pointer"
             data-bs-toggle="modal"
             data-bs-target="#amazon"
           />

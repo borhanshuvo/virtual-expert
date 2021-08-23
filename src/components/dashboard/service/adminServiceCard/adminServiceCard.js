@@ -1,7 +1,7 @@
-import { useState } from "react";
 import Image from "next/image";
-import { AiFillEdit, AiFillDelete } from "react-icons/ai";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const AdminServiceCard = ({
@@ -25,6 +25,7 @@ const AdminServiceCard = ({
   } = servicesCard;
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
+  const [showSpinner, setShowSpinner] = useState(false);
 
   const handleFileChange = (e) => {
     const newFile = e.target.files[0];

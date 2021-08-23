@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 import AdminWhyChooseVirtualExpertsCard from "../whyChooseVirtualExpertsCard/whyChooseVirtualExpertsCard";
 
 const AdminWhyChooseVirtualExperts = () => {
@@ -28,13 +29,17 @@ const AdminWhyChooseVirtualExperts = () => {
   const handleUpdateInfo = (data) => {
     const title = data.title || titleData;
     const description = data.description || descriptionData;
-    fetch("https://virtual-expert.herokuapp.com/headerInfoVirtualExports/update", {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ title, _id: info._id, description }),
-    })
+    fetch(
+      "https://virtual-expert.herokuapp.com/headerInfoVirtualExports/update",
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ title, _id: info._id, description }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Updated Successful");
         setNumber(number + 1);
       });
   };

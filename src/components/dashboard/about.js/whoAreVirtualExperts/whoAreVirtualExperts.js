@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const AdminWhoAreVirtualExperts = () => {
   const [number, setNumber] = useState(0);
@@ -29,6 +30,7 @@ const AdminWhoAreVirtualExperts = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Updated Successful");
         setNumber(number + 1);
       });
   };
