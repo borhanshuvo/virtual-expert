@@ -3,6 +3,7 @@ import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import WithAdminAuth from "../../src/components/adminPrivateRoute";
 import AdminAddServices from "../../src/components/dashboard/service/adminAddServices/adminAddServices";
 import AdminServiceBanner from "../../src/components/dashboard/service/adminServiceBanner/adminServiceBanner";
 import AdminServiceCard from "../../src/components/dashboard/service/adminServiceCard/adminServiceCard";
@@ -130,7 +131,7 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default  WithAdminAuth(Service);
 
 Service.getLayout = function PageLayout(page) {
   return <>{page}</>;

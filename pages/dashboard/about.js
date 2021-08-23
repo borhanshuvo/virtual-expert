@@ -2,6 +2,7 @@ import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import WithAdminAuth from "../../src/components/adminPrivateRoute";
 import AdminTeam from "../../src/components/dashboard/about.js/team/team";
 import AdminTeamSection from "../../src/components/dashboard/about.js/teamSection/teamSection";
 import AdminWhoAreVirtualExperts from "../../src/components/dashboard/about.js/whoAreVirtualExperts/whoAreVirtualExperts";
@@ -67,7 +68,7 @@ const About = () => {
   );
 };
 
-export default About;
+export default  WithAdminAuth(About);
 
 About.getLayout = function PageLayout(page) {
   return <>{page}</>;
