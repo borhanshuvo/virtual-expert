@@ -2,7 +2,12 @@ import { useForm } from "react-hook-form";
 import SectionTitle from "../src/components/sectionTitle/sectionTitle";
 
 const Order = () => {
-  const { handleSubmit, register } = useForm();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+
   const onSubmit = (data) => {
     const newArray = Object.keys(data);
     const test = newArray.filter((a, index) => data[newArray[index]] !== false);
@@ -32,12 +37,34 @@ const Order = () => {
     orderInfo.selectedServices = [...services];
 
     console.log(orderInfo);
+
+    const msgTemplate = {
+      service_id: "service_esd6cuw",
+      template_id: "template_peizayb",
+      user_id: "user_IPQt7Bei466UeZ7tBO084",
+      template_params: {
+        ...orderInfo,
+      },
+    };
+
+    // const sendMessage = (e) => {
+    //   e.preventDefault();
+    fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(msgTemplate),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+    // };
+    // sendMessage();
   };
+
   return (
     <section>
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
-          <h6 className="fs-30">Order Now</h6>
+          <h6 className="fs-30 roboto-font-family lh-45 fw-400">Order Now</h6>
           <p className="fs-15">Home {`>`} Order Now</p>
         </div>
       </div>
@@ -51,17 +78,25 @@ const Order = () => {
                 <input
                   type="text"
                   className="form-control"
+                  name="name"
                   placeholder="Your Name/Brand Name"
-                  {...register("name")}
+                  {...register("name", { required: true })}
                 />
+                {errors.name && (
+                  <p className="fs-14 text-danger">Name Required</p>
+                )}
               </div>
               <div className="col-12 col-md-6 mt-3 mt-md-0">
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Your Email"
-                  {...register("email")}
+                  name="email"
+                  {...register("email", { required: true })}
                 />
+                {errors.email && (
+                  <p className="fs-14 text-danger">Email Required</p>
+                )}
               </div>
             </div>
             <h6>Select Your item</h6>
@@ -273,16 +308,27 @@ const Order = () => {
               <div>
                 <input
                   type="text"
+                  name="productLink/ASIN"
                   placeholder="Product Link/ASIN"
-                  {...register("productLinkOrASIN")}
+                  {...register("productLinkOrASIN", { required: true })}
                   className="form-control mt-3"
                 />
+                {errors.productLinkOrASIN && (
+                  <p className="fs-14 text-danger">
+                    Product Link/ASIN Required
+                  </p>
+                )}
                 <textarea
                   rows="5"
                   col="3"
-                  {...register("description")}
+                  placeholder="Description"
+                  name="description"
+                  {...register("description", { required: true })}
                   className="form-control my-4"
                 />
+                {errors.description && (
+                  <p className="fs-14 text-danger">Description Required</p>
+                )}
               </div>
               <div>
                 <button

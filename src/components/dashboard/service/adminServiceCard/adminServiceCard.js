@@ -120,7 +120,7 @@ const AdminServiceCard = ({
         <div className="d-flex justify-content-end">
           <AiFillEdit
             size={24}
-            className="text-primary mx-2 cursor-pointer"
+            className="text-warning mx-2 cursor-pointer"
             data-bs-toggle="modal"
             data-bs-target={`#card${index + 1}`}
           />

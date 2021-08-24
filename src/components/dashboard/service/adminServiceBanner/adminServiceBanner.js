@@ -1,7 +1,7 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
-import { useForm } from "react-hook-form";
 
 const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
   const { title, description, subDescription } = serviceBanner;
@@ -33,7 +33,7 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
         <h6 className="fs-24">Service Banner</h6>
         <AiFillEdit
           size={24}
-          className="text-primary cursor-pointer"
+          className="text-warning cursor-pointer"
           data-bs-toggle="modal"
           data-bs-target="#serviceBanner"
         />

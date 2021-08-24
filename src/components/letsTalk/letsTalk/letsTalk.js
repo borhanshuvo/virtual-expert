@@ -1,7 +1,7 @@
-import emailjs from "emailjs-com";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaTelegram } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
@@ -15,31 +15,46 @@ import styles from "./letsTalk.module.css";
 const LetsTalk = () => {
   const [footerLink, setFooterLink] = useState({});
 
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+
   useEffect(() => {
     fetch("https://virtual-expert.herokuapp.com/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, []);
 
-  function sendEmail(e) {
-    e.preventDefault();
+  const onSubmit = async (data, e) => {
+    const emailInfo = {
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      phone: data.phone,
+      message: data.message,
+    };
 
-    emailjs
-      .sendForm(
-        "service_esd6cuw",
-        "template_peizayb",
-        e.target,
-        "user_IPQt7Bei466UeZ7tBO084"
-      )
-      .then(
-        (result) => {
-          toast.success("Email Send Successfully");
-        },
-        (error) => {
-          toast.error("Something went wrong");
-        }
-      );
-  }
+    const msgTemplate = {
+      service_id: "service_esd6cuw",
+      template_id: "template_lug6z1e",
+      user_id: "user_IPQt7Bei466UeZ7tBO084",
+      template_params: {
+        ...emailInfo,
+      },
+    };
+
+    const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(msgTemplate),
+    });
+    if (res.status === 200) {
+      toast.success("Message Sent Successfully");
+      e.target.reset();
+    }
+  };
 
   return (
     <>
@@ -152,36 +167,70 @@ const LetsTalk = () => {
             {/* form starts here ======================== form starts here */}
 
             <div className="col-md-6">
-              <form onSubmit={sendEmail}>
-                <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center">
-                  <input
-                    placeholder="Name"
-                    className={`${styles.input} form-control mb-3 mb-md-0 fs-14`}
-                  />
-                  <input
-                    placeholder="Email"
-                    className={`${styles.input} form-control fs-14`}
-                  />
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center mx-2">
+                  <div className="col-12 col-md-6">
+                    <input
+                      placeholder="Name"
+                      name="name"
+                      className={`${styles.input} form-control mb-3 mb-md-0 fs-14`}
+                      {...register("name", { required: true })}
+                    />
+                    {errors.name && (
+                      <p className="fs-14 text-danger">Name field required</p>
+                    )}
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <input
+                      placeholder="Email"
+                      name="email"
+                      className={`${styles.input} form-control fs-14`}
+                      {...register("email", { required: true })}
+                    />
+                    {errors.email && (
+                      <p className="fs-14 text-danger">Email field required</p>
+                    )}
+                  </div>
                 </div>
-                <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center fs-14">
-                  <input
-                    placeholder="Phone"
-                    className={`${styles.input} form-control mb-4 mb-md-0 fs-14`}
-                  />
-                  <input
-                    placeholder="Subject"
-                    className={`${styles.input} form-control fs-14`}
-                  />
+                <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center fs-14 mx-2">
+                  <div className="col-12 col-md-6">
+                    <input
+                      placeholder="Phone"
+                      className={`${styles.input} form-control mb-4 mb-md-0 fs-14`}
+                      name="phone"
+                      {...register("phone", { required: true })}
+                    />
+                    {errors.phone && (
+                      <p className="fs-14 text-danger">Phone field required</p>
+                    )}
+                  </div>
+                  <div className="col-12 col-md-6">
+                    <input
+                      placeholder="Subject"
+                      className={`${styles.input} form-control fs-14`}
+                      name="subject"
+                      {...register("subject", { required: true })}
+                    />
+                    {errors.subject && (
+                      <p className="fs-14 text-danger">
+                        Subject field required
+                      </p>
+                    )}
+                  </div>
                 </div>
                 <div className="mt-4 mb-4">
                   <textarea
                     className={`${styles.input} form-control w-100 fs-14`}
                     id="w3review"
-                    name="w3review"
+                    name="message"
                     rows="6"
                     cols="50"
+                    {...register("message", { required: true })}
                     placeholder="Massage"
                   ></textarea>
+                  {errors.message && (
+                    <p className="fs-14 text-danger">Message field required</p>
+                  )}
                 </div>
 
                 <input
