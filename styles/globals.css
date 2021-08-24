@@ -357,7 +357,7 @@ ul {
 }
 
 .top-30 {
-  top: 30%;
+  top: 40%;
 }
 
 .card-button {
@@ -459,4 +459,12 @@ ul {
 
 .lh-40 {
   line-height: 40px;
+}
+
+.lh-24 {
+  line-height: 24px;
+}
+
+.fw-400 {
+  font-weight: 400;
 }

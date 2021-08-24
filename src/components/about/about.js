@@ -16,7 +16,7 @@ const AboutC = ({
     <section className="overflow-hidden">
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
-          <h2 className="fs-30 lh-45 roboto-font-family">About</h2>
+          <h2 className="fs-30 lh-45 roboto-font-family fw-400">About</h2>
           <p className="fs-14">
             Home <span className="text-warning mx-2">{`>`}</span> About
           </p>
@@ -28,7 +28,9 @@ const AboutC = ({
       <div className="container my-5">
         <div className="row py-5">
           <div className="col-md-6">
-            <h2 className={`${styles.title} fs-28 roboto-font-family lh-44`}>
+            <h2
+              className={`${styles.title} fs-28 roboto-font-family lh-44 fw-400`}
+            >
               {aboutData?.title}
             </h2>
             <p className="text-muted fs-15 lh-30">{aboutData?.discription}</p>
@@ -49,7 +51,7 @@ const AboutC = ({
             </div>
             <div className="col-md-6 text-muted">
               <h6
-                className={`${styles.title} text-dark fs-24 lh-44 roboto-font-family`}
+                className={`${styles.title} text-dark fs-24 lh-44 roboto-font-family fw-400`}
               >
                 {aboutUniquetData.title}
               </h6>

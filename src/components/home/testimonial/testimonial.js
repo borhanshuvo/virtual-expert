@@ -29,13 +29,13 @@ const Testimonial = ({ testimonials }) => {
           <div className="position-absolute left-38">
             <Image src={quoteIcon} alt="quoteIcon" height="80" width="80" />
           </div>
-          <div className="p-5 text-center">
+          <div className="p-2 p-md-5 text-center">
             <Image
               src={`${imgType} ; base64, ${currentTestimonials.img.img}`}
               alt="Loading..."
               width="70"
               height="70"
-              className="rounded-circle borderColor "
+              className="rounded-circle borderColor"
             />
             <p className="fst-italic my-3 fs-14 lh-32">
               “{currentTestimonials.review}”

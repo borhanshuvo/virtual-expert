@@ -32,21 +32,6 @@ const Banner = ({ bannerData, footerLink }) => {
       </div>
       {/* social link goes here */}
       <div className="position-fixed left-0 top-30 px-2 d-none d-md-block">
-        {/* <Link href={footerLink.skype}>
-          <a target="_blank" title={footerLink.skype}>
-            <FaSkype className="d-block my-2 order-color" />
-          </a>
-        </Link>
-        <Link href={footerLink.whatsApp}>
-          <a target="_blank" title={footerLink.whatsApp}>
-            <IoLogoWhatsapp className="d-block my-2 order-color" />
-          </a>
-        </Link>
-        <Link href={footerLink.email}>
-          <a target="_blank" title={footerLink.email}>
-            <MdEmail className="d-block my-2 order-color" />
-          </a>
-        </Link> */}
         <a
           target="_blank"
           title={footerLink.skype}
