@@ -33,13 +33,13 @@ const About = () => {
               size={32}
               className="ms-2"
               data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
+              data-bs-target="#offcanvasRight2"
               aria-controls="offcanvasRight"
             />
             <div
               className="offcanvas offcanvas-start bg-dark"
               tabIndex="-1"
-              id="offcanvasRight"
+              id="offcanvasRight2"
               aria-labelledby="offcanvasRightLabel"
             >
               <div className="offcanvas-header">
@@ -68,7 +68,7 @@ const About = () => {
   );
 };
 
-export default  WithAdminAuth(About);
+export default WithAdminAuth(About);
 
 About.getLayout = function PageLayout(page) {
   return <>{page}</>;

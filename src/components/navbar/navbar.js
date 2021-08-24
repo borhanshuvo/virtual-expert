@@ -12,7 +12,8 @@ const Navbar = () => {
       className={
         router.pathname === "/dashboard" ||
         router.pathname === "/dashboard/service" ||
-        router.pathname === "/dashboard/about"
+        router.pathname === "/dashboard/about" ||
+        router.pathname === "/dashboard/orders"
           ? "d-none"
           : ""
       }

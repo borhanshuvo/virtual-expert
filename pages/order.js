@@ -8,7 +8,7 @@ const Order = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     const newArray = Object.keys(data);
     const test = newArray.filter((a, index) => data[newArray[index]] !== false);
     const service = test.filter(
@@ -36,28 +36,34 @@ const Order = () => {
     orderInfo.description = otherInfo[3];
     orderInfo.selectedServices = [...services];
 
-    console.log(orderInfo);
-
-    const msgTemplate = {
-      service_id: "service_esd6cuw",
-      template_id: "template_peizayb",
-      user_id: "user_IPQt7Bei466UeZ7tBO084",
-      template_params: {
-        ...orderInfo,
-      },
-    };
-
-    // const sendMessage = (e) => {
-    //   e.preventDefault();
-    fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    fetch("http://localhost:8000/order/post", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(msgTemplate),
+      body: JSON.stringify(orderInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-    // };
-    // sendMessage();
+      .then((data) => {
+        if (data._id) {
+          const id = data._id;
+          const msgTemplate = {
+            service_id: "service_esd6cuw",
+            template_id: "template_peizayb",
+            user_id: "user_IPQt7Bei466UeZ7tBO084",
+            template_params: {
+              id,
+            },
+          };
+
+          fetch("https://api.emailjs.com/api/v1.0/email/send", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(msgTemplate),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+          e.target.reset();
+        }
+      });
   };
 
   return (

@@ -18,8 +18,14 @@ const Sidebar = () => {
   return (
     <nav className="vh-100 bg-dark px-3 text-white">
       <Link href="/">
-        <a className="d-block mx-auto">
-          <Image src={Logo} alt="virtual-logo" height="100" width="150" />
+        <a className="d-block mx-auto w-100 text-center">
+          <Image
+            src={Logo}
+            alt="virtual-logo"
+            height="100"
+            width="150"
+            className="d-block mx-auto"
+          />
         </a>
       </Link>
       <div className="pt-1">
@@ -45,6 +51,15 @@ const Sidebar = () => {
           <a
             className={`d-block py-2 ${
               pathname === "/dashboard/about" ? "bg-orange" : ""
+            } px-3 rounded-3 text-white my-2 navHover`}
+          >
+            About
+          </a>
+        </Link>
+        <Link href="/dashboard/orders">
+          <a
+            className={`d-block py-2 ${
+              pathname === "/dashboard/orders" ? "bg-orange" : ""
             } px-3 rounded-3 text-white my-2 navHover`}
           >
             About

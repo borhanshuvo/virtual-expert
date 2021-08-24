@@ -3,17 +3,9 @@ import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import WithAdminAuth from "../../src/components/adminPrivateRoute";
-import AdminAmazon from "../../src/components/dashboard/amazon/amazon";
-import AdminBanner from "../../src/components/dashboard/banner.js/banner";
-import AdminFooter from "../../src/components/dashboard/footer/footer";
-import AdminHowToPlaceAnOrder from "../../src/components/dashboard/howToPlaceAnOrder/howToPlaceAnOrder";
-import ScheduleMeeting from "../../src/components/dashboard/scheduleMeeting/scheduleMeeting";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
-import AdminTestimonials from "../../src/components/dashboard/testimonials/testimonials";
-import AdminTopThreeService from "../../src/components/dashboard/topThreeService/topThreeService";
-import AdminWhyChooseVirtualExperts from "../../src/components/dashboard/whyChooseVirtualExperts/whyChooseVirtualExperts";
 
-const Dashboard = () => {
+const Orders = ({ orders }) => {
   return (
     <>
       <ToastContainer
@@ -32,18 +24,18 @@ const Dashboard = () => {
           <div className="col-12 col-md-2 d-none d-md-block">
             <Sidebar />
           </div>
-          <div className="d-md-none col-12 mt-2 me-2">
+          <div className="d-block d-md-none col-12 mt-2 me-2">
             <BiMenu
               size={32}
               className="ms-2"
               data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight3"
+              data-bs-target="#offcanvasRight1"
               aria-controls="offcanvasRight"
             />
             <div
               className="offcanvas offcanvas-start bg-dark"
               tabIndex="-1"
-              id="offcanvasRight3"
+              id="offcanvasRight1"
               aria-labelledby="offcanvasRightLabel"
             >
               <div className="offcanvas-header">
@@ -61,14 +53,37 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="col-12 col-md-10 py-4 vh-100 scroll">
-            <AdminBanner />
-            <AdminAmazon />
-            <AdminWhyChooseVirtualExperts />
-            <AdminTopThreeService />
-            <AdminHowToPlaceAnOrder />
-            <AdminTestimonials />
-            <ScheduleMeeting />
-            <AdminFooter />
+            {/*  */}
+            <div className="p-3 boxShadow">
+              <h2 className="fs-18 roboto-font-family">
+                Total Orders - {orders.length}
+              </h2>
+            </div>
+            {/*  */}
+            {orders.map((info) => (
+              <div className="boxShadow p-3 my-3" key={info._id}>
+                <p className="fs-14">
+                  <span className="fw-bold">Order Id</span> - {info._id}
+                </p>
+                <p className="fs-14">
+                  {" "}
+                  <span className="fw-bold">Name : </span> {info.name}
+                </p>
+                <p className="fs-14">
+                  <span className="fw-bold">Email : </span> {info.email}
+                </p>
+                <p className="fs-14">
+                  <span className="fw-bold">ProductLink/ASIN : </span>{" "}
+                  {info.productLinkOrASIN}
+                </p>
+                <p className="fs-14 fw-bold">Selected Services</p>
+                {info.selectedServices.map((service, index) => (
+                  <p key={service} className="fs-14">
+                    {index + 1} . {service}
+                  </p>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -76,8 +91,19 @@ const Dashboard = () => {
   );
 };
 
-export default WithAdminAuth(Dashboard);
+export default WithAdminAuth(Orders);
 
-Dashboard.getLayout = function PageLayout(page) {
+export async function getServerSideProps() {
+  const res = await fetch("http://localhost:8000/order");
+  const orders = await res.json();
+
+  return {
+    props: {
+      orders,
+    },
+  };
+}
+
+Orders.getLayout = function PageLayout(page) {
   return <>{page}</>;
 };

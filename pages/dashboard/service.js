@@ -57,13 +57,13 @@ const Service = () => {
             size={32}
             className="ms-2"
             data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight"
+            data-bs-target="#offcanvasRight4"
             aria-controls="offcanvasRight"
           />
           <div
             className="offcanvas offcanvas-start bg-dark"
             tabIndex="-1"
-            id="offcanvasRight"
+            id="offcanvasRight4"
             aria-labelledby="offcanvasRightLabel"
           >
             <div className="offcanvas-header">
@@ -131,7 +131,7 @@ const Service = () => {
   );
 };
 
-export default  WithAdminAuth(Service);
+export default WithAdminAuth(Service);
 
 Service.getLayout = function PageLayout(page) {
   return <>{page}</>;

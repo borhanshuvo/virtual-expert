@@ -36,15 +36,6 @@ function MyApp({ Component, pageProps }) {
     } catch (err) {}
   }, []);
 
-  const addGoogleAnalytics = () => {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "UA-196363901-1");
-  };
-
   if (Component.getLayout) {
     return Component.getLayout(
       <>
@@ -61,13 +52,6 @@ function MyApp({ Component, pageProps }) {
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
             crossOrigin="anonymous"
           ></script>
-          {/* start here */}
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-196363901-1"
-          ></script>
-          <script>{addGoogleAnalytics()}</script>
-          {/* end */}
         </Head>
         <UserContext.Provider value={[signedUser, setSignedUser]}>
           <Component {...pageProps} />
