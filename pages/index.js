@@ -34,15 +34,16 @@ export default function Home({
           virtualServicesData={virtualServicesData}
           headerInfoVirtualExportsData={headerInfoVirtualExportsData}
         />
+
         <TopServices
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
         />
-        <Testimonial testimonials={testimonials} />
         <HowToPlaceAnOrder
           placeAnOrderData={placeAnOrderData}
           placeAnOrderListData={placeAnOrderListData}
         />
+        <Testimonial testimonials={testimonials} />
         <ScheduleMeeting />
       </main>
     </>

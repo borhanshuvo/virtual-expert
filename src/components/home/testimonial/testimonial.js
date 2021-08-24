@@ -25,7 +25,7 @@ const Testimonial = ({ testimonials }) => {
     <section>
       <div className="container py-5">
         <SectionTitle title="Out TOP Amazon Clients" isBgWhite={true} />
-        <div className="col-12 col-md-6 boxShadow mx-auto my-3 position-relative">
+        <div className="col-12 col-md-7 boxShadow mx-auto mb-3 mt-5 position-relative">
           <div className="position-absolute left-38">
             <Image src={quoteIcon} alt="quoteIcon" height="80" width="80" />
           </div>
@@ -37,13 +37,13 @@ const Testimonial = ({ testimonials }) => {
               height="70"
               className="rounded-circle borderColor "
             />
-            <p className="fst-italic my-3 fs-14 lh-lg">
+            <p className="fst-italic my-3 fs-14 lh-32">
               “{currentTestimonials.review}”
             </p>
-            <h3 className="fw-bold fs-18 font-family-roboto">
+            <h3 className="fw-bold fs-18 font-family-roboto lh-26">
               {currentTestimonials.name}
             </h3>
-            <p className="fs-14">{currentTestimonials.jobTitle}</p>
+            <p className="fs-14 lh-26">{currentTestimonials.jobTitle}</p>
           </div>
           <div className="position-absolute right-38 d-flex flex-md-column">
             {testimonials.map((data, index) => {

@@ -25,7 +25,7 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
             return (
               <div
                 key={service._id}
-                className={`${styles.serviceCard} col-12 col-md-4 p-4  mt-md-5`}
+                className={`${styles.serviceCard} col-12 col-md-4 mx-auto p-4 mt-md-5`}
               >
                 <div className="d-flex justify-content-center">
                   <Image
@@ -35,22 +35,22 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
                     width="150"
                   />
                 </div>
-                <h2 className="text-center mt-5 font-family-roboto fs-18">
+                <h3 className="text-center mt-5 font-family-roboto fs-18 fs-600 lh-28">
                   {service.title}
-                </h2>
-                <p className="text-center fs-15 mt-3 text-color ">
+                </h3>
+                <p className="text-center fs-15 lh-30 mt-3 text-color ">
                   {service.description}
                 </p>
                 <Link href="/order">
-                  <a className="text-center order-color d-block buttonLink px-3">
-                    Order <RiArrowRightSLine />
+                  <a className="text-center order-color d-block buttonLink px-3 fs-14">
+                    Order Now <RiArrowRightSLine />
                   </a>
                 </Link>
               </div>
             );
           })}
         </div>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mt-4">
           <Link href="/services">
             <a className="button py-1 px-3">
               <h4 className="d-inline font-family-roboto fs-14">

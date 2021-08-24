@@ -12,15 +12,17 @@ const Amazon = ({ amazonData }) => {
             <div className="col-md-6 pb-5 pb-md-0 px-5">
               <Image src={amazonImg} alt="banner-image" />
             </div>
-            <div className="col-md-6">
-              <h2 className="fs-28 textLeftAfterEffect font-family-roboto">{amazonData.title}</h2>
-              <p className="fs-14 mt-4 lh-lg">
+            <div className="col-md-6 mt-md-2">
+              <h2 className="fs-28 textLeftAfterEffect font-family-roboto lh-52">
+                {amazonData.title}
+              </h2>
+              <p className="fs-15 mt-4 lh-30">
                 {amazonData.description_part_1}
               </p>
-              <p className="fs-14 mt-4 lh-lg">
+              <p className="fs-15 mt-4 lh-30">
                 {amazonData.description_part_2}
               </p>
-              <p className="fs-14 mt-4 lh-lg">
+              <p className="fs-15 mt-4 lh-30">
                 {amazonData.description_part_3}
               </p>
             </div>

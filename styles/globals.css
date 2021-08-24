@@ -30,6 +30,15 @@ p {
   font-weight: 400;
 } */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222f3e;
+}
+
 .font-family-roboto {
   font-family: "Roboto Slab", serif;
   color: #222f3e;
@@ -159,8 +168,8 @@ ul {
 .numberBefore::before {
   content: "";
   position: absolute;
-  left: -3px;
-  top: 8px;
+  left: -5px;
+  top: 11px;
   width: 14px;
   height: 14px;
   background: #ff9f26 0% 0% no-repeat padding-box;
@@ -402,4 +411,48 @@ ul {
 
 .fs-12 {
   font-size: 12px;
+}
+
+.lh-45 {
+  line-height: 52px;
+}
+
+.lh-30 {
+  line-height: 30px;
+}
+
+.lh-44 {
+  line-height: 44px;
+}
+
+.lh-26 {
+  line-height: 26px;
+}
+
+.font-family-popins {
+  font-family: "Poppins", sans-serif;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.lh-30 {
+  line-height: 30px;
+}
+
+.lh-28 {
+  line-height: 28px;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.lh-32 {
+  line-height: 32px;
+}
+
+.lh-40 {
+  line-height: 40px;
 }
