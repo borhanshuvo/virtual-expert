@@ -16,7 +16,7 @@ const AboutC = ({
     <section className="overflow-hidden">
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
-          <h6 className="fs-30">About</h6>
+          <h2 className="fs-30 lh-45 roboto-font-family">About</h2>
           <p className="fs-14">
             Home <span className="text-warning mx-2">{`>`}</span> About
           </p>
@@ -28,8 +28,10 @@ const AboutC = ({
       <div className="container my-5">
         <div className="row py-5">
           <div className="col-md-6">
-            <h6 className={`${styles.title} fs-28`}>{aboutData?.title}</h6>
-            <p className="text-muted fs-15 lh-lg">{aboutData?.discription}</p>
+            <h2 className={`${styles.title} fs-28 roboto-font-family lh-44`}>
+              {aboutData?.title}
+            </h2>
+            <p className="text-muted fs-15 lh-30">{aboutData?.discription}</p>
           </div>
           <div className="col-md-6 text-center order-1 order-md-2 px-4">
             <Image src={about1} alt="image" />
@@ -46,13 +48,15 @@ const AboutC = ({
               <Image src={about2} alt="waiting..." />
             </div>
             <div className="col-md-6 text-muted">
-              <h6 className={`${styles.title} text-dark fs-24`}>
+              <h6
+                className={`${styles.title} text-dark fs-24 lh-44 roboto-font-family`}
+              >
                 {aboutUniquetData.title}
               </h6>
               <div>
                 {aboutUniquetListData.map((item, index) => (
-                  <div key={item._id} className="d-flex fs-14 mt-2">
-                    <span className="me-2 numberBefore fw-bold text-dark">
+                  <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
                       {index + 1 > 9 ? index + 1 : ` 0${index + 1}`}
                     </span>
                     <p>{item.title}</p>
@@ -68,11 +72,11 @@ const AboutC = ({
 
       <div className="container my-5">
         <div className="d-flex justify-content-center align-items-center">
-          <div className="w-50 text-center  mt-5 pt-3">
-            <h6 className={`${styles.title1} fs-24 `}>
+          <div className="col-12 col-md-7 text-center  mt-5 pt-3">
+            <h2 className={`${styles.title1} fs-24 roboto-font-family fw-400`}>
               {aboutTeamData?.title}
-            </h6>
-            <p className="text-muted fs-15 mt-3 mb-5 lh-lg">
+            </h2>
+            <p className="text-muted fs-15 mt-3 mb-5 lh-30">
               {aboutTeamData?.discription}
             </p>
           </div>
@@ -88,8 +92,8 @@ const AboutC = ({
               imgType = "data:image/jpg";
             }
             return (
-              <div className="col-md-4 text-center" key={team._id}>
-                <div className="m-3 p-2">
+              <div className="col-12 col-md-4 text-center" key={team._id}>
+                <div className="m-3 p-2 cursor-pointer">
                   <Image
                     src={`${imgType} ; base64, ${team.img.img}`}
                     alt="Loading..."
@@ -99,8 +103,8 @@ const AboutC = ({
                     className="pb-1"
                   />
                   <div className={`${styles.name} mt-4`}>
-                    <h6 className="fs-18">{team.name}</h6>
-                    <p className="fs-15">{team.jobTitle}</p>
+                    <h6 className="fs-18 lh-26 fw-500">{team.name}</h6>
+                    <p className="fs-15 lh-26">{team.jobTitle}</p>
                   </div>
                 </div>
               </div>
