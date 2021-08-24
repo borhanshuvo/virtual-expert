@@ -91,9 +91,7 @@ export async function getServerSideProps(context) {
   );
   const placeAnOrderData = await resPlaceAnOrder.json();
 
-  const resFooter = await fetch(
-    "https://virtual-expert.herokuapp.com/footerLink"
-  );
+  const resFooter = await fetch("https://virtual-expert.herokuapp.com/footer");
   const footerLink = await resFooter.json();
 
   return {

@@ -7,7 +7,10 @@
   color: #222f3e;
 }
 .active {
-  color: #222f3e;
+  position: relative;
+  color: #000;
+}
+.active::after {
   content: "";
   position: absolute;
   color: #222f3e;

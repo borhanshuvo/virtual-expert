@@ -273,7 +273,7 @@ ul {
 .scroll {
   overflow-y: auto;
 }
-.scrollBlog{
+.scrollBlog {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -284,7 +284,7 @@ ul {
   -webkit-box-shadow: inset 0 0 6px rgba(126, 126, 126, 0.3);
 } */
 .scrollBlog::-webkit-scrollbar-thumb {
-  background-color:  #ffffff23;
+  background-color: #ffffff23;
   outline: 1px solid #ff9d2657;
 }
 
@@ -360,7 +360,7 @@ ul {
 }
 
 .card-input {
-  border: 1px solid #1F2A3633;
+  border: 1px solid #1f2a3633;
 }
 
 .card-input:hover {
@@ -369,7 +369,7 @@ ul {
 
 .card-input::placeholder {
   font-family: "Poppins", sans-serif;
-  color: #828B9A;
+  color: #828b9a;
   font-weight: 400;
   font-size: 14px;
 }
@@ -390,4 +390,16 @@ ul {
 
 .buttonLink:hover {
   color: #ff9f26;
+}
+
+.social-address {
+  display: none;
+}
+
+.test:hover .social-address {
+  display: block;
+}
+
+.fs-12 {
+  font-size: 12px;
 }

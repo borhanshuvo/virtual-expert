@@ -1,13 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import logo from "../../../images/Logo.svg";
 import { navData } from "../fakeData/navData";
 import styles from "./navBar.module.css";
-import { useRouter } from "next/router";
 const Navbar = () => {
   const router = useRouter();
+  const currentPath = router.pathname;
   return (
-    <nav className={router.pathname === "/dashboard" || router.pathname === "/dashboard/service" || router.pathname === "/dashboard/about" ? "d-none" : ""}>
+    <nav
+      className={
+        router.pathname === "/dashboard" ||
+        router.pathname === "/dashboard/service" ||
+        router.pathname === "/dashboard/about"
+          ? "d-none"
+          : ""
+      }
+    >
       <div className="d-flex justify-content-between align-items-center container py-3">
         <div className="d-none d-md-block">
           <Link href="/">
@@ -22,9 +31,15 @@ const Navbar = () => {
         <div className="d-none d-md-block">
           <ul className="d-flex align-items-center">
             {navData.map((nav) => (
-              <li key={nav.id} className="mx-3">
+              <li key={nav.id} className="mx-3 position-relative">
                 <Link href={nav.link}>
-                  <a className={styles.navItem}>{nav.title}</a>
+                  <a
+                    className={`${
+                      currentPath === nav.link ? `${styles.active}` : ""
+                    } ${styles.navItem}`}
+                  >
+                    {nav.title}
+                  </a>
                 </Link>
               </li>
             ))}

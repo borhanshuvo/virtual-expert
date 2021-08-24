@@ -41,7 +41,7 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
                 <p className="text-center fs-15 mt-3 text-color ">
                   {service.description}
                 </p>
-                <Link href="/">
+                <Link href="/order">
                   <a className="text-center order-color d-block buttonLink px-3">
                     Order <RiArrowRightSLine />
                   </a>

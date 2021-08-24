@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReactHtmlParser from "react-html-parser";
 
 const ScheduleMeeting = () => {
   const [scheduleTitle, setScheduleTitle] = useState({});
+  console.log(scheduleTitle.link);
 
   useEffect(() => {
     fetch("https://virtual-expert.herokuapp.com/scheduleMeeting")
@@ -20,7 +22,15 @@ const ScheduleMeeting = () => {
               </h3>
             )}
             <button className="button px-4 py-1 mt-4">
-              <h4 className="d-inline fs-14 font-family-roboto">Schedule a Meeting</h4>
+              {scheduleTitle.link && (
+                <Link href={scheduleTitle.link}>
+                  <a target="_blank">
+                    <h4 className="d-inline fs-14 font-family-roboto">
+                      Schedule a Meeting
+                    </h4>
+                  </a>
+                </Link>
+              )}
             </button>
           </div>
         </div>

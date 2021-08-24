@@ -17,7 +17,11 @@ const Sidebar = () => {
 
   return (
     <nav className="vh-100 bg-dark px-3 text-white">
-      <Image src={Logo} alt="virtual-logo" height="100" width="150" />
+      <Link href="/">
+        <a className="d-block mx-auto">
+          <Image src={Logo} alt="virtual-logo" height="100" width="150" />
+        </a>
+      </Link>
       <div className="pt-1">
         <Link href="/dashboard/">
           <a
