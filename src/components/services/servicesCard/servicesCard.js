@@ -31,42 +31,44 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                       />
                     </div>
                     <div className="card-body">
-                      <h6 className="fs-18 lh-base">{servicesCard.title}</h6>
+                      <h3 className="fs-18 lh-28 roboto-font-family fw-normal">
+                        {servicesCard.title}
+                      </h3>
                       <p className="fs-14 lh-26 font-medium">
                         {servicesCard.subTitle}
                       </p>
                       {servicesCard.regularReview && (
-                        <p className="fs-14 m-0">
+                        <p className="fs-14 m-0 lh-26">
                           Regular Review : ${servicesCard.regularReview} each
                         </p>
                       )}
                       {servicesCard.videoReview && (
-                        <p className="fs-14 m-0">
+                        <p className="fs-14 m-0 lh-26">
                           Video Review : ${servicesCard.videoReview} each
                         </p>
                       )}
                       {servicesCard.top50Reviewers && (
-                        <p className="fs-14 m-0">
+                        <p className="fs-14 m-0 lh-26">
                           Top 50 Reviewers : ${servicesCard.top50Reviewers} each
                         </p>
                       )}
                       {servicesCard.price && (
-                        <p className="fs-14 m-0">
+                        <p className="fs-14 m-0 lh-26">
                           Price : {servicesCard.price}
                         </p>
                       )}
                       {servicesCard.delivery && (
-                        <p className="fs-14 m-0">
+                        <p className="fs-14 m-0 lh-26">
                           Delivery : {servicesCard.delivery} days
                         </p>
                       )}
                       {servicesCard.warranty && (
-                        <p className="fs-14">
+                        <p className="fs-14 lh-26">
                           Warranty : {servicesCard.warranty}
                         </p>
                       )}
                       {servicesCard.maintenance && (
-                        <p className="fs-14">
+                        <p className="fs-14 lh-26">
                           Maintenence : ${servicesCard.maintenance} per month
                         </p>
                       )}

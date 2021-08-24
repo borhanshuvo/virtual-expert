@@ -433,6 +433,10 @@ ul {
   font-family: "Poppins", sans-serif;
 }
 
+.roboto-font-family {
+  font-family: "Roboto Slab", serif;
+}
+
 .fw-500 {
   font-weight: 500;
 }
