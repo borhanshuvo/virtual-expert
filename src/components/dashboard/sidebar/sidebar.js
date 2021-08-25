@@ -62,7 +62,7 @@ const Sidebar = () => {
               pathname === "/dashboard/orders" ? "bg-orange" : ""
             } px-3 rounded-3 text-white my-2 navHover`}
           >
-            About
+            Orders
           </a>
         </Link>
         <Link href="/">
