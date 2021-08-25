@@ -7,7 +7,7 @@ const ScheduleMeeting = () => {
   console.log(scheduleTitle.link);
 
   useEffect(() => {
-    fetch("https://virtual-expert.herokuapp.com/scheduleMeeting")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/scheduleMeeting")
       .then((res) => res.json())
       .then((data) => setScheduleTitle(data));
   }, []);

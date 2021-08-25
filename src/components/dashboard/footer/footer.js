@@ -11,11 +11,11 @@ const AdminFooter = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("https://virtual-expert.herokuapp.com/footer")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/footer")
       .then((res) => res.json())
       .then((data) => setFooterData(data[0]));
 
-    fetch("https://virtual-expert.herokuapp.com/footerLink")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, [number]);
@@ -28,7 +28,7 @@ const AdminFooter = () => {
     const copyRightText = data.copyRightText || footerData.copyRightText;
     const _id = footerData._id;
 
-    fetch("https://virtual-expert.herokuapp.com/footer/update", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/footer/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -54,7 +54,7 @@ const AdminFooter = () => {
     const telegram = data.telegram || footerLink.telegram;
     const twitter = data.twitter || footerLink.twitter;
 
-    fetch("https://virtual-expert.herokuapp.com/footerLink/update", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ _id, facebook, instagram, telegram, twitter }),

@@ -231,6 +231,10 @@ ul {
   background-repeat: no-repeat;
 } */
 
+.banner-lh-52 {
+  line-height: 52px;
+}
+
 /*Working on font size responsiveness*/
 @media only screen and (max-width: 600px) {
   .fs-30 {
@@ -275,6 +279,18 @@ ul {
     line-height: 26px;
   }
   .lh-36 {
+    line-height: 36px;
+  }
+
+  .lh-44 {
+    line-height: 36px;
+  }
+
+  .icon-margin-top {
+    margin-top: 0.7rem !important;
+  }
+
+  .banner-lh-52 {
     line-height: 36px;
   }
 }
@@ -467,4 +483,13 @@ ul {
 
 .fw-400 {
   font-weight: 400;
+}
+
+.card-shape-bottom {
+  transition: 0.3s ease-in-out;
+  bottom: -10px;
+}
+
+.card-shape-bottom:hover {
+  transform: scale(1.5);
 }

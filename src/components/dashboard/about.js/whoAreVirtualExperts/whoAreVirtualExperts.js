@@ -12,7 +12,7 @@ const AdminWhoAreVirtualExperts = () => {
   useEffect(() => {
     const loadData = async () => {
       const aboutResponse = await fetch(
-        "https://virtual-expert.herokuapp.com/about"
+        "https://sleepy-mesa-08037.herokuapp.com/about"
       );
       const aboutData = await aboutResponse.json();
       setAboutData(aboutData[0]);
@@ -23,7 +23,7 @@ const AdminWhoAreVirtualExperts = () => {
   const onSubmit = (data) => {
     const title = data.title || aboutData.title;
     const discription = data.discription || aboutData.discription;
-    fetch("https://virtual-expert.herokuapp.com/about/update", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/about/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ title, _id: aboutData._id, discription }),

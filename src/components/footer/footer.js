@@ -19,11 +19,11 @@ const Footer = () => {
   const [footer, setFooter] = useState(null);
   const [footerLink, setFooterLink] = useState({});
   useEffect(() => {
-    fetch("https://virtual-expert.herokuapp.com/footer")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/footer")
       .then((res) => res.json())
       .then((data) => setFooter(data[0]));
 
-    fetch("https://virtual-expert.herokuapp.com/footerLink")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, []);

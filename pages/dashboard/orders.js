@@ -94,7 +94,7 @@ const Orders = ({ orders }) => {
 export default WithAdminAuth(Orders);
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:8000/order");
+  const res = await fetch("https://sleepy-mesa-08037.herokuapp.com/order");
   const orders = await res.json();
 
   return {

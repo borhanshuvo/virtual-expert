@@ -14,11 +14,11 @@ const AdminTopThreeService = () => {
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("https://virtual-expert.herokuapp.com/headerInfoTopServices")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/headerInfoTopServices")
       .then((res) => res.json())
       .then((result) => setTitle(result[0]));
 
-    fetch("https://virtual-expert.herokuapp.com/topServices")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/topServices")
       .then((res) => res.json())
       .then((result) => {
         setShowSpinner(false);
@@ -28,11 +28,14 @@ const AdminTopThreeService = () => {
 
   const handleUpdateInfo = (data) => {
     const newTitle = data.title || title.title;
-    fetch("https://virtual-expert.herokuapp.com/headerInfoTopServices/update", {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ title: newTitle, _id: title._id }),
-    })
+    fetch(
+      "https://sleepy-mesa-08037.herokuapp.com/headerInfoTopServices/update",
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ title: newTitle, _id: title._id }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setNumber(number + 1);

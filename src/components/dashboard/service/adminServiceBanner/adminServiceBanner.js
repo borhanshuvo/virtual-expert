@@ -13,7 +13,7 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
     const description = data.description || serviceBanner.description;
     const subDescription = data.subDescription || serviceBanner.subDescription;
 
-    fetch("https://virtual-expert.herokuapp.com/whatWeDo/update", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/whatWeDo/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ _id, title, description, subDescription }),

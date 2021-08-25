@@ -36,7 +36,7 @@ const Order = () => {
     orderInfo.description = otherInfo[3];
     orderInfo.selectedServices = [...services];
 
-    fetch("http://localhost:8000/order/post", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/order/post", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(orderInfo),
@@ -71,7 +71,9 @@ const Order = () => {
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
           <h6 className="fs-30 roboto-font-family lh-45 fw-400">Order Now</h6>
-          <p className="fs-15">Home {`>`} Order Now</p>
+          <p className="fs-15">
+            Home <span className="text-warning mx-2">{`>`}</span> Order Now
+          </p>
         </div>
       </div>
 

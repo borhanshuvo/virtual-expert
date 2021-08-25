@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { GoPlus } from "react-icons/go";
 import { useForm } from "react-hook-form";
+import { GoPlus } from "react-icons/go";
 import { toast } from "react-toastify";
 
 const AdminAddServices = ({ setNumber }) => {
@@ -30,7 +30,7 @@ const AdminAddServices = ({ setNumber }) => {
     formData.append("price", data.price);
     formData.append("maintenance", data.maintenance);
 
-    fetch(`https://virtual-expert.herokuapp.com/servicesCard/post`, {
+    fetch(`https://sleepy-mesa-08037.herokuapp.com/servicesCard/post`, {
       method: "POST",
       body: formData,
     })

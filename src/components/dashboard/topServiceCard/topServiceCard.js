@@ -33,7 +33,7 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
     formData.append("description", newDescription);
 
     if (file === null) {
-      fetch("https://virtual-expert.herokuapp.com/topServices/update", {
+      fetch("https://sleepy-mesa-08037.herokuapp.com/topServices/update", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(newData),
@@ -44,7 +44,7 @@ const AdminTopServiceCard = ({ serviceCard, setNumber, index }) => {
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("https://virtual-expert.herokuapp.com/topServices/update", {
+      fetch("https://sleepy-mesa-08037.herokuapp.com/topServices/update", {
         method: "PUT",
         body: formData,
       })

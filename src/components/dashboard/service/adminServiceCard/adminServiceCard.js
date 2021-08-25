@@ -33,7 +33,7 @@ const AdminServiceCard = ({
   };
 
   const deleteService = (id) => {
-    fetch(`https://virtual-expert.herokuapp.com/servicesCard/delete/${id}`, {
+    fetch(`https://sleepy-mesa-08037.herokuapp.com/servicesCard/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -91,7 +91,7 @@ const AdminServiceCard = ({
     formData.append("maintenance", newMaintenance);
 
     if (file === null) {
-      fetch("https://virtual-expert.herokuapp.com/servicesCard/update", {
+      fetch("https://sleepy-mesa-08037.herokuapp.com/servicesCard/update", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newData),
@@ -102,7 +102,7 @@ const AdminServiceCard = ({
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("https://virtual-expert.herokuapp.com/servicesCard/update", {
+      fetch("https://sleepy-mesa-08037.herokuapp.com/servicesCard/update", {
         method: "PUT",
         body: formData,
       })

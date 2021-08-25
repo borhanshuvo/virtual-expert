@@ -10,6 +10,7 @@ import { ImTwitter } from "react-icons/im";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Logo from "../../../../images/Shape.svg";
+import ScheduleMeeting from "../../home/scheduleMeeting/scheduleMeeting";
 import styles from "./letsTalk.module.css";
 
 const LetsTalk = () => {
@@ -22,7 +23,7 @@ const LetsTalk = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch("https://virtual-expert.herokuapp.com/footerLink")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, []);
@@ -69,7 +70,7 @@ const LetsTalk = () => {
         draggable
         pauseOnHover
       />
-      <section className="mb-5 pb-5 overflow-hidden">
+      <section className="mb-2  overflow-hidden">
         <div className="background-color-skyblue">
           <div className="container d-md-flex justify-content-between align-items-center py-5">
             <h2 className="fs-30 roboto-font-family lh-45 fw-400">
@@ -99,9 +100,9 @@ const LetsTalk = () => {
                 Skype/WhatsApp.
               </p>
               <div className="text-muted mb-5 ">
-                <p className="fs-15 d-flex align-items-center lh-40 m-0">
+                <p className="fs-15 d-flex align-items-md-center lh-40 m-0">
                   {" "}
-                  <GoLocation className={`${styles.logo}`} />
+                  <GoLocation className={`${styles.logo} icon-margin-top`} />
                   <span>
                     <span className="fw-500">Address</span> : 226 West 26th
                     Street, New York, NY 10001, USA
@@ -241,6 +242,9 @@ const LetsTalk = () => {
               </form>
             </div>
           </div>
+        </div>
+        <div className="pt-2">
+          <ScheduleMeeting />
         </div>
       </section>
     </>

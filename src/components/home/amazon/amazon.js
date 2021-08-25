@@ -13,7 +13,7 @@ const Amazon = ({ amazonData }) => {
               <Image src={amazonImg} alt="banner-image" />
             </div>
             <div className="col-md-6 mt-md-2">
-              <h2 className="fs-28 textLeftAfterEffect font-family-roboto lh-52">
+              <h2 className="fs-28 textLeftAfterEffect font-family-roboto lh-44">
                 {amazonData.title}
               </h2>
               <p className="fs-15 mt-4 lh-30">

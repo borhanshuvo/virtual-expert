@@ -1,8 +1,11 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
+import shape from "../../../../images/dummy.png";
 import SectionTitle from "../../sectionTitle/sectionTitle";
 
 const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
+  const router = useRouter();
   return (
     <>
       <div className="background-color-skyblue py-5">
@@ -20,9 +23,12 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
               }
 
               return (
-                <div className="col-md-4 pb-3" key={servicesCard._id}>
-                  <div className="card h-100 border-0 borderRadius">
-                    <div className="background-color-skyblue">
+                <div
+                  className="col-md-4 position-relative overflow-hidden"
+                  key={servicesCard._id}
+                >
+                  <div className="card h-100 border-0 borderRadius overflow-hidden">
+                    <div className="background-color-skyblue overflow-hidden">
                       <Image
                         src={`${imgType} ; base64, ${servicesCard.img.img}`}
                         alt="waiting.."
@@ -31,10 +37,10 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                       />
                     </div>
                     <div className="card-body">
-                      <h3 className="fs-18 lh-28 roboto-font-family fw-normal">
+                      <h3 className="fs-18 lh-28 mb-4 roboto-font-family fw-normal">
                         {servicesCard.title}
                       </h3>
-                      <p className="fs-14 lh-26 font-medium">
+                      <p className="fs-14 lh-26 font-medium m-0">
                         {servicesCard.subTitle}
                       </p>
                       {servicesCard.regularReview && (
@@ -78,9 +84,13 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                           padding: "5px 20px",
                           backgroundColor: "white",
                         }}
+                        onClick={() => router.push("/order")}
                       >
                         <h6 className="fs-14 d-inline">Order Now</h6>
                       </button>
+                    </div>
+                    <div className="position-absolute end-0 card-shape-bottom ">
+                      <Image src={shape} alt="shape" height="120" width="120" />
                     </div>
                   </div>
                 </div>

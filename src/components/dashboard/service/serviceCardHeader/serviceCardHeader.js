@@ -11,7 +11,7 @@ const ServiceCardHeader = ({ serviceCardHeader, setNumber }) => {
     const _id = serviceCardHeader._id;
     const title = data.title || serviceBanner.title;
 
-    fetch("https://virtual-expert.herokuapp.com/serviceCardHeader/update", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/serviceCardHeader/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ _id, title }),
