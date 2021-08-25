@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import SectionTitle from "../src/components/sectionTitle/sectionTitle";
-
 const Order = () => {
   const {
     handleSubmit,
@@ -67,7 +66,7 @@ const Order = () => {
   };
 
   return (
-    <section>
+    <section className="order-bg position-relative">
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
           <h6 className="fs-30 roboto-font-family lh-45 fw-400">Order Now</h6>

@@ -488,8 +488,18 @@ ul {
 .card-shape-bottom {
   transition: 0.3s ease-in-out;
   bottom: -10px;
+  transform: scale(1.5);
+}
+
+.serviceCard:hover .card-shape-bottom {
+  transform: scale(1.2);
 }
 
 .card-shape-bottom:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
+
+/* .order-bg {
+  background-image: url("../images/Others/Bg.svg");
+  background-size: cover;
+} */

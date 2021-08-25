@@ -24,7 +24,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
 
               return (
                 <div
-                  className="col-md-4 position-relative overflow-hidden"
+                  className="col-md-4 position-relative overflow-hidden serviceCard cursor-pointer"
                   key={servicesCard._id}
                 >
                   <div className="card h-100 border-0 borderRadius overflow-hidden">
