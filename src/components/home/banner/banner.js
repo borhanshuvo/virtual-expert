@@ -31,13 +31,16 @@ const Banner = ({ bannerData, footerLink }) => {
         </div>
       </div>
       {/* social link goes here */}
-      <div className="position-fixed left-0 top-30 px-2 d-none d-md-block">
+      <div className="position-fixed left-0 top-30">
         <a
           target="_blank"
           title={footerLink.skype}
           className="position-relative d-flex align-items-center test"
         >
-          <FaSkype className="d-block cursor-pointer my-1 order-color bg-white" />
+          <FaSkype
+            className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+            size={32}
+          />
           <span className="social-address fs-12 ms-1 text-secondary">
             Skype: {footerLink[0].skype}
           </span>
@@ -47,7 +50,10 @@ const Banner = ({ bannerData, footerLink }) => {
           title={footerLink.whatsApp}
           className="position-relative d-flex align-items-center test"
         >
-          <IoLogoWhatsapp className="d-block cursor-pointer my-2 order-color" />
+          <IoLogoWhatsapp
+            className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+            size={32}
+          />
           <span className="social-address fs-12 ms-1 text-secondary">
             WhatsApp: {footerLink[0].whatsApp}
           </span>
@@ -57,7 +63,10 @@ const Banner = ({ bannerData, footerLink }) => {
           title={footerLink.email}
           className="position-relative d-flex align-items-center test"
         >
-          <MdEmail className="d-block my-2 cursor-pointer order-color" />
+          <MdEmail
+            className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+            size={32}
+          />
           <span className="social-address fs-12 ms-1 text-secondary">
             Email: {footerLink[0].email}
           </span>

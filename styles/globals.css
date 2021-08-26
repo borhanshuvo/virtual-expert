@@ -503,3 +503,10 @@ ul {
   background-image: url("../images/Others/Bg.svg");
   background-size: cover;
 } */
+.fixedIcon {
+  transition: 0.2s;
+}
+
+.fixedIcon:hover {
+  transform: scale(1.2);
+}
