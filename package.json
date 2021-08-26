@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^2.8.0",
-    "@material-ui/lab": "^4.0.0-alpha.60",
     "emailjs-com": "^3.2.0",
     "html-react-parser": "^1.2.8",
     "jwt-decode": "^3.1.2",

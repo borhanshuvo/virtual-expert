@@ -75,11 +75,8 @@ const Orders = ({ orderData, totalData }) => {
             </div>
             {/*  */}
             {orderData.map((info, index) => (
-              <>
-                <div
-                  className="boxShadow p-3 my-3 d-flex justify-content-between align-items-center"
-                  key={info._id}
-                >
+              <div key={info._id}>
+                <div className="boxShadow p-3 my-3 d-flex justify-content-between align-items-center">
                   <p className="fs-14">
                     <span className="fw-bold">Order Id</span> - {info._id}
                   </p>
@@ -135,7 +132,7 @@ const Orders = ({ orderData, totalData }) => {
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             ))}
             <div className="d-flex justify-content-center">
               <ReactPaginate

@@ -7,7 +7,6 @@ const SingleAnswerCard = ({ answer, index, setNumber }) => {
 
   const onSubmit = (data) => {
     const title = data.title || answer.title;
-    console.log(title);
     fetch("https://sleepy-mesa-08037.herokuapp.com/placeAnOrderList/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
@@ -25,7 +24,7 @@ const SingleAnswerCard = ({ answer, index, setNumber }) => {
   return (
     <>
       <div className="d-flex justify-content-between" key={answer._id}>
-        <p classNames="fs-14">
+        <p className="fs-14">
           {index + 1}. {answer.title}
         </p>
         <AiFillEdit

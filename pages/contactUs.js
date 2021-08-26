@@ -14,12 +14,8 @@ const ContactUs = () => {
         "user_IPQt7Bei466UeZ7tBO084"
       )
       .then(
-        (result) => {
-          console.log(result);
-        },
-        (error) => {
-          console.log(error);
-        }
+        (result) => {},
+        (error) => {}
       );
   }
   return (
