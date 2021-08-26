@@ -14,7 +14,7 @@ import Logo from "../../../../images/Shape.svg";
 import ScheduleMeeting from "../../home/scheduleMeeting/scheduleMeeting";
 import styles from "./letsTalk.module.css";
 
-const LetsTalk = () => {
+const LetsTalk = ({ footerData }) => {
   const router = useRouter();
   const [footerLink, setFooterLink] = useState({});
 
@@ -114,24 +114,25 @@ const LetsTalk = () => {
                   {" "}
                   <GoLocation className={`${styles.logo} icon-margin-top`} />
                   <span>
-                    <span className="fw-500">Address</span> : 226 West 26th
-                    Street, New York, NY 10001, USA
+                    <span className="fw-500">Address</span> :{" "}
+                    {footerData[0].address}
                   </span>
                 </p>
                 <p className="fs-15 d-flex align-items-center lh-40 m-0">
                   {" "}
                   <HiOutlineMail className={`${styles.logo}`} />
-                  <span className="fw-500">Email</span>: help@virtualexperts.net
+                  <span className="fw-500">Email</span>: {footerData[0].email}
                 </p>
                 <p className="fs-15 d-flex align-items-center lh-40 m-0">
                   {" "}
                   <AiOutlineSkype className={`${styles.logo} fs-15`} />
-                  <span className="fw-500">Skype</span>: VirtualExpertsLTD
+                  <span className="fw-500">Skype</span>: {footerData[0].skype}
                 </p>
                 <p className="fs-15 d-flex align-items-center lh-40 m-0">
                   {" "}
                   <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
-                  <span className="fw-500">Whatsapp</span>: +13473528622
+                  <span className="fw-500">Whatsapp</span>:{" "}
+                  {footerData[0].whatsApp}
                 </p>
               </div>
               <div>

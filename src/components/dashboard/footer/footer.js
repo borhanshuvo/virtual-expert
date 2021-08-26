@@ -27,6 +27,7 @@ const AdminFooter = () => {
     const whatsApp = data.whatsApp || footerData.whatsApp;
     const copyRightText = data.copyRightText || footerData.copyRightText;
     const _id = footerData._id;
+    const address = data.address || footerData.address;
 
     fetch("https://sleepy-mesa-08037.herokuapp.com/footer/update", {
       method: "PUT",
@@ -38,6 +39,7 @@ const AdminFooter = () => {
         whatsApp,
         _id,
         copyRightText,
+        address,
       }),
     })
       .then((res) => res.json())
@@ -117,6 +119,15 @@ const AdminFooter = () => {
           className="form-control fs-14"
           name="whatsApp"
           value={footerData.whatsApp}
+        />
+        <label htmlFor="address" className="d-block my-2">
+          Address
+        </label>
+        <input
+          type="text"
+          className="form-control fs-14"
+          name="address"
+          value={footerData?.address}
         />
         <div className="d-flex justify-content-between my-4">
           <h6 className="fs-18">Update Social Link</h6>
@@ -245,6 +256,16 @@ const AdminFooter = () => {
                   {...register("whatsApp")}
                   name="whatsApp"
                   id="whatsApp"
+                  className="form-control mb-2"
+                ></textarea>
+                <label htmlFor="address">Address</label>
+                <textarea
+                  rows="2"
+                  cols="2"
+                  defaultValue={footerData?.address}
+                  {...register("address")}
+                  name="address"
+                  id="address"
                   className="form-control mb-2"
                 ></textarea>
                 <input
