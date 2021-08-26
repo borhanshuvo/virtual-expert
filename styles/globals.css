@@ -525,3 +525,26 @@ ul {
 .top-80 {
   top: 90%;
 }
+
+ul {
+  display: flex;
+}
+
+ul li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+#react-paginate ul {
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#react-paginate li {
+  display: inline-block;
+}
+
+.selected {
+  color: red;
+}

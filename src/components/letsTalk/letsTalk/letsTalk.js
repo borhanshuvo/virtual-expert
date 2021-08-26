@@ -79,17 +79,16 @@ const LetsTalk = () => {
               Let&#x27;s Talk
             </h2>
             <p className="fs-14">
-            <span className="cursor-pointer" onClick={() => router.push("/")}>
-              Home
-            </span>{" "}
-            <span className="text-warning mx-2">{`>`}</span>{" "}
-            <span
-              className="cursor-pointer"
-              onClick={() => router.push("/lets-talk")}
-            >
-              Let&#x27;s
-              Talk
-            </span>
+              <span className="cursor-pointer" onClick={() => router.push("/")}>
+                Home
+              </span>{" "}
+              <span className="text-warning mx-2">{`>`}</span>{" "}
+              <span
+                className="cursor-pointer"
+                onClick={() => router.push("/lets-talk")}
+              >
+                Let&#x27;s Talk
+              </span>
             </p>
           </div>
         </div>
@@ -180,7 +179,7 @@ const LetsTalk = () => {
 
             <div className="col-md-6">
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center mx-2">
+                <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center mx-md-2">
                   <div className="col-12 col-md-6">
                     <input
                       placeholder="Name"
@@ -204,7 +203,7 @@ const LetsTalk = () => {
                     )}
                   </div>
                 </div>
-                <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center fs-14 mx-2">
+                <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center fs-14 mx-md-2">
                   <div className="col-12 col-md-6">
                     <input
                       placeholder="Phone"
