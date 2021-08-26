@@ -510,3 +510,10 @@ ul {
 .fixedIcon:hover {
   transform: scale(1.2);
 }
+
+.btn-popup {
+  position: absolute;
+  right: 8%;
+  top: 25px;
+  color: #fff;
+}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 import about1 from "../../../images/about/img-1.svg";
 import about2 from "../../../images/about/Img.svg";
@@ -12,13 +13,23 @@ const AboutC = ({
   aboutUniquetListData,
   teams,
 }) => {
+  const router = useRouter();
   return (
     <section className="overflow-hidden">
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
           <h2 className="fs-30 lh-45 roboto-font-family fw-400">About</h2>
           <p className="fs-14">
-            Home <span className="text-warning mx-2">{`>`}</span> About
+          <span className="cursor-pointer" onClick={() => router.push("/")}>
+              Home
+            </span>{" "}
+            <span className="text-warning mx-2">{`>`}</span>{" "}
+            <span
+              className="cursor-pointer"
+              onClick={() => router.push("/about")}
+            >
+              About
+            </span>
           </p>
         </div>
       </div>
