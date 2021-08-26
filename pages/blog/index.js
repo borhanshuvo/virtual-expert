@@ -6,8 +6,7 @@ import { useForm } from "react-hook-form";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
-import cover from "../images/PewDiePie-Facebook.png";
-const array = [1, 2, 3];
+import { blogData } from "../../src/components/fakeData/blogData";
 
 const Blog = () => {
   const router = useRouter();
@@ -47,39 +46,46 @@ const Blog = () => {
           {/* divide two main columns */}
           <div className="col-md-8">
             <div className="row">
-              {array.map((num) => (
-                <div className="col-12 col-md-6 my-2 cursor-pointer" key={num}>
+              {blogData.map((blog) => (
+                <div
+                  className="col-12 col-md-6 my-2 cursor-pointer"
+                  key={blog.id}
+                  onClick={() => router.push(`/blog/${blog.id}`)}
+                >
                   <div className="mx-1 boxShadow borderRadius">
-                    <Image src={cover} alt="blog" className="img-fluid" />
+                    <Image
+                      src={blog.img}
+                      alt={blog.title}
+                      width="200"
+                      height="150"
+                      layout="responsive"
+                      className="rounded-3"
+                    />
                     <div className="d-flex align-items-center justify-content-evenly mt-2 ">
                       <p style={{ fontSize: "14px" }}>
                         {" "}
-                        <FaUser className="me-1" /> Kamon Ahmed
+                        <FaUser className="me-1" /> {blog.writerName}
                       </p>
                       <p style={{ fontSize: "14px" }}>
                         {" "}
-                        <AiOutlineClockCircle className="me-1" /> August 17 2021
+                        <AiOutlineClockCircle className="me-1" />{" "}
+                        {blog.publishedDate}
                       </p>
                       <p style={{ fontSize: "14px" }}>
                         {" "}
-                        <BiMessageRounded className="me-1" /> 0
+                        <BiMessageRounded className="me-1" /> {blog.view}
                       </p>
                     </div>
-                    <div
-                      className="p-3 mb-3 scrollBlog"
-                      style={{ height: "170px", overflow: "scroll" }}
-                    >
-                      <p className="fs-14">
-                        n publishing and graphic design, Lorem ipsum is a
-                        placeholder text commonly used to demonstrate the visual
-                        form of a document or a typeface without relying on
-                        meaningful content. Lorem ipsum may be used as a
-                        placeholder before final copy is available n publishing
-                        and graphic design, Lorem ipsum is a placeholder text
-                        commonly used to demonstrate the visual form of a
-                        document or a typeface without relying on meaningful
-                        content. Lorem ipsum may be used as a placeholder before
-                        final copy is available{" "}
+                    <div className="px-3 mb-3">
+                      <h3 className="fs-18 lh-36 m-0">{blog.title}</h3>
+                      <p className="fs-14 lh-36 m-0">
+                        {blog.description.slice(0, 49)}...
+                      </p>
+                      <p
+                        className="fs-14 px-3 py-2 bg-light d-inline-block mb-3"
+                        onClick={() => router.push(`/blog/${blog.id}`)}
+                      >
+                        See More
                       </p>
                     </div>
                   </div>
