@@ -504,7 +504,7 @@ ul {
   background-size: cover;
 } */
 .fixedIcon {
-  transition: 0.2s;
+  transition: 0.2s ease-in-out;
 }
 
 .fixedIcon:hover {

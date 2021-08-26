@@ -53,11 +53,19 @@ const AdminFooter = () => {
     const instagram = data.instagram || footerLink.instagram;
     const telegram = data.telegram || footerLink.telegram;
     const twitter = data.twitter || footerLink.twitter;
+    const youTube = data.youTube || footerLink.youTube;
 
     fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ _id, facebook, instagram, telegram, twitter }),
+      body: JSON.stringify({
+        _id,
+        facebook,
+        instagram,
+        telegram,
+        twitter,
+        youTube,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -154,6 +162,15 @@ const AdminFooter = () => {
           className="form-control fs-14"
           name="twitter"
           value={footerLink.twitter}
+        />
+        <label htmlFor="youTube" className="d-block my-2">
+          YouTube
+        </label>
+        <input
+          type="text"
+          className="form-control fs-14"
+          name="youTube"
+          value={footerLink?.youTube}
         />
       </div>
 
@@ -304,6 +321,16 @@ const AdminFooter = () => {
                   {...register("twitter")}
                   name="twitter"
                   id="twitter"
+                  className="form-control mb-2"
+                ></textarea>
+                <label htmlFor="twitter">YouTube</label>
+                <textarea
+                  rows="2"
+                  cols="2"
+                  defaultValue={footerLink.youTube}
+                  {...register("youTube")}
+                  name="youTube"
+                  id="youTube"
                   className="form-control mb-2"
                 ></textarea>
                 <input
