@@ -1,13 +1,29 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import quoteIcon from "../../../../images/icon.svg";
 import SectionTitle from "../../sectionTitle/sectionTitle";
 
 const Testimonial = ({ testimonials }) => {
+  const [number, setNumber] = useState(0);
+
   const [currentTestimonials, setCurrentTestimonial] = useState(
-    testimonials[0]
+    testimonials[number]
   );
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (number >= testimonials.length - 1) {
+        setNumber(0);
+        setCurrentTestimonial(testimonials[number]);
+      } else {
+        setNumber(number + 1);
+        setCurrentTestimonial(testimonials[number]);
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [number, testimonials.length, testimonials]);
+
+  console.log(number);
   const handleChange = (id) => {
     setCurrentTestimonial(testimonials[id]);
   };
