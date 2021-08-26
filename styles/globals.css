@@ -401,11 +401,11 @@ ul {
 
 .cardHeaderImg {
   background-color: #ffffff;
-  padding: 15px 15px;
+  padding: 5px 5px;
   border-radius: 50%;
   position: absolute;
-  left: 45%;
-  bottom: -20px;
+  left: 42%;
+  bottom: -25px;
   border: 3px solid #ff9f26;
 }
 

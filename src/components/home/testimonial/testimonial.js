@@ -23,7 +23,6 @@ const Testimonial = ({ testimonials }) => {
     return () => clearInterval(interval);
   }, [number, testimonials.length, testimonials]);
 
-  console.log(number);
   const handleChange = (id) => {
     setCurrentTestimonial(testimonials[id]);
   };

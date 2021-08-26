@@ -65,7 +65,7 @@ const Order = () => {
             body: JSON.stringify(msgTemplate),
           })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {});
           e.target.reset();
         }
       });

@@ -9,7 +9,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 import cardHeaderBg from "../images/Others/Group 157.svg";
-import cardHeaderImg from "../images/Others/img.svg";
+import cardHeaderImg from "../images/v-logo.svg";
 import { UserContext } from "./_app";
 
 const Signin = () => {
@@ -80,10 +80,14 @@ const Signin = () => {
           <>
             <div className="position-relative">
               <div className="cardHeaderBg">
-                <Image src={cardHeaderBg} alt="banner Image" />
+                <Image src={cardHeaderBg} alt="header" />
               </div>
               <div className="cardHeaderImg">
-                <Image src={cardHeaderImg} alt="Logo Image" />
+                <Image
+                  src={cardHeaderImg}
+                  className="mt-2 p-2"
+                  alt="cardImage"
+                />
               </div>
             </div>
 
