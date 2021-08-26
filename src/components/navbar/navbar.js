@@ -72,15 +72,15 @@ const Navbar = () => {
             ></button>
           </div>
           <div className="offcanvas-body">
-            <ul className="text-center">
+            <div className="text-center">
               {navData.map((nav) => (
-                <li key={nav.id} className="my-4">
+                <div key={nav.id} className="my-4">
                   <Link href={nav.link} scroll>
                     <a className={styles.navItem}>{nav.title}</a>
                   </Link>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
