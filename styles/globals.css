@@ -503,3 +503,10 @@ ul {
   background-image: url("../images/Others/Bg.svg");
   background-size: cover;
 } */
+
+.btn-popup {
+  position: absolute;
+  right: 8%;
+  top: 25px;
+  color: #fff;
+}

@@ -4,16 +4,27 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 import cover from "../images/PewDiePie-Facebook.png";
+import { useRouter } from "next/router";
 const array = [1, 2, 3];
 
 const Blog = () => {
+  const router = useRouter();
   return (
     <>
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
           <h6 className="fs-30 roboto-font-family fw-400">Blog</h6>
           <p className="fs-14">
-            Home <span className="text-warning mx-2">{`>`}</span> About
+            <span className="cursor-pointer" onClick={() => router.push("/")}>
+              Home
+            </span>{" "}
+            <span className="text-warning mx-2">{`>`}</span>{" "}
+            <span
+              className="cursor-pointer"
+              onClick={() => router.push("/blog")}
+            >
+              Blog
+            </span>
           </p>
         </div>
       </div>

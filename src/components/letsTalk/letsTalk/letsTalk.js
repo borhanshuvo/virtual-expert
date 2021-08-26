@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/ai";
@@ -14,6 +15,7 @@ import ScheduleMeeting from "../../home/scheduleMeeting/scheduleMeeting";
 import styles from "./letsTalk.module.css";
 
 const LetsTalk = () => {
+  const router = useRouter();
   const [footerLink, setFooterLink] = useState({});
 
   const {
@@ -77,8 +79,17 @@ const LetsTalk = () => {
               Let&#x27;s Talk
             </h2>
             <p className="fs-14">
-              Home <span className="text-warning mx-2">{`>`}</span> Let&#x27;s
+            <span className="cursor-pointer" onClick={() => router.push("/")}>
+              Home
+            </span>{" "}
+            <span className="text-warning mx-2">{`>`}</span>{" "}
+            <span
+              className="cursor-pointer"
+              onClick={() => router.push("/lets-talk")}
+            >
+              Let&#x27;s
               Talk
+            </span>
             </p>
           </div>
         </div>
