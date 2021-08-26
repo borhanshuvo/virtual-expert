@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import shape from "../../../../images/dummy.png";
@@ -78,16 +79,19 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                           Maintenence : ${servicesCard.maintenance} per month
                         </p>
                       )}
-                      <button
-                        className="button mt-3"
-                        style={{
-                          padding: "5px 20px",
-                          backgroundColor: "white",
-                        }}
-                        onClick={() => router.push("/order")}
-                      >
-                        <h6 className="fs-14 d-inline">Order Now</h6>
-                      </button>
+                      <Link href="/order" scroll>
+                        <a>
+                          <button
+                            className="button mt-3"
+                            style={{
+                              padding: "5px 20px",
+                              backgroundColor: "white",
+                            }}
+                          >
+                            <h6 className="fs-14 d-inline">Order Now</h6>
+                          </button>
+                        </a>
+                      </Link>
                     </div>
                     <div className="position-absolute end-0 card-shape-bottom ">
                       <Image src={shape} alt="shape" height="120" width="120" />

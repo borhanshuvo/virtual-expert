@@ -20,7 +20,7 @@ const Navbar = () => {
     >
       <div className="d-flex justify-content-between align-items-center container py-3">
         <div className="d-none d-md-block">
-          <Link href="/">
+          <Link href="/" scroll>
             <a>
               <Image src={logo} alt="logo" height="50" width="278" />
             </a>
@@ -33,7 +33,7 @@ const Navbar = () => {
           <ul className="d-flex align-items-center">
             {navData.map((nav) => (
               <li key={nav.id} className="mx-3 position-relative">
-                <Link href={nav.link}>
+                <Link href={nav.link} scroll>
                   <a
                     className={`${
                       currentPath === nav.link ? `${styles.active}` : ""
@@ -75,7 +75,7 @@ const Navbar = () => {
             <ul className="text-center">
               {navData.map((nav) => (
                 <li key={nav.id} className="my-4">
-                  <Link href={nav.link}>
+                  <Link href={nav.link} scroll>
                     <a className={styles.navItem}>{nav.title}</a>
                   </Link>
                 </li>

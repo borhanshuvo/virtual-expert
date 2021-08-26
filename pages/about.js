@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import AboutC from "../src/components/about/about";
 
@@ -9,7 +10,11 @@ const About = ({
   teams,
 }) => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Virtual Experts | About</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <AboutC
         aboutData={aboutData}
         aboutTeamData={aboutTeamData}
@@ -17,7 +22,7 @@ const About = ({
         aboutUniquetListData={aboutUniquetListData}
         teams={teams}
       />
-    </div>
+    </>
   );
 };
 

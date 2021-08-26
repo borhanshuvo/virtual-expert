@@ -1,5 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import jwt_encode from "jwt-encode";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useContext } from "react";
@@ -58,70 +59,76 @@ const Signin = () => {
   };
 
   return (
-    <div className="background-color-skyblue d-flex align-items-center justify-content-center vh-100">
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      <div className="py-5 mx-auto">
-        <>
-          <div className="position-relative">
-            <div className="cardHeaderBg">
-              <Image src={cardHeaderBg} />
-            </div>
-            <div className="cardHeaderImg">
-              <Image src={cardHeaderImg} />
-            </div>
-          </div>
-
-          <div className="card-body mx-auto bg-white borderRadius">
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="mx-md-4 mx-0 my-5"
-            >
-              <div className="my-3">
-                <input
-                  autoComplete="off"
-                  className="card-input input-background py-2 px-2 w-100"
-                  type="text"
-                  placeholder="Username"
-                  defaultValue=""
-                  {...register("username")}
-                />
+    <>
+      <Head>
+        <title>Virtual Experts | SignIn</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <div className="background-color-skyblue d-flex align-items-center justify-content-center vh-100">
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        <div className="py-5 mx-auto">
+          <>
+            <div className="position-relative">
+              <div className="cardHeaderBg">
+                <Image src={cardHeaderBg} alt="banner Image" />
               </div>
-              <span role="alert" className="text-danger">
-                {errors.username?.message}
-              </span>
-
-              <div className="my-3">
-                <input
-                  autoComplete="off"
-                  className="card-input input-background py-2 px-2 w-100"
-                  type="password"
-                  defaultValue=""
-                  placeholder="Password"
-                  {...register("password")}
-                />
+              <div className="cardHeaderImg">
+                <Image src={cardHeaderImg} alt="Logo Image" />
               </div>
-              <span role="alert" className="text-danger">
-                {errors.password?.message}
-              </span>
+            </div>
 
-              <button className="card-button mt-2 d-block" type="submit">
-                Sign In
-              </button>
-            </form>
-          </div>
-        </>
+            <div className="card-body mx-auto bg-white borderRadius">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="mx-md-4 mx-0 my-5"
+              >
+                <div className="my-3">
+                  <input
+                    autoComplete="off"
+                    className="card-input input-background py-2 px-2 w-100"
+                    type="text"
+                    placeholder="Username"
+                    defaultValue=""
+                    {...register("username")}
+                  />
+                </div>
+                <span role="alert" className="text-danger">
+                  {errors.username?.message}
+                </span>
+
+                <div className="my-3">
+                  <input
+                    autoComplete="off"
+                    className="card-input input-background py-2 px-2 w-100"
+                    type="password"
+                    defaultValue=""
+                    placeholder="Password"
+                    {...register("password")}
+                  />
+                </div>
+                <span role="alert" className="text-danger">
+                  {errors.password?.message}
+                </span>
+
+                <button className="card-button mt-2 d-block" type="submit">
+                  Sign In
+                </button>
+              </form>
+            </div>
+          </>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,11 +1,12 @@
+import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
+import { useForm } from "react-hook-form";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 import cover from "../images/PewDiePie-Facebook.png";
-import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
 const array = [1, 2, 3];
 
 const Blog = () => {
@@ -20,6 +21,10 @@ const Blog = () => {
 
   return (
     <>
+      <Head>
+        <title>Virtual Experts | Blog</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
           <h6 className="fs-30 roboto-font-family fw-400">Blog</h6>
@@ -86,7 +91,9 @@ const Blog = () => {
           {/* ========================================================================================== */}
           {/* main 2nd col */}
           <div className="col-md-4 mt-4">
-            <p className="text-center"><u>Contact Us</u></p>
+            <p className="text-center">
+              <u>Contact Us</u>
+            </p>
             <div className="card-body mx-auto bg-white borderRadius">
               <form onSubmit={handleSubmit(onSubmit)} className="mx-md-4 mx-0">
                 <div className="my-3">

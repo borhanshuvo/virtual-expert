@@ -4,10 +4,10 @@ import Router from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { createContext, useEffect, useState } from "react";
+import { FaArrowAltCircleUp } from "react-icons/fa";
 import Footer from "../src/components/footer/footer";
 import Navbar from "../src/components/navbar/navbar";
 import "../styles/globals.css";
-import { FaArrowAltCircleUp } from "react-icons/fa";
 
 nProgress.configure(
   { showSpinner: false },
@@ -26,9 +26,11 @@ function MyApp({ Component, pageProps }) {
   const [signedUser, setSignedUser] = useState({});
   //showing n-progress
   Router.events.on("routeChangeStart", (url) => {
+    window.scroll(0, 0);
     nProgress.start();
   });
   Router.events.on("routeChangeComplete", (url) => {
+    window.scroll(0, 0);
     nProgress.done();
   });
   Router.events.on("routeChangeError", () => nProgress.done());
@@ -84,7 +86,10 @@ function MyApp({ Component, pageProps }) {
       <UserContext.Provider value={[signedUser, setSignedUser]}>
         <Component {...pageProps} />
       </UserContext.Provider>
-      <div onClick={handelClickTop} className="scrol-icon me-5 position-fixed end-0 top-80 cursor-pointer">
+      <div
+        onClick={handelClickTop}
+        className="scrol-icon me-5 position-fixed end-0 top-80 cursor-pointer"
+      >
         <FaArrowAltCircleUp size={40} />
       </div>
       <Footer />
