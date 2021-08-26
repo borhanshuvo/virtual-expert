@@ -7,10 +7,10 @@
   color: #ff9f26;
   font-size: 20px;
   margin-right: 10px;
+  transition: 0.3s ease-in-out;
 }
-.logo:hover{
-  transition-delay: 0.1s;
-  transform: scale(1.2);
+.logo:hover {
+  transform: scale(1.4);
 }
 .bottom {
   border-bottom: 1px solid #828b9a36;
@@ -30,9 +30,9 @@
   left: 0;
   background: #ff9f26 0% 0% no-repeat padding-box;
 }
-.hilight:hover{
-color: #ff9f26;
-cursor: pointer;
+.hilight:hover {
+  color: #ff9f26;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

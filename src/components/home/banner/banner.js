@@ -73,7 +73,7 @@ const Banner = ({ bannerData, footerLink }) => {
         >
           <FaSkype
             className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-            size={32}
+            size={40}
           />
           <span className="social-address fs-12 ms-1 text-secondary">
             Skype: {footerLink[0].skype}
@@ -86,7 +86,7 @@ const Banner = ({ bannerData, footerLink }) => {
         >
           <IoLogoWhatsapp
             className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-            size={32}
+            size={40}
           />
           <span className="social-address fs-12 ms-1 text-secondary">
             WhatsApp: {footerLink[0].whatsApp}
@@ -99,7 +99,7 @@ const Banner = ({ bannerData, footerLink }) => {
         >
           <MdEmail
             className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-            size={32}
+            size={40}
           />
           <span className="social-address fs-12 ms-1 text-secondary">
             Email: {footerLink[0].email}

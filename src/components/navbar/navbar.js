@@ -33,7 +33,7 @@ const Navbar = () => {
           <ul className="d-flex align-items-center">
             {navData.map((nav) => (
               <li key={nav.id} className="mx-3 position-relative">
-                <Link href={nav.link} scroll>
+                <Link href={nav.link}>
                   <a
                     className={`${
                       currentPath === nav.link ? `${styles.active}` : ""
@@ -75,7 +75,7 @@ const Navbar = () => {
             <div className="text-center">
               {navData.map((nav) => (
                 <div key={nav.id} className="my-4">
-                  <Link href={nav.link} scroll>
+                  <Link href={nav.link}>
                     <a className={styles.navItem}>{nav.title}</a>
                   </Link>
                 </div>

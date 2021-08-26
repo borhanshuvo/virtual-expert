@@ -26,11 +26,9 @@ function MyApp({ Component, pageProps }) {
   const [signedUser, setSignedUser] = useState({});
   //showing n-progress
   Router.events.on("routeChangeStart", (url) => {
-    window.scroll(0, 0);
     nProgress.start();
   });
   Router.events.on("routeChangeComplete", (url) => {
-    window.scroll(0, 0);
     nProgress.done();
   });
   Router.events.on("routeChangeError", () => nProgress.done());

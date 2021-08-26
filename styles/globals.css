@@ -520,6 +520,11 @@ ul {
 
 .scrol-icon {
   color: #ff9f26;
+  transition: 0.3s ease-in-out;
+}
+
+.scrol-icon:hover {
+  transform: scale(1.2);
 }
 
 .top-80 {
