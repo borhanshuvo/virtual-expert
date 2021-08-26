@@ -5,10 +5,19 @@ import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 import cover from "../images/PewDiePie-Facebook.png";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const array = [1, 2, 3];
 
 const Blog = () => {
   const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {};
+
   return (
     <>
       <div className="background-color-skyblue">
@@ -32,16 +41,6 @@ const Blog = () => {
         <div className="row ">
           {/* divide two main columns */}
           <div className="col-md-8">
-            {/* <p
-            className=" fw-bold button text-dark text-center d-flex align-items-center justify-content-center px-3 py-2"
-            style={{ width: "100px" }}
-          >
-            <ImBlog className="me-2" style={{ fontSize: "25px" }} />
-            Blogs
-          </p> */}
-            {/* <p style={{ border: "1px solid whiteSmoke" }}></p> */}
-            <hr className="text-dark" />
-            {/*  */}
             <div className="row">
               {array.map((num) => (
                 <div className="col-12 col-md-6 my-2 cursor-pointer" key={num}>
@@ -87,26 +86,69 @@ const Blog = () => {
           {/* ========================================================================================== */}
           {/* main 2nd col */}
           <div className="col-md-4 mt-4">
-            {array.map((num) => (
-              <div className=" my-3 row boxShadow cursor-pointer" key={num}>
-                <div className="col-md-6 p-1">
-                  <Image
-                    src={cover}
-                    height="100"
-                    width="150"
-                    alt="blog"
-                    layout="responsive"
-                    className="rounded-3"
+            <p className="text-center"><u>Contact Us</u></p>
+            <div className="card-body mx-auto bg-white borderRadius">
+              <form onSubmit={handleSubmit(onSubmit)} className="mx-md-4 mx-0">
+                <div className="my-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="name"
+                    placeholder="Your Name/Brand Name"
+                    {...register("name", { required: true })}
                   />
+                  {errors.name && (
+                    <p className="fs-14 text-danger">Name Required</p>
+                  )}
                 </div>
-                <div className="col-md-6 d-flex align-items-center justify-content-center">
-                  <p className="fs-14">
-                    Lorem ipsum is a placeholder text commonly used to
-                    demonstrat...
-                  </p>
+
+                <div className="my-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your Email"
+                    name="email"
+                    {...register("email", { required: true })}
+                  />
+                  {errors.email && (
+                    <p className="fs-14 text-danger">Email Required</p>
+                  )}
                 </div>
-              </div>
-            ))}
+
+                <div className="my-3">
+                  <input
+                    type="text"
+                    name="productLink/ASIN"
+                    placeholder="Product Link/ASIN"
+                    {...register("productLinkOrASIN", { required: true })}
+                    className="form-control mt-3"
+                  />
+                  {errors.productLinkOrASIN && (
+                    <p className="fs-14 text-danger">
+                      Product Link/ASIN Required
+                    </p>
+                  )}
+                </div>
+
+                <div className="my-3">
+                  <textarea
+                    rows="5"
+                    col="3"
+                    placeholder="Description"
+                    name="description"
+                    {...register("description", { required: true })}
+                    className="form-control my-4"
+                  />
+                  {errors.description && (
+                    <p className="fs-14 text-danger">Description Required</p>
+                  )}
+                </div>
+
+                <button className="card-button mt-2 d-block" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

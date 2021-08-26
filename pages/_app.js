@@ -7,6 +7,7 @@ import { createContext, useEffect, useState } from "react";
 import Footer from "../src/components/footer/footer";
 import Navbar from "../src/components/navbar/navbar";
 import "../styles/globals.css";
+import { FaArrowAltCircleUp } from "react-icons/fa";
 
 nProgress.configure(
   { showSpinner: false },
@@ -18,6 +19,10 @@ nProgress.configure(
 export const UserContext = createContext();
 
 function MyApp({ Component, pageProps }) {
+  const handelClickTop = () => {
+    window.scroll(0, 0);
+  };
+
   const [signedUser, setSignedUser] = useState({});
   //showing n-progress
   Router.events.on("routeChangeStart", (url) => {
@@ -79,6 +84,9 @@ function MyApp({ Component, pageProps }) {
       <UserContext.Provider value={[signedUser, setSignedUser]}>
         <Component {...pageProps} />
       </UserContext.Provider>
+      <div onClick={handelClickTop} className="scrol-icon me-5 position-fixed end-0 top-80 cursor-pointer">
+        <FaArrowAltCircleUp size={40} />
+      </div>
       <Footer />
     </>
   );
