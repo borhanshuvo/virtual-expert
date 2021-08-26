@@ -3,8 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/ai";
-import { FaFacebook, FaInstagram, FaTelegram } from "react-icons/fa";
+import {
+  AiOutlineSkype,
+  AiOutlineWhatsApp,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
 import { ImTwitter } from "react-icons/im";
@@ -152,7 +156,7 @@ const LetsTalk = ({ footerData }) => {
                   {footerLink?.instagram && (
                     <Link href={footerLink.instagram}>
                       <a target="_blank">
-                        <FaInstagram className={`${styles.logo} me-3`} />
+                        <AiFillInstagram className={`${styles.logo} me-3`} />
                       </a>
                     </Link>
                   )}
@@ -169,6 +173,13 @@ const LetsTalk = ({ footerData }) => {
                     <Link href={footerLink.twitter}>
                       <a target="_blank">
                         <ImTwitter className={`${styles.logo} me-3`} />
+                      </a>
+                    </Link>
+                  )}
+                  {footerLink?.youTube && (
+                    <Link href={footerLink.youTube}>
+                      <a target="_blank">
+                        <FaYoutube className={`${styles.logo} me-3`} />
                       </a>
                     </Link>
                   )}

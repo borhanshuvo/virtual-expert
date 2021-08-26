@@ -7,6 +7,8 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 import { blogData } from "../../src/components/fakeData/blogData";
+import cardHeaderBg from "../../images/Others/Group 157.svg";
+import cardHeaderImg from "../../images/v-logo.svg";
 
 const Blog = () => {
   const router = useRouter();
@@ -81,12 +83,12 @@ const Blog = () => {
                       <p className="fs-14 lh-36 m-0">
                         {blog.description.slice(0, 49)}...
                       </p>
-                      <p
-                        className="fs-14 px-3 py-2 bg-light d-inline-block mb-3"
+                      <button
+                        className="fs-14 px-3 py-2 d-inline-block mb-3 btn bg-orange"
                         onClick={() => router.push(`/blog/${blog.id}`)}
                       >
                         See More
-                      </p>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -96,71 +98,86 @@ const Blog = () => {
 
           {/* ========================================================================================== */}
           {/* main 2nd col */}
-          <div className="col-md-4 mt-4">
-            <p className="text-center">
-              <u>Contact Us</u>
-            </p>
-            <div className="card-body mx-auto bg-white borderRadius">
-              <form onSubmit={handleSubmit(onSubmit)} className="mx-md-4 mx-0">
-                <div className="my-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="name"
-                    placeholder="Your Name/Brand Name"
-                    {...register("name", { required: true })}
-                  />
-                  {errors.name && (
-                    <p className="fs-14 text-danger">Name Required</p>
-                  )}
+          <div className="col-md-4 mt-2">
+            <div className="boxShadow">
+              <div className="position-relative">
+                <div className="cardHeaderBg">
+                  <Image src={cardHeaderBg} alt="header" />
                 </div>
-
-                <div className="my-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Your Email"
-                    name="email"
-                    {...register("email", { required: true })}
+                <div className="cardHeaderImg">
+                  <Image
+                    src={cardHeaderImg}
+                    className="mt-2 p-2"
+                    alt="cardImage"
                   />
-                  {errors.email && (
-                    <p className="fs-14 text-danger">Email Required</p>
-                  )}
                 </div>
+              </div>
 
-                <div className="my-3">
-                  <input
-                    type="text"
-                    name="productLink/ASIN"
-                    placeholder="Product Link/ASIN"
-                    {...register("productLinkOrASIN", { required: true })}
-                    className="form-control mt-3"
-                  />
-                  {errors.productLinkOrASIN && (
-                    <p className="fs-14 text-danger">
-                      Product Link/ASIN Required
-                    </p>
-                  )}
-                </div>
+              <div className="card-body mx-auto bg-white borderRadius">
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="mx-md-2 mx-0"
+                >
+                  <div className="my-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="name"
+                      placeholder="Your Name/Brand Name"
+                      {...register("name", { required: true })}
+                    />
+                    {errors.name && (
+                      <p className="fs-14 text-danger">Name Required</p>
+                    )}
+                  </div>
 
-                <div className="my-3">
-                  <textarea
-                    rows="5"
-                    col="3"
-                    placeholder="Description"
-                    name="description"
-                    {...register("description", { required: true })}
-                    className="form-control my-4"
-                  />
-                  {errors.description && (
-                    <p className="fs-14 text-danger">Description Required</p>
-                  )}
-                </div>
+                  <div className="my-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Your Email"
+                      name="email"
+                      {...register("email", { required: true })}
+                    />
+                    {errors.email && (
+                      <p className="fs-14 text-danger">Email Required</p>
+                    )}
+                  </div>
 
-                <button className="card-button mt-2 d-block" type="submit">
-                  Submit
-                </button>
-              </form>
+                  <div className="my-3">
+                    <input
+                      type="text"
+                      name="productLink/ASIN"
+                      placeholder="Product Link/ASIN"
+                      {...register("productLinkOrASIN", { required: true })}
+                      className="form-control mt-3"
+                    />
+                    {errors.productLinkOrASIN && (
+                      <p className="fs-14 text-danger">
+                        Product Link/ASIN Required
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="my-3">
+                    <textarea
+                      rows="5"
+                      col="3"
+                      placeholder="Description"
+                      name="description"
+                      {...register("description", { required: true })}
+                      className="form-control my-4"
+                    />
+                    {errors.description && (
+                      <p className="fs-14 text-danger">Description Required</p>
+                    )}
+                  </div>
+
+                  <button className="card-button mt-2 d-block" type="submit">
+                    Submit
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

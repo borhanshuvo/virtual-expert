@@ -557,3 +557,14 @@ ul li {
 .fs-20 {
   font-size: 20px;
 }
+
+.bg-orange {
+  background-color: #ffffff;
+  color: #ff9f26;
+}
+
+.bg-orange:hover {
+  background-color: #ff9f26;
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
+}
