@@ -26,6 +26,7 @@ const Blog = () => {
         <title>Virtual Experts | Blog</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
           <h6 className="fs-30 roboto-font-family fw-400">Blog</h6>
@@ -43,6 +44,7 @@ const Blog = () => {
           </p>
         </div>
       </div>
+
       <div className="container mt-5">
         <div className="row ">
           {/* divide two main columns */}
@@ -81,10 +83,10 @@ const Blog = () => {
                     <div className="px-3 mb-3">
                       <h3 className="fs-18 lh-36 m-0">{blog.title}</h3>
                       <p className="fs-14 lh-36 m-0">
-                        {blog.description.slice(0, 49)}...
+                        {blog.description.slice(0, 49)}
                       </p>
                       <button
-                        className="fs-14 px-3 py-2 d-inline-block mb-3 btn bg-orange"
+                        className="fs-14 px-3 py-2 d-inline-block mb-3 btn btn-orange"
                         onClick={() => router.push(`/blog/${blog.id}`)}
                       >
                         See More

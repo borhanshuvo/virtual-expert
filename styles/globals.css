@@ -558,12 +558,12 @@ ul li {
   font-size: 20px;
 }
 
-.bg-orange {
+.btn-orange {
   background-color: #ffffff;
   color: #ff9f26;
 }
 
-.bg-orange:hover {
+.btn-orange:hover {
   background-color: #ff9f26;
   color: #ffffff;
   transition: 0.3s ease-in-out;
