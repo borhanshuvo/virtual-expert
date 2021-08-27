@@ -32,7 +32,7 @@ const BlogDetails = () => {
               Blog
             </span>
             <span className="text-warning mx-2">{`>`}</span>{" "}
-            <span>{currentBlog.title}</span>
+            <span>{currentBlog?.title}</span>
           </p>
         </div>
       </div>
@@ -41,8 +41,8 @@ const BlogDetails = () => {
         <div className="mt-4 d-none d-md-block">
           {currentBlog && (
             <Image
-              src={currentBlog.img}
-              alt={currentBlog.title}
+              src={currentBlog?.img}
+              alt={currentBlog?.title}
               layout="responsive"
               height="350"
               width="1000"
@@ -53,8 +53,8 @@ const BlogDetails = () => {
         <div className="mt-4 d-block d-md-none">
           {currentBlog && (
             <Image
-              src={currentBlog.img}
-              alt={currentBlog.title}
+              src={currentBlog?.img}
+              alt={currentBlog?.title}
               layout="responsive"
               height="450"
               width="1000"
