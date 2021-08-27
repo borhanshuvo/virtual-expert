@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 import { FaSkype } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
@@ -74,8 +75,8 @@ const Banner = ({ bannerData, footerLink }) => {
             className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
             size={40}
           />
-          <span className="social-address fs-12 ms-1 text-secondary">
-            Skype: {footerLink[0].skype}
+          <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+            skype:{footerLink[0].skype}
           </span>
         </a>
         <a
@@ -87,23 +88,25 @@ const Banner = ({ bannerData, footerLink }) => {
             className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
             size={40}
           />
-          <span className="social-address fs-12 ms-1 text-secondary">
-            WhatsApp: {footerLink[0].whatsApp}
+          <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+            WhatsApp:{footerLink[0].whatsApp}
           </span>
         </a>
-        <a
-          target="_blank"
-          title={footerLink.email}
-          className="position-relative d-flex align-items-center test"
-        >
-          <MdEmail
-            className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-            size={40}
-          />
-          <span className="social-address fs-12 ms-1 text-secondary">
-            Email: {footerLink[0].email}
-          </span>
-        </a>
+        <Link href={`mailto:${footerLink.email}`}>
+          <a
+            target="_blank"
+            title={footerLink.email}
+            className="position-relative d-flex align-items-center test"
+          >
+            <MdEmail
+              className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+              size={40}
+            />
+            <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+              Email:{footerLink[0].email}
+            </span>
+          </a>
+        </Link>
       </div>
 
       {/* PopUp Modal */}
