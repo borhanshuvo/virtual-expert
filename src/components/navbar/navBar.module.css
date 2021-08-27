@@ -3,13 +3,16 @@
   color: #828b9a;
   position: relative;
 }
+
 .navItem:hover {
   color: #222f3e;
 }
+
 .active {
   position: relative;
   color: #000;
 }
+
 .active::after {
   content: "";
   position: absolute;
@@ -46,4 +49,14 @@
   display: block;
   margin-left: auto;
   background-color: #828b9a;
+}
+
+.navItemMobile {
+  font-size: 14px;
+  position: relative;
+  color: #ffffff !important;
+}
+
+.navItemMobileHover:hover {
+  background-color: #ffac45;
 }

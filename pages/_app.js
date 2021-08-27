@@ -1,6 +1,7 @@
 import jwt_decode from "jwt-decode";
 import Head from "next/head";
 import Router from "next/router";
+import { useRouter } from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { createContext, useEffect, useState } from "react";
@@ -19,6 +20,9 @@ nProgress.configure(
 export const UserContext = createContext();
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const currentPath = router.pathname;
+
   const handelClickTop = () => {
     window.scroll(0, 0);
   };
@@ -85,10 +89,21 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </UserContext.Provider>
       <div
-        onClick={handelClickTop}
-        className="scrol-icon me-5 position-fixed end-0 top-80 cursor-pointer"
+        className={
+          router.pathname === "/dashboard" ||
+          router.pathname === "/dashboard/service" ||
+          router.pathname === "/dashboard/about" ||
+          router.pathname === "/dashboard/orders"
+            ? "d-none"
+            : ""
+        }
       >
-        <FaArrowAltCircleUp size={40} />
+        <div
+          onClick={handelClickTop}
+          className="scrol-icon me-5 position-fixed end-0 top-80 cursor-pointer"
+        >
+          <FaArrowAltCircleUp size={40} />
+        </div>
       </div>
       <Footer />
     </>
