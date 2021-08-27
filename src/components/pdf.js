@@ -4,24 +4,14 @@ import {
   Image,
   Page,
   PDFDownloadLink,
-  StyleSheet,
   Text,
   View,
 } from "@react-pdf/renderer";
 
 Font.register({
   family: "Work Sans",
-  src: "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
-});
-
-const styles = StyleSheet.create({
-  displayFlex: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  halfWidth: {
-    width: "50%",
-  },
+  src: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200&display=swap",
+  fontWeight: "light",
 });
 
 const MyDoc = () => (
@@ -33,13 +23,14 @@ const MyDoc = () => (
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
+            paddingLeft: "10px",
           }}
         >
-          <View style={{ flexDirection: "column", width: "70%" }}>
+          <View style={{ flexDirection: "column", width: "65%" }}>
             <Image
               src="https://scontent.xx.fbcdn.net/v/t1.15752-9/p206x206/236572994_398461971630466_605516393644358744_n.png?_nc_cat=111&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeFopFSP5O0LojpX3q40b94S5Gpr5B2PbuvkamvkHY9u60rOZvYT0zftznjoT1f_wKirth1ENb-0blYso0M6QJ73&_nc_ohc=39umaJbC2p4AX91rnmZ&_nc_oc=AQlAP6SrcFia3WIFVgllNSyl6qPP-tAP62_nefXf-Or1LibN4N9caZi8rioayfTdE14lOjmjz2WcmmbRfTmGwv-U&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=254c14cbeef641439b1ae7c02e3c2c3b&oe=61502BDF"
               alt="Logo"
-              style={{ height: "50px", width: "120px" }}
+              style={{ height: "50px", width: "220px", marginBottom: "20px" }}
             />
             <Text
               style={{
@@ -51,39 +42,70 @@ const MyDoc = () => (
             >
               Richard Sid
             </Text>
-            <Text style={{ marginBottom: "5px", fontSize: "11px" }}>
+            <Text
+              style={{
+                marginBottom: "4px",
+                fontSize: "12px",
+                letterSpacing: "1px",
+              }}
+            >
               9070 179 PL
             </Text>
-            <Text style={{ marginBottom: "5px", fontSize: "11px" }}>
+            <Text
+              style={{
+                marginBottom: "4px",
+                fontSize: "12px",
+                letterSpacing: "1px",
+              }}
+            >
               Jamaica AV
             </Text>
-            <Text style={{ marginBottom: "5px", fontSize: "11px" }}>
+            <Text
+              style={{
+                marginBottom: "4px",
+                fontSize: "12px",
+                letterSpacing: "1px",
+              }}
+            >
               New York
             </Text>
-            <Text style={{ marginBottom: "5px", fontSize: "11px" }}>11432</Text>
+            <Text style={{ marginBottom: "4px", fontSize: "12px" }}>11432</Text>
             <Text
               style={{
                 marginTop: "30px",
                 marginBottom: "10px",
                 color: "#3EB2FF",
                 fontSize: "14px",
+                letterSpacing: "1px",
               }}
             >
               AMAZON FBA CONSULTANT
             </Text>
-            <Text style={{ marginBottom: "5px", fontSize: "11px" }}>
+            <Text
+              style={{
+                marginBottom: "5px",
+                fontSize: "12px",
+                letterSpacing: "1px",
+              }}
+            >
               SKYPE: virtualexpertsltd
             </Text>
-            <Text style={{ marginBottom: "5px", fontSize: "11px" }}>
-              PHONE: +1 347 352 8622
+            <Text
+              style={{
+                marginBottom: "5px",
+                fontSize: "12px",
+                letterSpacing: "1px",
+              }}
+            >
+              PHONE: +13473528622
             </Text>
           </View>
           {/* right part */}
           <View
             style={{
               flexDirection: "column",
-              textAlign: "right",
-              width: "30%",
+
+              width: "35%",
             }}
           >
             <Image
@@ -94,19 +116,21 @@ const MyDoc = () => (
                 width: "80px",
                 display: "block",
                 marginLeft: "auto",
+                marginRight: "60px",
               }}
             />
             <Text
               style={{
-                fontSize: "28px",
-                fontWeight: "900",
+                fontSize: "32px",
+                fontWeight: "bolder",
                 color: "#3EB2FF",
-                margin: "15px 0px",
+                textAlign: "right",
+                margin: "15px 40px 15px 0px",
               }}
             >
               INVOICE
             </Text>
-            <Text style={{ fontSize: "12px" }}>
+            <Text style={{ fontSize: "12px", marginBottom: "5px" }}>
               <Text
                 style={{
                   color: "#3EB2FF",
@@ -116,7 +140,7 @@ const MyDoc = () => (
               >
                 DATE:
               </Text>{" "}
-              AUGUEST 10, 2021
+              AUGUST 10, 2021
             </Text>
             <Text style={{ fontSize: "12px" }}>
               <Text
@@ -135,15 +159,38 @@ const MyDoc = () => (
                 fontSize: "12px",
                 color: "#3EB2EF",
                 letterSpacing: "2px",
-                marginTop: "10px",
+                marginTop: "20px",
               }}
             >
               CLIENT INFORMATION
             </Text>
-            <Text style={{ fontSize: "12px" }}>Name: Vitamin T</Text>
-            <Text style={{ fontSize: "12px" }}>EMAIL: business@gmail.com</Text>
-            <Text style={{ fontSize: "12px" }}>
-              ADRESS: Jisperveldstraat 274 AMSTERDAM Netherlands 1024AN
+            <Text
+              style={{
+                fontSize: "12px",
+                margin: "5px 0",
+                letterSpacing: "1px",
+              }}
+            >
+              Name: <Text style={{ color: "#3EB2EF" }}>Vitamin T</Text>
+            </Text>
+            <Text
+              style={{
+                fontSize: "12px",
+                margin: "5px 0",
+                letterSpacing: "1px",
+              }}
+            >
+              EMAIL: business@gmail.com
+            </Text>
+            <Text
+              style={{
+                fontSize: "12px",
+                margin: "5px 0",
+                letterSpacing: "1px",
+                lineHeight: "1px",
+              }}
+            >
+              ADDRESS: Jisperveldstraat 274 AMSTERDAM Netherlands 1024AN
               Netherlands
             </Text>
           </View>
@@ -161,18 +208,48 @@ const MyDoc = () => (
             }}
           >
             <View style={{ flexDirection: "column" }}>
-              <Text style={{ color: "#fff", fontSize: "11px" }}>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
                 Amazon FBA Services
               </Text>
             </View>
             <View style={{ flexDirection: "column" }}>
-              <Text style={{ color: "#fff", fontSize: "11px" }}>QTY</Text>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                QTY
+              </Text>
             </View>
             <View style={{ flexDirection: "column" }}>
-              <Text style={{ color: "#fff", fontSize: "11px" }}>PRICE</Text>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                PRICE
+              </Text>
             </View>
             <View style={{ flexDirection: "column" }}>
-              <Text style={{ color: "#fff", fontSize: "11px" }}>TOTAL</Text>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                TOTAL
+              </Text>
             </View>
           </View>
           {/* loop will be continue here */}
@@ -187,13 +264,19 @@ const MyDoc = () => (
               marginTop: "20px",
             }}
           >
-            <View style={{ flexDirection: "column", width: "55%" }}>
-              <Text style={{ fontSize: "11px" }}>
+            <View style={{ flexDirection: "column", width: "70%" }}>
+              <Text
+                style={{
+                  fontSize: "14px",
+                  paddingTop: "15px",
+                  letterSpacing: "1px",
+                }}
+              >
                 Please check this invoice & complete the payment
               </Text>
             </View>
             {/* subtotal part  */}
-            <View style={{ flexDirection: "column" }}>
+            <View style={{ flexDirection: "column", width: "30%" }}>
               <View
                 style={{
                   flexDirection: "row",
@@ -201,10 +284,26 @@ const MyDoc = () => (
                 }}
               >
                 <View>
-                  <Text style={{ fontSize: "11px" }}>Tax (5%)</Text>
+                  <Text
+                    style={{
+                      fontSize: "12px",
+                      margin: "3px 0px",
+                      letterSpacing: "1px",
+                    }}
+                  >
+                    Sub Total:{" "}
+                  </Text>
                 </View>
                 <View>
-                  <Text style={{ fontSize: "11px" }}>$10</Text>
+                  <Text
+                    style={{
+                      fontSize: "12px",
+                      margin: "3px 0px",
+                      letterSpacing: "1px",
+                    }}
+                  >
+                    $432
+                  </Text>
                 </View>
               </View>
               {/* tax part */}
@@ -215,10 +314,26 @@ const MyDoc = () => (
                 }}
               >
                 <View>
-                  <Text style={{ fontSize: "11px" }}>Tax (5%)</Text>
+                  <Text
+                    style={{
+                      fontSize: "12px",
+                      margin: "3px 0px",
+                      letterSpacing: "1px",
+                    }}
+                  >
+                    Tax (5%):
+                  </Text>
                 </View>
                 <View>
-                  <Text style={{ fontSize: "11px" }}>$10</Text>
+                  <Text
+                    style={{
+                      fontSize: "12px",
+                      margin: "3px 0px",
+                      letterSpacing: "1px",
+                    }}
+                  >
+                    $10
+                  </Text>
                 </View>
               </View>
               {/* grand total part */}
@@ -229,10 +344,26 @@ const MyDoc = () => (
                 }}
               >
                 <View>
-                  <Text style={{ fontSize: "11px" }}>GRAND TOTAL</Text>
+                  <Text
+                    style={{
+                      fontSize: "12px",
+                      margin: "3px 0px",
+                      letterSpacing: "1px",
+                    }}
+                  >
+                    GRAND TOTAL:
+                  </Text>
                 </View>
                 <View>
-                  <Text style={{ fontSize: "11px" }}>$532</Text>
+                  <Text
+                    style={{
+                      fontSize: "12px",
+                      margin: "3px 0px",
+                      letterSpacing: "1px",
+                    }}
+                  >
+                    $532
+                  </Text>
                 </View>
               </View>
             </View>
@@ -240,6 +371,67 @@ const MyDoc = () => (
           {/*  */}
         </View>
         {/* 4th part start here */}
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            margin: "30px 0px",
+          }}
+        >
+          <View style={{ width: "80%", marginTop: "20px" }}>
+            <Text style={{ fontSize: "12px" }}>
+              {" "}
+              <Text
+                style={{
+                  fontSize: "12px",
+                  marginBottom: "4px",
+                  letterSpacing: "1px",
+                }}
+              >
+                Questions?
+              </Text>
+            </Text>
+            <Text
+              style={{
+                fontSize: "12px",
+                letterSpacing: "1px",
+              }}
+            >
+              {" "}
+              <Text style={{ fontSize: "12px", marginBottom: "4px" }}>
+                Email us at help@virtualexperts.net
+              </Text>
+            </Text>
+            <Text
+              style={{
+                fontSize: "12px",
+                marginBottom: "4px",
+                letterSpacing: "1px",
+              }}
+            >
+              or call us at ++1 347 352 8622
+            </Text>
+          </View>
+          <View style={{ width: "20%", textAlign: "right" }}>
+            <Text style={{ fontSize: "33px" }}>Thank</Text>
+            <Text style={{ fontSize: "33px" }}>YOU!</Text>
+          </View>
+        </View>
+
+        {/* footer part */}
+        <View style={{ borderTop: "2px solid #3EB2EF" }}>
+          <Text
+            style={{
+              padding: "10px 20px",
+              fontSize: "13px",
+              letterSpacing: "1px",
+              fontWeight: "300",
+              textAlign: "center",
+            }}
+          >
+            9070179 PL Jamaica AV, New York 11432 • www.virtualexperts.net
+          </Text>
+        </View>
       </View>
     </Page>
   </Document>
