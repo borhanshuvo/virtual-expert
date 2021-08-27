@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import SectionTitle from "../src/components/sectionTitle/sectionTitle";
+import swal from "sweetalert";
 
 const Order = () => {
   const router = useRouter();
@@ -71,6 +72,7 @@ const Order = () => {
             .then((res) => res.json())
             .then((data) => {});
           e.target.reset();
+          return swal("Thank You", "Order Successfully Done.", "success");
         }
       });
   };
@@ -82,7 +84,6 @@ const Order = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <section className="order-bg position-relative">
-
         <div className="background-color-skyblue">
           <div className="container d-md-flex justify-content-between align-items-center py-5">
             <h6 className="fs-30 roboto-font-family fw-400">Order Now</h6>
