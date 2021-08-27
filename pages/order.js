@@ -1,12 +1,17 @@
 import Head from "next/head";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import SectionTitle from "../src/components/sectionTitle/sectionTitle";
+import swal from "sweetalert";
 
 const Order = () => {
+  const router = useRouter();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const {
     handleSubmit,
     register,
@@ -67,6 +72,7 @@ const Order = () => {
             .then((res) => res.json())
             .then((data) => {});
           e.target.reset();
+          return swal("Thank You", "Order Successfully Done.", "success");
         }
       });
   };
@@ -80,9 +86,18 @@ const Order = () => {
       <section className="order-bg position-relative">
         <div className="background-color-skyblue">
           <div className="container d-md-flex justify-content-between align-items-center py-5">
-            <h6 className="fs-30 roboto-font-family lh-45 fw-400">Order Now</h6>
-            <p className="fs-15">
-              Home <span className="text-warning mx-2">{`>`}</span> Order Now
+            <h6 className="fs-30 roboto-font-family fw-400">Order Now</h6>
+            <p className="fs-14">
+              <span className="cursor-pointer" onClick={() => router.push("/")}>
+                Home
+              </span>{" "}
+              <span className="text-warning mx-2">{`>`}</span>{" "}
+              <span
+                className="cursor-pointer"
+                onClick={() => router.push("/order")}
+              >
+                Order Now
+              </span>
             </p>
           </div>
         </div>
