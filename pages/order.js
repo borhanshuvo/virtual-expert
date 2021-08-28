@@ -46,7 +46,7 @@ const Order = () => {
     orderInfo.description = otherInfo[3];
     orderInfo.selectedServices = [...services];
 
-    fetch("https://sleepy-mesa-08037.herokuapp.com/order/post", {
+    fetch("http://localhost:8000/order/post", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(orderInfo),

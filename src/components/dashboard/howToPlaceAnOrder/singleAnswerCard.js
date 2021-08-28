@@ -7,7 +7,7 @@ const SingleAnswerCard = ({ answer, index, setNumber }) => {
 
   const onSubmit = (data) => {
     const title = data.title || answer.title;
-    fetch("https://sleepy-mesa-08037.herokuapp.com/placeAnOrderList/update", {
+    fetch("http://localhost:8000/placeAnOrderList/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({

@@ -30,26 +30,26 @@ export default About;
 
 export async function getServerSideProps() {
   const aboutResponse = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/about"
+    "http://localhost:8000/about"
   );
   const aboutData = await aboutResponse.json();
 
   const aboutUniqueResponse = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/aboutUnique"
+    "http://localhost:8000/aboutUnique"
   );
   const aboutUniquetData = await aboutUniqueResponse.json();
 
   const aboutUniqueListResponse = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/aboutUniqueList"
+    "http://localhost:8000/aboutUniqueList"
   );
   const aboutUniquetListData = await aboutUniqueListResponse.json();
 
   const aboutTeamResponse = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/aboutTeam"
+    "http://localhost:8000/aboutTeam"
   );
   const aboutTeamData = await aboutTeamResponse.json();
 
-  const resTeams = await fetch("https://sleepy-mesa-08037.herokuapp.com/teams");
+  const resTeams = await fetch("http://localhost:8000/teams");
   const teams = await resTeams.json();
 
   return {

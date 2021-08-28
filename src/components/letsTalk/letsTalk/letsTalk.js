@@ -29,7 +29,7 @@ const LetsTalk = ({ footerData }) => {
   } = useForm();
 
   useEffect(() => {
-    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink")
+    fetch("http://localhost:8000/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, []);

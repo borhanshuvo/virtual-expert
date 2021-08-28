@@ -15,7 +15,7 @@ const AdminBanner = () => {
   useEffect(() => {
     const loadData = async () => {
       const resBanner = await fetch(
-        "https://sleepy-mesa-08037.herokuapp.com/banner"
+        "http://localhost:8000/banner"
       );
       const bannerData = await resBanner.json();
       setBannerData(bannerData[0]);
@@ -26,7 +26,7 @@ const AdminBanner = () => {
   const onSubmit = (data) => {
     const title = data.title || titleData;
     const description = data.description || descriptionData;
-    fetch("https://sleepy-mesa-08037.herokuapp.com/banner/update", {
+    fetch("http://localhost:8000/banner/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ title, _id: bannerData._id, description }),

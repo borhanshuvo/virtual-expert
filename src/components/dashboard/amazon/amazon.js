@@ -11,7 +11,7 @@ const AdminAmazon = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("https://sleepy-mesa-08037.herokuapp.com/amazon")
+    fetch("http://localhost:8000/amazon")
       .then((res) => res.json())
       .then((data) => setAmazon(data));
   }, [number]);
@@ -36,7 +36,7 @@ const AdminAmazon = () => {
       description_part_3 = amazon.description_part_3;
     }
 
-    fetch("https://sleepy-mesa-08037.herokuapp.com/amazon/update", {
+    fetch("http://localhost:8000/amazon/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
