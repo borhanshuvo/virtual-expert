@@ -91,7 +91,7 @@ const Navbar = () => {
                   key={nav.id}
                   className={`${styles.navItemMobileHover} my-2 py-2`}
                 >
-                  <Link href={nav.link}>
+                  <Link href={nav.link} passHref>
                     <span
                       className={`cursor-pointer`}
                       data-bs-dismiss="offcanvas"
