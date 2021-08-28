@@ -14,7 +14,7 @@ const AdminTeam = () => {
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("https://sleepy-mesa-08037.herokuapp.com/teams")
+    fetch("http://localhost:8000/teams")
       .then((res) => res.json())
       .then((data) => {
         setShowSpinner(false);
@@ -36,7 +36,7 @@ const AdminTeam = () => {
     formData.append("name", name);
     formData.append("jobTitle", jobTitle);
 
-    fetch("https://sleepy-mesa-08037.herokuapp.com/teams/post", {
+    fetch("http://localhost:8000/teams/post", {
       method: "POST",
       body: formData,
     })

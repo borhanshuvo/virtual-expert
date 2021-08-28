@@ -11,11 +11,11 @@ const AdminFooter = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("https://sleepy-mesa-08037.herokuapp.com/footer")
+    fetch("http://localhost:8000/footer")
       .then((res) => res.json())
       .then((data) => setFooterData(data[0]));
 
-    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink")
+    fetch("http://localhost:8000/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, [number]);
@@ -29,7 +29,7 @@ const AdminFooter = () => {
     const _id = footerData._id;
     const address = data.address || footerData.address;
 
-    fetch("https://sleepy-mesa-08037.herokuapp.com/footer/update", {
+    fetch("http://localhost:8000/footer/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -57,7 +57,7 @@ const AdminFooter = () => {
     const twitter = data.twitter || footerLink.twitter;
     const youTube = data.youTube || footerLink.youTube;
 
-    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink/update", {
+    fetch("http://localhost:8000/footerLink/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({

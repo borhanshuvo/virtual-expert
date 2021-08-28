@@ -51,52 +51,52 @@ export default function Home({
 //top three services fetching
 export async function getServerSideProps(context) {
   const resTopServices = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/topServices"
+    "http://localhost:8000/topServices"
   );
   const topServicesData = await resTopServices.json();
 
   const resHeaderInfoTopServices = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/headerInfoTopServices"
+    "http://localhost:8000/headerInfoTopServices"
   );
   const headerInfoTopServicesData = await resHeaderInfoTopServices.json();
 
   const resVirtualService = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/virtualService"
+    "http://localhost:8000/virtualService"
   );
   const virtualServicesData = await resVirtualService.json();
 
   const resHeaderInfoVirtualExports = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/headerInfoVirtualExports"
+    "http://localhost:8000/headerInfoVirtualExports"
   );
   const headerInfoVirtualExportsData = await resHeaderInfoVirtualExports.json();
 
   const resBanner = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/banner"
+    "http://localhost:8000/banner"
   );
   const bannerData = await resBanner.json();
 
   const resTestimonials = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/testimonials"
+    "http://localhost:8000/testimonials"
   );
   const testimonials = await resTestimonials.json();
 
   const resAmazon = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/amazon"
+    "http://localhost:8000/amazon"
   );
   const amazonData = await resAmazon.json();
 
   const resPlaceAnOrderList = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/placeAnOrderList"
+    "http://localhost:8000/placeAnOrderList"
   );
   const placeAnOrderListData = await resPlaceAnOrderList.json();
 
   const resPlaceAnOrder = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/placeAnOrder"
+    "http://localhost:8000/placeAnOrder"
   );
   const placeAnOrderData = await resPlaceAnOrder.json();
 
   const resFooter = await fetch(
-    "https://sleepy-mesa-08037.herokuapp.com/footer"
+    "http://localhost:8000/footer"
   );
   const footerLink = await resFooter.json();
 

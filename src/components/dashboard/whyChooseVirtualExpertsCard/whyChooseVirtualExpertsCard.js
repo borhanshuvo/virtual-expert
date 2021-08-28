@@ -13,7 +13,7 @@ const AdminWhyChooseVirtualExpertsCard = ({
   const handleUpdateInfo = (data) => {
     const title = data.title || cardData.title;
     const description = data.description || cardData.description;
-    fetch("https://sleepy-mesa-08037.herokuapp.com/virtualService/update", {
+    fetch("http://localhost:8000/virtualService/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ title, _id: cardData._id, description }),

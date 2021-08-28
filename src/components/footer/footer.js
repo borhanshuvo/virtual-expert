@@ -19,11 +19,11 @@ const Footer = () => {
   const [footer, setFooter] = useState(null);
   const [footerLink, setFooterLink] = useState({});
   useEffect(() => {
-    fetch("https://sleepy-mesa-08037.herokuapp.com/footer")
+    fetch("http://localhost:8000/footer")
       .then((res) => res.json())
       .then((data) => setFooter(data[0]));
 
-    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink")
+    fetch("http://localhost:8000/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, []);
@@ -34,7 +34,8 @@ const Footer = () => {
         router.pathname === "/dashboard" ||
         router.pathname === "/dashboard/service" ||
         router.pathname === "/dashboard/about" ||
-        router.pathname === "/dashboard/orders"
+        router.pathname === "/dashboard/orders" ||
+        router.pathname === "/dashboard/invoice"
           ? "d-none"
           : ""
       }

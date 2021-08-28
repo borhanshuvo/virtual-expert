@@ -38,7 +38,7 @@ const Banner = ({ bannerData, footerLink }) => {
     e.target.reset();
   };
   return (
-    <>
+    <div className="">
       <div className={`${styles.bannerContainer}`}>
         <div className="container py-5">
           <div className="row d-flex align-items-center">
@@ -65,7 +65,7 @@ const Banner = ({ bannerData, footerLink }) => {
       </div>
 
       {/* social link goes here */}
-      <div className="position-fixed left-0 top-30">
+      <div className={`position-fixed left-0 top-30 ${styles.zIndex}`}>
         <a
           target="_blank"
           title={footerLink.skype}
@@ -75,7 +75,7 @@ const Banner = ({ bannerData, footerLink }) => {
             className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
             size={40}
           />
-          <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+          <span className={`social-address fs-12 ms-1 text-secondary bg-light p-1`}>
             skype:{footerLink[0].skype}
           </span>
         </a>
@@ -103,7 +103,7 @@ const Banner = ({ bannerData, footerLink }) => {
               size={40}
             />
             <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
-              Email:{footerLink[0].email}
+              {footerLink[0].email}
             </span>
           </a>
         </Link>
@@ -206,7 +206,7 @@ const Banner = ({ bannerData, footerLink }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

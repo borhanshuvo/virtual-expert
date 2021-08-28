@@ -151,7 +151,7 @@ export default WithAdminAuth(Orders);
 
 export async function getServerSideProps(context) {
   const page = context.query.page;
-  const res = await fetch("https://sleepy-mesa-08037.herokuapp.com/order", {
+  const res = await fetch("http://localhost:8000/order", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ page: page }),
