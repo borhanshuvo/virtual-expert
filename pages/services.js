@@ -5,13 +5,29 @@ import Header from "../src/components/services/header/header";
 import ServicesCard from "../src/components/services/servicesCard/servicesCard";
 import WhatWeDo from "../src/components/services/whatWeDo/whatWeDo";
 
-const Services = ({ servicesCardData, whatWeDo, serviceCardHeader, metaService }) => {
-  console.log(metaService, 'service')
+const Services = ({
+  servicesCardData,
+  whatWeDo,
+  serviceCardHeader,
+  metaService,
+}) => {
+  console.log(metaService, "service");
   return (
     <>
       <Head>
-        <title>{metaService.title ?  `Virtual Experts |  ${metaService.title}` : 'virtual Experts | Service'}</title>
-        <meta name="description" content={metaService.description ? ` ${metaService.description}` : 'virtual Experts' }/>
+        <title>
+          {metaService.title
+            ? `Virtual Experts |  ${metaService.title}`
+            : "virtual Experts | Service"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaService.description
+              ? ` ${metaService.description}`
+              : "virtual Experts"
+          }
+        />
       </Head>
       <Header />
       <WhatWeDo whatWeDo={whatWeDo} />
@@ -40,15 +56,17 @@ export async function getServerSideProps(context) {
   );
   const serviceCardHeader = await serviceCardHeaderRes.json();
 
-  const resMetaService = await fetch('http://localhost:8000/metaService')
-  const metaService = await resMetaService.json() 
+  const resMetaService = await fetch(
+    "https://sleepy-mesa-08037.herokuapp.com/metaService"
+  );
+  const metaService = await resMetaService.json();
 
   return {
     props: {
       servicesCardData,
       whatWeDo,
       serviceCardHeader,
-      metaService:metaService[0]
+      metaService: metaService[0],
     },
   };
 }

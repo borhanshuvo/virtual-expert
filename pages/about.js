@@ -8,13 +8,24 @@ const About = ({
   aboutUniquetData,
   aboutUniquetListData,
   teams,
-  metaAbout
+  metaAbout,
 }) => {
   return (
     <>
       <Head>
-        <title>{metaAbout.title ?  `Virtual Experts |  ${metaAbout.title}` : 'virtual Experts | Home'}</title>
-        <meta name="description" content={metaAbout.description ? ` ${metaAbout.description}` : 'virtual Experts' }/>
+        <title>
+          {metaAbout.title
+            ? `Virtual Experts |  ${metaAbout.title}`
+            : "virtual Experts | Home"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaAbout.description
+              ? ` ${metaAbout.description}`
+              : "virtual Experts"
+          }
+        />
       </Head>
       <AboutC
         aboutData={aboutData}
@@ -53,7 +64,9 @@ export async function getServerSideProps() {
   const resTeams = await fetch("https://sleepy-mesa-08037.herokuapp.com/teams");
   const teams = await resTeams.json();
 
-  const resMetaAbout = await fetch("http://localhost:8000/metaAbout");
+  const resMetaAbout = await fetch(
+    "https://sleepy-mesa-08037.herokuapp.com/metaAbout"
+  );
   const metaAbout = await resMetaAbout.json();
 
   return {
@@ -63,7 +76,7 @@ export async function getServerSideProps() {
       aboutUniquetListData: aboutUniquetListData,
       aboutTeamData: aboutTeamData[0],
       teams,
-      metaAbout:metaAbout[0]
+      metaAbout: metaAbout[0],
     },
   };
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import { AiFillEdit } from 'react-icons/ai';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import React from "react";
+import { useForm } from "react-hook-form";
+import { AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const Service = ({ serviceData, setNumber }) => {
   const { _id, title, description } = serviceData;
@@ -12,16 +12,16 @@ const Service = ({ serviceData, setNumber }) => {
     const title = data.title || newTitle;
     const description = data.description || newDescription;
 
-    fetch('http://localhost:8000/metaService/update', {
-      method: 'PUT',
+    fetch("https://sleepy-mesa-08037.herokuapp.com/metaService/update", {
+      method: "PUT",
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
       body: JSON.stringify({ _id, title, description }),
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success('Updates Successfully');
+        toast.success("Updates Successfully");
         setNumber((preState) => preState + 1);
       });
   };
@@ -73,7 +73,7 @@ const Service = ({ serviceData, setNumber }) => {
                   rows="2"
                   cols="2"
                   defaultValue={title}
-                  {...register('title')}
+                  {...register("title")}
                   name="title"
                   id="title"
                   className="form-control mb-2"
@@ -83,7 +83,7 @@ const Service = ({ serviceData, setNumber }) => {
                   rows="2"
                   cols="2"
                   defaultValue={description}
-                  {...register('description')}
+                  {...register("description")}
                   name="description"
                   id="description"
                   className="form-control mb-2"

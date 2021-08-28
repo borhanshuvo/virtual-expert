@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { BiMenu } from 'react-icons/bi';
-import { GiCrossedPistols } from 'react-icons/gi';
-import Home from '../../src/components/dashboard/meta/home';
-import Sidebar from '../../src/components/dashboard/sidebar/sidebar';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import About from '../../src/components/dashboard/meta/about';
-import Service from '../../src/components/dashboard/meta/service';
-import Blog from '../../src/components/dashboard/meta/blog';
-import LetsTalk from '../../src/components/dashboard/meta/letsTalk';
+import React, { useEffect, useState } from "react";
+import { BiMenu } from "react-icons/bi";
+import { GiCrossedPistols } from "react-icons/gi";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import About from "../../src/components/dashboard/meta/about";
+import Blog from "../../src/components/dashboard/meta/blog";
+import Home from "../../src/components/dashboard/meta/home";
+import LetsTalk from "../../src/components/dashboard/meta/letsTalk";
+import Service from "../../src/components/dashboard/meta/service";
+import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const Meta = () => {
   const [number, setNumber] = useState(0);
@@ -18,23 +18,23 @@ const Meta = () => {
   const [blogData, setBlogData] = useState({});
   const [letsTalkData, setletsTalkData] = useState({});
   useEffect(() => {
-    fetch('http://localhost:8000/metaHome')
+    fetch("https://sleepy-mesa-08037.herokuapp.com/metaHome")
       .then((res) => res.json())
       .then((data) => setHomeData(data[0]));
 
-    fetch('http://localhost:8000/metaAbout')
+    fetch("https://sleepy-mesa-08037.herokuapp.com/metaAbout")
       .then((res) => res.json())
       .then((data) => setAboutData(data[0]));
 
-    fetch('http://localhost:8000/metaService')
+    fetch("https://sleepy-mesa-08037.herokuapp.com/metaService")
       .then((res) => res.json())
       .then((data) => setServiceData(data[0]));
 
-    fetch('http://localhost:8000/metaBlog')
+    fetch("https://sleepy-mesa-08037.herokuapp.com/metaBlog")
       .then((res) => res.json())
       .then((data) => setBlogData(data[0]));
 
-    fetch('http://localhost:8000/metaLetsTalk')
+    fetch("https://sleepy-mesa-08037.herokuapp.com/metaLetsTalk")
       .then((res) => res.json())
       .then((data) => setletsTalkData(data[0]));
   }, [number]);
@@ -74,7 +74,7 @@ const Meta = () => {
                 <GiCrossedPistols
                   size={32}
                   className="text-reset d-block ms-auto mt-2"
-                  style={{ color: '#fff!important' }}
+                  style={{ color: "#fff!important" }}
                   data-bs-dismiss="offcanvas"
                   aria-label="Close"
                 />

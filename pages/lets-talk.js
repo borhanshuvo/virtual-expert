@@ -6,9 +6,20 @@ const LetsTalks = ({ footerData, metaLetsTalk }) => {
   return (
     <>
       <Head>
-      <title>{metaLetsTalk.title ?  `Virtual Experts |  ${metaLetsTalk.title}` : 'virtual Experts | Lets Talk'}</title>
+        <title>
+          {metaLetsTalk.title
+            ? `Virtual Experts |  ${metaLetsTalk.title}`
+            : "virtual Experts | Lets Talk"}
+        </title>
         {/* <title>Virtual Experts | Let&apos;s Talk</title> */}
-        <meta name="description" content={metaLetsTalk.description ? ` ${metaLetsTalk.description}` : 'virtual Experts' }/>
+        <meta
+          name="description"
+          content={
+            metaLetsTalk.description
+              ? ` ${metaLetsTalk.description}`
+              : "virtual Experts"
+          }
+        />
       </Head>
       <LetsTalk footerData={footerData} />
     </>
@@ -21,13 +32,15 @@ export async function getServerSideProps() {
   const res = await fetch("https://sleepy-mesa-08037.herokuapp.com/footer");
   const footerData = await res.json();
 
-  const resmetaLetsTalk = await fetch('http://localhost:8000/metaLetsTalk')
-  const metaLetsTalk = await resmetaLetsTalk.json()
+  const resmetaLetsTalk = await fetch(
+    "https://sleepy-mesa-08037.herokuapp.com/metaLetsTalk"
+  );
+  const metaLetsTalk = await resmetaLetsTalk.json();
 
   return {
     props: {
       footerData,
-      metaLetsTalk:metaLetsTalk[0]
+      metaLetsTalk: metaLetsTalk[0],
     },
   };
 }
