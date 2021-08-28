@@ -74,6 +74,15 @@ const Sidebar = () => {
             Invoice
           </a>
         </Link>
+        <Link href="/dashboard/meta">
+          <a
+            className={`d-block py-2 ${
+              pathname === "/dashboard/meta" ? "bg-orange" : ""
+            } px-3 rounded-3 text-white my-2 navHover`}
+          >
+            Meta
+          </a>
+        </Link>
         <Link href="/">
           <a
             className={`d-block py-2 px-3 rounded-3 text-white my-2 navHover`}

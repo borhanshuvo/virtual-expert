@@ -94,7 +94,9 @@ function MyApp({ Component, pageProps }) {
           router.pathname === "/dashboard/service" ||
           router.pathname === "/dashboard/about" ||
           router.pathname === "/dashboard/orders" ||
-          router.pathname === "/dashboard/invoice"
+          router.pathname === "/dashboard/invoice" ||
+          router.pathname === "/dashboard/meta"
+
             ? "d-none"
             : ""
         }
