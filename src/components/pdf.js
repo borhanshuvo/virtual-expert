@@ -26,16 +26,16 @@ Font.register({
   family: "Roboto",
   fonts: [
     {
-      src: "http://localhost:3000/fonts/Roboto-Light.ttf",
+      src: "https://virtual-expert.vercel.app/fonts/Roboto-Light.ttf",
       fontWeight: 300,
       color: "black", // Also accepts numeric values, ex. 700
     },
     {
-      src: "http://localhost:3000/fonts/Roboto-Regular.ttf",
+      src: "https://virtual-expert.vercel.app/fonts/Roboto-Regular.ttf",
       fontWeight: 400, // Also accepts numeric values, ex. 700
     },
     {
-      src: "http://localhost:3000/fonts/Roboto-Bold.ttf",
+      src: "https://virtual-expert.vercel.app/fonts/Roboto-Bold.ttf",
       fontWeight: "700, 900", // Also accepts numeric values, ex. 700
     },
   ],
