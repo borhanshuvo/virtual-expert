@@ -18,14 +18,15 @@ export default function Home({
   placeAnOrderListData,
   placeAnOrderData,
   footerLink,
+  metaHome
 }) {
   return (
     <>
       <Head>
-        <title>Virtual Experts | Home</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>{metaHome.title ?  `Virtual Experts |  ${metaHome.title}` : 'virtual Experts | Home'}</title>
+        {/* <title>Virtual Experts | Home</title> */}
+        <meta name="description" content={metaHome.description ? ` ${metaHome.description}` : 'virtual Experts' }/>
       </Head>
-
       <main>
         <Banner bannerData={bannerData} footerLink={footerLink} />
         <Amazon amazonData={amazonData} />
@@ -100,6 +101,9 @@ export async function getServerSideProps(context) {
   );
   const footerLink = await resFooter.json();
 
+  const resMetaHome = await fetch('http://localhost:8000/metaHome')
+  const metaHome = await resMetaHome.json() 
+
   return {
     props: {
       topServicesData,
@@ -112,6 +116,7 @@ export async function getServerSideProps(context) {
       placeAnOrderListData,
       placeAnOrderData,
       footerLink,
+      metaHome: metaHome[0]
     },
   };
 }

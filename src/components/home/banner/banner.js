@@ -103,7 +103,7 @@ const Banner = ({ bannerData, footerLink }) => {
               size={40}
             />
             <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
-              Email:{footerLink[0].email}
+              {footerLink[0].email}
             </span>
           </a>
         </Link>
