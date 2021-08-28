@@ -3,8 +3,8 @@ import { AiFillEdit } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-const Home = ({ homeData, setNumber }) => {
-  const { _id, title, description } = homeData;
+const Service = ({ serviceData, setNumber }) => {
+  const { _id, title, description } = serviceData;
   const newTitle = title;
   const newDescription = description;
   const { register, handleSubmit } = useForm();
@@ -12,7 +12,7 @@ const Home = ({ homeData, setNumber }) => {
     const title = data.title || newTitle;
     const description = data.description || newDescription;
 
-    fetch('http://localhost:8000/metaHome/update', {
+    fetch('http://localhost:8000/metaService/update', {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -30,12 +30,12 @@ const Home = ({ homeData, setNumber }) => {
     <>
       <section className="my-2 boxShadow me-3 p-3">
         <div className="d-flex justify-content-between">
-          <h1 className="fs-24">Home Page</h1>
+          <h1 className="fs-24">Service Page</h1>
           <AiFillEdit
             size={24}
             className="text-warning cursor-pointer "
             data-bs-toggle="modal"
-            data-bs-target="#homeModal"
+            data-bs-target="#serviceModal"
           />
         </div>
         <h6 className="fs-18 mt-2">Title</h6>
@@ -48,7 +48,7 @@ const Home = ({ homeData, setNumber }) => {
 
       <div
         className="modal fade"
-        id="homeModal"
+        id="serviceModal"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -57,7 +57,7 @@ const Home = ({ homeData, setNumber }) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Meta Tag and description For Home
+                Meta Tag and description For Service
               </h5>
               <button
                 type="button"
@@ -104,4 +104,4 @@ const Home = ({ homeData, setNumber }) => {
   );
 };
 
-export default Home;
+export default Service;
