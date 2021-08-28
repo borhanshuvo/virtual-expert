@@ -6,7 +6,7 @@ const ScheduleMeeting = () => {
   const [scheduleTitle, setScheduleTitle] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:8000/scheduleMeeting")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/scheduleMeeting")
       .then((res) => res.json())
       .then((data) => setScheduleTitle(data));
   }, []);

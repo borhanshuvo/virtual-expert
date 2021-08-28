@@ -10,7 +10,7 @@ const ScheduleMeeting = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:8000/scheduleMeeting")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/scheduleMeeting")
       .then((res) => res.json())
       .then((data) => setScheduleTitle(data));
   }, [number]);
@@ -20,7 +20,7 @@ const ScheduleMeeting = () => {
     const link = data.link || scheduleTitle?.link;
     const _id = scheduleTitle._id;
 
-    fetch("http://localhost:8000/scheduleMeeting/update", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/scheduleMeeting/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ title, link, _id }),

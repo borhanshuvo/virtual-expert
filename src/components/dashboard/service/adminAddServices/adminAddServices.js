@@ -32,7 +32,7 @@ const AdminAddServices = ({ setNumber }) => {
     formData.append("imgTitle", data.imgTitle);
     formData.append("imgAlt", data.imgAlt);
 
-    fetch(`http://localhost:8000/servicesCard/post`, {
+    fetch(`https://sleepy-mesa-08037.herokuapp.com/servicesCard/post`, {
       method: "POST",
       body: formData,
     })

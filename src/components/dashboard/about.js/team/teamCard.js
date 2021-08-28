@@ -33,7 +33,7 @@ const TeamCard = ({ team, index, setNumber }) => {
     formData.append("_id", _id);
 
     if (file === null) {
-      fetch("http://localhost:8000/teams/update", {
+      fetch("https://sleepy-mesa-08037.herokuapp.com/teams/update", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(newData),
@@ -44,7 +44,7 @@ const TeamCard = ({ team, index, setNumber }) => {
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("http://localhost:8000/teams/update", {
+      fetch("https://sleepy-mesa-08037.herokuapp.com/teams/update", {
         method: "PUT",
         body: formData,
       })

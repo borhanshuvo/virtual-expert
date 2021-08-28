@@ -8,7 +8,7 @@ const AdminWhyWeAreUnique = () => {
   useEffect(() => {
     const loadData = async () => {
       const aboutUniqueListResponse = await fetch(
-        "http://localhost:8000/aboutUniqueList"
+        "https://sleepy-mesa-08037.herokuapp.com/aboutUniqueList"
       );
       const aboutUniquetListData = await aboutUniqueListResponse.json();
       setAnswers(aboutUniquetListData);

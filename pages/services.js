@@ -25,17 +25,17 @@ const Services = ({ servicesCardData, whatWeDo, serviceCardHeader }) => {
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    "http://localhost:8000/servicesCard"
+    "https://sleepy-mesa-08037.herokuapp.com/servicesCard"
   );
   const servicesCardData = await res.json();
 
   const whatWeDoRes = await fetch(
-    "http://localhost:8000/whatWeDo"
+    "https://sleepy-mesa-08037.herokuapp.com/whatWeDo"
   );
   const whatWeDo = await whatWeDoRes.json();
 
   const serviceCardHeaderRes = await fetch(
-    "http://localhost:8000/serviceCardHeader"
+    "https://sleepy-mesa-08037.herokuapp.com/serviceCardHeader"
   );
   const serviceCardHeader = await serviceCardHeaderRes.json();
 

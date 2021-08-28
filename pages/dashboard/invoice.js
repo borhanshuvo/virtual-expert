@@ -1,21 +1,17 @@
-// import dynamic from "next/dynamic";
-
-// // const PDFViewer = dynamic(import("../../components/PDFViewer"), { ssr: false });
-
-// const MyDocument = dynamic(import("../../src/components/pdf"), {
-//   ssr: false,
-// });
-
+import dynamic from "next/dynamic";
 // const Invoice = () => {
 //   return <MyDocument />;
 // };
-
 // export default Invoice;
 import React from "react";
-import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
+import { useForm } from "react-hook-form";
 import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
-import { useForm } from "react-hook-form";
+import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
+
+const MyDocument = dynamic(import("../../src/components/pdf"), {
+  ssr: false,
+});
 
 const Invoice = () => {
   const {
@@ -66,6 +62,9 @@ const Invoice = () => {
               <button data-bs-toggle="modal" data-bs-target="#invoiceModal">
                 Create Invoice
               </button>
+            </div>
+            <div className="my-5">
+              <MyDocument />
             </div>
           </div>
         </div>

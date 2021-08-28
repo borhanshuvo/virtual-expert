@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
+  AiFillInstagram,
   AiOutlineSkype,
   AiOutlineWhatsApp,
-  AiFillInstagram,
 } from "react-icons/ai";
 import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
@@ -29,7 +29,7 @@ const LetsTalk = ({ footerData }) => {
   } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:8000/footerLink")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, []);

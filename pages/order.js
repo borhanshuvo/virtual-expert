@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import SectionTitle from "../src/components/sectionTitle/sectionTitle";
 import swal from "sweetalert";
+import SectionTitle from "../src/components/sectionTitle/sectionTitle";
 
 const Order = () => {
   const router = useRouter();
@@ -46,7 +46,7 @@ const Order = () => {
     orderInfo.description = otherInfo[3];
     orderInfo.selectedServices = [...services];
 
-    fetch("http://localhost:8000/order/post", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/order/post", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(orderInfo),

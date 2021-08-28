@@ -15,13 +15,13 @@ const AdminWhyChooseVirtualExperts = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:8000/headerInfoVirtualExports")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/headerInfoVirtualExports")
       .then((res) => res.json())
       .then((result) => {
         setInfo(result[0]);
       });
 
-    fetch("http://localhost:8000/virtualService")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/virtualService")
       .then((res) => res.json())
       .then((result) => setCardsData(result));
   }, [number]);
@@ -30,7 +30,7 @@ const AdminWhyChooseVirtualExperts = () => {
     const title = data.title || titleData;
     const description = data.description || descriptionData;
     fetch(
-      "http://localhost:8000/headerInfoVirtualExports/update",
+      "https://sleepy-mesa-08037.herokuapp.com/headerInfoVirtualExports/update",
       {
         method: "PUT",
         headers: { "content-type": "application/json" },

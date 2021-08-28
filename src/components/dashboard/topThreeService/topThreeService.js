@@ -14,11 +14,11 @@ const AdminTopThreeService = () => {
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("http://localhost:8000/headerInfoTopServices")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/headerInfoTopServices")
       .then((res) => res.json())
       .then((result) => setTitle(result[0]));
 
-    fetch("http://localhost:8000/topServices")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/topServices")
       .then((res) => res.json())
       .then((result) => {
         setShowSpinner(false);
@@ -29,7 +29,7 @@ const AdminTopThreeService = () => {
   const handleUpdateInfo = (data) => {
     const newTitle = data.title || title.title;
     fetch(
-      "http://localhost:8000/headerInfoTopServices/update",
+      "https://sleepy-mesa-08037.herokuapp.com/headerInfoTopServices/update",
       {
         method: "PUT",
         headers: { "content-type": "application/json" },

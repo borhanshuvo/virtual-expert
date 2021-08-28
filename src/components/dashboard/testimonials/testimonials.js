@@ -13,7 +13,7 @@ const AdminTestimonials = () => {
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("http://localhost:8000/testimonials")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/testimonials")
       .then((res) => res.json())
       .then((data) => {
         setShowSpinner(false);
@@ -37,7 +37,7 @@ const AdminTestimonials = () => {
     formData.append("jobTitle", jobTitle);
     formData.append("review", review);
 
-    fetch("http://localhost:8000/testimonials/post", {
+    fetch("https://sleepy-mesa-08037.herokuapp.com/testimonials/post", {
       method: "POST",
       body: formData,
     })

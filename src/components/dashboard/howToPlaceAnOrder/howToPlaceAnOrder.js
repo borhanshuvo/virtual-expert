@@ -6,7 +6,7 @@ const AdminHowToPlaceAnOrder = () => {
   const [number, setNumber] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/placeAnOrderList")
+    fetch("https://sleepy-mesa-08037.herokuapp.com/placeAnOrderList")
       .then((res) => res.json())
       .then((data) => setAnswerList(data));
   }, [number]);
