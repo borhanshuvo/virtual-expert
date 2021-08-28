@@ -1,9 +1,5 @@
 import dynamic from "next/dynamic";
-// const Invoice = () => {
-//   return <MyDocument />;
-// };
-// export default Invoice;
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
@@ -13,14 +9,25 @@ const MyDocument = dynamic(import("../../src/components/pdf"), {
   ssr: false,
 });
 
-const Invoice = () => {
+const Invoice = ({ serviceData }) => {
+  const [selectedServices, setSelectedServices] = useState([]);
+  const [info, setInfo] = useState({});
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data, e) => {};
+  const onSubmit = (data, e) => {
+    setInfo(data);
+  };
+
+  const handleSelect = (e) => {
+    const newArray = [...selectedServices];
+    setSelectedServices([...newArray, e.target.value]);
+  };
+
+  console.log(selectedServices);
 
   return (
     <>
@@ -64,7 +71,7 @@ const Invoice = () => {
               </button>
             </div>
             <div className="my-5">
-              <MyDocument />
+              <MyDocument info={info} selectedServices={selectedServices} />
             </div>
           </div>
         </div>
@@ -171,6 +178,15 @@ const Invoice = () => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </div>
+                <div className="form-group">
+                  <label>Service</label>
+                  <select className="form-control" onChange={handleSelect}>
+                    <option value="Select Service">Select Service</option>
+                    {serviceData.map((service) => (
+                      <option key={service._id}>{service.title}</option>
+                    ))}
+                  </select>
+                </div>
 
                 <div className="form-group mt-3">
                   <input
@@ -178,6 +194,8 @@ const Invoice = () => {
                     name="submit"
                     className="btn btn-primary"
                     value="Submit"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
                   />
                 </div>
               </form>
@@ -190,3 +208,16 @@ const Invoice = () => {
 };
 
 export default Invoice;
+
+export async function getServerSideProps() {
+  const res = await fetch(
+    "https://sleepy-mesa-08037.herokuapp.com/servicesCard"
+  );
+  const serviceData = await res.json();
+
+  return {
+    props: {
+      serviceData,
+    },
+  };
+}

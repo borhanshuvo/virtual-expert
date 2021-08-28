@@ -8,15 +8,33 @@ import {
   View,
 } from "@react-pdf/renderer";
 
+// Font.register({
+//   family: "Work Sans",
+//   src: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200&display=swap",
+//   fontWeight: "200, 300, 700,900",
+// });
+// Font.register("../components/fonts/Roboto-Thin.ttf", {
+//   family: "Roboto",
+//   weight: "100,200,300", // or [100, 200, 300]
+// });
+// Font.register(`https://fonts.googleapis.com/fonts/Roboto-Bold.ttf`, {
+//   family: "Roboto",
+//   weight: "400,500",
+// });
+
 Font.register({
-  family: "Work Sans",
-  src: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200&display=swap",
-  fontWeight: "200, 300, 700,900",
+  family: "Roboto",
+  fonts: [
+    {
+      src: "http://localhost:3000/fonts/Roboto-Bold.ttf",
+      fontWeight: 700, // Also accepts numeric values, ex. 700
+    },
+  ],
 });
 
-const MyDoc = () => (
+const MyDoc = ({ info, selectedServices }) => (
   <Document>
-    <Page size="a4" style={{ padding: "20px" }}>
+    <Page size="a4" style={{ padding: "20px", fontFamily: "Roboto" }}>
       <View>
         <View
           style={{
@@ -40,7 +58,7 @@ const MyDoc = () => (
                 color: "#6DE039",
               }}
             >
-              Richard Sid
+              Richard Son
             </Text>
             <Text
               style={{
@@ -126,7 +144,8 @@ const MyDoc = () => (
                 color: "#3EB2FF",
                 textAlign: "right",
                 margin: "15px 40px 15px 0px",
-                fontWeight: "bold",
+                fontWeight: 700,
+                fontFamily: "Roboto",
               }}
             >
               INVOICE
@@ -141,7 +160,7 @@ const MyDoc = () => (
               >
                 DATE:
               </Text>{" "}
-              AUGUST 10, 2021
+              {info.date}
             </Text>
             <Text style={{ fontSize: "12px" }}>
               <Text
@@ -153,7 +172,7 @@ const MyDoc = () => (
               >
                 INVOICE NO:
               </Text>{" "}
-              FR+DE 01
+              {info.invoiceNo}
             </Text>
             <Text
               style={{
@@ -172,7 +191,7 @@ const MyDoc = () => (
                 letterSpacing: "1px",
               }}
             >
-              Name: <Text style={{ color: "#3EB2EF" }}>Vitamin T</Text>
+              Name: <Text style={{ color: "#3EB2EF" }}>{info.clientName}</Text>
             </Text>
             <Text
               style={{
@@ -181,7 +200,7 @@ const MyDoc = () => (
                 letterSpacing: "1px",
               }}
             >
-              EMAIL: business@gmail.com
+              EMAIL: {info.clientEmail}
             </Text>
             <Text
               style={{
@@ -191,8 +210,7 @@ const MyDoc = () => (
                 lineHeight: "1px",
               }}
             >
-              ADDRESS: Jisperveldstraat 274 AMSTERDAM Netherlands 1024AN
-              Netherlands
+              ADDRESS: {info.clientAddress}
             </Text>
           </View>
         </View>
@@ -254,6 +272,68 @@ const MyDoc = () => (
             </View>
           </View>
           {/* loop will be continue here */}
+          {selectedServices.map((service, index) => (
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                marginTop: "10px",
+                padding: "10px",
+                backgroundColor: `${
+                  (index + 1) % 2 === 0 ? "#F7F6F2" : "white"
+                }`,
+              }}
+              key={index}
+            >
+              <View
+                style={{
+                  flexDirection: "column",
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: "11px",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  {service}
+                </Text>
+              </View>
+              {/* <View style={{ flexDirection: "column" }}>
+                <Text
+                  style={{
+                    color: "#fff",
+                    fontSize: "11px",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  QTY
+                </Text>
+              </View>
+              <View style={{ flexDirection: "column" }}>
+                <Text
+                  style={{
+                    color: "#fff",
+                    fontSize: "11px",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  PRICE
+                </Text>
+              </View> */}
+              {/* <View style={{ flexDirection: "column" }}>
+                <Text
+                  style={{
+                    color: "#fff",
+                    fontSize: "11px",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  TOTAL
+                </Text>
+              </View> */}
+            </View>
+          ))}
         </View>
         {/* 2nd part end */}
 
@@ -438,9 +518,12 @@ const MyDoc = () => (
   </Document>
 );
 
-const MyDocument = () => (
+const MyDocument = ({ info, selectedServices }) => (
   <div>
-    <PDFDownloadLink document={<MyDoc />} fileName="somename.pdf">
+    <PDFDownloadLink
+      document={<MyDoc info={info} selectedServices={selectedServices} />}
+      fileName="somename.pdf"
+    >
       {({ blob, url, loading, error }) =>
         loading ? "Loading document..." : "Download now!"
       }
