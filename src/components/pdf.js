@@ -26,6 +26,15 @@ Font.register({
   family: "Roboto",
   fonts: [
     {
+      src: "http://localhost:3000/fonts/Roboto-Light.ttf",
+      fontWeight: 300,
+      color: "black", // Also accepts numeric values, ex. 700
+    },
+    {
+      src: "http://localhost:3000/fonts/Roboto-Regular.ttf",
+      fontWeight: 400, // Also accepts numeric values, ex. 700
+    },
+    {
       src: "http://localhost:3000/fonts/Roboto-Bold.ttf",
       fontWeight: 700, // Also accepts numeric values, ex. 700
     },
@@ -34,7 +43,7 @@ Font.register({
 
 const MyDoc = ({ info, selectedServices }) => (
   <Document>
-    <Page size="a4" style={{ padding: "20px", fontFamily: "Roboto" }}>
+    <Page size="a4" style={{ padding: "35px", fontFamily: "Roboto" }}>
       <View>
         <View
           style={{
@@ -54,7 +63,7 @@ const MyDoc = ({ info, selectedServices }) => (
               style={{
                 fontSize: "20px",
                 fontWeight: "bold",
-                marginBottom: "10px",
+                marginBottom: "6px",
                 color: "#6DE039",
               }}
             >
@@ -62,39 +71,55 @@ const MyDoc = ({ info, selectedServices }) => (
             </Text>
             <Text
               style={{
-                marginBottom: "4px",
-                fontSize: "12px",
+                marginBottom: "3px",
+                fontSize: "11px",
                 letterSpacing: "1px",
+                fontWeight: 400,
+                color: "black",
               }}
             >
               9070 179 PL
             </Text>
             <Text
               style={{
-                marginBottom: "4px",
-                fontSize: "12px",
+                marginBottom: "3px",
+                fontSize: "11px",
                 letterSpacing: "1px",
+                fontWeight: 400,
+                color: "#000",
               }}
             >
               Jamaica AV
             </Text>
             <Text
               style={{
-                marginBottom: "4px",
-                fontSize: "12px",
+                marginBottom: "3px",
+                fontSize: "11px",
                 letterSpacing: "1px",
+                fontWeight: 400,
+                color: "#000",
               }}
             >
               New York
             </Text>
-            <Text style={{ marginBottom: "4px", fontSize: "12px" }}>11432</Text>
+            <Text
+              style={{
+                marginBottom: "1px",
+                fontSize: "11px",
+                fontWeight: 400,
+                color: "#000",
+              }}
+            >
+              11432
+            </Text>
             <Text
               style={{
                 marginTop: "30px",
                 marginBottom: "10px",
-                color: "#3EB2FF",
+                color: "#ff9f26",
                 fontSize: "14px",
-                letterSpacing: "1px",
+                letterSpacing: "2px",
+                fontWeight: 400,
               }}
             >
               AMAZON FBA CONSULTANT
@@ -102,20 +127,20 @@ const MyDoc = ({ info, selectedServices }) => (
             <Text
               style={{
                 marginBottom: "5px",
-                fontSize: "12px",
+                fontSize: "11px",
                 letterSpacing: "1px",
               }}
             >
-              SKYPE: virtualexpertsltd
+              <Text style={{ fontWeight: 400 }}>SKYPE:</Text> virtualexpertsltd
             </Text>
             <Text
               style={{
                 marginBottom: "5px",
-                fontSize: "12px",
+                fontSize: "11px",
                 letterSpacing: "1px",
               }}
             >
-              PHONE: +13473528622
+              <Text style={{ fontWeight: 400 }}>PHONE:</Text> +13473528622
             </Text>
           </View>
           {/* right part */}
