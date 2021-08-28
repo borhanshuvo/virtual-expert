@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import SectionTitle from "../src/components/sectionTitle/sectionTitle";
 import swal from "sweetalert";
+import SectionTitle from "../src/components/sectionTitle/sectionTitle";
 
 const Order = () => {
   const router = useRouter();

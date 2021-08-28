@@ -32,7 +32,8 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                     <div className="background-color-skyblue overflow-hidden">
                       <Image
                         src={`${imgType} ; base64, ${servicesCard.img.img}`}
-                        alt="waiting.."
+                        alt={servicesCard.imgAlt}
+                        title={servicesCard.imgTitle}
                         width={200}
                         height={200}
                       />

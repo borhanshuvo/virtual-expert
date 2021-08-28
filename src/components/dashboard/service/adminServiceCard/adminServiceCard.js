@@ -22,6 +22,8 @@ const AdminServiceCard = ({
     warranty,
     price,
     maintenance,
+    imgTitle,
+    imgAlt,
   } = servicesCard;
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
@@ -60,6 +62,8 @@ const AdminServiceCard = ({
     const newWarranty = data.warranty || servicesCard.warranty;
     const newPrice = data.price || servicesCard.price;
     const newMaintenance = data.maintenance || servicesCard.maintenance;
+    const newImgTitle = data.imgTitle || servicesCard.imgTitle;
+    const newImgAlt = data.imgAlt || servicesCard.imgAlt;
     const _id = servicesCard._id;
 
     const newData = {
@@ -73,6 +77,8 @@ const AdminServiceCard = ({
       warranty: newWarranty,
       price: newPrice,
       maintenance: newMaintenance,
+      imgTitle: newImgTitle,
+      imgAlt: newImgAlt,
       img: servicesCard.img,
       uploadImage: false,
     };
@@ -89,6 +95,8 @@ const AdminServiceCard = ({
     formData.append("warranty", newWarranty);
     formData.append("price", newPrice);
     formData.append("maintenance", newMaintenance);
+    formData.append("imgTitle", newImgTitle);
+    formData.append("imgAlt", newImgAlt);
 
     if (file === null) {
       fetch("https://sleepy-mesa-08037.herokuapp.com/servicesCard/update", {
@@ -133,7 +141,8 @@ const AdminServiceCard = ({
         </div>
         <Image
           src={`${imgType} ; base64, ${servicesCard.img.img}`}
-          alt="waiting.."
+          title={imgTitle}
+          alt={imgAlt}
           width={200}
           height={200}
         />
@@ -319,6 +328,32 @@ const AdminServiceCard = ({
                       className="form-control"
                       {...register("img")}
                       onChange={handleFileChange}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="imgTitle">Image Title</label>
+                    <input
+                      type="text"
+                      defaultValue={imgTitle}
+                      {...register("imgTitle")}
+                      name="imgTitle"
+                      id="imgTitle"
+                      autoComplete="off"
+                      className="form-control"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="imgAlt">Image Alt</label>
+                    <input
+                      type="text"
+                      defaultValue={imgAlt}
+                      {...register("imgAlt")}
+                      name="imgAlt"
+                      id="imgAlt"
+                      autoComplete="off"
+                      className="form-control"
                     />
                   </div>
 

@@ -29,6 +29,8 @@ const AdminAddServices = ({ setNumber }) => {
     formData.append("warranty", data.warranty);
     formData.append("price", data.price);
     formData.append("maintenance", data.maintenance);
+    formData.append("imgTitle", data.imgTitle);
+    formData.append("imgAlt", data.imgAlt);
 
     fetch(`https://sleepy-mesa-08037.herokuapp.com/servicesCard/post`, {
       method: "POST",
@@ -214,6 +216,32 @@ const AdminAddServices = ({ setNumber }) => {
                   {errors.img && (
                     <span className="text-danger">This field is required</span>
                   )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="imgTitle">Image Title</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    {...register("imgTitle")}
+                    name="imgTitle"
+                    id="imgTitle"
+                    autoComplete="off"
+                    className="form-control"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="imgAlt">Image Alt</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    {...register("imgAlt")}
+                    name="imgAlt"
+                    id="imgAlt"
+                    autoComplete="off"
+                    className="form-control"
+                  />
                 </div>
 
                 <div className="form-group mt-3">

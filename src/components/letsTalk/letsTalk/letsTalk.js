@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
+  AiFillInstagram,
   AiOutlineSkype,
   AiOutlineWhatsApp,
-  AiFillInstagram,
 } from "react-icons/ai";
 import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
