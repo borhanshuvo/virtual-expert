@@ -11,7 +11,7 @@ import {
 Font.register({
   family: "Work Sans",
   src: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200&display=swap",
-  fontWeight: "light",
+  fontWeight: "200, 300, 700,900",
 });
 
 const MyDoc = () => (
@@ -126,6 +126,7 @@ const MyDoc = () => (
                 color: "#3EB2FF",
                 textAlign: "right",
                 margin: "15px 40px 15px 0px",
+                fontWeight: "bold",
               }}
             >
               INVOICE
