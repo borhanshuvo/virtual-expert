@@ -60,3 +60,11 @@
 .navItemMobileHover:hover {
   background-color: #ffac45;
 }
+
+.zIndex {
+  z-index: 35555;
+}
+
+.marginBottomNavbar {
+  margin-bottom: 92px;
+}
