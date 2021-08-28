@@ -34,7 +34,8 @@ const Footer = () => {
         router.pathname === "/dashboard" ||
         router.pathname === "/dashboard/service" ||
         router.pathname === "/dashboard/about" ||
-        router.pathname === "/dashboard/orders"
+        router.pathname === "/dashboard/orders" ||
+        router.pathname === "/dashboard/invoice"
           ? "d-none"
           : ""
       }
