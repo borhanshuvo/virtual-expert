@@ -12,6 +12,7 @@ const MyDocument = dynamic(import("../../src/components/pdf"), {
 const Invoice = ({ serviceData }) => {
   const [selectedServices, setSelectedServices] = useState([]);
   const [info, setInfo] = useState({});
+
   const {
     register,
     handleSubmit,
@@ -26,8 +27,6 @@ const Invoice = ({ serviceData }) => {
     const newArray = [...selectedServices];
     setSelectedServices([...newArray, e.target.value]);
   };
-
-  console.log(selectedServices);
 
   return (
     <>
@@ -178,6 +177,7 @@ const Invoice = ({ serviceData }) => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </div>
+
                 <div className="form-group">
                   <label>Service</label>
                   <select className="form-control" onChange={handleSelect}>
@@ -186,6 +186,122 @@ const Invoice = ({ serviceData }) => {
                       <option key={service._id}>{service.title}</option>
                     ))}
                   </select>
+                </div>
+
+                <div className="form-group">
+                  <p>{selectedServices}</p>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="quantity">Quantity</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    name="quantity"
+                    id="quantity"
+                    autoComplete="off"
+                    className="form-control"
+                    {...register("quantity", { required: true })}
+                  />
+                  {errors.quantity && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="price">Price</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    name="price"
+                    id="price"
+                    autoComplete="off"
+                    className="form-control"
+                    {...register("price", { required: true })}
+                  />
+                  {errors.price && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="total">Total</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    name="total"
+                    id="total"
+                    autoComplete="off"
+                    className="form-control"
+                    {...register("total", { required: true })}
+                  />
+                  {errors.total && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="subTotal">Sub Total</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    name="subTotal"
+                    id="subTotal"
+                    autoComplete="off"
+                    className="form-control"
+                    {...register("subTotal", { required: true })}
+                  />
+                  {errors.subTotal && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="taxPercentage">Tax Percentage</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    name="taxPercentage"
+                    id="taxPercentage"
+                    autoComplete="off"
+                    className="form-control"
+                    {...register("taxPercentage", { required: true })}
+                  />
+                  {errors.taxPercentage && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="tax">Tax</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    name="tax"
+                    id="tax"
+                    autoComplete="off"
+                    className="form-control"
+                    {...register("tax", { required: true })}
+                  />
+                  {errors.tax && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="grandTotal">Grand Total</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    name="grandTotal"
+                    id="grandTotal"
+                    autoComplete="off"
+                    className="form-control"
+                    {...register("grandTotal", { required: true })}
+                  />
+                  {errors.grandTotal && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group mt-3">

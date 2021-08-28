@@ -30,7 +30,7 @@ const LetsTalk = ({ letsTalkData, setNumber }) => {
     <>
       <section className="my-2 boxShadow me-3 p-3">
         <div className="d-flex justify-content-between">
-          <h1 className="fs-24">About Page</h1>
+          <h1 className="fs-24">Let's Talk Page</h1>
           <AiFillEdit
             size={24}
             className="text-warning cursor-pointer "
