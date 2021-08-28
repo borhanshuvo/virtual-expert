@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
@@ -16,6 +17,10 @@ import AdminWhyChooseVirtualExperts from "../../src/components/dashboard/whyChoo
 const Dashboard = () => {
   return (
     <>
+      <Head>
+        <title>Virtual Experts | Admin</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <ToastContainer
         position="top-right"
         autoClose={3000}

@@ -401,11 +401,11 @@ ul {
 
 .cardHeaderImg {
   background-color: #ffffff;
-  padding: 15px 15px;
+  padding: 5px 5px;
   border-radius: 50%;
   position: absolute;
-  left: 45%;
-  bottom: -20px;
+  left: 42%;
+  bottom: -25px;
   border: 3px solid #ff9f26;
 }
 
@@ -503,10 +503,68 @@ ul {
   background-image: url("../images/Others/Bg.svg");
   background-size: cover;
 } */
+.fixedIcon {
+  transition: 0.2s ease-in-out;
+}
+
+.fixedIcon:hover {
+  transform: scale(1.2);
+}
 
 .btn-popup {
   position: absolute;
   right: 8%;
   top: 25px;
   color: #fff;
+}
+
+.scrol-icon {
+  color: #ff9f26;
+  transition: 0.3s ease-in-out;
+}
+
+.scrol-icon:hover {
+  transform: scale(1.2);
+}
+
+.top-80 {
+  top: 90%;
+}
+
+ul {
+  display: flex;
+}
+
+ul li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+#react-paginate ul {
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#react-paginate li {
+  display: inline-block;
+}
+
+.selected {
+  color: red;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.btn-orange {
+  background-color: #ffffff;
+  color: #ff9f26;
+}
+
+.btn-orange:hover {
+  background-color: #ff9f26;
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
 }

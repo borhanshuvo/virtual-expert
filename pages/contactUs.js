@@ -1,5 +1,6 @@
-import React from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
+import Head from "next/head";
+import React from "react";
 
 const ContactUs = () => {
   function sendEmail(e) {
@@ -7,22 +8,22 @@ const ContactUs = () => {
 
     emailjs
       .sendForm(
-        'service_esd6cuw',
-        'template_peizayb',
+        "service_esd6cuw",
+        "template_peizayb",
         e.target,
-        'user_IPQt7Bei466UeZ7tBO084'
+        "user_IPQt7Bei466UeZ7tBO084"
       )
       .then(
-        (result) => {
-          console.log(result);
-        },
-        (error) => {
-          console.log(error);
-        }
+        (result) => {},
+        (error) => {}
       );
   }
   return (
-    <div>
+    <>
+      <Head>
+        <title>Virtual Experts | Contact Us</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <form className="contact-form" onSubmit={sendEmail}>
         <input type="hidden" name="contact_number" />
         <label>Name</label>
@@ -33,7 +34,7 @@ const ContactUs = () => {
         <textarea name="message" />
         <input type="submit" value="Send" />
       </form>
-    </div>
+    </>
   );
 };
 

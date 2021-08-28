@@ -1,14 +1,15 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 import { FaSkype } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { AiOutlineClose } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import bannerImg from "../../../../images/Img-5.svg";
 import styles from "./banner.module.css";
 import { useForm } from "react-hook-form";
+import { AiOutlineClose } from "react-icons/ai";
 import cardHeaderBg from "../../../../images/Others/Group 157.svg";
-import cardHeaderImg from "../../../../images/Others/img.svg";
+import cardHeaderImg from "../../../../images/v-logo.svg";
 
 const Banner = ({ bannerData, footerLink }) => {
   const {
@@ -18,20 +19,24 @@ const Banner = ({ bannerData, footerLink }) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const title = data.title || titleData;
-    const description = data.description || descriptionData;
-    fetch("https://sleepy-mesa-08037.herokuapp.com/banner/update", {
-      method: "PUT",
+    const msgTemplate = {
+      service_id: "service_esd6cuw",
+      template_id: "template_peizayb",
+      user_id: "user_IPQt7Bei466UeZ7tBO084",
+      template_params: {
+        data,
+      },
+    };
+
+    fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ title, _id: bannerData._id, description }),
+      body: JSON.stringify(msgTemplate),
     })
       .then((res) => res.json())
-      .then((data) => {
-        toast.success("Updated Successful");
-        setNumber(number + 1);
-      });
+      .then((data) => {});
+    e.target.reset();
   };
-
   return (
     <>
       <div className={`${styles.bannerContainer}`}>
@@ -60,15 +65,18 @@ const Banner = ({ bannerData, footerLink }) => {
       </div>
 
       {/* social link goes here */}
-      <div className="position-fixed left-0 top-30 px-2 d-none d-md-block">
+      <div className="position-fixed left-0 top-30">
         <a
           target="_blank"
           title={footerLink.skype}
           className="position-relative d-flex align-items-center test"
         >
-          <FaSkype className="d-block cursor-pointer my-1 order-color bg-white" />
-          <span className="social-address fs-12 ms-1 text-secondary">
-            Skype: {footerLink[0].skype}
+          <FaSkype
+            className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+            size={40}
+          />
+          <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+            skype:{footerLink[0].skype}
           </span>
         </a>
         <a
@@ -76,24 +84,32 @@ const Banner = ({ bannerData, footerLink }) => {
           title={footerLink.whatsApp}
           className="position-relative d-flex align-items-center test"
         >
-          <IoLogoWhatsapp className="d-block cursor-pointer my-2 order-color" />
-          <span className="social-address fs-12 ms-1 text-secondary">
-            WhatsApp: {footerLink[0].whatsApp}
+          <IoLogoWhatsapp
+            className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+            size={40}
+          />
+          <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+            WhatsApp:{footerLink[0].whatsApp}
           </span>
         </a>
-        <a
-          target="_blank"
-          title={footerLink.email}
-          className="position-relative d-flex align-items-center test"
-        >
-          <MdEmail className="d-block my-2 cursor-pointer order-color" />
-          <span className="social-address fs-12 ms-1 text-secondary">
-            Email: {footerLink[0].email}
-          </span>
-        </a>
+        <Link href={`mailto:${footerLink.email}`}>
+          <a
+            target="_blank"
+            title={footerLink.email}
+            className="position-relative d-flex align-items-center test"
+          >
+            <MdEmail
+              className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+              size={40}
+            />
+            <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+              Email:{footerLink[0].email}
+            </span>
+          </a>
+        </Link>
       </div>
 
-      {/* Pop up  */}
+      {/* PopUp Modal */}
       <div
         className="modal fade"
         id="popup"
@@ -106,10 +122,14 @@ const Banner = ({ bannerData, footerLink }) => {
             <div className="modal-body">
               <div className="position-relative">
                 <div className="cardHeaderBg">
-                  <Image src={cardHeaderBg} />
+                  <Image src={cardHeaderBg} alt="header" />
                 </div>
                 <div className="cardHeaderImg">
-                  <Image src={cardHeaderImg} />
+                  <Image
+                    src={cardHeaderImg}
+                    className="mt-2 p-2"
+                    alt="cardImage"
+                  />
                 </div>
                 <div className="btn-popup cursor-pointer">
                   <AiOutlineClose
@@ -119,11 +139,9 @@ const Banner = ({ bannerData, footerLink }) => {
                   />
                 </div>
               </div>
+
               <div className="card-body mx-auto bg-white borderRadius">
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className="mx-md-4 mx-0"
-                >
+                <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="my-3">
                     <input
                       type="text"

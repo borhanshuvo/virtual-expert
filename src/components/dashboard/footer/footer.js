@@ -27,6 +27,7 @@ const AdminFooter = () => {
     const whatsApp = data.whatsApp || footerData.whatsApp;
     const copyRightText = data.copyRightText || footerData.copyRightText;
     const _id = footerData._id;
+    const address = data.address || footerData.address;
 
     fetch("https://sleepy-mesa-08037.herokuapp.com/footer/update", {
       method: "PUT",
@@ -38,6 +39,7 @@ const AdminFooter = () => {
         whatsApp,
         _id,
         copyRightText,
+        address,
       }),
     })
       .then((res) => res.json())
@@ -53,11 +55,19 @@ const AdminFooter = () => {
     const instagram = data.instagram || footerLink.instagram;
     const telegram = data.telegram || footerLink.telegram;
     const twitter = data.twitter || footerLink.twitter;
+    const youTube = data.youTube || footerLink.youTube;
 
     fetch("https://sleepy-mesa-08037.herokuapp.com/footerLink/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ _id, facebook, instagram, telegram, twitter }),
+      body: JSON.stringify({
+        _id,
+        facebook,
+        instagram,
+        telegram,
+        twitter,
+        youTube,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -110,6 +120,15 @@ const AdminFooter = () => {
           name="whatsApp"
           value={footerData.whatsApp}
         />
+        <label htmlFor="address" className="d-block my-2">
+          Address
+        </label>
+        <input
+          type="text"
+          className="form-control fs-14"
+          name="address"
+          value={footerData?.address}
+        />
         <div className="d-flex justify-content-between my-4">
           <h6 className="fs-18">Update Social Link</h6>
           <AiFillEdit
@@ -154,6 +173,15 @@ const AdminFooter = () => {
           className="form-control fs-14"
           name="twitter"
           value={footerLink.twitter}
+        />
+        <label htmlFor="youTube" className="d-block my-2">
+          YouTube
+        </label>
+        <input
+          type="text"
+          className="form-control fs-14"
+          name="youTube"
+          value={footerLink?.youTube}
         />
       </div>
 
@@ -230,6 +258,16 @@ const AdminFooter = () => {
                   id="whatsApp"
                   className="form-control mb-2"
                 ></textarea>
+                <label htmlFor="address">Address</label>
+                <textarea
+                  rows="2"
+                  cols="2"
+                  defaultValue={footerData?.address}
+                  {...register("address")}
+                  name="address"
+                  id="address"
+                  className="form-control mb-2"
+                ></textarea>
                 <input
                   type="submit"
                   className="btn btn-primary"
@@ -304,6 +342,16 @@ const AdminFooter = () => {
                   {...register("twitter")}
                   name="twitter"
                   id="twitter"
+                  className="form-control mb-2"
+                ></textarea>
+                <label htmlFor="twitter">YouTube</label>
+                <textarea
+                  rows="2"
+                  cols="2"
+                  defaultValue={footerLink.youTube}
+                  {...register("youTube")}
+                  name="youTube"
+                  id="youTube"
                   className="form-control mb-2"
                 ></textarea>
                 <input

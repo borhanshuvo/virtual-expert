@@ -7,9 +7,12 @@
 }
 .logo {
   color: #ff9f26;
-  font-size: 16px;
+  font-size: 20px;
   margin-right: 10px;
-  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.4);
 }
 .logoBottom {
   color: #ff9f26;

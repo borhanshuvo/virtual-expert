@@ -4,7 +4,6 @@ import ReactHtmlParser from "react-html-parser";
 
 const ScheduleMeeting = () => {
   const [scheduleTitle, setScheduleTitle] = useState({});
-  console.log(scheduleTitle.link);
 
   useEffect(() => {
     fetch("https://sleepy-mesa-08037.herokuapp.com/scheduleMeeting")

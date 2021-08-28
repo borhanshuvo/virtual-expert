@@ -3,8 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AiOutlineSkype, AiOutlineWhatsApp } from "react-icons/ai";
-import { FaFacebook, FaInstagram, FaTelegram } from "react-icons/fa";
+import {
+  AiOutlineSkype,
+  AiOutlineWhatsApp,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
 import { ImTwitter } from "react-icons/im";
@@ -14,7 +18,7 @@ import Logo from "../../../../images/Shape.svg";
 import ScheduleMeeting from "../../home/scheduleMeeting/scheduleMeeting";
 import styles from "./letsTalk.module.css";
 
-const LetsTalk = () => {
+const LetsTalk = ({ footerData }) => {
   const router = useRouter();
   const [footerLink, setFooterLink] = useState({});
 
@@ -79,17 +83,16 @@ const LetsTalk = () => {
               Let&#x27;s Talk
             </h2>
             <p className="fs-14">
-            <span className="cursor-pointer" onClick={() => router.push("/")}>
-              Home
-            </span>{" "}
-            <span className="text-warning mx-2">{`>`}</span>{" "}
-            <span
-              className="cursor-pointer"
-              onClick={() => router.push("/lets-talk")}
-            >
-              Let&#x27;s
-              Talk
-            </span>
+              <span className="cursor-pointer" onClick={() => router.push("/")}>
+                Home
+              </span>{" "}
+              <span className="text-warning mx-2">{`>`}</span>{" "}
+              <span
+                className="cursor-pointer"
+                onClick={() => router.push("/lets-talk")}
+              >
+                Let&#x27;s Talk
+              </span>
             </p>
           </div>
         </div>
@@ -115,24 +118,25 @@ const LetsTalk = () => {
                   {" "}
                   <GoLocation className={`${styles.logo} icon-margin-top`} />
                   <span>
-                    <span className="fw-500">Address</span> : 226 West 26th
-                    Street, New York, NY 10001, USA
+                    <span className="fw-500">Address</span> :{" "}
+                    {footerData[0].address}
                   </span>
                 </p>
                 <p className="fs-15 d-flex align-items-center lh-40 m-0">
                   {" "}
                   <HiOutlineMail className={`${styles.logo}`} />
-                  <span className="fw-500">Email</span>: help@virtualexperts.net
+                  <span className="fw-500">Email</span>: {footerData[0].email}
                 </p>
                 <p className="fs-15 d-flex align-items-center lh-40 m-0">
                   {" "}
                   <AiOutlineSkype className={`${styles.logo} fs-15`} />
-                  <span className="fw-500">Skype</span>: VirtualExpertsLTD
+                  <span className="fw-500">Skype</span>: {footerData[0].skype}
                 </p>
                 <p className="fs-15 d-flex align-items-center lh-40 m-0">
                   {" "}
                   <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
-                  <span className="fw-500">Whatsapp</span>: +13473528622
+                  <span className="fw-500">Whatsapp</span>:{" "}
+                  {footerData[0].whatsApp}
                 </p>
               </div>
               <div>
@@ -152,7 +156,7 @@ const LetsTalk = () => {
                   {footerLink?.instagram && (
                     <Link href={footerLink.instagram}>
                       <a target="_blank">
-                        <FaInstagram className={`${styles.logo} me-3`} />
+                        <AiFillInstagram className={`${styles.logo} me-3`} />
                       </a>
                     </Link>
                   )}
@@ -172,6 +176,13 @@ const LetsTalk = () => {
                       </a>
                     </Link>
                   )}
+                  {footerLink?.youTube && (
+                    <Link href={footerLink.youTube}>
+                      <a target="_blank">
+                        <FaYoutube className={`${styles.logo} me-3`} />
+                      </a>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
@@ -180,7 +191,7 @@ const LetsTalk = () => {
 
             <div className="col-md-6">
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center mx-2">
+                <div className="d-md-flex gap-4 mt-5 mb-md-3 mb-sm-2 justify-content-center mx-md-2">
                   <div className="col-12 col-md-6">
                     <input
                       placeholder="Name"
@@ -204,7 +215,7 @@ const LetsTalk = () => {
                     )}
                   </div>
                 </div>
-                <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center fs-14 mx-2">
+                <div className="d-md-flex gap-4 mt-4 mb-3 justify-content-center fs-14 mx-md-2">
                   <div className="col-12 col-md-6">
                     <input
                       placeholder="Phone"

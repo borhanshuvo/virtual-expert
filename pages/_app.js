@@ -1,9 +1,11 @@
 import jwt_decode from "jwt-decode";
 import Head from "next/head";
 import Router from "next/router";
+import { useRouter } from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { createContext, useEffect, useState } from "react";
+import { FaArrowAltCircleUp } from "react-icons/fa";
 import Footer from "../src/components/footer/footer";
 import Navbar from "../src/components/navbar/navbar";
 import "../styles/globals.css";
@@ -18,6 +20,13 @@ nProgress.configure(
 export const UserContext = createContext();
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const currentPath = router.pathname;
+
+  const handelClickTop = () => {
+    window.scroll(0, 0);
+  };
+
   const [signedUser, setSignedUser] = useState({});
   //showing n-progress
   Router.events.on("routeChangeStart", (url) => {
@@ -79,6 +88,23 @@ function MyApp({ Component, pageProps }) {
       <UserContext.Provider value={[signedUser, setSignedUser]}>
         <Component {...pageProps} />
       </UserContext.Provider>
+      <div
+        className={
+          router.pathname === "/dashboard" ||
+          router.pathname === "/dashboard/service" ||
+          router.pathname === "/dashboard/about" ||
+          router.pathname === "/dashboard/orders"
+            ? "d-none"
+            : ""
+        }
+      >
+        <div
+          onClick={handelClickTop}
+          className="scrol-icon me-5 position-fixed end-0 top-80 cursor-pointer"
+        >
+          <FaArrowAltCircleUp size={40} />
+        </div>
+      </div>
       <Footer />
     </>
   );
