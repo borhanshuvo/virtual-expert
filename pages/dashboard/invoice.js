@@ -28,6 +28,7 @@ const Invoice = ({ serviceData }) => {
     setSelectedServices([...newArray, e.target.value]);
   };
 
+  console.log(selectedServices);
   return (
     <>
       <section className="overflow-hidden">
@@ -63,9 +64,13 @@ const Invoice = ({ serviceData }) => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-10 scroll vh-100">
+          <div className="col-12 col-md-10 scroll vh-100 d-flex justify-content-center align-items-center">
             <div>
-              <button data-bs-toggle="modal" data-bs-target="#invoiceModal">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#invoiceModal"
+                className="btn btn-warning mx-3"
+              >
                 Create Invoice
               </button>
             </div>
@@ -188,8 +193,12 @@ const Invoice = ({ serviceData }) => {
                   </select>
                 </div>
 
-                <div className="form-group">
-                  <p>{selectedServices}</p>
+                <div className="form-group my-2">
+                  {selectedServices.map((service, index) => (
+                    <p key={index} className="fs-14">
+                      {index + 1}. {service}
+                    </p>
+                  ))}
                 </div>
 
                 <div className="form-group">

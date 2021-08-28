@@ -36,14 +36,17 @@ Font.register({
     },
     {
       src: "http://localhost:3000/fonts/Roboto-Bold.ttf",
-      fontWeight: 700, // Also accepts numeric values, ex. 700
+      fontWeight: "700, 900", // Also accepts numeric values, ex. 700
     },
   ],
 });
 
 const MyDoc = ({ info, selectedServices }) => (
   <Document>
-    <Page size="a4" style={{ padding: "35px", fontFamily: "Roboto" }}>
+    <Page
+      size="a4"
+      style={{ padding: "35px 35px 0px 35px", fontFamily: "Roboto" }}
+    >
       <View>
         <View
           style={{
@@ -63,7 +66,7 @@ const MyDoc = ({ info, selectedServices }) => (
               style={{
                 fontSize: "20px",
                 fontWeight: "bold",
-                marginBottom: "6px",
+                marginBottom: "4px",
                 color: "#6DE039",
               }}
             >
@@ -71,52 +74,47 @@ const MyDoc = ({ info, selectedServices }) => (
             </Text>
             <Text
               style={{
-                marginBottom: "3px",
+                marginBottom: "2px",
                 fontSize: "11px",
                 letterSpacing: "1px",
-                fontWeight: 400,
-                color: "black",
+                fontWeight: 300,
               }}
             >
               9070 179 PL
             </Text>
             <Text
               style={{
-                marginBottom: "3px",
+                marginBottom: "2px",
                 fontSize: "11px",
                 letterSpacing: "1px",
-                fontWeight: 400,
-                color: "#000",
+                fontWeight: 300,
               }}
             >
               Jamaica AV
             </Text>
             <Text
               style={{
-                marginBottom: "3px",
+                marginBottom: "2px",
                 fontSize: "11px",
                 letterSpacing: "1px",
-                fontWeight: 400,
-                color: "#000",
+                fontWeight: 300,
               }}
             >
               New York
             </Text>
             <Text
               style={{
-                marginBottom: "1px",
                 fontSize: "11px",
-                fontWeight: 400,
-                color: "#000",
+                fontWeight: 300,
               }}
             >
               11432
             </Text>
             <Text
               style={{
-                marginTop: "30px",
+                marginTop: "20px",
                 marginBottom: "10px",
-                color: "#ff9f26",
+                color: "#3EB2EF",
                 fontSize: "14px",
                 letterSpacing: "2px",
                 fontWeight: 400,
@@ -129,18 +127,44 @@ const MyDoc = ({ info, selectedServices }) => (
                 marginBottom: "5px",
                 fontSize: "11px",
                 letterSpacing: "1px",
+                paddingLeft: "5px",
               }}
             >
-              <Text style={{ fontWeight: 400 }}>SKYPE:</Text> virtualexpertsltd
+              <Text
+                style={{
+                  fontWeight: 400,
+                  paddingLeft: "5px",
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                SKYPE:
+              </Text>{" "}
+              <Text style={{ paddingLeft: "10px", fontWeight: 300 }}>
+                virtualexpertsltd
+              </Text>
             </Text>
             <Text
               style={{
                 marginBottom: "5px",
                 fontSize: "11px",
+                paddingLeft: "5px",
                 letterSpacing: "1px",
               }}
             >
-              <Text style={{ fontWeight: 400 }}>PHONE:</Text> +13473528622
+              <Text
+                style={{
+                  fontWeight: 400,
+                  paddingLeft: "5px",
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                PHONE:
+              </Text>{" "}
+              <Text style={{ marginLeft: "100px", fontWeight: 300 }}>
+                +13473528622
+              </Text>
             </Text>
           </View>
           {/* right part */}
@@ -166,11 +190,12 @@ const MyDoc = ({ info, selectedServices }) => (
               style={{
                 fontSize: "32px",
                 fontWeight: "bolder",
-                color: "#3EB2FF",
+                color: "#3EB2EF",
                 textAlign: "right",
                 margin: "15px 40px 15px 0px",
-                fontWeight: 700,
+                fontWeight: 900,
                 fontFamily: "Roboto",
+                letterSpacing: "2px",
               }}
             >
               INVOICE
@@ -178,26 +203,28 @@ const MyDoc = ({ info, selectedServices }) => (
             <Text style={{ fontSize: "12px", marginBottom: "5px" }}>
               <Text
                 style={{
-                  color: "#3EB2FF",
-                  fontWeight: "700",
-                  fontSize: "12px",
+                  color: "#3EB2EF",
+                  fontWeight: 700,
+                  fontSize: "11px",
+                  letterSpacing: "1px",
                 }}
               >
                 DATE:
               </Text>{" "}
-              {info.date}
+              <Text style={{ fontWeight: 300 }}>{info.date}</Text>
             </Text>
             <Text style={{ fontSize: "12px" }}>
               <Text
                 style={{
                   color: "#3EB2EF",
-                  fontWeight: "bold",
-                  fontSize: "12px",
+                  fontWeight: 700,
+                  fontSize: "11px",
+                  letterSpacing: "1px",
                 }}
               >
                 INVOICE NO:
               </Text>{" "}
-              {info.invoiceNo}
+              <Text style={{ fontWeight: 300 }}>{info.invoiceNo}</Text>
             </Text>
             <Text
               style={{
@@ -205,37 +232,44 @@ const MyDoc = ({ info, selectedServices }) => (
                 color: "#3EB2EF",
                 letterSpacing: "2px",
                 marginTop: "20px",
+                marginBottom: "3px",
               }}
             >
               CLIENT INFORMATION
             </Text>
             <Text
               style={{
-                fontSize: "12px",
-                margin: "5px 0",
+                fontSize: "11px",
+                margin: "2px 0",
                 letterSpacing: "1px",
               }}
             >
-              Name: <Text style={{ color: "#3EB2EF" }}>{info.clientName}</Text>
+              NAME: <Text style={{ color: "#3EB2EF" }}>{info.clientName}</Text>
             </Text>
             <Text
               style={{
-                fontSize: "12px",
-                margin: "5px 0",
+                fontSize: "11px",
+                margin: "2px 0",
                 letterSpacing: "1px",
               }}
             >
-              EMAIL: {info.clientEmail}
+              EMAIL:{" "}
+              <Text style={{ fontSize: "11px", fontWeight: 300 }}>
+                {info.clientEmail}
+              </Text>
             </Text>
             <Text
               style={{
-                fontSize: "12px",
-                margin: "5px 0",
+                fontSize: "11px",
+                margin: "2px 0",
                 letterSpacing: "1px",
                 lineHeight: "1px",
               }}
             >
-              ADDRESS: {info.clientAddress}
+              ADDRESS:
+              <Text style={{ fontSize: "11px", fontWeight: 300 }}>
+                {info.clientAddress}
+              </Text>
             </Text>
           </View>
         </View>
@@ -324,41 +358,63 @@ const MyDoc = ({ info, selectedServices }) => (
                   {service}
                 </Text>
               </View>
-              {/* <View style={{ flexDirection: "column" }}>
-                <Text
-                  style={{
-                    color: "#fff",
-                    fontSize: "11px",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  QTY
-                </Text>
-              </View>
-              <View style={{ flexDirection: "column" }}>
-                <Text
-                  style={{
-                    color: "#fff",
-                    fontSize: "11px",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  PRICE
-                </Text>
-              </View> */}
-              {/* <View style={{ flexDirection: "column" }}>
-                <Text
-                  style={{
-                    color: "#fff",
-                    fontSize: "11px",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  TOTAL
-                </Text>
-              </View> */}
             </View>
           ))}
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: "10px",
+              padding: "10px",
+              borderBottom: "2px solid #F7F6F2",
+            }}
+          >
+            <View
+              style={{
+                flexDirection: "column",
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                  color: "#fff",
+                }}
+              >
+                Order Info of your order
+              </Text>
+            </View>
+            <View style={{ flexDirection: "column" }}>
+              <Text
+                style={{
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                {info.quantity}
+              </Text>
+            </View>
+            <View style={{ flexDirection: "column" }}>
+              <Text
+                style={{
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                ${info.price}
+              </Text>
+            </View>
+            <View style={{ flexDirection: "column" }}>
+              <Text
+                style={{
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                ${info.total}
+              </Text>
+            </View>
+          </View>
         </View>
         {/* 2nd part end */}
 
@@ -376,9 +432,19 @@ const MyDoc = ({ info, selectedServices }) => (
                   fontSize: "14px",
                   paddingTop: "15px",
                   letterSpacing: "1px",
+                  fontWeight: 300,
                 }}
               >
-                Please check this invoice & complete the payment
+                Please check this invoice & complete the
+              </Text>
+              <Text
+                style={{
+                  fontSize: "14px",
+                  letterSpacing: "1px",
+                  fontWeight: 300,
+                }}
+              >
+                payment
               </Text>
             </View>
             {/* subtotal part  */}
@@ -389,26 +455,30 @@ const MyDoc = ({ info, selectedServices }) => (
                   justifyContent: "space-between",
                 }}
               >
-                <View>
+                <View style={{ width: "60%" }}>
                   <Text
                     style={{
-                      fontSize: "12px",
+                      fontSize: "11px",
                       margin: "3px 0px",
                       letterSpacing: "1px",
+                      fontWeight: 300,
+                      textAlign: "right",
                     }}
                   >
-                    Sub Total:{" "}
+                    Subtotal
                   </Text>
                 </View>
-                <View>
+                <View style={{ width: "40%" }}>
                   <Text
                     style={{
-                      fontSize: "12px",
-                      margin: "3px 0px",
+                      fontSize: "11px",
+                      margin: "3px 0px 3px 15px",
                       letterSpacing: "1px",
+                      fontWeight: 300,
+                      textAlign: "left",
                     }}
                   >
-                    $432
+                    ${info.subTotal}
                   </Text>
                 </View>
               </View>
@@ -419,26 +489,30 @@ const MyDoc = ({ info, selectedServices }) => (
                   justifyContent: "space-between",
                 }}
               >
-                <View>
+                <View style={{ width: "60%" }}>
                   <Text
                     style={{
-                      fontSize: "12px",
+                      fontSize: "11px",
                       margin: "3px 0px",
                       letterSpacing: "1px",
+                      fontWeight: 300,
+                      textAlign: "right",
                     }}
                   >
-                    Tax (5%):
+                    Tax ({info.taxPercentage}%)
                   </Text>
                 </View>
-                <View>
+                <View style={{ width: "40%" }}>
                   <Text
                     style={{
-                      fontSize: "12px",
-                      margin: "3px 0px",
+                      fontSize: "11px",
+                      margin: "3px 0px 3px 15px",
                       letterSpacing: "1px",
+                      fontWeight: 300,
+                      textAlign: "left",
                     }}
                   >
-                    $10
+                    ${info.tax}
                   </Text>
                 </View>
               </View>
@@ -449,26 +523,30 @@ const MyDoc = ({ info, selectedServices }) => (
                   justifyContent: "space-between",
                 }}
               >
-                <View>
+                <View style={{ width: "60%" }}>
                   <Text
                     style={{
-                      fontSize: "12px",
+                      fontSize: "11px",
                       margin: "3px 0px",
                       letterSpacing: "1px",
+                      fontWeight: 300,
+                      textAlign: "right",
                     }}
                   >
-                    GRAND TOTAL:
+                    GRAND TOTAL
                   </Text>
                 </View>
-                <View>
+                <View style={{ width: "40%" }}>
                   <Text
                     style={{
-                      fontSize: "12px",
-                      margin: "3px 0px",
+                      fontSize: "11px",
+                      margin: "3px 0px 3px 15px",
                       letterSpacing: "1px",
+                      fontWeight: 300,
+                      textAlign: "left",
                     }}
                   >
-                    $532
+                    ${info.grandTotal}
                   </Text>
                 </View>
               </View>
@@ -485,7 +563,7 @@ const MyDoc = ({ info, selectedServices }) => (
           }}
         >
           <View style={{ width: "80%", marginTop: "20px" }}>
-            <Text style={{ fontSize: "12px" }}>
+            <Text style={{ fontSize: "12px", fontWeight: 300 }}>
               {" "}
               <Text
                 style={{
@@ -501,6 +579,7 @@ const MyDoc = ({ info, selectedServices }) => (
               style={{
                 fontSize: "12px",
                 letterSpacing: "1px",
+                fontWeight: 300,
               }}
             >
               {" "}
@@ -513,14 +592,25 @@ const MyDoc = ({ info, selectedServices }) => (
                 fontSize: "12px",
                 marginBottom: "4px",
                 letterSpacing: "1px",
+                fontWeight: 300,
               }}
             >
-              or call us at ++1 347 352 8622
+              <Text style={{ fontSize: "12px", marginBottom: "4px" }}>
+                or call us at ++1 347 352 8622
+              </Text>
             </Text>
           </View>
           <View style={{ width: "20%", textAlign: "right" }}>
-            <Text style={{ fontSize: "33px" }}>Thank</Text>
-            <Text style={{ fontSize: "33px" }}>YOU!</Text>
+            <Text
+              style={{ fontSize: "33px", fontWeight: 700, color: "#525352" }}
+            >
+              THANK
+            </Text>
+            <Text
+              style={{ fontSize: "33px", fontWeight: 700, color: "#525352" }}
+            >
+              YOU!
+            </Text>
           </View>
         </View>
 
@@ -529,9 +619,9 @@ const MyDoc = ({ info, selectedServices }) => (
           <Text
             style={{
               padding: "10px 20px",
-              fontSize: "13px",
+              fontSize: "12px",
               letterSpacing: "1px",
-              fontWeight: "300",
+              fontWeight: 300,
               textAlign: "center",
             }}
           >
@@ -544,13 +634,13 @@ const MyDoc = ({ info, selectedServices }) => (
 );
 
 const MyDocument = ({ info, selectedServices }) => (
-  <div>
+  <div className="btn btn-success">
     <PDFDownloadLink
       document={<MyDoc info={info} selectedServices={selectedServices} />}
-      fileName="somename.pdf"
+      fileName={`${info.clientName}.pdf`}
     >
       {({ blob, url, loading, error }) =>
-        loading ? "Loading document..." : "Download now!"
+        loading ? "Loading document..." : "Download Now"
       }
     </PDFDownloadLink>
   </div>
