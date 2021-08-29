@@ -1,7 +1,6 @@
 import jwt_decode from "jwt-decode";
 import Head from "next/head";
-import Router from "next/router";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { createContext, useEffect, useState } from "react";
@@ -94,7 +93,7 @@ function MyApp({ Component, pageProps }) {
             <img
               height="1"
               width="1"
-              style="display:none"
+              style={{ display: "none" }}
               src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
             />
           </noscript>
@@ -154,7 +153,7 @@ function MyApp({ Component, pageProps }) {
           <img
             height="1"
             width="1"
-            style="display:none"
+            style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
           />
         </noscript>

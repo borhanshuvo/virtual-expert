@@ -56,7 +56,7 @@ const MyDoc = ({ info, selectedServices }) => (
                 color: "#FFAC45",
               }}
             >
-              Richard Son
+              Richard Sid
             </Text>
             <Text
               style={{
@@ -610,7 +610,7 @@ const MyDoc = ({ info, selectedServices }) => (
               textAlign: "center",
             }}
           >
-            9070179 PL Jamaica AV, New York 11432 • www.virtualexperts.net
+            226 West 26th Street, New York, NY 10001, USA
           </Text>
         </View>
       </View>
