@@ -1,4 +1,5 @@
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 
 const WhatWeDo = ({ whatWeDo }) => {
   return (
@@ -7,11 +8,11 @@ const WhatWeDo = ({ whatWeDo }) => {
         <h6
           className={`textLeftAfterEffect fs-28 mb-4 lh-44 font-family-roboto`}
         >
-          {whatWeDo?.title}
+          {ReactHtmlParser(whatWeDo?.title)}
         </h6>
-        <p className="fs-15 text-color my-4 lh-lg">{whatWeDo?.description}</p>
+        <p className="fs-15 text-color my-4 lh-lg">{ReactHtmlParser(whatWeDo?.description)}</p>
         <h6 className="fs-18 lh-30 font-family-roboto">
-          {whatWeDo?.subDescription}
+          {ReactHtmlParser(whatWeDo?.subDescription)}
         </h6>
       </div>
     </>
