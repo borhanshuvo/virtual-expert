@@ -20,7 +20,6 @@ nProgress.configure(
 export const UserContext = createContext();
 
 function MyApp({ Component, pageProps }) {
-
   const router = useRouter();
 
   const handelClickTop = () => {
@@ -67,7 +66,6 @@ function MyApp({ Component, pageProps }) {
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
           ></script>
-          {/* googleAnalytics function call */}
           <script
             dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];
@@ -78,6 +76,28 @@ function MyApp({ Component, pageProps }) {
               gtag("config", "G-M0L3PN9HQL");`,
             }}
           />
+          {/* facebook Analytics Script Add */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `!function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '878234442794429');
+              fbq('track', 'PageView');`,
+            }}
+          />
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style="display:none"
+              src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
+            />
+          </noscript>
         </Head>
         <UserContext.Provider value={[signedUser, setSignedUser]}>
           <Component {...pageProps} />
@@ -100,7 +120,6 @@ function MyApp({ Component, pageProps }) {
           integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
           crossOrigin="anonymous"
         ></script>
-
         {/* Google Analytics Script Add */}
         <script
           async
@@ -117,6 +136,29 @@ function MyApp({ Component, pageProps }) {
               gtag("config", "G-M0L3PN9HQL");]`,
           }}
         />
+        {/* facebook Analytics Script Add */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '878234442794429');
+              fbq('track', 'PageView');`,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style="display:none"
+            src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
+          />
+        </noscript>
+        ;
       </Head>
       <Navbar />
       <UserContext.Provider value={[signedUser, setSignedUser]}>
