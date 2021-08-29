@@ -36,8 +36,7 @@ const Footer = () => {
         router.pathname === "/dashboard/about" ||
         router.pathname === "/dashboard/orders" ||
         router.pathname === "/dashboard/invoice" ||
-        router.pathname === "/dashboard/meta" 
-
+        router.pathname === "/dashboard/meta"
           ? "d-none"
           : ""
       }
@@ -59,27 +58,37 @@ const Footer = () => {
                   Get in Touch
                 </h6>
               </div>
-              <p className={`mt-3 text-muted fs-14 lh-30`}>
-                {" "}
-                <MdEmail className={`${styles.logo}`} />
-                <span className={`${styles.hilight}`}>
-                  <span className="fw-500">Email</span> : {footer?.email}
-                </span>
-              </p>
-              <p className=" text-muted fs-14 lh-30">
-                {" "}
-                <FaSkype className={`${styles.logo}`} />
-                <span className={`${styles.hilight}`}>
-                  <span className="fw-500">Skype</span> : {footer?.skype}
-                </span>
-              </p>
-              <p className=" text-muted fs-14 lh-30">
-                {" "}
-                <IoLogoWhatsapp className={`${styles.logo}`} />
-                <span className={`${styles.hilight}`}>
-                  <span className="fw-500">WhatsApp</span> : {footer?.whatsApp}
-                </span>
-              </p>
+              <Link href={`mailto:${footerLink.email}`}>
+                <a target="_blank">
+                  <p className={`mt-3 text-muted fs-14 lh-30`}>
+                    <MdEmail className={`${styles.logo}`} />
+                    <span className={`${styles.hilight}`}>
+                      <span className="fw-500">Email</span> : {footer?.email}
+                    </span>
+                  </p>
+                </a>
+              </Link>
+              <Link href={`${footerLink.skype}`}>
+                <a target="_blank">
+                  <p className=" text-muted fs-14 lh-30">
+                    <FaSkype className={`${styles.logo}`} />
+                    <span className={`${styles.hilight}`}>
+                      <span className="fw-500">Skype</span> : {footer?.skype}
+                    </span>
+                  </p>
+                </a>
+              </Link>
+              <Link href={`${footerLink.whatsApp}`}>
+                <a target="_blank">
+                  <p className=" text-muted fs-14 lh-30">
+                    <IoLogoWhatsapp className={`${styles.logo}`} />
+                    <span className={`${styles.hilight}`}>
+                      <span className="fw-500">WhatsApp</span> :{" "}
+                      {footer?.whatsApp}
+                    </span>
+                  </p>
+                </a>
+              </Link>
             </div>
             <div className="col-md-4 text-center text-md-start mt-4 mt-md-0">
               <h6 className={`${styles.title} fs-16 mt-5 mt-md-0 lh-30 fw-500`}>

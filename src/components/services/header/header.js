@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import SideLink from "../../sideLink/sideLink";
 
 const Header = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const Header = () => {
           </p>
         </div>
       </div>
+      <SideLink />
     </>
   );
 };

@@ -34,7 +34,11 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="d-block d-md-none">
-              <Image src={logo} alt="logo" height="31" width="170" />
+              <Link href="/" scroll>
+                <a>
+                  <Image src={logo} alt="logo" height="31" width="170" />
+                </a>
+              </Link>
             </div>
             <div className="d-none d-md-block">
               <ul className="d-flex align-items-center">
@@ -82,7 +86,18 @@ const Navbar = () => {
             </div>
           </div>
           <div className="mx-auto">
-            <Image src={mobileLogo} height={100} width={150} alt="loading..." />
+            <Link href="/" scroll>
+              <a>
+                <Image
+                  src={mobileLogo}
+                  height={100}
+                  width={150}
+                  alt="loading..."
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                />
+              </a>
+            </Link>
           </div>
           <div className="offcanvas-body">
             <div className="text-center">

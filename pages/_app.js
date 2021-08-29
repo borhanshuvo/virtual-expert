@@ -20,8 +20,8 @@ nProgress.configure(
 export const UserContext = createContext();
 
 function MyApp({ Component, pageProps }) {
+
   const router = useRouter();
-  const currentPath = router.pathname;
 
   const handelClickTop = () => {
     window.scroll(0, 0);
@@ -61,6 +61,23 @@ function MyApp({ Component, pageProps }) {
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
             crossOrigin="anonymous"
           ></script>
+
+          {/* Google Analytics Script Add */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
+          ></script>
+          {/* googleAnalytics function call */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                dataLayer.push(arguments);
+              }
+              gtag("js", new Date());
+              gtag("config", "G-M0L3PN9HQL");`,
+            }}
+          />
         </Head>
         <UserContext.Provider value={[signedUser, setSignedUser]}>
           <Component {...pageProps} />
@@ -83,6 +100,23 @@ function MyApp({ Component, pageProps }) {
           integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
           crossOrigin="anonymous"
         ></script>
+
+        {/* Google Analytics Script Add */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
+        ></script>
+        {/* googleAnalytics function call */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `[window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                dataLayer.push(arguments);
+              }
+              gtag("js", new Date());
+              gtag("config", "G-M0L3PN9HQL");]`,
+          }}
+        />
       </Head>
       <Navbar />
       <UserContext.Provider value={[signedUser, setSignedUser]}>
@@ -96,7 +130,6 @@ function MyApp({ Component, pageProps }) {
           router.pathname === "/dashboard/orders" ||
           router.pathname === "/dashboard/invoice" ||
           router.pathname === "/dashboard/meta"
-
             ? "d-none"
             : ""
         }

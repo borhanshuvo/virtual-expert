@@ -1,15 +1,12 @@
 import Image from "next/image";
 import React from "react";
-import Link from "next/link";
-import { FaSkype } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
 import bannerImg from "../../../../images/Img-5.svg";
 import styles from "./banner.module.css";
 import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
 import cardHeaderBg from "../../../../images/Others/Group 157.svg";
 import cardHeaderImg from "../../../../images/v-logo.svg";
+import SideLink from "../../sideLink/sideLink";
 
 const Banner = ({ bannerData, footerLink }) => {
   const {
@@ -65,55 +62,7 @@ const Banner = ({ bannerData, footerLink }) => {
       </div>
 
       {/* social link goes here */}
-      <div className={`position-fixed left-0 top-30 ${styles.zIndex}`}>
-        <Link href={`${footerLink.skype}`}>
-          <a
-            target="_blank"
-            title={footerLink.skype}
-            className="position-relative d-flex align-items-center test"
-          >
-            <FaSkype
-              className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-              size={40}
-            />
-            <span
-              className={`social-address fs-12 ms-1 text-secondary bg-light p-1`}
-            >
-              skype:{footerLink[0].skype}
-            </span>
-          </a>
-        </Link>
-        <Link href={`${footerLink.whatsApp}`}>
-          <a
-            target="_blank"
-            title={footerLink.whatsApp}
-            className="position-relative d-flex align-items-center test"
-          >
-            <IoLogoWhatsapp
-              className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-              size={40}
-            />
-            <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
-              WhatsApp:{footerLink[0].whatsApp}
-            </span>
-          </a>
-        </Link>
-        <Link href={`mailto:${footerLink.email}`}>
-          <a
-            target="_blank"
-            title={footerLink.email}
-            className="position-relative d-flex align-items-center test"
-          >
-            <MdEmail
-              className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-              size={40}
-            />
-            <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
-              {footerLink[0].email}
-            </span>
-          </a>
-        </Link>
-      </div>
+      <SideLink />
 
       {/* PopUp Modal */}
       <div

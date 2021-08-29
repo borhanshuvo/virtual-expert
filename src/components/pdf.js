@@ -618,8 +618,8 @@ const MyDoc = ({ info, selectedServices }) => (
   </Document>
 );
 
-const MyDocument = ({ info, selectedServices, kawsar }) => (
-  <div className="btn btn-success" onClick={kawsar}>
+const MyDocument = ({ info, selectedServices, handelClear }) => (
+  <div className="btn btn-success" onClick={handelClear}>
     <PDFDownloadLink
       document={<MyDoc info={info} selectedServices={selectedServices} />}
       fileName={`${info.clientName}.pdf`}
