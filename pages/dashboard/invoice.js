@@ -32,7 +32,7 @@ const Invoice = ({ serviceData }) => {
     setSelectedServices([...newArray, e.target.value]);
   };
 
-  const kawsar = () => {
+  const handelClear = () => {
     setSelectedServices([]);
   };
 
@@ -96,7 +96,7 @@ const Invoice = ({ serviceData }) => {
               <MyDocument
                 info={info}
                 selectedServices={selectedServices}
-                kawsar={kawsar}
+                handelClear={handelClear}
               />
             </div>
           </div>

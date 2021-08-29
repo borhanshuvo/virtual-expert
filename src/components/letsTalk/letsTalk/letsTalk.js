@@ -16,6 +16,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Logo from "../../../../images/Shape.svg";
 import ScheduleMeeting from "../../home/scheduleMeeting/scheduleMeeting";
+import SideLink from "../../sideLink/sideLink";
 import styles from "./letsTalk.module.css";
 
 const LetsTalk = ({ footerData }) => {
@@ -269,6 +270,7 @@ const LetsTalk = ({ footerData }) => {
           <ScheduleMeeting />
         </div>
       </section>
+      <SideLink />
     </>
   );
 };

@@ -26,6 +26,13 @@ const About = ({
               : "virtual Experts"
           }
         />
+        <meta
+          name="keyword"
+          content="amazon fba consultant,
+        amazon seo services,
+        amazon seo consultant,
+        amazon seo agency"
+        />
       </Head>
       <AboutC
         aboutData={aboutData}

@@ -5,6 +5,22 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 import { blogData } from "../../src/components/fakeData/blogData";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  PinterestShareButton,
+  RedditShareButton,
+  TwitterShareButton,
+  TumblrShareButton,
+} from "react-share";
+import {
+  FacebookIcon,
+  LinkedinIcon,
+  PinterestIcon,
+  RedditIcon,
+  TumblrIcon,
+  TwitterIcon,
+} from "react-share";
 
 const BlogDetails = () => {
   const router = useRouter();
@@ -79,6 +95,34 @@ const BlogDetails = () => {
         </div>
         <h1 className="fs-24 my-4 lh-30">{currentBlog?.title}</h1>
         <p className="fs-14 lh-36">{currentBlog?.description}</p>
+      </div>
+
+      <div className={`position-fixed left-0 top-30 bg-light`}>
+
+        <FacebookShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+          <FacebookIcon size={32} round={true} />
+        </FacebookShareButton>
+
+        <LinkedinShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+          <LinkedinIcon size={32} round={true} />
+        </LinkedinShareButton>
+
+        <PinterestShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+          <PinterestIcon size={32} round={true} />
+        </PinterestShareButton>
+
+        <RedditShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+          <RedditIcon size={32} round={true} />
+        </RedditShareButton>
+
+        <TwitterShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+          <TwitterIcon size={32} round={true} />
+        </TwitterShareButton>
+
+        <TumblrShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+          <TumblrIcon size={32} round={true} />
+        </TumblrShareButton>
+
       </div>
     </>
   );
