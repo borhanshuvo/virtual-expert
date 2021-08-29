@@ -141,8 +141,14 @@ const Order = () => {
                       {...register("amazonVerifiedReviews")}
                       className="me-2 my-3"
                       value="Amazon Verified Reviewers"
+                      id="Amazon Verified Reviewers"
                     />{" "}
-                    <span className="fs-15">Amazon Verified Reviewers</span>
+                    <label
+                      htmlFor="Amazon Verified Reviewers"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Amazon Verified Reviewers
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -150,10 +156,14 @@ const Order = () => {
                       {...register("amazonKindleVerifiedReviews")}
                       value="Amazon Kindle Verified Reviews"
                       className="me-2 my-3"
+                      id="Amazon Kindle Verified Reviews"
                     />{" "}
-                    <span className="fs-15">
+                    <label
+                      htmlFor="Amazon Kindle Verified Reviews"
+                      className="fs-15 cursor-pointer"
+                    >
                       Amazon Kindle Verified Reviews
-                    </span>
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -161,10 +171,14 @@ const Order = () => {
                       {...register("removeNegativeAmazonReviewsFrom1stPage")}
                       value="Remove Negative Amazon Reviews from 1st Page"
                       className="me-2 my-3"
+                      id="Remove Negative Amazon Reviews from 1st Page"
                     />{" "}
-                    <span className="fs-15">
+                    <label
+                      htmlFor="Remove Negative Amazon Reviews from 1st Page"
+                      className="fs-15 cursor-pointer"
+                    >
                       Remove Negative Amazon Reviews from 1st Page
-                    </span>
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -172,10 +186,14 @@ const Order = () => {
                       {...register("amazonSEORank1stPageInAmazonSearchEngine")}
                       value="Amazon SEO - Rank 1st Page in Amazon Search Engine"
                       className="me-2 my-3"
+                      id="Amazon SEO - Rank 1st Page in Amazon Search Engine"
                     />{" "}
-                    <span className="fs-15">
+                    <label
+                      htmlFor="Amazon SEO - Rank 1st Page in Amazon Search Engine"
+                      className="fs-15 cursor-pointer"
+                    >
                       Amazon SEO - Rank 1st Page in Amazon Search Engine
-                    </span>
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -183,8 +201,14 @@ const Order = () => {
                       {...register("amazonHelpfulVotes")}
                       value="Amazon Helpful Votes"
                       className="me-2 my-3"
+                      id="Amazon Helpful Votes"
                     />{" "}
-                    <span className="fs-15">Amazon Helpful Votes</span>
+                    <label
+                      htmlFor="Amazon Helpful Votes"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Amazon Helpful Votes
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -192,8 +216,14 @@ const Order = () => {
                       {...register("reportAbuse")}
                       value="Report Abuse"
                       className="me-2 my-3"
+                      id="Report Abuse"
                     />{" "}
-                    <span className="fs-15">Report Abuse</span>
+                    <label
+                      htmlFor="Report Abuse"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Report Abuse
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -201,8 +231,11 @@ const Order = () => {
                       {...register("questionAndAnswer")}
                       value="Question & Answer"
                       className="me-2 my-3"
+                      id="Question & Answer"
                     />{" "}
-                    <span className="fs-15">Question & Answer</span>
+                    <label htmlFor="Question & Answer" className="fs-15">
+                      Question & Answer
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -210,8 +243,14 @@ const Order = () => {
                       {...register("fbmHijackerRemoval")}
                       value="FBM Hijacker Removal"
                       className="me-2 my-3"
+                      id="FBM Hijacker Removal"
                     />{" "}
-                    <span className="fs-15">FBM Hijacker Removal</span>
+                    <label
+                      htmlFor="FBM Hijacker Removal"
+                      className="fs-15 cursor-pointer"
+                    >
+                      FBM Hijacker Removal
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -219,8 +258,14 @@ const Order = () => {
                       {...register("amazonVideoUploader")}
                       value="Amazon Video Uploader"
                       className="me-2 my-3"
+                      id="Amazon Video Uploader"
                     />{" "}
-                    <span className="fs-15">Amazon Video Uploader</span>
+                    <label
+                      htmlFor="Amazon Video Uploader"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Amazon Video Uploader
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -228,8 +273,14 @@ const Order = () => {
                       {...register("keywordBooster")}
                       value="Keyword Booster"
                       className="me-2 my-3"
+                      id="Keyword Booster"
                     />{" "}
-                    <span className="fs-15">Keyword Booster</span>
+                    <label
+                      htmlFor="Keyword Booster"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Keyword Booster
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -237,8 +288,14 @@ const Order = () => {
                       {...register("competitorProtectionAttack")}
                       value="Competitor Protection/Attack"
                       className="me-2 my-3"
+                      id="Competitor Protection/Attack"
                     />{" "}
-                    <span className="fs-15">Competitor Protection/Attack</span>
+                    <label
+                      htmlFor="Competitor Protection/Attack"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Competitor Protection/Attack
+                    </label>
                   </div>
                 </div>
                 {/*  */}
@@ -249,8 +306,14 @@ const Order = () => {
                       {...register("ppcKeywordResearch")}
                       value="PPC Keyword Research"
                       className="me-2 my-3"
+                      id="PPC Keyword Research"
                     />{" "}
-                    <span className="fs-15">PPC Keyword Research</span>
+                    <span
+                      htmlFor="PPC Keyword Research"
+                      className="fs-15 cursor-pointer"
+                    >
+                      PPC Keyword Research
+                    </span>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -258,8 +321,14 @@ const Order = () => {
                       {...register("designAmazonListingImages")}
                       value="Design Amazon Listing Images"
                       className="me-2 my-3"
+                      id="Design Amazon Listing Images"
                     />{" "}
-                    <span className="fs-15">Design Amazon Listing Images</span>
+                    <label
+                      htmlFor="Design Amazon Listing Images"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Design Amazon Listing Images
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -267,10 +336,14 @@ const Order = () => {
                       {...register("enhanceBrandContentA+EBCDesignCopywriting")}
                       value=" Enhance Brand Content – A+ / EBC Design/Copywriting!"
                       className="me-2 my-3"
+                      id="Enhance Brand Content – A+ / EBC Design/Copywriting!"
                     />{" "}
-                    <span className="fs-15">
+                    <label
+                      htmlFor="Enhance Brand Content – A+ / EBC Design/Copywriting!"
+                      className="fs-15 cursor-pointer"
+                    >
                       Enhance Brand Content – A+ / EBC Design/Copywriting!
-                    </span>
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -278,8 +351,14 @@ const Order = () => {
                       {...register("kindleBookCoverDesign")}
                       value="Kindle Book Cover Design"
                       className="me-2 my-3"
+                      id="Kindle Book Cover Design"
                     />{" "}
-                    <span className="fs-15">Kindle Book Cover Design</span>
+                    <label
+                      htmlFor="Kindle Book Cover Design"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Kindle Book Cover Design
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -287,10 +366,14 @@ const Order = () => {
                       {...register("bulletPointsForAmazonListing")}
                       value="Bullet Points for Amazon Listing"
                       className="me-2 my-3"
+                      id="Bullet Points for Amazon Listing"
                     />{" "}
-                    <span className="fs-15">
+                    <label
+                      htmlFor="Bullet Points for Amazon Listing"
+                      className="fs-15 cursor-pointer"
+                    >
                       Bullet Points for Amazon Listing
-                    </span>
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -298,8 +381,14 @@ const Order = () => {
                       {...register("amazonProductDescription")}
                       value="Amazon Product Description"
                       className="me-2 my-3"
+                      id="Amazon Product Description"
                     />{" "}
-                    <span className="fs-15">Amazon Product Description</span>
+                    <label
+                      htmlFor="Amazon Product Description"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Amazon Product Description
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -307,8 +396,14 @@ const Order = () => {
                       {...register("findASupplier")}
                       value="Find a Supplier"
                       className="me-2 my-3"
+                      id="Find a Supplier"
                     />{" "}
-                    <span className="fs-15">Find a Supplier</span>
+                    <label
+                      htmlFor="Find a Supplier"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Find a Supplier
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -316,8 +411,14 @@ const Order = () => {
                       {...register("competitorAnalysis")}
                       value="Competitor Analysis"
                       className="me-2 my-3"
+                      id="Competitor Analysis"
                     />{" "}
-                    <span className="fs-15">Competitor Analysis</span>
+                    <label
+                      htmlFor="Competitor Analysis"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Competitor Analysis
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -325,8 +426,14 @@ const Order = () => {
                       {...register("amazonFBAAtoZConsultancy")}
                       value="Amazon FBA A-Z Consultancy!"
                       className="me-2 my-3"
+                      id="Amazon FBA A-Z Consultancy!"
                     />{" "}
-                    <span className="fs-15">Amazon FBA A-Z Consultancy!</span>
+                    <label
+                      htmlFor="Amazon FBA A-Z Consultancy!"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Amazon FBA A-Z Consultancy!
+                    </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
@@ -334,10 +441,14 @@ const Order = () => {
                       {...register("amazonKindleBookAtoZConsultancy")}
                       value="Amazon Kindle Book A-Z Consultancy!"
                       className="me-2 my-3"
+                      id="Amazon Kindle Book A-Z Consultancy!"
                     />{" "}
-                    <span className="fs-15">
+                    <label
+                      htmlFor="Amazon Kindle Book A-Z Consultancy!"
+                      className="fs-15 cursor-pointer"
+                    >
                       Amazon Kindle Book A-Z Consultancy!
-                    </span>
+                    </label>
                   </div>
                 </div>
                 <div>
