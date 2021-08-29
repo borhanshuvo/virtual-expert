@@ -6,9 +6,9 @@ import { useForm } from "react-hook-form";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
-import { blogData } from "../../src/components/fakeData/blogData";
 import cardHeaderBg from "../../images/Others/Group 157.svg";
 import cardHeaderImg from "../../images/v-logo.svg";
+import { blogData } from "../../src/components/fakeData/blogData";
 import SideLink from "../../src/components/sideLink/sideLink";
 
 const Blog = () => {
@@ -87,7 +87,7 @@ const Blog = () => {
                         {blog.description.slice(0, 49)}
                       </p>
                       <button
-                        className="fs-14 my-2 px-3 py-2 d-inline-block mb-3 btn btn-orange btn-outline-dark"
+                        className="fs-14 my-2 px-3 py-2 d-inline-block mb-3 btn btn-orange btn-outline-warning"
                         onClick={() => router.push(`/blog/${blog.id}`)}
                       >
                         See More
