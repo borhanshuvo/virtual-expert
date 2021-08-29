@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
 const MyDocument = dynamic(import("../../src/components/pdf"), {
@@ -21,6 +23,8 @@ const Invoice = ({ serviceData }) => {
 
   const onSubmit = (data, e) => {
     setInfo(data);
+    toast.success("Please Download the invoice");
+    e.target.reset();
   };
 
   const handleSelect = (e) => {
@@ -28,9 +32,23 @@ const Invoice = ({ serviceData }) => {
     setSelectedServices([...newArray, e.target.value]);
   };
 
-  console.log(selectedServices);
+  const kawsar = () => {
+    setSelectedServices([]);
+  };
+
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <section className="overflow-hidden">
         <div className="row">
           <div className="col-12 col-md-2 d-none d-md-block">
@@ -75,7 +93,11 @@ const Invoice = ({ serviceData }) => {
               </button>
             </div>
             <div className="my-5">
-              <MyDocument info={info} selectedServices={selectedServices} />
+              <MyDocument
+                info={info}
+                selectedServices={selectedServices}
+                kawsar={kawsar}
+              />
             </div>
           </div>
         </div>
@@ -186,7 +208,9 @@ const Invoice = ({ serviceData }) => {
                 <div className="form-group">
                   <label>Service</label>
                   <select className="form-control" onChange={handleSelect}>
-                    <option value="Select Service">Select Service</option>
+                    <option selected disabled value="NULL">
+                      Select Service
+                    </option>
                     {serviceData.map((service) => (
                       <option key={service._id}>{service.title}</option>
                     ))}
@@ -319,8 +343,6 @@ const Invoice = ({ serviceData }) => {
                     name="submit"
                     className="btn btn-primary"
                     value="Submit"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
                   />
                 </div>
               </form>

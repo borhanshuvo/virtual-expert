@@ -66,32 +66,38 @@ const Banner = ({ bannerData, footerLink }) => {
 
       {/* social link goes here */}
       <div className={`position-fixed left-0 top-30 ${styles.zIndex}`}>
-        <a
-          target="_blank"
-          title={footerLink.skype}
-          className="position-relative d-flex align-items-center test"
-        >
-          <FaSkype
-            className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-            size={40}
-          />
-          <span className={`social-address fs-12 ms-1 text-secondary bg-light p-1`}>
-            skype:{footerLink[0].skype}
-          </span>
-        </a>
-        <a
-          target="_blank"
-          title={footerLink.whatsApp}
-          className="position-relative d-flex align-items-center test"
-        >
-          <IoLogoWhatsapp
-            className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
-            size={40}
-          />
-          <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
-            WhatsApp:{footerLink[0].whatsApp}
-          </span>
-        </a>
+        <Link href={`${footerLink.skype}`}>
+          <a
+            target="_blank"
+            title={footerLink.skype}
+            className="position-relative d-flex align-items-center test"
+          >
+            <FaSkype
+              className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+              size={40}
+            />
+            <span
+              className={`social-address fs-12 ms-1 text-secondary bg-light p-1`}
+            >
+              skype:{footerLink[0].skype}
+            </span>
+          </a>
+        </Link>
+        <Link href={`${footerLink.whatsApp}`}>
+          <a
+            target="_blank"
+            title={footerLink.whatsApp}
+            className="position-relative d-flex align-items-center test"
+          >
+            <IoLogoWhatsapp
+              className="d-block cursor-pointer px-2 order-color bg-white fixedIcon"
+              size={40}
+            />
+            <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+              WhatsApp:{footerLink[0].whatsApp}
+            </span>
+          </a>
+        </Link>
         <Link href={`mailto:${footerLink.email}`}>
           <a
             target="_blank"

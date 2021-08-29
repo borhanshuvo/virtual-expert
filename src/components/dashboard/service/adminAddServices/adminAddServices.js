@@ -223,12 +223,15 @@ const AdminAddServices = ({ setNumber }) => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("imgTitle")}
+                    {...register("imgTitle", { required: true })}
                     name="imgTitle"
                     id="imgTitle"
                     autoComplete="off"
                     className="form-control"
                   />
+                  {errors.imgTitle && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -236,12 +239,15 @@ const AdminAddServices = ({ setNumber }) => {
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("imgAlt")}
+                    {...register("imgAlt", { required: true })}
                     name="imgAlt"
                     id="imgAlt"
                     autoComplete="off"
                     className="form-control"
                   />
+                  {errors.imgAlt && (
+                    <span className="text-danger">This field is required</span>
+                  )}
                 </div>
 
                 <div className="form-group mt-3">
