@@ -8,20 +8,6 @@ import {
   View,
 } from "@react-pdf/renderer";
 
-// Font.register({
-//   family: "Work Sans",
-//   src: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200&display=swap",
-//   fontWeight: "200, 300, 700,900",
-// });
-// Font.register("../components/fonts/Roboto-Thin.ttf", {
-//   family: "Roboto",
-//   weight: "100,200,300", // or [100, 200, 300]
-// });
-// Font.register(`https://fonts.googleapis.com/fonts/Roboto-Bold.ttf`, {
-//   family: "Roboto",
-//   weight: "400,500",
-// });
-
 Font.register({
   family: "Roboto",
   fonts: [
@@ -56,7 +42,7 @@ const MyDoc = ({ info, selectedServices }) => (
             paddingLeft: "10px",
           }}
         >
-          <View style={{ flexDirection: "column", width: "65%" }}>
+          <View style={{ flexDirection: "column", width: "60%" }}>
             <Image
               src="https://scontent.xx.fbcdn.net/v/t1.15752-9/p206x206/236572994_398461971630466_605516393644358744_n.png?_nc_cat=111&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeFopFSP5O0LojpX3q40b94S5Gpr5B2PbuvkamvkHY9u60rOZvYT0zftznjoT1f_wKirth1ENb-0blYso0M6QJ73&_nc_ohc=39umaJbC2p4AX91rnmZ&_nc_oc=AQlAP6SrcFia3WIFVgllNSyl6qPP-tAP62_nefXf-Or1LibN4N9caZi8rioayfTdE14lOjmjz2WcmmbRfTmGwv-U&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=254c14cbeef641439b1ae7c02e3c2c3b&oe=61502BDF"
               alt="Logo"
@@ -67,7 +53,7 @@ const MyDoc = ({ info, selectedServices }) => (
                 fontSize: "20px",
                 fontWeight: "bold",
                 marginBottom: "4px",
-                color: "#6DE039",
+                color: "#FFAC45",
               }}
             >
               Richard Son
@@ -114,7 +100,7 @@ const MyDoc = ({ info, selectedServices }) => (
               style={{
                 marginTop: "20px",
                 marginBottom: "10px",
-                color: "#3EB2EF",
+                color: "#FFAC45",
                 fontSize: "14px",
                 letterSpacing: "2px",
                 fontWeight: 400,
@@ -127,13 +113,11 @@ const MyDoc = ({ info, selectedServices }) => (
                 marginBottom: "5px",
                 fontSize: "11px",
                 letterSpacing: "1px",
-                paddingLeft: "5px",
               }}
             >
               <Text
                 style={{
                   fontWeight: 400,
-                  paddingLeft: "5px",
                   fontSize: "11px",
                   letterSpacing: "1px",
                 }}
@@ -148,14 +132,12 @@ const MyDoc = ({ info, selectedServices }) => (
               style={{
                 marginBottom: "5px",
                 fontSize: "11px",
-                paddingLeft: "5px",
                 letterSpacing: "1px",
               }}
             >
               <Text
                 style={{
                   fontWeight: 400,
-                  paddingLeft: "5px",
                   fontSize: "11px",
                   letterSpacing: "1px",
                 }}
@@ -172,7 +154,7 @@ const MyDoc = ({ info, selectedServices }) => (
             style={{
               flexDirection: "column",
 
-              width: "35%",
+              width: "40%",
             }}
           >
             <Image
@@ -182,16 +164,15 @@ const MyDoc = ({ info, selectedServices }) => (
                 height: "80px",
                 width: "80px",
                 display: "block",
-                marginLeft: "auto",
-                marginRight: "60px",
+                marginLeft: "30px",
               }}
             />
             <Text
               style={{
                 fontSize: "32px",
                 fontWeight: "bolder",
-                color: "#3EB2EF",
-                textAlign: "right",
+                color: "#FFAC45",
+                textAlign: "left",
                 margin: "15px 40px 15px 0px",
                 fontWeight: 900,
                 fontFamily: "Roboto",
@@ -203,7 +184,7 @@ const MyDoc = ({ info, selectedServices }) => (
             <Text style={{ fontSize: "12px", marginBottom: "5px" }}>
               <Text
                 style={{
-                  color: "#3EB2EF",
+                  color: "#FFAC45",
                   fontWeight: 700,
                   fontSize: "11px",
                   letterSpacing: "1px",
@@ -211,12 +192,14 @@ const MyDoc = ({ info, selectedServices }) => (
               >
                 DATE:
               </Text>{" "}
-              <Text style={{ fontWeight: 300 }}>{info.date}</Text>
+              <Text style={{ fontWeight: 300, fontSize: "11px" }}>
+                {info.date}
+              </Text>
             </Text>
             <Text style={{ fontSize: "12px" }}>
               <Text
                 style={{
-                  color: "#3EB2EF",
+                  color: "#FFAC45",
                   fontWeight: 700,
                   fontSize: "11px",
                   letterSpacing: "1px",
@@ -224,12 +207,14 @@ const MyDoc = ({ info, selectedServices }) => (
               >
                 INVOICE NO:
               </Text>{" "}
-              <Text style={{ fontWeight: 300 }}>{info.invoiceNo}</Text>
+              <Text style={{ fontWeight: 300, fontSize: "11px" }}>
+                {info.invoiceNo}
+              </Text>
             </Text>
             <Text
               style={{
                 fontSize: "12px",
-                color: "#3EB2EF",
+                color: "#FFAC45",
                 letterSpacing: "2px",
                 marginTop: "20px",
                 marginBottom: "3px",
@@ -244,7 +229,7 @@ const MyDoc = ({ info, selectedServices }) => (
                 letterSpacing: "1px",
               }}
             >
-              NAME: <Text style={{ color: "#3EB2EF" }}>{info.clientName}</Text>
+              NAME: <Text style={{ color: "#FFAC45" }}>{info.clientName}</Text>
             </Text>
             <Text
               style={{
@@ -254,7 +239,7 @@ const MyDoc = ({ info, selectedServices }) => (
               }}
             >
               EMAIL:{" "}
-              <Text style={{ fontSize: "11px", fontWeight: 300 }}>
+              <Text style={{ fontSize: "10px", fontWeight: 300 }}>
                 {info.clientEmail}
               </Text>
             </Text>
@@ -280,7 +265,7 @@ const MyDoc = ({ info, selectedServices }) => (
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
-              backgroundColor: "#3EB2EF",
+              backgroundColor: "#FFAC45",
               marginTop: "20px",
               padding: "10px",
             }}
@@ -475,7 +460,7 @@ const MyDoc = ({ info, selectedServices }) => (
                       margin: "3px 0px 3px 15px",
                       letterSpacing: "1px",
                       fontWeight: 300,
-                      textAlign: "left",
+                      textAlign: "right",
                     }}
                   >
                     ${info.subTotal}
@@ -509,7 +494,7 @@ const MyDoc = ({ info, selectedServices }) => (
                       margin: "3px 0px 3px 15px",
                       letterSpacing: "1px",
                       fontWeight: 300,
-                      textAlign: "left",
+                      textAlign: "right",
                     }}
                   >
                     ${info.tax}
@@ -543,7 +528,7 @@ const MyDoc = ({ info, selectedServices }) => (
                       margin: "3px 0px 3px 15px",
                       letterSpacing: "1px",
                       fontWeight: 300,
-                      textAlign: "left",
+                      textAlign: "right",
                     }}
                   >
                     ${info.grandTotal}
@@ -615,7 +600,7 @@ const MyDoc = ({ info, selectedServices }) => (
         </View>
 
         {/* footer part */}
-        <View style={{ borderTop: "2px solid #3EB2EF" }}>
+        <View style={{ borderTop: "2px solid #FFAC45" }}>
           <Text
             style={{
               padding: "10px 20px",
