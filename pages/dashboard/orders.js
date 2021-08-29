@@ -1,21 +1,59 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
+import { MdDelete } from "react-icons/md";
 import ReactPaginate from "react-paginate";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import WithAdminAuth from "../../src/components/adminPrivateRoute";
 import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
 
-const Orders = ({ orderData, totalData }) => {
+const Orders = () => {
+  const [orderData, setOrderData] = useState([]);
+  const [totalData, setTotalData] = useState(0);
+  const [number, setNumber] = useState(0);
+
   const router = useRouter();
+  const page = router.query.page;
+
+  useEffect(() => {
+    const loadData = async () => {
+      const res = await fetch("https://sleepy-mesa-08037.herokuapp.com/order", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ page: page }),
+      });
+      const ordersData = await res.json();
+      const orderData = ordersData.result;
+      setOrderData(orderData);
+      const totalData = ordersData.totalData;
+      setTotalData(totalData);
+    };
+    loadData();
+  }, [page, number]);
 
   const totalPage = Math.ceil(totalData / 5);
 
   const handlePageChange = (page) => {
-    router.push(`/admin/complete-orders?page=${page.selected + 1}`);
+    router.push(`/dashboard/orders?page=${page.selected + 1}`);
   };
+
+  const handleDeleteOrder = (id) => {
+    const _id = id;
+    fetch("https://sleepy-mesa-08037.herokuapp.com/order/delete", {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ _id }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setNumber((prevState) => prevState + 1);
+        toast.success("Deleted Successfully");
+      });
+  };
+
   return (
     <>
       <Head>
@@ -66,6 +104,7 @@ const Orders = ({ orderData, totalData }) => {
               </div>
             </div>
           </div>
+
           <div className="col-12 col-md-10 py-4 vh-100 scroll">
             {/*  */}
             <div className="p-3 boxShadow">
@@ -80,13 +119,21 @@ const Orders = ({ orderData, totalData }) => {
                   <p className="fs-14">
                     <span className="fw-bold">Order Id</span> - {info._id}
                   </p>
-                  <small
-                    className="cursor-pointer"
-                    data-bs-toggle="modal"
-                    data-bs-target={`#order${index + 100}`}
-                  >
-                    View Details
-                  </small>
+                  <div className="d-flex align-items-center">
+                    <small
+                      className="cursor-pointer"
+                      data-bs-toggle="modal"
+                      data-bs-target={`#order${index + 100}`}
+                    >
+                      View Details
+                    </small>
+                    <MdDelete
+                      size={20}
+                      className="ms-3 cursor-pointer text-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target={`#orderDelete${index + 100}`}
+                    />
+                  </div>
                 </div>
 
                 {/* modal */}
@@ -132,6 +179,45 @@ const Orders = ({ orderData, totalData }) => {
                     </div>
                   </div>
                 </div>
+
+                {/* modal for delete */}
+                <div
+                  className="modal fade"
+                  id={`orderDelete${index + 100}`}
+                  tabIndex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                      <div className="modal-header d-flex align-items-center">
+                        <p className="fs-18 text-danger m-0">
+                          Do you want to delete it?{" "}
+                        </p>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body">
+                        <div className="text-end">
+                          <button className="btn btn-primary px-4">No</button>
+                          <button
+                            className="btn btn-danger px-4 ms-3"
+                            onClick={() => handleDeleteOrder(info._id)}
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            Yes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* modal 2 end */}
               </div>
             ))}
             <div className="d-flex justify-content-center">
@@ -148,24 +234,6 @@ const Orders = ({ orderData, totalData }) => {
 };
 
 export default WithAdminAuth(Orders);
-
-export async function getServerSideProps(context) {
-  const page = context.query.page;
-  const res = await fetch("https://sleepy-mesa-08037.herokuapp.com/order", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ page: page }),
-  });
-  const ordersData = await res.json();
-  const orderData = ordersData.result;
-  const totalData = ordersData.totalData;
-  return {
-    props: {
-      orderData,
-      totalData,
-    },
-  };
-}
 
 Orders.getLayout = function PageLayout(page) {
   return <>{page}</>;
