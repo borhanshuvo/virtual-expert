@@ -6,6 +6,7 @@ import about2 from "../../../images/about/Img.svg";
 import ScheduleMeeting from "../home/scheduleMeeting/scheduleMeeting";
 import SideLink from "../sideLink/sideLink";
 import styles from "./about.module.css";
+import ReactHtmlParser from "react-html-parser";
 
 const AboutC = ({
   aboutData,
@@ -46,7 +47,7 @@ const AboutC = ({
               >
                 {aboutData?.title}
               </h2>
-              <p className="text-muted fs-15 lh-30">{aboutData?.discription}</p>
+              <p className="text-muted fs-15 lh-30">{ReactHtmlParser(aboutData?.discription)}</p>
             </div>
             <div className="col-md-6 text-center order-1 order-md-2 px-4">
               <Image src={about1} alt="image" />
