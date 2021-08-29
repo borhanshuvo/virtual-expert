@@ -94,7 +94,7 @@ function MyApp({ Component, pageProps }) {
             <img
               height="1"
               width="1"
-              style="display:none"
+              style={{display: 'none'}}
               src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
             />
           </noscript>
@@ -154,7 +154,7 @@ function MyApp({ Component, pageProps }) {
           <img
             height="1"
             width="1"
-            style="display:none"
+            style={{display: 'none'}}
             src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
           />
         </noscript>
