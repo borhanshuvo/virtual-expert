@@ -27,6 +27,9 @@ const Footer = () => {
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, []);
+  console.log('footer', footer);
+  console.log('footerLink', footerLink);
+
 
   return (
     <footer
@@ -58,7 +61,7 @@ const Footer = () => {
                   Get in Touch
                 </h6>
               </div>
-              <Link href={`mailto:${footerLink.email}`}>
+              <Link href={`mailto:${footer?.email}`}>
                 <a target="_blank">
                   <p className={`mt-3 text-muted fs-14 lh-30`}>
                     <MdEmail className={`${styles.logo}`} />
@@ -68,7 +71,7 @@ const Footer = () => {
                   </p>
                 </a>
               </Link>
-              <Link href={`${footerLink.skype}`}>
+              <Link href={`${footer?.skype}`}>
                 <a target="_blank">
                   <p className=" text-muted fs-14 lh-30">
                     <FaSkype className={`${styles.logo}`} />
@@ -78,7 +81,7 @@ const Footer = () => {
                   </p>
                 </a>
               </Link>
-              <Link href={`${footerLink.whatsApp}`}>
+              <Link href={`${footer?.whatsApp}`}>
                 <a target="_blank">
                   <p className=" text-muted fs-14 lh-30">
                     <IoLogoWhatsapp className={`${styles.logo}`} />

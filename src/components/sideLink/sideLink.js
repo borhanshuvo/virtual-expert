@@ -20,7 +20,7 @@ const SideLink = () => {
         <Link href={`${footerLink.skype}`}>
           <a
             target="_blank"
-            title={footerLink.skype}
+            title={footerLink.skypeTitle}
             className="position-relative d-flex align-items-center test"
           >
             <FaSkype
@@ -37,7 +37,7 @@ const SideLink = () => {
         <Link href={`${footerLink.whatsApp}`}>
           <a
             target="_blank"
-            title={footerLink.whatsApp}
+            title={footerLink.whatsAppTitle}
             className="position-relative d-flex align-items-center test"
           >
             <IoLogoWhatsapp

@@ -23,7 +23,9 @@ const AdminFooter = () => {
   const handleUpdateFooterInfo = (data) => {
     const description = data.description || footerData.description;
     const email = data.email || footerData.email;
+    const skypeTitle = data.skypeTitle || footerData.skypeTitle;
     const skype = data.skype || footerData.skype;
+    const whatsAppTitle = data.whatsAppTitle || footerData.whatsAppTitle;
     const whatsApp = data.whatsApp || footerData.whatsApp;
     const copyRightText = data.copyRightText || footerData.copyRightText;
     const _id = footerData._id;
@@ -35,7 +37,9 @@ const AdminFooter = () => {
       body: JSON.stringify({
         description,
         email,
+        skypeTitle,
         skype,
+        whatsAppTitle,
         whatsApp,
         _id,
         copyRightText,
@@ -103,6 +107,15 @@ const AdminFooter = () => {
           value={footerData.email}
         />
         <label htmlFor="skype" className="d-block my-2">
+          Skype Title
+        </label>
+        <input
+          type="text"
+          className="form-control fs-14"
+          name="skypeTitle"
+          value={footerData.skypeTitle}
+        />
+        <label htmlFor="skype" className="d-block my-2">
           Skype
         </label>
         <input
@@ -110,6 +123,15 @@ const AdminFooter = () => {
           className="form-control fs-14"
           name="skype"
           value={footerData.skype}
+        />
+        <label htmlFor="whatsApp" className="d-block my-2">
+          WhatsApp Title
+        </label>
+        <input
+          type="text"
+          className="form-control fs-14"
+          name="whatsAppTitle"
+          value={footerData.whatsAppTitle}
         />
         <label htmlFor="whatsApp" className="d-block my-2">
           WhatsApp
@@ -238,6 +260,16 @@ const AdminFooter = () => {
                   id="email"
                   className="form-control mb-2"
                 ></textarea>
+                <label htmlFor="skypeTitle">Skype Title</label>
+                <textarea
+                  rows="2"
+                  cols="2"
+                  defaultValue={footerData.skypeTitle}
+                  {...register("skypeTitle")}
+                  name="skypeTitle"
+                  id="skypeTitle"
+                  className="form-control mb-2"
+                ></textarea>
                 <label htmlFor="skype">Skype</label>
                 <textarea
                   rows="2"
@@ -246,6 +278,16 @@ const AdminFooter = () => {
                   {...register("skype")}
                   name="skype"
                   id="skype"
+                  className="form-control mb-2"
+                ></textarea>
+                <label htmlFor="whatsAppTitle">WhatsApp Title</label>
+                <textarea
+                  rows="2"
+                  cols="2"
+                  defaultValue={footerData.whatsAppTitle}
+                  {...register("whatsAppTitle")}
+                  name="whatsAppTitle"
+                  id="whatsAppTitle"
                   className="form-control mb-2"
                 ></textarea>
                 <label htmlFor="whatsApp">WhatsApp</label>
