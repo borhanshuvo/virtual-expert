@@ -30,7 +30,7 @@ const SideLink = () => {
             <span
               className={`social-address fs-12 ms-1 text-secondary bg-light p-1`}
             >
-              skype:{footerLink.skype}
+              skype:{footerLink.skypeTitle}
             </span>
           </a>
         </Link>
@@ -45,7 +45,7 @@ const SideLink = () => {
               size={40}
             />
             <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
-              WhatsApp:{footerLink.whatsApp}
+              WhatsApp:{footerLink.whatsAppTitle}
             </span>
           </a>
         </Link>

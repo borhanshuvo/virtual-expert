@@ -73,7 +73,7 @@ const Footer = () => {
                   <p className=" text-muted fs-14 lh-30">
                     <FaSkype className={`${styles.logo}`} />
                     <span className={`${styles.hilight}`}>
-                      <span className="fw-500">Skype</span> : {footer?.skype}
+                      <span className="fw-500">Skype</span> : {footer?.skypeTitle}
                     </span>
                   </p>
                 </a>
@@ -84,7 +84,7 @@ const Footer = () => {
                     <IoLogoWhatsapp className={`${styles.logo}`} />
                     <span className={`${styles.hilight}`}>
                       <span className="fw-500">WhatsApp</span> :{" "}
-                      {footer?.whatsApp}
+                      {footer?.whatsAppTitle}
                     </span>
                   </p>
                 </a>
