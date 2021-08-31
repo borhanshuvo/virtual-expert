@@ -47,7 +47,7 @@ const AboutC = ({
               >
                 {aboutData?.title}
               </h2>
-              <p className="text-muted fs-15 lh-30">{ReactHtmlParser(aboutData?.discription)}</p>
+              <p className="text-muted fs-15 lh-30 text-justify">{ReactHtmlParser(aboutData?.discription)}</p>
             </div>
             <div className="col-md-6 text-center order-1 order-md-2 px-4">
               <Image src={about1} alt="image" />

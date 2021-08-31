@@ -10,8 +10,8 @@ const WhatWeDo = ({ whatWeDo }) => {
         >
           {ReactHtmlParser(whatWeDo?.title)}
         </h6>
-        <p className="fs-15 text-color my-4 lh-lg">{ReactHtmlParser(whatWeDo?.description)}</p>
-        <h6 className="fs-18 lh-30 font-family-roboto">
+        <p className="fs-15 text-color my-4 lh-lg text-justify">{ReactHtmlParser(whatWeDo?.description)}</p>
+        <h6 className="fs-18 lh-30 font-family-roboto text-justify">
           {ReactHtmlParser(whatWeDo?.subDescription)}
         </h6>
       </div>

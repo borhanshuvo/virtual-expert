@@ -43,7 +43,7 @@ const Banner = ({ bannerData, footerLink }) => {
               <h1 className="fs-36 banner-lh-52 font-family-roboto">
                 {bannerData[0].title}
               </h1>
-              <p className="fs-15 lh-30">{bannerData[0].description}</p>
+              <p className="fs-15 lh-30 text-justify">{bannerData[0].description}</p>
               <button
                 className="button px-4 py-1"
                 data-bs-toggle="modal"

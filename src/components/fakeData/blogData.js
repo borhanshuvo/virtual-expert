@@ -31,6 +31,10 @@ export const blogData = [
     subTitle_8: "GTINs",
     description_9:
       "GTINs( Global Trade Identification Numbers) are unique numbers assigned to recognize retail products globally and can be used anywhere in the world. GTINs are used with two different barcodes: Universal Product Codes (UPCs) and European Article Numbers (EANs). <br /> In America and Canada, mostly UPCs are used with GTINS, whereas in countries outside America and Canada, EANs are used with GTINs. GTINs are among the several numbers that are used to identify products sold on amazon. ISBN ( International Standard Book Number ) and JAN ( Japanese Article Number are also among the GTINs used in the Amazon catalog. <br /> For most categories, you must provide the GTIN in the Amazon platform to create a new listing. The GTIN specification varies by category of products.",
+    metaDescription:
+      "The barcode for amazon fba is an important factor for amazon's business. You will learn about the upc code for amazon and why gs1 barcode amazon is the best!",
+    metaKeyword:
+      "upc code for amazon, barcodes for amazon, gs1 amazon, get upc code for amazon, gs1 barcode amazon, upc barcode for amazon, barcodes for amazon fba",
     writerName: "Nolan Kazoil",
     publishedDate: "August 31, 2021",
     view: "1253",
@@ -57,6 +61,8 @@ export const blogData = [
     description_8: "",
     subTitle_8: "",
     description_9: "",
+    metaDescription: "",
+    metaKeyword: "",
     writerName: "Nolan Kazoil",
     publishedDate: "August 24, 2021",
     view: "0",
@@ -83,6 +89,8 @@ export const blogData = [
     description_8: "",
     subTitle_8: "",
     description_9: "",
+    metaDescription: "",
+    metaKeyword: "",
     writerName: "Nolan Kazoil",
     publishedDate: "August 17, 2021",
     view: "120",
@@ -109,6 +117,8 @@ export const blogData = [
     description_8: "",
     subTitle_8: "",
     description_9: "",
+    metaDescription: "",
+    metaKeyword: "",
     writerName: "Nolan Kazoil",
     publishedDate: "August 10, 2021",
     view: "230",

@@ -41,8 +41,10 @@ const BlogDetails = () => {
   return (
     <>
       <Head>
-        <title>Virtual Experts | Blog</title>
+        <title>Virtual Experts | {currentBlog?.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={currentBlog?.metaDescription} />
+        <meta name="keyword" content={currentBlog?.metaKeyword} />
       </Head>
 
       <div className="background-color-skyblue">
