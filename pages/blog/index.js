@@ -60,6 +60,7 @@ const Blog = () => {
                   <div className="mx-1 boxShadow borderRadius">
                     <Image
                       src={blog.img}
+                      title={blog.title}
                       alt={blog.title}
                       width="200"
                       height="150"
@@ -84,7 +85,7 @@ const Blog = () => {
                     <div className="px-3 mb-3">
                       <h3 className="fs-18 lh-36 m-0">{blog.title}</h3>
                       <p className="fs-14 lh-36 m-0">
-                        {blog.description.slice(0, 49)}
+                        {blog.description.slice(0, 98)}...
                       </p>
                       <button
                         className="fs-14 my-2 px-3 py-2 d-inline-block mb-3 btn btn-orange btn-outline-warning"

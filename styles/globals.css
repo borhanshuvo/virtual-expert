@@ -97,6 +97,10 @@ ul {
   font-size: 24px;
 }
 
+.fs-22 {
+  font-size: 22px;
+}
+
 .fs-18 {
   font-size: 18px;
 }
@@ -254,6 +258,10 @@ ul {
 
   .fs-24 {
     font-size: 22px;
+  }
+
+  .fs-22 {
+    font-size: 20px;
   }
 
   .fs-18 {

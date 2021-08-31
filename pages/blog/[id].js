@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Head from "next/head";
+import ReactHtmlParser from "react-html-parser";
 import { useRouter } from "next/router";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
@@ -95,34 +96,66 @@ const BlogDetails = () => {
         </div>
         <h1 className="fs-24 my-4 lh-30">{currentBlog?.title}</h1>
         <p className="fs-14 lh-36">{currentBlog?.description}</p>
+        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_1}</h2>
+        <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_2)}</p>
+        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_2}</h2>
+        <p className="fs-14 lh-36">{currentBlog?.description_3}</p>
+        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_3}</h2>
+        <p className="fs-14 lh-36">{currentBlog?.description_4}</p>
+        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_4}</h2>
+        <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_5)}</p>
+        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_5}</h2>
+        <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_6)}</p>
+        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_6}</h2>
+        <p className="fs-14 lh-36">{currentBlog?.description_7}</p>
+        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_7}</h2>
+        <p className="fs-14 lh-36">{currentBlog?.description_8}</p>
+        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_8}</h2>
+        <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_9)}</p>
       </div>
 
       <div className={`position-fixed left-0 top-30 bg-light`}>
-
-        <FacebookShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+        <FacebookShareButton
+          url="https://virtual-expert.vercel.app/"
+          className="d-block p-2"
+        >
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
 
-        <LinkedinShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+        <LinkedinShareButton
+          url="https://virtual-expert.vercel.app/"
+          className="d-block p-2"
+        >
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
 
-        <PinterestShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+        <PinterestShareButton
+          url="https://virtual-expert.vercel.app/"
+          className="d-block p-2"
+        >
           <PinterestIcon size={32} round={true} />
         </PinterestShareButton>
 
-        <RedditShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+        <RedditShareButton
+          url="https://virtual-expert.vercel.app/"
+          className="d-block p-2"
+        >
           <RedditIcon size={32} round={true} />
         </RedditShareButton>
 
-        <TwitterShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+        <TwitterShareButton
+          url="https://virtual-expert.vercel.app/"
+          className="d-block p-2"
+        >
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
 
-        <TumblrShareButton url="https://virtual-expert.vercel.app/" className="d-block p-2">
+        <TumblrShareButton
+          url="https://virtual-expert.vercel.app/"
+          className="d-block p-2"
+        >
           <TumblrIcon size={32} round={true} />
         </TumblrShareButton>
-
       </div>
     </>
   );
