@@ -578,12 +578,7 @@ ul li {
 }
 
 .bolg-shadow {
-  box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0px;
-  background-color: #ffffff;
-}
-
-.blog-background-color {
-  background-color: #f8f8f8;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .text-justify {

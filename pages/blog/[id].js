@@ -67,30 +67,32 @@ const BlogDetails = () => {
         </div>
       </div>
 
-      <div className="w-100 blog-background-color">
-        <div className="d-none d-md-block">
-          {currentBlog && (
-            <Image
-              src={currentBlog?.img}
-              alt={currentBlog?.title}
-              layout="responsive"
-              height="350"
-              width="1000"
-            />
-          )}
-        </div>
-        <div className="d-block d-md-none">
-          {currentBlog && (
-            <Image
-              src={currentBlog?.img}
-              alt={currentBlog?.title}
-              layout="responsive"
-              height="450"
-              width="1000"
-            />
-          )}
-        </div>
-        <div className="container">
+      <div className="w-100">
+        <div className="container mt-5">
+          <div className="d-none d-md-block">
+            {currentBlog && (
+              <Image
+                src={currentBlog?.img}
+                alt={currentBlog?.title}
+                layout="responsive"
+                height="350"
+                width="1000"
+                className="borderRadius"
+              />
+            )}
+          </div>
+          <div className="d-block d-md-none">
+            {currentBlog && (
+              <Image
+                src={currentBlog?.img}
+                alt={currentBlog?.title}
+                layout="responsive"
+                height="450"
+                width="1000"
+                className="borderRadius"
+              />
+            )}
+          </div>
           <div className="row">
             <div className="col-md-8 my-md-5 mt-4">
               <div className="bolg-shadow py-3 px-md-5 px-3 borderRadius text-justify">
@@ -115,9 +117,17 @@ const BlogDetails = () => {
                 <p className="fs-14 lh-36">
                   {ReactHtmlParser(currentBlog?.description_2)}
                 </p>
-                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_2}</h2>
-                <p className="fs-14 lh-36">{currentBlog?.description_3}</p>
-                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_3}</h2>
+                <div className="py-md-5 px-md-5">
+                  <div className="border-start border-warning border-3">
+                    <div className="ms-3">
+                      <h2 className="fs-22 lh-30">{currentBlog?.subTitle_2}</h2>
+                      <p className="fs-14 lh-36 background-color-skyblue py-2 px-3 borderRadius">
+                        <i>{currentBlog?.description_3}</i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <h2 className="fs-22 mb-4 lh-30">{currentBlog?.subTitle_3}</h2>
                 <p className="fs-14 lh-36">{currentBlog?.description_4}</p>
                 <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_4}</h2>
                 <p className="fs-14 lh-36">
