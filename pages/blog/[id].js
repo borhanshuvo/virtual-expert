@@ -66,7 +66,7 @@ const BlogDetails = () => {
       </div>
 
       <div className="w-100 blog-background-color">
-        <div className="mt-4 d-none d-md-block">
+        <div className="d-none d-md-block">
           {currentBlog && (
             <Image
               src={currentBlog?.img}
@@ -74,11 +74,10 @@ const BlogDetails = () => {
               layout="responsive"
               height="350"
               width="1000"
-              className="borderRadius"
             />
           )}
         </div>
-        <div className="mt-4 d-block d-md-none">
+        <div className="d-block d-md-none">
           {currentBlog && (
             <Image
               src={currentBlog?.img}
@@ -86,13 +85,12 @@ const BlogDetails = () => {
               layout="responsive"
               height="450"
               width="1000"
-              className="borderRadius"
             />
           )}
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8 my-5">
+            <div className="col-md-8 my-md-5 mt-4">
               <div className="bolg-shadow pt-3 px-md-5 px-3 borderRadius text-justify">
                 {/* <div className="d-flex align-items-center justify-content-evenly mt-4 ">
                   <p style={{ fontSize: "14px" }}>
