@@ -576,3 +576,16 @@ ul li {
   color: #ffffff;
   transition: 0.3s ease-in-out;
 }
+
+.bolg-shadow {
+  box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0px;
+  background-color: #ffffff;
+}
+
+.blog-background-color {
+  background-color: #f8f8f8;
+}
+
+.text-justify {
+  text-align: justify;
+}

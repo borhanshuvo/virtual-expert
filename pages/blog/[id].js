@@ -6,6 +6,9 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 import { blogData } from "../../src/components/fakeData/blogData";
+import cardHeaderBg from "../../images/Others/Group 157.svg";
+import cardHeaderImg from "../../images/v-logo.svg";
+import { useForm } from "react-hook-form";
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -27,6 +30,14 @@ const BlogDetails = () => {
   const router = useRouter();
   const id = router.query.id;
   const currentBlog = blogData.find((blog) => blog.id === id);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {};
+
   return (
     <>
       <Head>
@@ -54,7 +65,7 @@ const BlogDetails = () => {
         </div>
       </div>
 
-      <div className="w-100 container">
+      <div className="w-100 blog-background-color">
         <div className="mt-4 d-none d-md-block">
           {currentBlog && (
             <Image
@@ -79,39 +90,139 @@ const BlogDetails = () => {
             />
           )}
         </div>
-        <div className="d-flex align-items-center justify-content-evenly mt-4 ">
-          <p style={{ fontSize: "14px" }}>
-            {" "}
-            <FaUser className="me-1" /> {currentBlog?.writerName}
-          </p>
-          <p style={{ fontSize: "14px" }}>
-            {" "}
-            <AiOutlineClockCircle className="me-1" />{" "}
-            {currentBlog?.publishedDate}
-          </p>
-          <p style={{ fontSize: "14px" }}>
-            {" "}
-            <BiMessageRounded className="me-1" /> {currentBlog?.view}
-          </p>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 my-5">
+              <div className="bolg-shadow py-md-3 px-md-5 px-3 borderRadius text-justify">
+                {/* <div className="d-flex align-items-center justify-content-evenly mt-4 ">
+                  <p style={{ fontSize: "14px" }}>
+                    {" "}
+                    <FaUser className="me-1" /> {currentBlog?.writerName}
+                  </p>
+                  <p style={{ fontSize: "14px" }}>
+                    {" "}
+                    <AiOutlineClockCircle className="me-1" />{" "}
+                    {currentBlog?.publishedDate}
+                  </p>
+                  <p style={{ fontSize: "14px" }}>
+                    {" "}
+                    <BiMessageRounded className="me-1" /> {currentBlog?.view}
+                  </p>
+                </div> */}
+                <h1 className="fs-24 my-4 lh-30">{currentBlog?.title}</h1>
+                <p className="fs-14 lh-36">{currentBlog?.description}</p>
+                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_1}</h2>
+                <p className="fs-14 lh-36">
+                  {ReactHtmlParser(currentBlog?.description_2)}
+                </p>
+                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_2}</h2>
+                <p className="fs-14 lh-36">{currentBlog?.description_3}</p>
+                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_3}</h2>
+                <p className="fs-14 lh-36">{currentBlog?.description_4}</p>
+                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_4}</h2>
+                <p className="fs-14 lh-36">
+                  {ReactHtmlParser(currentBlog?.description_5)}
+                </p>
+                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_5}</h2>
+                <p className="fs-14 lh-36">
+                  {ReactHtmlParser(currentBlog?.description_6)}
+                </p>
+                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_6}</h2>
+                <p className="fs-14 lh-36">{currentBlog?.description_7}</p>
+                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_7}</h2>
+                <p className="fs-14 lh-36">{currentBlog?.description_8}</p>
+                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_8}</h2>
+                <p className="fs-14 lh-36">
+                  {ReactHtmlParser(currentBlog?.description_9)}
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 my-5">
+              <div className="boxShadow">
+                <div className="position-relative">
+                  <div className="cardHeaderBg">
+                    <Image src={cardHeaderBg} alt="header" />
+                  </div>
+                  <div className="cardHeaderImg">
+                    <Image
+                      src={cardHeaderImg}
+                      className="mt-2 p-2"
+                      alt="cardImage"
+                    />
+                  </div>
+                </div>
+
+                <div className="card-body mx-auto bg-white borderRadius">
+                  <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="mx-md-2 mx-0"
+                  >
+                    <div className="my-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="name"
+                        placeholder="Your Name/Brand Name"
+                        {...register("name", { required: true })}
+                      />
+                      {errors.name && (
+                        <p className="fs-14 text-danger">Name Required</p>
+                      )}
+                    </div>
+
+                    <div className="my-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Your Email"
+                        name="email"
+                        {...register("email", { required: true })}
+                      />
+                      {errors.email && (
+                        <p className="fs-14 text-danger">Email Required</p>
+                      )}
+                    </div>
+
+                    <div className="my-3">
+                      <input
+                        type="text"
+                        name="productLink/ASIN"
+                        placeholder="Product Link/ASIN"
+                        {...register("productLinkOrASIN", { required: true })}
+                        className="form-control mt-3"
+                      />
+                      {errors.productLinkOrASIN && (
+                        <p className="fs-14 text-danger">
+                          Product Link/ASIN Required
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="my-3">
+                      <textarea
+                        rows="5"
+                        col="3"
+                        placeholder="Description"
+                        name="description"
+                        {...register("description", { required: true })}
+                        className="form-control my-4"
+                      />
+                      {errors.description && (
+                        <p className="fs-14 text-danger">
+                          Description Required
+                        </p>
+                      )}
+                    </div>
+
+                    <button className="card-button mt-2 d-block" type="submit">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h1 className="fs-24 my-4 lh-30">{currentBlog?.title}</h1>
-        <p className="fs-14 lh-36">{currentBlog?.description}</p>
-        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_1}</h2>
-        <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_2)}</p>
-        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_2}</h2>
-        <p className="fs-14 lh-36">{currentBlog?.description_3}</p>
-        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_3}</h2>
-        <p className="fs-14 lh-36">{currentBlog?.description_4}</p>
-        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_4}</h2>
-        <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_5)}</p>
-        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_5}</h2>
-        <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_6)}</p>
-        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_6}</h2>
-        <p className="fs-14 lh-36">{currentBlog?.description_7}</p>
-        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_7}</h2>
-        <p className="fs-14 lh-36">{currentBlog?.description_8}</p>
-        <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_8}</h2>
-        <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_9)}</p>
       </div>
 
       <div className={`position-fixed left-0 top-30 bg-light`}>
