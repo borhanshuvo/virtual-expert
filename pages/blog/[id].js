@@ -93,7 +93,7 @@ const BlogDetails = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 my-5">
-              <div className="bolg-shadow py-3 px-md-5 px-3 borderRadius text-justify">
+              <div className="bolg-shadow pt-3 px-md-5 px-3 borderRadius text-justify">
                 {/* <div className="d-flex align-items-center justify-content-evenly mt-4 ">
                   <p style={{ fontSize: "14px" }}>
                     {" "}
