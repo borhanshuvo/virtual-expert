@@ -3,17 +3,18 @@ import jwt_encode from "jwt-encode";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 import cardHeaderBg from "../images/Others/Group 157.svg";
 import cardHeaderImg from "../images/v-logo.svg";
+import Spinner from "../src/components/spinner";
 import { UserContext } from "./_app";
 
 const Signin = () => {
-  //   const [showSpinner, setShowSpinner] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
   const router = useRouter();
   const validationSchema = Yup.object().shape({
     username: Yup.string().required("Username is required"),
@@ -58,6 +59,51 @@ const Signin = () => {
       });
   };
 
+  const handleResetPassword = async () => {
+    setShowSpinner(true);
+    const randomNumber = Math.ceil(Math.random() * 1000000);
+
+    const emailInfo = {
+      verificationCode: randomNumber,
+      link: "http://localhost:3000/reset-password",
+    };
+    const msgTemplate = {
+      service_id: "service_esd6cuw",
+      template_id: "template_lug6z1e",
+      user_id: "user_IPQt7Bei466UeZ7tBO084",
+      template_params: {
+        ...emailInfo,
+      },
+    };
+
+    fetch("http://localhost:8000/adminLogin/update/verificationCode", {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ verificationCode: randomNumber }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result === "Verification Code Added") {
+          const sendEmail = async () => {
+            const res = await fetch(
+              "https://api.emailjs.com/api/v1.0/email/send",
+              {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(msgTemplate),
+              }
+            );
+            if (res.status === 200) {
+              setShowSpinner(false);
+              toast.success("Verification Code Sent Successfully");
+            }
+          };
+          setShowSpinner(false);
+          sendEmail();
+        }
+      });
+  };
+
   return (
     <>
       <Head>
@@ -77,6 +123,7 @@ const Signin = () => {
           pauseOnHover
         />
         <div className="py-5 mx-auto">
+          <div className="my-4">{showSpinner ? <Spinner /> : ""}</div>
           <>
             <div className="position-relative">
               <div className="cardHeaderBg">
@@ -123,6 +170,13 @@ const Signin = () => {
                 <span role="alert" className="text-danger">
                   {errors.password?.message}
                 </span>
+
+                <p
+                  className="text-end cursor-pointer fs-14 text-dark"
+                  onClick={handleResetPassword}
+                >
+                  Change Password?
+                </p>
 
                 <button className="card-button mt-2 d-block" type="submit">
                   Sign In
