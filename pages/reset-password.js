@@ -20,11 +20,14 @@ const ResetPassword = () => {
 
   const handleCheckVerificationCode = (data) => {
     const verificationCode = data.verificationCode;
-    fetch("http://localhost:8000/adminLogin/checkVerificationCode", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ verificationCode }),
-    })
+    fetch(
+      "https://sleepy-mesa-08037.herokuapp.com/adminLogin/checkVerificationCode",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ verificationCode }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -38,11 +41,14 @@ const ResetPassword = () => {
 
   const handleResetPassword = async (data) => {
     const password = data.password;
-    fetch("http://localhost:8000/adminLogin/update/password", {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ password }),
-    })
+    fetch(
+      "https://sleepy-mesa-08037.herokuapp.com/adminLogin/update/password",
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ password }),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         if (result === "Password changed") {

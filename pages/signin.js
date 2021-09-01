@@ -76,11 +76,14 @@ const Signin = () => {
       },
     };
 
-    fetch("http://localhost:8000/adminLogin/update/verificationCode", {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ verificationCode: randomNumber }),
-    })
+    fetch(
+      "https://sleepy-mesa-08037.herokuapp.com/adminLogin/update/verificationCode",
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ verificationCode: randomNumber }),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         if (result === "Verification Code Added") {
