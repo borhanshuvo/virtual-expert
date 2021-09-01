@@ -50,7 +50,7 @@ const Blog = () => {
       <div className="container mt-5">
         <div className="row ">
           {/* divide two main columns */}
-          <div className="col-md-8">
+          <div className="col-md-8 mb-md-5">
             <div className="row">
               {blogData.map((blog) => (
                 <div
@@ -58,7 +58,7 @@ const Blog = () => {
                   key={blog.id}
                   onClick={() => router.push(`/blog/${blog.id}`)}
                 >
-                  <div className="mx-1 boxShadow borderRadius">
+                  <div className="mx-1 boxShadow borderRadius h-100">
                     <Image
                       src={blog.img}
                       title={blog.imgAlt}

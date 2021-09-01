@@ -113,9 +113,9 @@ const BlogDetails = () => {
                     <BiMessageRounded className="me-1" /> {currentBlog?.view}
                   </p>
                 </div> */}
-                <h1 className="fs-24 my-4 lh-30">{currentBlog?.title}</h1>
+                <h1 className="fs-24 my-4 lh-30">{ReactHtmlParser(currentBlog?.title)}</h1>
                 <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description)}</p>
-                <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_1}</h2>
+                <h2 className="fs-22 my-4 lh-30">{ReactHtmlParser(currentBlog?.subTitle_1)}</h2>
                 <p className="fs-14 lh-36">
                   {ReactHtmlParser(currentBlog?.description_2)}
                 </p>
