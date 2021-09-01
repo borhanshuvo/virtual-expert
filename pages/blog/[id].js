@@ -73,7 +73,8 @@ const BlogDetails = () => {
             {currentBlog && (
               <Image
                 src={currentBlog?.img}
-                alt={currentBlog?.title}
+                alt={currentBlog?.imgAlt}
+                title={currentBlog?.imgAlt}
                 layout="responsive"
                 height="350"
                 width="1000"
@@ -85,7 +86,8 @@ const BlogDetails = () => {
             {currentBlog && (
               <Image
                 src={currentBlog?.img}
-                alt={currentBlog?.title}
+                alt={currentBlog?.imgAlt}
+                title={currentBlog?.imgAlt}
                 layout="responsive"
                 height="450"
                 width="1000"
@@ -112,7 +114,7 @@ const BlogDetails = () => {
                   </p>
                 </div> */}
                 <h1 className="fs-24 my-4 lh-30">{currentBlog?.title}</h1>
-                <p className="fs-14 lh-36">{currentBlog?.description}</p>
+                <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description)}</p>
                 <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_1}</h2>
                 <p className="fs-14 lh-36">
                   {ReactHtmlParser(currentBlog?.description_2)}
@@ -122,13 +124,13 @@ const BlogDetails = () => {
                     <div className="ms-3">
                       <h2 className="fs-22 lh-30">{currentBlog?.subTitle_2}</h2>
                       <p className="fs-14 lh-36 background-color-skyblue py-2 px-3 borderRadius">
-                        <i>{currentBlog?.description_3}</i>
+                        <i>{ReactHtmlParser(currentBlog?.description_3)}</i>
                       </p>
                     </div>
                   </div>
                 </div>
                 <h2 className="fs-22 mb-4 lh-30">{currentBlog?.subTitle_3}</h2>
-                <p className="fs-14 lh-36">{currentBlog?.description_4}</p>
+                <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_4)}</p>
                 <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_4}</h2>
                 <p className="fs-14 lh-36">
                   {ReactHtmlParser(currentBlog?.description_5)}
@@ -138,9 +140,9 @@ const BlogDetails = () => {
                   {ReactHtmlParser(currentBlog?.description_6)}
                 </p>
                 <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_6}</h2>
-                <p className="fs-14 lh-36">{currentBlog?.description_7}</p>
+                <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_7)}</p>
                 <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_7}</h2>
-                <p className="fs-14 lh-36">{currentBlog?.description_8}</p>
+                <p className="fs-14 lh-36">{ReactHtmlParser(currentBlog?.description_8)}</p>
                 <h2 className="fs-22 my-4 lh-30">{currentBlog?.subTitle_8}</h2>
                 <p className="fs-14 lh-36">
                   {ReactHtmlParser(currentBlog?.description_9)}

@@ -1,9 +1,8 @@
-import blog_image_1 from "../../../images/blog/blog_image_1.png";
-
 export const blogData = [
   {
-    id: "1",
-    img: blog_image_1,
+    id: "the-significance-of-UPC-barcodes-for-amazon",
+    img: "https://res.cloudinary.com/dhhcesyn3/image/upload/v1630496515/v-expert/Blog/upc-code-for-amazon_bdghty.png",
+    imgAlt: "upc-code-for-amazon_bdghty",
     title: "The Significance of UPC Barcodes for Amazon",
     description:
       "If you are planning to grow your business by selling products on Amazon, which is the most popular platform for sellers and shoppers, there is some homework you will have to do. Among several other vital steps one is getting UPC barcodes that is accepted by amazon.  UPCs for amazon are obtained through the most legitimate organization that is the GS1.",
@@ -35,41 +34,53 @@ export const blogData = [
       "The barcode for amazon fba is an important factor for amazon's business. You will learn about the upc code for amazon and why gs1 barcode amazon is the best!",
     metaKeyword:
       "upc code for amazon, barcodes for amazon, gs1 amazon, get upc code for amazon, gs1 barcode amazon, upc barcode for amazon, barcodes for amazon fba",
-    writerName: "Nolan Kazoil",
+    writerName: "Richard",
     publishedDate: "August 31, 2021",
     view: "1253",
   },
   {
-    id: "2",
-    img: "https://www.amzonestep.com/blog/wp-content/uploads/1-5.jpg",
-    title: "How to Drive External Traffic to Your Amazon Listing",
+    id: "amazon-product-review",
+    img: "https://res.cloudinary.com/dhhcesyn3/image/upload/v1630496516/v-expert/Blog/Amazon-Product-Review-The-ultimate-guide_uhpi2s.png",
+    imgAlt: "Amazon-Product-Review-The-ultimate-guide_uhpi2s",
+    title: "Amazon Product Review",
     description:
-      "One way that you can get traffic to your listing is by having backlinks in blogs.Whatever niche your product falls into, I can guarantee a content creator is blogging about it. Connect with those content creators ask them if they would be willing to review your product in a write-up. You can set up affiliate links for them so that if someone buys your product as a result of them being directed from the blog, then the content creator will earn a cut.Say you’re selling headphones. Look for blogs that say “Top 10 Best Headphones of the Year”. Ask the writer if you can send them your product, and hopefully, they’ll change that list to include your product",
-    subTitle_1: "",
-    description_2: "",
-    subTitle_2: "",
-    description_3: "",
-    subTitle_3: "",
-    description_4: "",
-    subTitle_4: "",
-    description_5: "",
-    subTitle_5: "",
-    description_6: "",
-    subTitle_6: "",
-    description_7: "",
-    subTitle_7: "",
-    description_8: "",
-    subTitle_8: "",
-    description_9: "",
-    metaDescription: "",
-    metaKeyword: "",
-    writerName: "Nolan Kazoil",
+      "As of 2021, about <u>2 million people</u> are selling products through Fulfillment by Amazon (FBA). This setup allows sellers to choose their product and supplier while letting Amazon handle all the logistical needs – packing, shipping, and returns. <br /> <div className='d-flex'> <div>The success of your business hinges on four pillars: product, supplier, marketing, and customer satisfaction. For the first three, you can carefully strategize them in the beginning but for the long haul, you need to build up the reputation of your product to maintain customer loyalty. <br /> Before clicking Amazon’s add-to-cart button, wise buyers thoroughly check the product if it meets their desired quality, based on its description and specifications. Another great way to evaluate its quality is by reading customer reviews.</div></div> By reading an Amazon product review, prospect buyers can glean useful insights about your product and if it truly lives up to its promised features. <br /> Gaining a significant amount of positive customer reviews helps a business improve its conversation rates and pushes them up in Amazon's search results ladder. An Amazon verified review strengthens the marketing position of your product. <br /> Amazon encourages its customers to submit honest reviews, whether favorable or unfavorable. In fact, in 2016, Amazon revised its terms of service, wherein they prohibited compensating users with free or discounted products for writing good reviews.",
+    subTitle_1: "Why Your Business Needs Amazon Product Reviews",
+    description_2:
+      "About <u>88% of customers</u> perceive online reviews as personal recommendations. Successful branding often comes from word-of-mouth, but an Amazon product review works the same way because it voices out personal testimonies of the product’s users. <br /> People are more likely to purchase products that have been proven and tested compared to those that none has ever tried. When customers study reviews, they grasp more in-depth details about the product and how it could fit their specific needs realistically. In effect, this helps them make an informed decision to make a purchase. <br /> Prospect buyers can pick up a customer’s honest sentiment, what features the customer likes, and what areas need to be improved. ",
+    subTitle_2: "How Negative Reviews Ruin Your Business",
+    description_3:
+      "Customer reviews can make or break the success of your business. Prospects are often hesitant to purchase products that are flagged as below expectation. Amazon negative reviews can draw your customers away, damage your reputation, lower your Amazon search ranking, and worse, affect your profitability. <br /> <b>Customer-Repellant</b> <br /> One glance at a negative review can create a cloud of doubt in the buyer's mind, preventing customers to even try your product. Or if you have a bunch of loyal patrons, they might not be as loyal anymore. <br />When customers negatively comment about your product or service, prospects tend to look for other competitor brands that offer similar products. <br /> <b>Damaged Reputation</b> <br /> Negative customer reviews can have a long-term effect on your business because it destroys your perceived reliability. It’s frustrating to think that the reputation you worked so hard to build can easily collapse with just a few critiques. <br /> <b>Reduced Search Engine Ranking</b> <br /> When your rating drops, so does your search ranking. This is so because search engines are designed to offer users the best enterprises. <br /> <b>Income Loss</b> <br /> The bottom line for lost customers is lost income. According to Forbes, 94% of customers avoid a company with poor reviews. It’s just hard to convince customers to buy products from a brand with low ratings.",
+    subTitle_3: "The Difference Between Verified & Fake Reviews in Amazon",
+    description_4:
+      "Upon checking your chosen product, you saw that it garnered a large number of reviews. Before jumping to conclusions, make sure to dig deeper and check if the reviewers are authentic.<br /> There are trustworthy reviews but there are also those that tend to be misleading and are worth scrutinizing. <br /> Verified product reviews belong to clients that purchased the product, left product reviews, and were verified later on by Amazon. In short, verification equates to transparency and credibility.<br /> Verified and fake reviews differ in how they read. If one review seems to sound dubious compared to other reviews, there’s a high possibility that these claims are not trustworthy.<br /> Another sign that the review is fake is the abundance of extreme reviews (one star and 5 stars), but the writeup contains very few words.",
+    subTitle_4: "Amazon Review Guidelines and Amazon Vine Program",
+    description_5:
+      "Today, Amazon manages its incentivization of reviews through the Amazon Vine Program. Though Amazon charges their vendors with an enrollment fee per product, this remarkable development reinforces their credibility.<br />Amazon Vine manages the reviewing activities in Amazon. This program invites the most credible Amazon reviews to give their honest opinion. As a result, customers interested in the same product can decide upon it easily.<br />Amazon names the invitees as Vine Voices, which is based on their reviewer rank.  Amazon then provides Vine members with free products that were previously submitted by vendors. <br />Can anyone join the program? Yes, but you have to be invited by Amazon to do so. It's not something that you have to apply for. Amazon chooses its Vine Voices based on a set of criteria, particularly on how a review has helped the customer develop a sense of interest in the product or related products. <br />Those who consistently leave helpful reviews and become experts in a particular category have higher chances of being invited. Recent reviews are also given more weight. You can visit <u>How Ranking works</u> for more details on reviewer rankings.<br />The great thing about Amazon’s Vine Program is that it encourages reviewers to be honest, whether it's positive or negative. ",
+    subTitle_5: "Requirements for Amazon Vine Program",
+    description_6:
+      "Previously, only vendors were given sole access to the Amazon Vine Program. Today, sellers are also given access provided that you meet the following criteria: <br /> <ul style='display : block'><li style='list-style-type: disc'>Registered in Amazon Brand Registry</li><li style='list-style-type: disc'>Have adequate inventory</li><li style='list-style-type: disc'>Have less than 30 ratings on product for enrollment under the program</li><li style='list-style-type: disc'>The product should be available at Amazon FBA under the 'New' condition</li><li style='list-style-type: disc'>The product must have a title, image, and description.</li><li style='list-style-type: disc'>Not be applications, digital software, or adult products.</li></ul>",
+    subTitle_6: "Illegible Products for Amazon Vine",
+    description_7:
+      "Below are the products that do not qualify for the Amazon Vine Program: <br /> <ul style='display : block'><li style='list-style-type: disc'>Products that are listed as restricted</li><li style='list-style-type: disc'>Products that need to be bundled for review or delivery</li><li style='list-style-type: disc'>Products that need reviewers to purchase another product to review.</li></ul>",
+    subTitle_7: "Benefits of Amazon Vine Program for Sellers",
+    description_8:
+      "If you enroll in Amazon Vine, you get to enjoy the following advantages: <br /> <ul style='display : block'><li style='list-style-type: disc'>Improved conversions because of increased traffic</li><li style='list-style-type: disc'>Increased brand awareness for new products</li><li style='list-style-type: disc'>The buildup of brand trustworthiness and credibility</li><li style='list-style-type: disc'>Improved rank on Amazon search results</li><li style='list-style-type: disc'>A greater understanding of audience perception about your products, giving you ideas on how to improve them further</li></ul>",
+    subTitle_8: "How to Use Free Amazon Products for Review to Gain Reviews",
+    description_9:
+      "As a seller, you can give away free products to customers for honest and unbiased reviews. These individuals or groups make reviews for a living. In exchange for reviews, you can offer them your products. <br />To ensure excellent quality of reviews, you can tap third-party reviewing agencies. Partnering with these entities helps increase your online presence and drive revenue into your business. Depending on your needs, you can discuss with the agency your vision and specific goals for your Amazon FBA business.<br />Amazon marketing agencies have substantial knowledge of the Amazon workplace so they know how it works. They have experts that help you in optimizing product listing and managing PPC. With a million competitors in Amazon, being alone is a difficult task!<br />At a reasonable price, the company can shoulder the following services for you: <br /> <ul style='display : block'><li style='list-style-type: disc'>Amazon Vine</li><li style='list-style-type: disc'>Amazon Early Reviewer Program</li><li style='list-style-type: disc'>Negative Reviews Management</li><li style='list-style-type: disc'>Product Customer Service</li><li style='list-style-type: disc'>Social Media Marketing</li><li style='list-style-type: disc'>SEO-driven Content Marketing</li><li style='list-style-type: disc'>Account Management</li></ul>The mentioned services are non-exhaustive and the agency is willing to discuss with you your plans.",
+    metaDescription:
+      "Importance of amazon product review & how amazon negative reviews ruining your business! How to deal with Amazon Product Review as per amazon review guidelines?",
+    metaKeyword:
+      "amazon product review, amazon fake reviews, amazon negative reviews, amazon verified review, amazon review guidelines, amazon vine program",
+    writerName: "Richard",
     publishedDate: "August 24, 2021",
     view: "0",
   },
   {
     id: "3",
     img: "https://www.amzonestep.com/blog/wp-content/uploads/1-5.jpg",
+    imgAlt: "upc-code-for-amazon_bdghty",
     title: "How to Drive External Traffic to Your Amazon Listing",
     description:
       "One way that you can get traffic to your listing is by having backlinks in blogs.Whatever niche your product falls into, I can guarantee a content creator is blogging about it. Connect with those content creators ask them if they would be willing to review your product in a write-up. You can set up affiliate links for them so that if someone buys your product as a result of them being directed from the blog, then the content creator will earn a cut.Say you’re selling headphones. Look for blogs that say “Top 10 Best Headphones of the Year”. Ask the writer if you can send them your product, and hopefully, they’ll change that list to include your product",
@@ -91,13 +102,14 @@ export const blogData = [
     description_9: "",
     metaDescription: "",
     metaKeyword: "",
-    writerName: "Nolan Kazoil",
+    writerName: "Richard",
     publishedDate: "August 17, 2021",
     view: "120",
   },
   {
     id: "4",
     img: "https://www.amzonestep.com/blog/wp-content/uploads/1-5.jpg",
+    imgAlt: "upc-code-for-amazon_bdghty",
     title: "How to Drive External Traffic to Your Amazon Listing",
     description:
       "One way that you can get traffic to your listing is by having backlinks in blogs.Whatever niche your product falls into, I can guarantee a content creator is blogging about it. Connect with those content creators ask them if they would be willing to review your product in a write-up. You can set up affiliate links for them so that if someone buys your product as a result of them being directed from the blog, then the content creator will earn a cut.Say you’re selling headphones. Look for blogs that say “Top 10 Best Headphones of the Year”. Ask the writer if you can send them your product, and hopefully, they’ll change that list to include your product",
@@ -119,7 +131,7 @@ export const blogData = [
     description_9: "",
     metaDescription: "",
     metaKeyword: "",
-    writerName: "Nolan Kazoil",
+    writerName: "Richard",
     publishedDate: "August 10, 2021",
     view: "230",
   },
