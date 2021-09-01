@@ -65,7 +65,7 @@ const Signin = () => {
 
     const emailInfo = {
       verificationCode: randomNumber,
-      link: "http://localhost:3000/reset-password",
+      link: "https://virtual-expert.vercel.app/reset-password",
     };
     const msgTemplate = {
       service_id: "service_esd6cuw",
