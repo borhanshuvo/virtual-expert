@@ -23,8 +23,6 @@ const LetsTalk = ({ footerData }) => {
   const router = useRouter();
   const [footerLink, setFooterLink] = useState({});
 
-  console.log(footerData[0].skype);
-
   const {
     handleSubmit,
     register,
