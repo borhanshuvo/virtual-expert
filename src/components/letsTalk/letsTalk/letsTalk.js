@@ -23,6 +23,8 @@ const LetsTalk = ({ footerData }) => {
   const router = useRouter();
   const [footerLink, setFooterLink] = useState({});
 
+  console.log(footerData[0].skype);
+
   const {
     handleSubmit,
     register,
@@ -128,10 +130,16 @@ const LetsTalk = ({ footerData }) => {
                   <HiOutlineMail className={`${styles.logo}`} />
                   <span className="fw-500">Email</span>: {footerData[0].email}
                 </p>
-                <p className="fs-15 d-flex align-items-center lh-40 m-0">
+                <p className="fs-15 d-flex lh-40 m-0">
                   {" "}
-                  <AiOutlineSkype className={`${styles.logo} fs-15`} />
-                  <span className="fw-500">Skype</span>: {footerData[0].skype}
+                  <div>
+                    <AiOutlineSkype className={`${styles.logo}`} />
+                  </div>
+                  <span className="col-10 d-flex">
+                    {" "}
+                    <span className="fw-500">Skype</span>:{" "}
+                    <span>{footerData[0].skype}</span>
+                  </span>
                 </p>
                 <p className="fs-15 d-flex align-items-center lh-40 m-0">
                   {" "}
