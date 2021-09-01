@@ -136,14 +136,14 @@ const LetsTalk = ({ footerData }) => {
                   <span className="col-10 d-flex">
                     {" "}
                     <span className="fw-500">Skype</span>:{" "}
-                    <span>{footerData[0].skype}</span>
+                    <span>{footerData[0].skypeTitle}</span>
                   </span>
                 </p>
                 <p className="fs-15 d-flex align-items-center lh-40 m-0">
                   {" "}
                   <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
                   <span className="fw-500">Whatsapp</span>:{" "}
-                  {footerData[0].whatsApp}
+                  {footerData[0].whatsAppTitle}
                 </p>
               </div>
               <div>

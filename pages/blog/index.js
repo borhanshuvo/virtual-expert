@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import ReactHtmlParser from "react-html-parser";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineClockCircle } from "react-icons/ai";
@@ -60,8 +61,8 @@ const Blog = () => {
                   <div className="mx-1 boxShadow borderRadius">
                     <Image
                       src={blog.img}
-                      title={blog.title}
-                      alt={blog.title}
+                      title={blog.imgAlt}
+                      alt={blog.imgAlt}
                       width="200"
                       height="150"
                       layout="responsive"
@@ -77,15 +78,15 @@ const Blog = () => {
                         <AiOutlineClockCircle className="me-1" />{" "}
                         {blog.publishedDate}
                       </p>
-                      <p style={{ fontSize: "14px" }}>
+                      {/* <p style={{ fontSize: "14px" }}>
                         {" "}
                         <BiMessageRounded className="me-1" /> {blog.view}
-                      </p>
+                      </p> */}
                     </div>
                     <div className="px-3 mb-3">
                       <h3 className="fs-18 lh-36 m-0">{blog.title}</h3>
                       <p className="fs-14 lh-36 m-0">
-                        {blog.description.slice(0, 98)}...
+                        {ReactHtmlParser(blog.description.slice(0, 98))}...
                       </p>
                       <button
                         className="fs-14 my-2 px-3 py-2 d-inline-block mb-3 btn btn-orange btn-outline-warning"
