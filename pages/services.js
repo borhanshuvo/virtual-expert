@@ -11,7 +11,6 @@ const Services = ({
   serviceCardHeader,
   metaService,
 }) => {
-  console.log(metaService, "service");
   return (
     <>
       <Head>

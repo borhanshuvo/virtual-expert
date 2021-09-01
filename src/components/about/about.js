@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
-import about1 from "../../../images/about/img-1.svg";
-import about2 from "../../../images/about/Img.svg";
+import ReactHtmlParser from "react-html-parser";
+import about2 from "../../../images/about/about-virtual-experts-amazon-seo-agency.svg";
+import about1 from "../../../images/about/amazon-fba-consultant-about-virtual-experts.svg";
 import ScheduleMeeting from "../home/scheduleMeeting/scheduleMeeting";
 import SideLink from "../sideLink/sideLink";
 import styles from "./about.module.css";
-import ReactHtmlParser from "react-html-parser";
 
 const AboutC = ({
   aboutData,
@@ -47,10 +47,16 @@ const AboutC = ({
               >
                 {aboutData?.title}
               </h2>
-              <p className="text-muted fs-15 lh-30 text-justify">{ReactHtmlParser(aboutData?.discription)}</p>
+              <p className="text-muted fs-15 lh-30 text-justify">
+                {ReactHtmlParser(aboutData?.discription)}
+              </p>
             </div>
             <div className="col-md-6 text-center order-1 order-md-2 px-4">
-              <Image src={about1} alt="image" />
+              <Image
+                src={about1}
+                alt="amazon-fba-consultant-about-virtual-experts"
+                title="amazon-fba-consultant-about-virtual-experts"
+              />
             </div>
           </div>
         </div>
@@ -61,7 +67,11 @@ const AboutC = ({
           <div className="container my-5">
             <div className="row">
               <div className="col-md-6 d-flex justify-content-center align-items-center">
-                <Image src={about2} alt="waiting..." />
+                <Image
+                  src={about2}
+                  alt="about-virtual-experts-amazon-seo-agency"
+                  title="about-virtual-experts-amazon-seo-agency"
+                />
               </div>
               <div className="col-md-6 text-muted">
                 <h6
@@ -112,14 +122,26 @@ const AboutC = ({
               return (
                 <div className="col-12 col-md-4 text-center" key={team._id}>
                   <div className="m-3 p-2 cursor-pointer">
-                    <Image
-                      src={`${imgType} ; base64, ${team.img.img}`}
-                      alt="Loading..."
-                      height="350"
-                      width="300"
-                      layout="responsive"
-                      className="pb-1"
-                    />
+                    {team.imgURL ? (
+                      <Image
+                        src={team.imgURL}
+                        alt={team.alt}
+                        title={team.alt}
+                        height="350"
+                        width="300"
+                        layout="responsive"
+                        className="pb-1"
+                      />
+                    ) : (
+                      <Image
+                        src={`${imgType} ; base64, ${team.img.img}`}
+                        alt="loading.."
+                        height="350"
+                        width="300"
+                        layout="responsive"
+                        className="pb-1"
+                      />
+                    )}
                     <div className={`${styles.name} mt-4`}>
                       <h6 className="fs-18 lh-26 fw-500">{team.name}</h6>
                       <p className="fs-15 lh-26">{team.jobTitle}</p>

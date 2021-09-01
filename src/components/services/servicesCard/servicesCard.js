@@ -30,13 +30,23 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                 >
                   <div className="card h-100 border-0 borderRadius overflow-hidden">
                     <div className="background-color-skyblue overflow-hidden">
-                      <Image
-                        src={`${imgType} ; base64, ${servicesCard.img.img}`}
-                        alt={servicesCard.imgAlt}
-                        title={servicesCard.imgTitle}
-                        width={200}
-                        height={200}
-                      />
+                      {servicesCard.imgURL ? (
+                        <Image
+                          src={servicesCard.imgURL}
+                          alt={servicesCard.imgAlt}
+                          title={servicesCard.imgTitle}
+                          width={200}
+                          height={200}
+                        />
+                      ) : (
+                        <Image
+                          src={`${imgType} ; base64, ${servicesCard.img.img}`}
+                          alt={servicesCard.imgAlt}
+                          title={servicesCard.imgTitle}
+                          width={200}
+                          height={200}
+                        />
+                      )}
                     </div>
                     <div className="card-body">
                       <h3 className="fs-18 lh-28 mb-4 roboto-font-family fw-normal">

@@ -29,7 +29,13 @@ const Navbar = () => {
             <div className="d-none d-md-block">
               <Link href="/" scroll>
                 <a>
-                  <Image src={logo} alt="logo" height="50" width="278" />
+                  <Image
+                    src={logo}
+                    alt="virtual-experts"
+                    title="virtual-experts"
+                    height="50"
+                    width="278"
+                  />
                 </a>
               </Link>
             </div>

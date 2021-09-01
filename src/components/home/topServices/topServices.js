@@ -28,12 +28,22 @@ const TopServices = ({ topServicesData, headerInfoTopServicesData }) => {
                 className={`${styles.serviceCard} col-12 col-md-4 mx-auto p-4 mt-md-5`}
               >
                 <div className="d-flex justify-content-center">
-                  <Image
-                    src={`${imgType} ; base64, ${service.img.img}`}
-                    alt="Loading..."
-                    height="150"
-                    width="150"
-                  />
+                  {service.imgURL ? (
+                    <Image
+                      src={service.imgURL}
+                      title={service.alt}
+                      alt={service.alt}
+                      height="150"
+                      width="150"
+                    />
+                  ) : (
+                    <Image
+                      src={`${imgType} ; base64, ${service.img.img}`}
+                      alt="Loading..."
+                      height="150"
+                      width="150"
+                    />
+                  )}
                 </div>
                 <h3 className="text-center mt-5 font-family-roboto fs-18 fs-600 lh-28">
                   {service.title}

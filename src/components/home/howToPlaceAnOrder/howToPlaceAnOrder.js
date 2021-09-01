@@ -1,5 +1,5 @@
 import Image from "next/image";
-import questionImage from "../../../../images/Img.svg";
+import questionImage from "../../../../images/home/amazon-marketing-strategy.svg";
 
 const HowToPlaceAnOrder = ({ placeAnOrderData, placeAnOrderListData }) => {
   return (
@@ -9,7 +9,8 @@ const HowToPlaceAnOrder = ({ placeAnOrderData, placeAnOrderListData }) => {
           <div className="col-12 col-md-5 p-3">
             <Image
               src={questionImage}
-              alt="questionImg"
+              alt="amazon-marketing-strategy"
+              title="amazon-marketing-strategy"
               height="411"
               width="574"
             />

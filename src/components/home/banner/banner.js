@@ -1,12 +1,12 @@
 import Image from "next/image";
 import React from "react";
-import bannerImg from "../../../../images/Img-5.svg";
-import styles from "./banner.module.css";
 import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
+import bannerImg from "../../../../images/home/amazon-fba-consultant-virtual-experts.svg";
 import cardHeaderBg from "../../../../images/Others/Group 157.svg";
 import cardHeaderImg from "../../../../images/v-logo.svg";
 import SideLink from "../../sideLink/sideLink";
+import styles from "./banner.module.css";
 
 const Banner = ({ bannerData, footerLink }) => {
   const {
@@ -43,7 +43,9 @@ const Banner = ({ bannerData, footerLink }) => {
               <h1 className="fs-36 banner-lh-52 font-family-roboto">
                 {bannerData[0].title}
               </h1>
-              <p className="fs-15 lh-30 text-justify">{bannerData[0].description}</p>
+              <p className="fs-15 lh-30 text-justify">
+                {bannerData[0].description}
+              </p>
               <button
                 className="button px-4 py-1"
                 data-bs-toggle="modal"
@@ -55,7 +57,11 @@ const Banner = ({ bannerData, footerLink }) => {
               </button>
             </div>
             <div className="col-md-6 order-1 order-md-2 pb-5 pb-md-0">
-              <Image src={bannerImg} alt="banner-image" />
+              <Image
+                src={bannerImg}
+                alt="amazon-fba-consultant-virtual-experts"
+                title="amazon-fba-consultant-virtual-experts"
+              />
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ module.exports = {
       "media.istockphoto.com",
       "i.pinimg.com",
       "www.amzonestep.com",
+      "res.cloudinary.com",
     ],
   },
 };
