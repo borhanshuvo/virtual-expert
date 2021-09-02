@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineClockCircle } from "react-icons/ai";
+import Link from "react-icons/link";
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -169,15 +170,12 @@ const BlogDetails = () => {
                       <p>
                         Source:
                         <span className="table-of-content">
-                          {" "}
-                          <a
-                            href="https://www.junglescout.com/blog/online-review-statistics/"
-                            className="d-inline-block"
-                            target="_blank"
-                          >
-                            https://www.junglescout.c
-                            om/blog/online-review-statistics/
-                          </a>
+                          <Link href="https://www.junglescout.com/blog/online-review-statistics/">
+                            <a className="d-inline-block" target="_blank">
+                              https://www.junglescout.c
+                              om/blog/online-review-statistics/
+                            </a>
+                          </Link>
                         </span>
                       </p>
                     </div>
