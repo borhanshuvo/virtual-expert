@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import Link from "react-icons/link";
+import Link from "next/link";
 import {
   FacebookIcon,
   FacebookShareButton,
