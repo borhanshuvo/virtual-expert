@@ -54,13 +54,15 @@ const Order = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data._id) {
+          const subject = "You got a new order";
           const id = data._id;
           const msgTemplate = {
-            service_id: "service_esd6cuw",
-            template_id: "template_peizayb",
-            user_id: "user_IPQt7Bei466UeZ7tBO084",
+            service_id: "service_bnwytsn",
+            template_id: "template_9rugjbz",
+            user_id: "user_SWFeTeBulzLsvOS4miuh4",
             template_params: {
               id,
+              subject,
             },
           };
 
