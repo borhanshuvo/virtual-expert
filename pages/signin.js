@@ -64,13 +64,15 @@ const Signin = () => {
     const randomNumber = Math.ceil(Math.random() * 1000000);
 
     const emailInfo = {
+      subject: `You verification code is - ${randomNumber}`,
+      name: "Virtual Experts",
       verificationCode: randomNumber,
-      link: "https://virtual-expert.vercel.app/reset-password",
+      link: "https://virtualexperts.net/reset-password",
     };
     const msgTemplate = {
-      service_id: "service_esd6cuw",
-      template_id: "template_lug6z1e",
-      user_id: "user_IPQt7Bei466UeZ7tBO084",
+      service_id: "service_bnwytsn",
+      template_id: "template_mi5fgyh",
+      user_id: "user_SWFeTeBulzLsvOS4miuh4",
       template_params: {
         ...emailInfo,
       },
@@ -96,6 +98,7 @@ const Signin = () => {
                 body: JSON.stringify(msgTemplate),
               }
             );
+            console.log(res);
             if (res.status === 200) {
               setShowSpinner(false);
               toast.success("Verification Code Sent Successfully");

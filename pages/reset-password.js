@@ -18,7 +18,7 @@ const ResetPassword = () => {
     formState: { errors },
   } = useForm();
 
-  const handleCheckVerificationCode = (data) => {
+  const handleCheckVerificationCode = (data, e) => {
     const verificationCode = data.verificationCode;
     fetch(
       "https://sleepy-mesa-08037.herokuapp.com/adminLogin/checkVerificationCode",
@@ -32,6 +32,7 @@ const ResetPassword = () => {
       .then((data) => {
         console.log(data);
         if (data === "True") {
+          e.target.reset();
           setShowResetPassword(true);
         } else {
           setShowResetPassword(false);

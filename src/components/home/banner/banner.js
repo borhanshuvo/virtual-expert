@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import bannerImg from "../../../../images/home/amazon-fba-consultant-virtual-experts.svg";
 import cardHeaderBg from "../../../../images/Others/Group 157.svg";
 import cardHeaderImg from "../../../../images/v-logo.svg";
@@ -15,27 +17,42 @@ const Banner = ({ bannerData, footerLink }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data, e) => {
+    data.subject = `You got a new mail from ${data.name}`;
     const msgTemplate = {
-      service_id: "service_esd6cuw",
-      template_id: "template_peizayb",
-      user_id: "user_IPQt7Bei466UeZ7tBO084",
-      template_params: {
-        data,
-      },
+      service_id: "service_bnwytsn",
+      template_id: "template_9rugjbz",
+      user_id: "user_SWFeTeBulzLsvOS4miuh4",
+      template_params: data,
     };
 
-    fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(msgTemplate),
-    })
-      .then((res) => res.json())
-      .then((data) => {});
+    const sendMessage = async () => {
+      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(msgTemplate),
+      });
+      if (res.status === 200) {
+        toast.success("Message Sent Successfully");
+      }
+    };
+
+    sendMessage();
     e.target.reset();
   };
   return (
     <div className="">
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className={`${styles.bannerContainer}`}>
         <div className="container py-5">
           <div className="row d-flex align-items-center">

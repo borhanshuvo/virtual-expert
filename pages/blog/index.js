@@ -1,12 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import ReactHtmlParser from "react-html-parser";
 import React from "react";
 import { useForm } from "react-hook-form";
+import ReactHtmlParser from "react-html-parser";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { BiMessageRounded } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import cardHeaderBg from "../../images/Others/Group 157.svg";
 import cardHeaderImg from "../../images/v-logo.svg";
 import { blogData } from "../../src/components/fakeData/blogData";
@@ -20,7 +21,29 @@ const Blog = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {};
+  const onSubmit = async (data, e) => {
+    data.subject = `You got a new mail from ${data.name}`;
+    const msgTemplate = {
+      service_id: "service_bnwytsn",
+      template_id: "template_9rugjbz",
+      user_id: "user_SWFeTeBulzLsvOS4miuh4",
+      template_params: data,
+    };
+
+    const sendMessage = async () => {
+      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(msgTemplate),
+      });
+      if (res.status === 200) {
+        toast.success("Message Sent Successfully");
+      }
+    };
+
+    sendMessage();
+    e.target.reset();
+  };
 
   return (
     <>
@@ -28,7 +51,17 @@ const Blog = () => {
         <title>Virtual Experts | Blog</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">
           <h6 className="fs-30 roboto-font-family fw-400">Blog</h6>

@@ -45,9 +45,9 @@ const LetsTalk = ({ footerData }) => {
     };
 
     const msgTemplate = {
-      service_id: "service_esd6cuw",
-      template_id: "template_lug6z1e",
-      user_id: "user_IPQt7Bei466UeZ7tBO084",
+      service_id: "service_bnwytsn",
+      template_id: "template_mi5fgyh",
+      user_id: "user_SWFeTeBulzLsvOS4miuh4",
       template_params: {
         ...emailInfo,
       },
