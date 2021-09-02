@@ -154,33 +154,42 @@ const BlogDetails = () => {
                   {ReactHtmlParser(currentBlog?.title)}
                 </h1>
 
-                <div className="row">
-                  <div className="col-md-8">
+                {currentBlog?.title === "Amazon Product Review" ? (
+                  <div className="row">
+                    <div className="col-md-8">
+                      <h6 className="my-3">Table Of Contents</h6>
+                      <p className="table-of-content cursor-pointer d-inline-block">
+                        {ReactHtmlParser(currentBlog?.tableOfContent)}
+                      </p>
+                    </div>
+                    <div className="col-md-4 boxShadow h-100 border-3">
+                      <div className="p-2 mt-3 lh-30">
+                        <p>
+                          79% of Amazon shoppers are influenced by products
+                          having the highest ratings and reviews.
+                        </p>
+                        <p>
+                          Source:
+                          <span className="table-of-content">
+                            <Link href="https://www.junglescout.com/blog/online-review-statistics/">
+                              <a className="d-inline-block" target="_blank">
+                                https://www.junglescout.c
+                                om/blog/online-review-statistics/
+                              </a>
+                            </Link>
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div>
                     <h6 className="my-3">Table Of Contents</h6>
                     <p className="table-of-content cursor-pointer d-inline-block">
                       {ReactHtmlParser(currentBlog?.tableOfContent)}
                     </p>
                   </div>
-                  <div className="col-md-4 boxShadow h-100 border-3">
-                    <div className="p-2 mt-3 lh-30">
-                      <p>
-                        79% of Amazon shoppers are influenced by products having
-                        the highest ratings and reviews.
-                      </p>
-                      <p>
-                        Source:
-                        <span className="table-of-content">
-                          <Link href="https://www.junglescout.com/blog/online-review-statistics/">
-                            <a className="d-inline-block" target="_blank">
-                              https://www.junglescout.c
-                              om/blog/online-review-statistics/
-                            </a>
-                          </Link>
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                )}
 
                 <div className="fs-28 my-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle)}
