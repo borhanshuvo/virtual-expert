@@ -295,42 +295,42 @@ const BlogDetails = () => {
 
       <div className={`position-fixed left-0 top-30 bg-light`}>
         <FacebookShareButton
-          url="https://virtual-expert.vercel.app/"
+          url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
 
         <LinkedinShareButton
-          url="https://virtual-expert.vercel.app/"
+          url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
 
         <PinterestShareButton
-          url="https://virtual-expert.vercel.app/"
+          url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <PinterestIcon size={32} round={true} />
         </PinterestShareButton>
 
         <RedditShareButton
-          url="https://virtual-expert.vercel.app/"
+          url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <RedditIcon size={32} round={true} />
         </RedditShareButton>
 
         <TwitterShareButton
-          url="https://virtual-expert.vercel.app/"
+          url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
 
         <TumblrShareButton
-          url="https://virtual-expert.vercel.app/"
+          url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <TumblrIcon size={32} round={true} />
