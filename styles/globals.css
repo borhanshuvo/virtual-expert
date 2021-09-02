@@ -578,7 +578,7 @@ ul li {
 }
 
 .bolg-shadow {
-  box-shadow: 0 0 7px 1px #00000099;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .text-justify {
@@ -586,5 +586,13 @@ ul li {
 }
 
 .blog-title-background {
-  background: linear-gradient(162deg, rgb(0, 97, 98), rgb(77, 120, 77));
+  background: linear-gradient(162deg, #ff9f26, #ffdd76);
+}
+
+.table-of-content {
+  color: #ff9f26;
+}
+
+.table-of-content a {
+  color: #ff9f26;
 }

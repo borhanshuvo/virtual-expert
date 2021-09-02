@@ -110,7 +110,7 @@ const BlogDetails = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 my-md-5 mt-4">
-              <div className="bolg-shadow py-3 px-md-5 px-3 text-justify">
+              <div className="bolg-shadow py-3 px-md-5 px-3">
                 <div className="d-none d-md-block">
                   {currentBlog && (
                     <Image
@@ -154,70 +154,70 @@ const BlogDetails = () => {
                 </h1>
 
                 <h6 className="my-3">Table Of Contents</h6>
-                <p className="text-primary cursor-pointer d-inline-block">
+                <p className="table-of-content cursor-pointer d-inline-block text-justify">
                   {ReactHtmlParser(currentBlog?.tableOfContent)}
                 </p>
 
-                <h2 className="fs-28 my-4 lh-30">
+                <div className="fs-28 my-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description)}
                 </p>
 
-                <h2 className="fs-28 my-4 lh-30">
+                <div className="fs-28 my-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle_1)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_2)}
                 </p>
 
-                <h2 className="fs-28 lh-30">
+                <div className="fs-28 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle_2)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_3)}
                 </p>
 
-                <h2 className="fs-28 mb-4 lh-30">
+                <div className="fs-28 mb-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle_3)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_4)}
                 </p>
 
-                <h2 className="fs-28 my-4 lh-3">
+                <div className="fs-28 my-4 lh-3">
                   {ReactHtmlParser(currentBlog?.subTitle_4)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_5)}
                 </p>
 
-                <h2 className="fs-28 my-4 lh-36">
+                <div className="fs-28 my-4 lh-36">
                   {ReactHtmlParser(currentBlog?.subTitle_5)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_6)}
                 </p>
 
-                <h2 className="fs-28 my-4 lh-36">
+                <div className="fs-28 my-4 lh-36">
                   {ReactHtmlParser(currentBlog?.subTitle_6)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_7)}
                 </p>
 
-                <h2 className="fs-28 my-4 lh-36">
+                <div className="fs-28 my-4 lh-36">
                   {ReactHtmlParser(currentBlog?.subTitle_7)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_8)}
                 </p>
 
-                <h2 className="fs-28 my-4 lh-36">
+                <div className="fs-28 my-4 lh-36">
                   {ReactHtmlParser(currentBlog?.subTitle_8)}
-                </h2>
-                <p className="fs-14 lh-36">
+                </div>
+                <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_9)}
                 </p>
               </div>
