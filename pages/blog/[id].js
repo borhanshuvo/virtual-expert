@@ -62,7 +62,7 @@ const BlogDetails = () => {
   return (
     <>
       <Head>
-        <title>Virtual Experts | {currentBlog?.metaTitle}</title>
+        <title>{currentBlog?.metaTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={currentBlog?.metaDescription} />
         <meta name="keyword" content={currentBlog?.metaKeyword} />
@@ -110,7 +110,7 @@ const BlogDetails = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 my-md-5 mt-4">
-              <div className="bolg-shadow py-3 px-md-5 px-3">
+              <div className="boxShadow border py-3 px-md-5 px-3">
                 <div className="d-none d-md-block">
                   {currentBlog && (
                     <Image
@@ -153,10 +153,36 @@ const BlogDetails = () => {
                   {ReactHtmlParser(currentBlog?.title)}
                 </h1>
 
-                <h6 className="my-3">Table Of Contents</h6>
-                <p className="table-of-content cursor-pointer d-inline-block text-justify">
-                  {ReactHtmlParser(currentBlog?.tableOfContent)}
-                </p>
+                <div className="row">
+                  <div className="col-md-8">
+                    <h6 className="my-3">Table Of Contents</h6>
+                    <p className="table-of-content cursor-pointer d-inline-block">
+                      {ReactHtmlParser(currentBlog?.tableOfContent)}
+                    </p>
+                  </div>
+                  <div className="col-md-4 boxShadow h-100 border-3">
+                    <div className="p-2 mt-3 lh-30">
+                      <p>
+                        79% of Amazon shoppers are influenced by products having
+                        the highest ratings and reviews.
+                      </p>
+                      <p>
+                        Source:
+                        <span className="table-of-content">
+                          {" "}
+                          <a
+                            href="https://www.junglescout.com/blog/online-review-statistics/"
+                            className="d-inline-block"
+                            target="_blank"
+                          >
+                            https://www.junglescout.c
+                            om/blog/online-review-statistics/
+                          </a>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="fs-28 my-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle)}
@@ -223,10 +249,10 @@ const BlogDetails = () => {
               </div>
             </div>
             <div className="col-md-4 my-5">
-              <div className="boxShadow">
+              <div className="">
                 {blogData.map((blog) => (
                   <div
-                    className="col-12 cursor-pointer p-3 mb-2 border"
+                    className="col-12 cursor-pointer p-3 mb-4 border boxShadow rounded-1"
                     key={blog.id}
                     onClick={() => router.push(`/blog/${blog.id}`)}
                   >

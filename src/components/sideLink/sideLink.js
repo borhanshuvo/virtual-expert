@@ -24,7 +24,7 @@ const SideLink = () => {
             className="position-relative d-flex align-items-center test"
           >
             <FaSkype
-              className={`d-block cursor-pointer px-2 order-color bg-white fixedIcon ${styles.sidelinkColor}`}
+              className={`d-block cursor-pointer px-2 order-color fixedIcon ${styles.sidelinkColor}`}
               size={40}
             />
             <span
@@ -41,7 +41,7 @@ const SideLink = () => {
             className="position-relative d-flex align-items-center test"
           >
             <IoLogoWhatsapp
-              className={`d-block cursor-pointer px-2 order-color bg-white fixedIcon ${styles.sidelinkColor}`}
+              className={`d-block cursor-pointer px-2 order-color fixedIcon ${styles.sidelinkColor}`}
               size={40}
             />
             <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
@@ -56,7 +56,7 @@ const SideLink = () => {
             className="position-relative d-flex align-items-center test" 
           >
             <MdEmail
-              className={`d-block cursor-pointer px-2 order-color bg-white fixedIcon ${styles.sidelinkColor}`}
+              className={`d-block cursor-pointer px-2 order-color fixedIcon ${styles.sidelinkColor}`}
               size={40}
             />
             <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
