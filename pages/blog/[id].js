@@ -293,7 +293,7 @@ const BlogDetails = () => {
         </div>
       </div>
 
-      <div className={`position-fixed left-0 top-30 bg-light`}>
+      <div className={`position-fixed left-0 top-30`}>
         <FacebookShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
