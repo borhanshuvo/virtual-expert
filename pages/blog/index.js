@@ -119,7 +119,7 @@ const Blog = () => {
                     <div className="px-3 mb-3">
                       <h3 className="fs-18 lh-36 m-0">{blog.title}</h3>
                       <p className="fs-14 lh-36 m-0">
-                        {ReactHtmlParser(blog.description.slice(0, 98))}...
+                        {ReactHtmlParser(blog.cardDescription)}
                       </p>
                       <button
                         className="fs-14 my-2 px-3 py-2 d-inline-block mb-3 btn btn-orange btn-outline-warning"

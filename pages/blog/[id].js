@@ -119,9 +119,9 @@ const BlogDetails = () => {
                       alt={currentBlog?.imgAlt}
                       title={currentBlog?.imgAlt}
                       layout="responsive"
-                      height="450"
+                      height="420"
                       width="1000"
-                      className="borderRadius"
+                      className="borderRadius mt-4"
                     />
                   )}
                 </div>
@@ -154,96 +154,64 @@ const BlogDetails = () => {
                   {ReactHtmlParser(currentBlog?.title)}
                 </h1>
 
-                {currentBlog?.title === "Amazon Product Review" ? (
-                  <div className="row">
-                    <div className="col-md-8">
-                      <h6 className="my-3">Table Of Contents</h6>
-                      <p className="table-of-content cursor-pointer d-inline-block">
-                        {ReactHtmlParser(currentBlog?.tableOfContent)}
-                      </p>
-                    </div>
-                    <div className="col-md-4 boxShadow h-100 border-3">
-                      <div className="p-2 mt-3 lh-30">
-                        <p>
-                          79% of Amazon shoppers are influenced by products
-                          having the highest ratings and reviews.
-                        </p>
-                        <p>
-                          Source:
-                          <span className="table-of-content">
-                            <Link href="https://www.junglescout.com/blog/online-review-statistics/">
-                              <a className="d-inline-block" target="_blank">
-                                https://www.junglescout.c
-                                om/blog/online-review-statistics/
-                              </a>
-                            </Link>
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <h6 className="my-3">Table Of Contents</h6>
-                    <p className="table-of-content cursor-pointer d-inline-block">
-                      {ReactHtmlParser(currentBlog?.tableOfContent)}
-                    </p>
-                  </div>
-                )}
+                <h6 className="my-3">Table Of Contents</h6>
+                <p className="table-of-content cursor-pointer d-inline-block">
+                  {ReactHtmlParser(currentBlog?.tableOfContent)}
+                </p>
 
                 <div className="fs-28 my-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle)}
                 </div>
-                <p className="fs-14 lh-36 text-justify">
+                <p className="fs-14 lh-36 text-justify mb-5">
                   {ReactHtmlParser(currentBlog?.description)}
                 </p>
 
                 <div className="fs-28 my-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle_1)}
                 </div>
-                <p className="fs-14 lh-36 text-justify">
+                <p className="fs-14 lh-36 text-justify mb-5">
                   {ReactHtmlParser(currentBlog?.description_2)}
                 </p>
 
                 <div className="fs-28 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle_2)}
                 </div>
-                <p className="fs-14 lh-36 text-justify">
+                <p className="fs-14 lh-36 text-justify mb-5">
                   {ReactHtmlParser(currentBlog?.description_3)}
                 </p>
 
                 <div className="fs-28 mb-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle_3)}
                 </div>
-                <p className="fs-14 lh-36 text-justify">
+                <p className="fs-14 lh-36 text-justify mb-5">
                   {ReactHtmlParser(currentBlog?.description_4)}
                 </p>
 
                 <div className="fs-28 my-4 lh-3">
                   {ReactHtmlParser(currentBlog?.subTitle_4)}
                 </div>
-                <p className="fs-14 lh-36 text-justify">
+                <p className="fs-14 lh-36 text-justify mb-5">
                   {ReactHtmlParser(currentBlog?.description_5)}
                 </p>
 
                 <div className="fs-28 my-4 lh-36">
                   {ReactHtmlParser(currentBlog?.subTitle_5)}
                 </div>
-                <p className="fs-14 lh-36 text-justify">
+                <p className="fs-14 lh-36 text-justify mb-5">
                   {ReactHtmlParser(currentBlog?.description_6)}
                 </p>
 
                 <div className="fs-28 my-4 lh-36">
                   {ReactHtmlParser(currentBlog?.subTitle_6)}
                 </div>
-                <p className="fs-14 lh-36 text-justify">
+                <p className="fs-14 lh-36 text-justify mb-5">
                   {ReactHtmlParser(currentBlog?.description_7)}
                 </p>
 
                 <div className="fs-28 my-4 lh-36">
                   {ReactHtmlParser(currentBlog?.subTitle_7)}
                 </div>
-                <p className="fs-14 lh-36 text-justify">
+                <p className="fs-14 lh-36 text-justify mb-5">
                   {ReactHtmlParser(currentBlog?.description_8)}
                 </p>
 
