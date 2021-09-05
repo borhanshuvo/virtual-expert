@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
-import { FaUser } from "react-icons/fa";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import Link from "next/link";
+import { FaUser } from "react-icons/fa";
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -20,45 +18,12 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from "react-share";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import cardHeaderBg from "../../images/Others/Group 157.svg";
-import cardHeaderImg from "../../images/v-logo.svg";
 import { blogData } from "../../src/components/fakeData/blogData";
 
 const BlogDetails = () => {
   const router = useRouter();
   const id = router.query.id;
   const currentBlog = blogData.find((blog) => blog.id === id);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = async (data, e) => {
-    data.subject = `You got a new mail from ${data.name}`;
-    const msgTemplate = {
-      service_id: "service_bnwytsn",
-      template_id: "template_9rugjbz",
-      user_id: "user_SWFeTeBulzLsvOS4miuh4",
-      template_params: data,
-    };
-
-    const sendMessage = async () => {
-      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(msgTemplate),
-      });
-      if (res.status === 200) {
-        toast.success("Message Sent Successfully");
-      }
-    };
-
-    sendMessage();
-    e.target.reset();
-  };
 
   return (
     <>
@@ -68,18 +33,6 @@ const BlogDetails = () => {
         <meta name="description" content={currentBlog?.metaDescription} />
         <meta name="keyword" content={currentBlog?.metaKeyword} />
       </Head>
-
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
 
       <div className="background-color-skyblue">
         <div className="container d-md-flex justify-content-between align-items-center py-5">

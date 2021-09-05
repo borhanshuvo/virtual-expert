@@ -9,9 +9,9 @@ const ContactUs = () => {
     emailjs
       .sendForm(
         "service_bnwytsn",
-        "template_mi5fgyh",
+        "template_jcid58g",
         e.target,
-        "user_SWFeTeBulzLsvOS4miuh4"
+        "user_Gj21qvrXg9jH4lGJolreq"
       )
       .then(
         (result) => {},
