@@ -103,7 +103,7 @@ const BlogDetails = () => {
                   </p>
                 </div>
 
-                <h1 className="fs-32 my-4 lh-30">
+                <h1 className="fs-32 my-4 lh-36">
                   {ReactHtmlParser(currentBlog?.title)}
                 </h1>
 
@@ -173,6 +173,13 @@ const BlogDetails = () => {
                 </div>
                 <p className="fs-14 lh-36 text-justify">
                   {ReactHtmlParser(currentBlog?.description_9)}
+                </p>
+
+                <div className="fs-28 my-4 lh-36">
+                  {ReactHtmlParser(currentBlog?.subTitle_9)}
+                </div>
+                <p className="fs-14 lh-36 text-justify">
+                  {ReactHtmlParser(currentBlog?.description_10)}
                 </p>
               </div>
             </div>

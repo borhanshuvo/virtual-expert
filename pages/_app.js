@@ -119,12 +119,11 @@ function MyApp({ Component, pageProps }) {
           integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
           crossOrigin="anonymous"
         ></script>
-        {/* Google Analytics Script Add */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
         ></script>
-        {/* googleAnalytics function call */}
+        {/* Google Analytics Script Add */}
         <script
           dangerouslySetInnerHTML={{
             __html: `[window.dataLayer = window.dataLayer || [];
@@ -157,7 +156,6 @@ function MyApp({ Component, pageProps }) {
             src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
           />
         </noscript>
-        ;
       </Head>
       <Navbar />
       <UserContext.Provider value={[signedUser, setSignedUser]}>
